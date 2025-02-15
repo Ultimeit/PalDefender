@@ -55,7 +55,7 @@ Check this out for default values: [GitHub/iiLarsH/Chillet/csv's/PalData.csv](ht
 
 
 ## Template
-The files have to be placed in [`Pal/Binaries/Win64/palguard/pals/`](../../README.md#windows)
+The files have to be placed in [`Pal/Binaries/Win64/PalDefender/pals/`](../../README.md#windows)
 ```json
 {
     "NickName": "",

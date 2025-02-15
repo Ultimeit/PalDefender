@@ -13,7 +13,7 @@
 ### Description
 Deletes multiple pals from a player's palteam and palbox based on a filter, which can be configured through command arguments. Deleted pals will create a .json file so you can restore pals upon invalid usage. This requires manual file lookup for now. A counter command to restore pals is planned in a future release.
 
-The delete pals can be found in `<palserver_root>/Pal/Binaries/Win64/palguard/pals/deleted/<SteamID>/`.
+The delete pals can be found in `<palserver_root>/Pal/Binaries/Win64/PalDefender/pals/deleted/<SteamID>/`.
 
 ### Syntax
 

@@ -13,7 +13,7 @@
 ### 描述
 根据过滤器从玩家的帕鲁队伍和帕鲁终端中删除多个帕鲁。过滤器可以通过命令参数配置。被删除的帕鲁将创建一个 .json 文件，以便在使用不当时恢复帕鲁。目前需要手动查找文件，未来版本计划提供一个恢复帕鲁的命令。
 
-被删除的帕鲁可以在 `<palserver_root>/Pal/Binaries/Win64/palguard/pals/deleted/<SteamID>/` 中找到。
+被删除的帕鲁可以在 `<palserver_root>/Pal/Binaries/Win64/PalDefender/pals/deleted/<SteamID>/` 中找到。
 
 ### 语法
 

@@ -1,8 +1,8 @@
 ### [<<<](README_ZH_CN.md) 文件类型
 
-#### [English](./PalGuard%20Config.md) / 简体中文
+#### [English](./Config.md) / 简体中文
 
-# PalGuard.json
+# Config.json
 
 以下是每个配置项的的说明:
 | 配置项 | 值 | 说明 |
@@ -30,6 +30,8 @@
 | `logPlayerIP` | true, false | Additionally logs the player IP whenever a log contains a player. |
 | `logPlayerUID` | true, false | Additionally logs the player UniqueID whenever a log contains a player. |
 | `logRCON` | true, false | 将所有RCON命令记录到日志。 |
+| `logPlayerDeaths` | true, false | When set to `false`, it will no longer log player deaths in the console. |
+| `logPlayerLogins` | true, false | When set to `false`, it will no longer log player Logins and Logouts in the console. |
 | `palStatsMaxRank` | 任何正数（包括0） | 设置强化帕鲁的最大等级限制。设置为0任何玩家都无法强化帕鲁。任何大于0的数值将设置新的限制，默认为10。如果设置为-1，将检测服务器的最大帕鲁强化等级，并相应地更新此值。 |
 | `pveMaxToPalBanThreshold` | 任何正数 | 尝试对高于此数值的帕鲁造成伤害时，将标记为作弊者。 |
 | `pvpMaxToPalDamage` | 任何正数 | 如果启用PVP（bEnablePlayerToPlayerDamage），玩家对帕鲁造成的最大伤害超过此数值，将会被限制为该数值。此选项适用于未经任何伤害减免的伤害。 |
@@ -43,3 +45,5 @@
 | `useAdminWhitelist` | true, false | 启用/禁用管理员IP白名单系统（仅有adminIPs中的IP地址的玩家可以通过/adminpassword指令获得管理员权限）。 |
 | `useWhitelist` | true, false | 启用/禁用SteamID白名单（仅有在SteamID白名单列表中的玩家可以进入服务器）。 |
 | `whitelistMessage` | "You are not whitelisted." | 自定义未被列入白名单时显示的消息（支持中文）。 |
+| `infiniteAmmoExploitActions` | true, false | When set to `false`, it will only log warnings in the console. |
+| `infiniteAmmoExploitDisabled` | true, false | When set to `true`, it will ignore the feature completely. |

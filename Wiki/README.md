@@ -1,4 +1,7 @@
-# PalGuard Wiki
+![PalDefender Logo](/.github/images/LOGO_WIKI.jpg)
+*LOGO made by [Jia](<https://www.fiverr.com/javeriahjaved/design-a-unique-sports-mascot-esports-and-gaming-logo>)* !
+
+# PalDefender Wiki
 
 #### English / [简体中文](./README_ZH_CN.md)
 
@@ -21,19 +24,19 @@ The Wiki is currently under construction and therefor incomplete. We would appre
 
 ## FAQ
 ### I've accidentally banned myself/someone. How can I unban them?
-If you've banned their IP, for the time being you would need to edit palguard.json file and either reload the config or restart the server. If you've banned their account, you would need to remove their steamID from Pal\Saved\SaveGames\banlist.txt and restart the server afterwards.
+If you've banned their IP, for the time being you would need to edit `Config.json` file and either reload the config or restart the server. If you've banned their account, you would need to remove their steamID from Pal\Saved\SaveGames\banlist.txt and restart the server afterwards.
 
 ---
 
 ### I cannot login as an admin, it says that admin commands are whitelist protected.
-Make sure you have added your IP to palguard.json like shown on the picture. Alternatively, you can set useAdminWhitelist to false, but that is not recommended, since cheaters are known to have some kind of exploit to obtain admin password.
+Make sure you have added your IP to `Config.json` like shown on the picture. Alternatively, you can set useAdminWhitelist to false, but that is not recommended, since cheaters are known to have some kind of exploit to obtain admin password.
 
 ![AdminWhitelist](/.github/images/AdminWhitelist.png)
 
 ---
 
 ### My server crashes on startup.
-Ensure you haven't messed up in palguard.json file, try deleting in and starting server again. If that doesn't helps and this is your first time using PalGuard, I'd suggest trying installing [VC++ redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170).
+Ensure you haven't messed up in `Config.json` file, try deleting in and starting server again. If that doesn't helps and this is your first time using PalDefender, I'd suggest trying installing [VC++ redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170).
 
 ---
 
@@ -43,6 +46,6 @@ Please use Windows Terminal (or any alternative with proper unicode support) ins
 ---
 
 ### How can I report crashes?
-Send your `\Pal\Saved\Crashes\*random numbers*\CrashContext.runtime-xml` file + palguard version used + log from `Pal\Binaries\Win64\logs` folder in [Bug Report Issues](https://github.com/Ultimeit/palguard/issues/new?template=BUG-REPORT.yml).
+Send your `\Pal\Saved\Crashes\*random numbers*\CrashContext.runtime-xml` file + PalDefender version used + log from `Pal\Binaries\Win64\logs` folder in bug-reports channel to our [issue section](https://github.com/Ultimeit/PalDefender/issues).
 
 ---

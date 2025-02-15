@@ -17,7 +17,7 @@ body:
     id: purpose
     attributes:
       label: "Purposes"
-      description: Please explain why this feature should be implemented into PalGuard.
+      description: Please explain why this feature should be implemented into PalDefender.
     validations:
       required: true
   - type: textarea

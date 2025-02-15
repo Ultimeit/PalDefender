@@ -1,9 +1,7 @@
 {
     "CharacterID": "Anubis",
     "NickName": "OPnubis",
-    "UniqueNPCID": "",
-    "Gender": 2,
-    "Level": 55,
+    "Level": 60,
     "IsRarePal": true,
     "MaxHP": 9999999,
     "Hp": 9999999,

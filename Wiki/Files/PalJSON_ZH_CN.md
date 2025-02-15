@@ -54,7 +54,7 @@ PalJSON 是一个 JSON 文件，用于定义正在创建的帕鲁的属性。**�
 | `PassiveSkillList` | 字符串数组，包含 [PassiveSkills](../Data%20Lists/PassiveSkills_ZH_CN.md) | ["", "", "", ""] |帕鲁拥有的所有被动技能。 |
 
 ## 模板
-文件必须放置在 [`Pal/Binaries/Win64/palguard/pals/`](../../README_ZH_CN.md#windows)
+文件必须放置在 [`Pal/Binaries/Win64/PalDefender/pals/`](../../README_ZH_CN.md#windows)
 ```json
 {
     "NickName": "",
