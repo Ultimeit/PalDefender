@@ -2,12 +2,14 @@
 *LOGO made by [Jia](<https://www.fiverr.com/javeriahjaved/design-a-unique-sports-mascot-esports-and-gaming-logo>)* !
 
 # PalDefender (幻兽帕鲁服务器反作弊)
-**Version:** 1.1336
+**Version:** 1.1273
 
 ### [English](/README.md) / 简体中文
 
 ### Get the best servers for modding at [Qonzer](https://qonzer.com/aff.php?aff=61) *(Affiliate Link)*. 
 *They support PalDefender right out of the box—no special setup or technical knowledge needed. It just works.*
+
+**A 10% Discount code for qonzer servers can be found on our Discord! Check out the server-host channel.**
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/T6T014OZZB)
 
