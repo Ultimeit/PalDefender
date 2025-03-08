@@ -64,6 +64,11 @@
 | `/givemestats [Count=1]` | `/givestats 666` | Gives yourself one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent. | X | X | |
 | `/setguildleader <UserID>` | `/setguildleader 76567890987654321` | 让目标玩家成为他当前公会的会长。 | X | X | X |
 | `/imcheater` | `/imcheater` | 将你标记为作弊者并采取措施（用于测试反作弊）。 | X | X | X |
+| `/godmode [on/off]` | `/godmode on` | Turns on or off godmode. The mode blocks any kind of damage and statuses towards you. | X | X |   |
+| `/settime <hour>` | `/settime day` | Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`. | X | X | X |
+| `/resetoilrig <oilrig>` | `/resetoilrig lv60` | Resets the specified OilRigs. Only the rocket tower is unaffected. Argument can have following values: `lv30`, `lv55`, `lv60` and `all`. | X | X | X |
+| `/spawnpal <PalID> [X] [Y] [Z] [Level=1]` | `/spawnpal Anubis 100` (Anubis lvl 100) | Spawns a pal by ID at the specified location. **RCON always needs to specify coordinates.** If spawned via chat and no location specified, it will spawn infront of you. | X | X | X |
+| `/spawnpal_j <PalJSON> [X] [Y] [Z]` | `/spawnpal_j OPnubis` | Spawns a pal by ID at the specified location. **RCON always needs to specify coordinates.** If spawned via chat and no location specified, it will spawn infront of you. | X | X | X |
 
 <br>
 

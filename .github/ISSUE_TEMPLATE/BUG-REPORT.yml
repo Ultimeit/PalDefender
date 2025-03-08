@@ -12,6 +12,7 @@ body:
       description: What version of PalDefender are you running?
       multiple: true
       options:
+        - v1.1291
         - v1.1273
         - Older than v1.1273
         - Beta

@@ -45,5 +45,8 @@ Explanation of every config entry:
 | `useAdminWhitelist` | true, false | Enables/disables usage of admin IP whitelist system. |
 | `useWhitelist` | true, false | Enables/disables SteamID whitelist. |
 | `whitelistMessage` | "You are not whitelisted." | Allows you to customize the not whitelisted message. |
-| `infiniteAmmoExploitActions` | true, false | When set to `false`, it will only log warnings in the console. |
-| `infiniteAmmoExploitDisabled` | true, false | When set to `true`, it will ignore the feature completely. |
+| `allowGodmodeOnehit` | true, false | Enables/disables one-shotting during godmode. Any hit towards players, pals, etc will kill the target. |
+| `announcePlayerSummons` | true, false | Summoning Raid bosses will be announced in in the chat. |
+| `announceOpenOilrigBoxes` | true, false | Opening OilRig End-Goal-Boxes will be announced in in the chat. |
+| `announceHelicopterKills` | true, false | Killing the OilRig Combat Helicopter will be announced in in the chat. |
+| `logNetworkingToConsole` | true, false | Enables/disables the NetworkLogger to log into the console. Turn it off for a more cleaner console. |

@@ -45,5 +45,8 @@
 | `useAdminWhitelist` | true, false | 启用/禁用管理员IP白名单系统（仅有adminIPs中的IP地址的玩家可以通过/adminpassword指令获得管理员权限）。 |
 | `useWhitelist` | true, false | 启用/禁用SteamID白名单（仅有在SteamID白名单列表中的玩家可以进入服务器）。 |
 | `whitelistMessage` | "You are not whitelisted." | 自定义未被列入白名单时显示的消息（支持中文）。 |
-| `infiniteAmmoExploitActions` | true, false | When set to `false`, it will only log warnings in the console. |
-| `infiniteAmmoExploitDisabled` | true, false | When set to `true`, it will ignore the feature completely. |
+| `allowGodmodeOnehit` | true, false | Enables/disables one-shotting during godmode. Any hit towards players, pals, etc will kill the target. |
+| `announcePlayerSummons` | true, false | Summoning Raid bosses will be announced in in the chat. |
+| `announceOpenOilrigBoxes` | true, false | Opening OilRig End-Goal-Boxes will be announced in in the chat. |
+| `announceHelicopterKills` | true, false | Killing the OilRig Combat Helicopter will be announced in in the chat. |
+| `logNetworkingToConsole` | true, false | Enables/disables the NetworkLogger to log into the console. Turn it off for a more cleaner console. |
