@@ -2,7 +2,7 @@
 *LOGO made by [Jia](<https://www.fiverr.com/javeriahjaved/design-a-unique-sports-mascot-esports-and-gaming-logo>)* !
 
 # PalDefender (PalWorld Server AntiCheat)
-**Version:** 1.1273
+**Version:** 1.1291
 
 #### English / [简体中文](/README_ZH_CN.md)
 
