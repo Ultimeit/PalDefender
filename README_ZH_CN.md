@@ -2,7 +2,7 @@
 *LOGO made by [Jia](<https://www.fiverr.com/javeriahjaved/design-a-unique-sports-mascot-esports-and-gaming-logo>)* !
 
 # PalDefender (幻兽帕鲁服务器反作弊)
-**Version:** 1.1273
+**Version:** 1.1291
 
 ### [English](/README.md) / 简体中文
 
