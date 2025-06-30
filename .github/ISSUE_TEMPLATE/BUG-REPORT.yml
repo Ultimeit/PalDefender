@@ -12,16 +12,22 @@ body:
       description: What version of PalDefender are you running?
       multiple: true
       options:
-        - v1.1273
-        - Older than v1.1273
-        - Beta
+        - v1.4.5
+        - v1.4.4
+        - v1.4.3
+        - v1.4.2
+        - v1.4.0
+        - v1.3.1
+        - v1.3.0
+        - v1.1.6
+        - Older than v1.1.6
     validations:
       required: true
   - type: textarea
     id: description
     attributes:
       label: "What happened?"
-      description: Also tell us, what did you expect to happen?
+      description: Please provide every bit of information that you have.
       placeholder: Short and explicit description of your incident...
     validations:
       required: true
@@ -29,7 +35,7 @@ body:
     id: reprod
     attributes:
       label: "Reproduction steps"
-      description: Please enter an explicit description of your bug
+      description: Please enter an explicit description of your bug. E.g.: It doesnt help us when you tell us a command is not working without providing the command you typed.
       value: |
         1. ...
         2. ...
