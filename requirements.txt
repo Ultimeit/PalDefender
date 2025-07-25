@@ -1,0 +1,5 @@
+mkdocs>=1.5.3
+mkdocs-material>=9.5.7
+pymdown-extensions>=10.5
+mkdocs-static-i18n>=1.0.4
+mkdocs-material-extensions>=1.1.1

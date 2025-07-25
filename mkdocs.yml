@@ -1,0 +1,78 @@
+site_name: PalDefender Wiki
+site_author: "Zvend"
+site_description: "PalDefender (PalWorld Dedicated Server anticheat)"
+repo_url: https://github.com/Ultimeit/PalDefender
+extra_css:
+  - stylesheets/extra.css
+theme:
+  name: material
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: assets/LogoWiki.png
+  features:
+    - navigation.indexes
+    - navigation.path
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+  palette:
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: indigo
+      accent: deep orange
+
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: indigo
+      accent: blue grey
+
+markdown_extensions:
+  - attr_list
+  - tables
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+
+
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: en
+          name: English
+          default: true
+        - locale: de
+          name: Deutsch
+        - locale: pt-BR
+          link: /pt-BR/
+          name: Brasileiro
+        - locale: zh
+          name: 简体中文
+        - locale: ja
+          name: 日本語
