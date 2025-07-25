@@ -4,8 +4,6 @@
 <a href="https://discord.com/invite/bdTxPbwSEW" target="_blank">![Discord Server](https://img.shields.io/badge/-Join%20our%20Discord-111111?style=for-the-badge&logo=discord)</a>
 <a href="https://www.nexusmods.com/palworld/mods/451" target="_blank">![Static Badge](https://img.shields.io/badge/-Nexus%20Mods-111111?style=for-the-badge&logo=nexusmods)</a>
 
-Version: 1.1.2.241 Beta
-
 ---
 
 ## Foreword
