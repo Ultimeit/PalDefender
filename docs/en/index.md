@@ -23,8 +23,8 @@ PalDefender implements comprehensive server-side validation to prevent a wide ra
 
 ## Authors
 
-- <a href="https://github.com/Ultimeit" target="_blank">Ultimeit</a>
-- <a href="https://github.com/Zvendson" target="_blank">Zvendson</a>
+- <a href="https://github.com/Zvendson" target="_blank">Zvendson</a> (Current Maintainer)
+- <a href="https://github.com/Ultimeit" target="_blank">Ultimeit</a> (Original Creator)
 ---
 
 ## Credits
