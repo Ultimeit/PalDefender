@@ -658,6 +658,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives a player a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
 
+        **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
+
         **Arguments:**
         - `<UserID>`: The ID of the player.
         - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
@@ -732,18 +734,20 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/summon"
-        **Syntax:** `/summon <PalSummon.json>`
+        **Syntax:** `/summon <PalSummon>`
 
-        **Description:** Spawns a Pal using the provided `PalSummon.json` file.
+        **Description:** Spawns a Pal using the provided PalSummon file.
+
+        **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
         **Arguments:**
-        - `<PalSummon.json>`: The JSON file to use.
+        - `<PalSummon>`: The name of the PalSummon file to use.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /summon PalSummon.json
+        /summon PalSummon
         ```
 
     ??? info "/clearinv"
