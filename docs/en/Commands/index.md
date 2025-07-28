@@ -293,7 +293,7 @@ At the current version there are only Admin and RCON commands available.
         **Arguments:**
         - None
 
-        **Permissions:** `RCON`, `Admin`
+        **Permissions:** `RCON`
 
         **Example:**
         ```
