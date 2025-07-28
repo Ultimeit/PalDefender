@@ -380,22 +380,6 @@ At the current version there are only Admin and RCON commands available.
         /alert Server will restart in 5 minutes!
         ```
 
-    ??? info "/goto"
-        **Syntax:** `/goto <X> <Y> [Z]`
-
-        **Description:** Teleports you to the location.
-
-        **Arguments:**
-        - `<X>`: X coordinate.
-        - `<Y>`: Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
-
-        **Permissions:** `Chat`, `Admin`
-
-        **Example:**
-        ```
-        /goto 100 200 50
-        ```
 
     ??? info "/gotonearestbase"
         **Syntax:** `/gotonearestbase [X] [Y] [Z]`
