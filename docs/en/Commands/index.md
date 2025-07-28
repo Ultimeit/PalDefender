@@ -24,72 +24,787 @@ At the current version there are only Admin and RCON commands available.
     </p>
 
 
-??? note "Server Management Commands"
-    | Command | Description | Permissions |
-    | ------- | ----------- | ----------- |
-    | `/kick <UserId> [Reason="Kicked by Admin."]` | Kicks a player from the server. | `Chat` `RCON` `Admin` |
-    | `/ban <UserId> [Reason="Banned by Admin."]` | Bans and kicks a player from the server. | `Chat` `RCON` `Admin` |
-    | `/ipban <UserId> [Reason="Banned by Admin."]` | Bans a player IP address and then and kicks them from the server. | `Chat` `RCON` `Admin` |
-    | `/banip <IP>` | Bans an IP address from the server. | `Chat` `RCON` `Admin` |
-    | `/unbanip <IP>` | Removes an IP address from the banlist. | `Chat` `RCON` `Admin` |
-    | `/getip <UserId>` | Shows you the IP address of a player. | `Chat` `RCON` `Admin` |
-    | `/whitelist_add <UserId>` | Adds a UserId to the whitelist. | `Chat` `RCON` `Admin` |
-    | `/whitelist_remove <UserId>` | Removes a UserId from the whitelist. | `Chat` `RCON` `Admin` |
-    | `/whitelist_get` | Shows the full list of the whitelisted players. | `Chat` `RCON` `Admin` |
-    | `/addadminip <IP>` | Adds a IP address to admin whitelist. | `Chat` `RCON` `Admin` |
-    | `/setadmin <UserId>` | Temporarily grants/revokes admin from a player. | `Chat` `RCON` `Admin` |
-    | `/adminlogout` | Logs you out of admin mode. | `Chat` `Admin` |
-    | `/adminlogin` | Logs you into admin mode. | `Chat` |
-    | `/setguildleader <UserId>` | Makes target player the leader of his current guild. | `Chat` `RCON` `Admin` |
-    | `/renameplayer <UserId> <NewName>` | Renames a player's nickname. | `Chat` `RCON` `Admin` |
-    | `/pgbroadcast <Message>` | Send a message to all players in the server. | `Chat` `RCON` `Admin` |
-    | `/reloadcfg` | Reloads `Config.json`, `whitelist.json` and `banlist.txt`. | `Chat` `RCON` `Admin` |
-    | `/getrconcmds` | Returns a list of every command with the required arg count which is usable by RCON. | `RCON` `Admin` |
+
+???+ info "Server Management Commands"
+    ??? info "/kick"
+        **Syntax:** `/kick <UserId> [Reason="Kicked by Admin."]`
+
+        **Description:** Kicks a player from the server.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to kick.
+        - `[Reason]`: (Optional) Reason for kicking. Default: "Kicked by Admin."
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /kick 123456789 "Spamming in chat"
+        ```
+
+    ??? info "/ban"
+        **Syntax:** `/ban <UserId> [Reason="Banned by Admin."]`
+
+        **Description:** Bans and kicks a player from the server.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to ban.
+        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /ban 123456789 "Cheating"
+        ```
+
+    ??? info "/ipban"
+        **Syntax:** `/ipban <UserId> [Reason="Banned by Admin."]`
+
+        **Description:** Bans a player's IP address and then kicks them from the server.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to IP ban.
+        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /ipban 123456789
+        ```
+
+    ??? info "/banip"
+        **Syntax:** `/banip <IP>`
+
+        **Description:** Bans an IP address from the server.
+
+        **Arguments:**
+        - `<IP>`: The IP address to ban.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /banip 192.168.1.1
+        ```
+
+    ??? info "/unbanip"
+        **Syntax:** `/unbanip <IP>`
+
+        **Description:** Removes an IP address from the banlist.
+
+        **Arguments:**
+        - `<IP>`: The IP address to unban.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /unbanip 192.168.1.1
+        ```
+
+    ??? info "/getip"
+        **Syntax:** `/getip <UserId>`
+
+        **Description:** Shows you the IP address of a player.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /getip 123456789
+        ```
+
+    ??? info "/whitelist_add"
+        **Syntax:** `/whitelist_add <UserId>`
+
+        **Description:** Adds a UserId to the whitelist.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to whitelist.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /whitelist_add 123456789
+        ```
+
+    ??? info "/whitelist_remove"
+        **Syntax:** `/whitelist_remove <UserId>`
+
+        **Description:** Removes a UserId from the whitelist.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to remove from whitelist.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /whitelist_remove 123456789
+        ```
+
+    ??? info "/whitelist_get"
+        **Syntax:** `/whitelist_get`
+
+        **Description:** Shows the full list of the whitelisted players.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /whitelist_get
+        ```
+
+    ??? info "/addadminip"
+        **Syntax:** `/addadminip <IP>`
+
+        **Description:** Adds an IP address to admin whitelist.
+
+        **Arguments:**
+        - `<IP>`: The IP address to add as admin.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /addadminip 192.168.1.1
+        ```
+
+    ??? info "/setadmin"
+        **Syntax:** `/setadmin <UserId>`
+
+        **Description:** Temporarily grants/revokes admin from a player.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to grant/revoke admin.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /setadmin 123456789
+        ```
+
+    ??? info "/adminlogout"
+        **Syntax:** `/adminlogout`
+
+        **Description:** Logs you out of admin mode.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /adminlogout
+        ```
+
+    ??? info "/adminlogin"
+        **Syntax:** `/adminlogin`
+
+        **Description:** Logs you into admin mode.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`
+
+        **Example:**
+        ```
+        /adminlogin
+        ```
+
+    ??? info "/setguildleader"
+        **Syntax:** `/setguildleader <UserId>`
+
+        **Description:** Makes target player the leader of his current guild.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to make guild leader.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /setguildleader 123456789
+        ```
+
+    ??? info "/renameplayer"
+        **Syntax:** `/renameplayer <UserId> <NewName>`
+
+        **Description:** Renames a player's nickname.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<NewName>`: The new nickname.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /renameplayer 123456789 NewNickname
+        ```
+
+    ??? info "/pgbroadcast"
+        **Syntax:** `/pgbroadcast <Message>`
+
+        **Description:** Send a message to all players in the server.
+
+        **Arguments:**
+        - `<Message>`: The message to broadcast.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /pgbroadcast "Server will restart soon."
+        ```
+
+    ??? info "/reloadcfg"
+        **Syntax:** `/reloadcfg`
+
+        **Description:** Reloads `Config.json`, `whitelist.json` and `banlist.txt`.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /reloadcfg
+        ```
+
+    ??? info "/getrconcmds"
+        **Syntax:** `/getrconcmds`
+
+        **Description:** Returns a list of every command with the required arg count which is usable by RCON.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /getrconcmds
+        ```
 
 
-??? note "Admin Exclusive Commands"
-    | Command | Description | Permissions |
-    | ------- | ----------- | ----------- |
-    | `/imcheater` | Use this to test how your server response to a cheater. | `Chat` `Admin` |
-    | `/godmode [on/off]` | Makes you invulnerable and allows one shotting anything. | `Chat` `Admin` |
-    | `/jetragon` | Gives you a extremely fast Jetragon named `PalGuardian`. | `Chat` `Admin` |
-    | `/catwaifu` | Gives you an Cat-Waifu (Katress) that buffs your character stats. | `Chat` `Admin` |
 
-??? note "World Commands"
-    | Command | Description | Permissions |
-    | ------- | ----------- | ----------- |
-    | `/goto <X> <Y> [Z]` | Teleports you to the location. | `Chat` `Admin` |
-    | `/gotonearestbase [X] [Y] [Z]` | Teleports you to the nearest base of the location. | `Chat` `Admin` |
-    | `/getnearestbase [X] [Y] [Z]` | Tells you guild name which owns base nearest to your character. | `Chat` `RCON` `Admin` |
-    | `/killnearestbase [X] [Y] [Z]` | Destroys nearest base (**Use with caution!**). | `Chat` `RCON` `Admin` |
-    | `/settime <hour>` | Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`. | `Chat` `RCON` `Admin` |
-    | `/resetoilrig <oilrig>` | Resets the specified OilRigs. Only the rocket tower is unaffected. Argument can have following values: `lv30`, `lv55`, `lv60` and `all`. | `Chat` `RCON` `Admin` |
-    | `/tp <UserId1> <UserId2>` | Teleports UserId1 to UserId2. | `Chat` `RCON` `Admin` |
-    | `/tp <UserId> <X> <Y> <Z>` | Teleports the player to coordinates. | `Chat` `RCON` `Admin` |
-    | `/tp <UserId> home` | Teleports the player to their closest base. | `Chat` `RCON` `Admin` |
-    | `/tp <UserId> oilrig` | Teleports the player to their closest oilrig. | `Chat` `RCON` `Admin` |
-    | `/tp <UserId>` | Teleports you to the player. | `Chat` `RCON` `Admin` |
+???+ info "Admin Exclusive Commands"
+    ??? info "/imcheater"
+        **Syntax:** `/imcheater`
 
-??? note "Item Commands"
-    | Command | Description | Permissions |
-    | ------- | ----------- | ----------- |
-    | `/give <UserId> <ItemId> [Amount=1]` | Gives a player an item and if specified how many. | `Chat` `RCON` `Admin` |
-    | `/giveitems <UserId> <ItemId>[:<Amount>] ...` | Gives a player more than 1 item in one command and if specified how many of each seperated by a colon. | `Chat` `RCON` `Admin` |
-    | `/giveme <ItemId> [Amount=1]` | Gives yourself an item and if specified how many. | `Chat` `Admin` |
-    | `/delitem <UserId> <ItemId> [Amount=1]` | Deletes an item from a player and if specified how many. Default is `1` which will delete only 1 occurence of that item. Use `all` instead of `1` to delete all occurences. | `Chat` `RCON` `Admin` |
-    | `/delitems <UserId> <ItemId>[:<Amount>] ...` | Deletes more than 1 item from a player in one command and if specified how many of each seperated by a colon. Use `all` instead of `1` to delete all occurences. | `Chat` `RCON` `Admin` |
-    | `/givepal <UserId> <PalId> [Level=1]` | Gives a Pal to a player at the specified level. | `Chat` `RCON` `Admin` |
-    | `/givepal_j <UserID> <PalJSON>` | Gives player a Pal defined by a JSON blob. | `Chat` `RCON` `Admin` |
-    | `/givemepal <PalId> [Level=1]` | Gives yourself a Pal at the specified level. | `Chat` `Admin` |
-    | `/givemepal_j <PalJSON>` | Gives yourself a Pal defined by a JSON blob. | `Chat` `Admin` |
-    | `/give_exp <UserId> <Amount>` | Gives experience points to a player. | `Chat` `RCON` `Admin` |
-    | `/giveme_exp <Amount>` | Gives experience points to yourself. | `Chat` `Admin` |
-    | `/summon <PalSummon.json>` | Spawns a Pal using the provided `PalSummon.json` file. | `Chat` `Admin` |
-    | `/clearinv <UserId> [Container=items] ...` | Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`. | `Chat` `RCON` `Admin` |
+        **Description:** Use this to test how your server responds to a cheater.
 
-??? note "Technology Commands"
-    | Command | Description | Permissions |
-    | ------- | ----------- | ----------- |
-    | `/learntech <UserId> <TechID>` | Lets a player learn a specific technology. Use `all` to unlock everything. | `Chat` `RCON` `Admin` |
-    | `/unlearntech <UserId> <TechID>` | Makes a player forget a specific technology. Use `all` to remove everything. | `Chat` `RCON` `Admin` |
-    | `/gettechids` | Returns a list of all available technology IDs. RCON gets JSON output. | `Chat` `RCON` `Admin` |
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /imcheater
+        ```
+
+    ??? info "/godmode"
+        **Syntax:** `/godmode [on/off]`
+
+        **Description:** Makes you invulnerable and allows one shotting anything.
+
+        **Arguments:**
+        - `[on/off]`: (Optional) Enable or disable god mode.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /godmode on
+        ```
+
+    ??? info "/jetragon"
+        **Syntax:** `/jetragon`
+
+        **Description:** Gives you an extremely fast Jetragon named `PalGuardian`.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /jetragon
+        ```
+
+    ??? info "/catwaifu"
+        **Syntax:** `/catwaifu`
+
+        **Description:** Gives you a Cat-Waifu (Katress) that buffs your character stats.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /catwaifu
+        ```
+
+
+???+ info "World Commands"
+    ??? info "/goto"
+        **Syntax:** `/goto <X> <Y> [Z]`
+
+        **Description:** Teleports you to the location.
+
+        **Arguments:**
+        - `<X>`: X coordinate.
+        - `<Y>`: Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /goto 100 200 50
+        ```
+
+    ??? info "/gotonearestbase"
+        **Syntax:** `/gotonearestbase [X] [Y] [Z]`
+
+        **Description:** Teleports you to the nearest base of the location.
+
+        **Arguments:**
+        - `[X]`: (Optional) X coordinate.
+        - `[Y]`: (Optional) Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /gotonearestbase 100 200 50
+        ```
+
+    ??? info "/getnearestbase"
+        **Syntax:** `/getnearestbase [X] [Y] [Z]`
+
+        **Description:** Tells you guild name which owns base nearest to your character.
+
+        **Arguments:**
+        - `[X]`: (Optional) X coordinate.
+        - `[Y]`: (Optional) Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /getnearestbase 100 200 50
+        ```
+
+    ??? info "/killnearestbase"
+        **Syntax:** `/killnearestbase [X] [Y] [Z]`
+
+        **Description:** Destroys nearest base (**Use with caution!**).
+
+        **Arguments:**
+        - `[X]`: (Optional) X coordinate.
+        - `[Y]`: (Optional) Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /killnearestbase 100 200 50
+        ```
+
+    ??? info "/settime"
+        **Syntax:** `/settime <hour>`
+
+        **Description:** Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`.
+
+        **Arguments:**
+        - `<hour>`: Hour value (0-23, day, night).
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /settime 12
+        /settime night
+        ```
+
+    ??? info "/resetoilrig"
+        **Syntax:** `/resetoilrig <oilrig>`
+
+        **Description:** Resets the specified OilRigs. Only the rocket tower is unaffected. Argument can have following values: `lv30`, `lv55`, `lv60` and `all`.
+
+        **Arguments:**
+        - `<oilrig>`: Oilrig value (lv30, lv55, lv60, all).
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /resetoilrig lv30
+        /resetoilrig all
+        ```
+
+    ??? info "/tp"
+        **Syntax:** `/tp <UserId1> <UserId2>`
+
+        **Description:** Teleports UserId1 to UserId2.
+
+        **Arguments:**
+        - `<UserId1>`: The player to teleport.
+        - `<UserId2>`: The target player.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /tp 123456789 987654321
+        ```
+
+    ??? info "/tp-coords"
+        **Syntax:** `/tp <UserId> <X> <Y> <Z>`
+
+        **Description:** Teleports the player to coordinates.
+
+        **Arguments:**
+        - `<UserId>`: The player to teleport.
+        - `<X>`: X coordinate.
+        - `<Y>`: Y coordinate.
+        - `<Z>`: Z coordinate.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /tp 123456789 100 200 50
+        ```
+
+    ??? info "/tp-home"
+        **Syntax:** `/tp <UserId> home`
+
+        **Description:** Teleports the player to their closest base.
+
+        **Arguments:**
+        - `<UserId>`: The player to teleport.
+        - `home`: Keyword for home base.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /tp 123456789 home
+        ```
+
+    ??? info "/tp-oilrig"
+        **Syntax:** `/tp <UserId> oilrig`
+
+        **Description:** Teleports the player to their closest oilrig.
+
+        **Arguments:**
+        - `<UserId>`: The player to teleport.
+        - `oilrig`: Keyword for oilrig.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /tp 123456789 oilrig
+        ```
+
+    ??? info "/tp-player"
+        **Syntax:** `/tp <UserId>`
+
+        **Description:** Teleports you to the player.
+
+        **Arguments:**
+        - `<UserId>`: The player to teleport to.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /tp 123456789
+        ```
+
+
+???+ info "Item Commands"
+    ??? info "/give"
+        **Syntax:** `/give <UserId> <ItemId> [Amount=1]`
+
+        **Description:** Gives a player an item and if specified how many.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to give the item to.
+        - `<ItemId>`: The item to give.
+        - `[Amount]`: (Optional) How many. Default: 1.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /give 123456789 Sword 2
+        ```
+
+    ??? info "/giveitems"
+        **Syntax:** `/giveitems <UserId> <ItemId>[:<Amount>] ...`
+
+        **Description:** Gives a player more than 1 item in one command and if specified how many of each separated by a colon.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to give the items to.
+        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /giveitems 123456789 Sword:2 Shield:1
+        ```
+
+    ??? info "/giveme"
+        **Syntax:** `/giveme <ItemId> [Amount=1]`
+
+        **Description:** Gives yourself an item and if specified how many.
+
+        **Arguments:**
+        - `<ItemId>`: The item to give yourself.
+        - `[Amount]`: (Optional) How many. Default: 1.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /giveme Sword 3
+        ```
+
+    ??? info "/delitem"
+        **Syntax:** `/delitem <UserId> <ItemId> [Amount=1]`
+
+        **Description:** Deletes an item from a player and if specified how many. Default is `1` which will delete only 1 occurrence of that item. Use `all` instead of `1` to delete all occurrences.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<ItemId>`: The item to delete.
+        - `[Amount]`: (Optional) How many. Default: 1. Use `all` to delete all occurrences.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /delitem 123456789 Sword 1
+        /delitem 123456789 Sword all
+        ```
+
+    ??? info "/delitems"
+        **Syntax:** `/delitems <UserId> <ItemId>[:<Amount>] ...`
+
+        **Description:** Deletes more than 1 item from a player in one command and if specified how many of each separated by a colon. Use `all` instead of `1` to delete all occurrences.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /delitems 123456789 Sword:1 Shield:all
+        ```
+
+    ??? info "/givepal"
+        **Syntax:** `/givepal <UserId> <PalId> [Level=1]`
+
+        **Description:** Gives a Pal to a player at the specified level.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<PalId>`: The Pal to give.
+        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /givepal 123456789 Pal001 10
+        ```
+
+    ??? info "/givepal_j"
+        **Syntax:** `/givepal_j <UserID> <PalJSON>`
+
+        **Description:** Gives player a Pal defined by a JSON blob.
+
+        **Arguments:**
+        - `<UserID>`: The ID of the player.
+        - `<PalJSON>`: JSON blob defining the Pal.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /givepal_j 123456789 {"PalId": "Pal001", "Level": 10}
+        ```
+
+    ??? info "/givemepal"
+        **Syntax:** `/givemepal <PalId> [Level=1]`
+
+        **Description:** Gives yourself a Pal at the specified level.
+
+        **Arguments:**
+        - `<PalId>`: The Pal to give yourself.
+        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /givemepal Pal001 10
+        ```
+
+    ??? info "/givemepal_j"
+        **Syntax:** `/givemepal_j <PalJSON>`
+
+        **Description:** Gives yourself a Pal defined by a JSON blob.
+
+        **Arguments:**
+        - `<PalJSON>`: JSON blob defining the Pal.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /givemepal_j {"PalId": "Pal001", "Level": 10}
+        ```
+
+    ??? info "/give_exp"
+        **Syntax:** `/give_exp <UserId> <Amount>`
+
+        **Description:** Gives experience points to a player.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<Amount>`: Amount of experience points.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /give_exp 123456789 1000
+        ```
+
+    ??? info "/giveme_exp"
+        **Syntax:** `/giveme_exp <Amount>`
+
+        **Description:** Gives experience points to yourself.
+
+        **Arguments:**
+        - `<Amount>`: Amount of experience points.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /giveme_exp 1000
+        ```
+
+    ??? info "/summon"
+        **Syntax:** `/summon <PalSummon.json>`
+
+        **Description:** Spawns a Pal using the provided `PalSummon.json` file.
+
+        **Arguments:**
+        - `<PalSummon.json>`: The JSON file to use.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /summon PalSummon.json
+        ```
+
+    ??? info "/clearinv"
+        **Syntax:** `/clearinv <UserId> [Container=items] ...`
+
+        **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `[Container] ...`: (Optional) Containers to clear. Default: items.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /clearinv 123456789 items
+        /clearinv 123456789 all
+        ```
+
+
+???+ info "Technology Commands"
+    ??? info "/learntech"
+        **Syntax:** `/learntech <UserId> <TechID>`
+
+        **Description:** Lets a player learn a specific technology. Use `all` to unlock everything.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<TechID>`: The technology to learn. Use `all` to unlock everything.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /learntech 123456789 Tech001
+        /learntech 123456789 all
+        ```
+
+    ??? info "/unlearntech"
+        **Syntax:** `/unlearntech <UserId> <TechID>`
+
+        **Description:** Makes a player forget a specific technology. Use `all` to remove everything.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<TechID>`: The technology to forget. Use `all` to remove everything.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /unlearntech 123456789 Tech001
+        /unlearntech 123456789 all
+        ```
+
+    ??? info "/gettechids"
+        **Syntax:** `/gettechids`
+
+        **Description:** Returns a list of all available technology IDs. RCON gets JSON output.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /gettechids
+        ```
