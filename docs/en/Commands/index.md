@@ -39,7 +39,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /kick 123456789 "Spamming in chat"
+        /kick steam_76500000000000000 "Spamming in chat"
         ```
 
     ??? info "/ban"
@@ -55,7 +55,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /ban 123456789 "Cheating"
+        /ban gdk_25300000000000000 "Cheating"
         ```
 
     ??? info "/ipban"
@@ -71,7 +71,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /ipban 123456789
+        /ipban steam_76500000000000000
         ```
 
     ??? info "/banip"
@@ -116,7 +116,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /getip 123456789
+        /getip gdk_25300000000000000
         ```
 
     ??? info "/whitelist_add"
@@ -131,7 +131,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /whitelist_add 123456789
+        /whitelist_add steam_76500000000000000
         ```
 
     ??? info "/whitelist_remove"
@@ -146,7 +146,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /whitelist_remove 123456789
+        /whitelist_remove gdk_25300000000000000
         ```
 
     ??? info "/whitelist_get"
@@ -191,7 +191,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /setadmin 123456789
+        /setadmin steam_76500000000000000
         ```
 
     ??? info "/adminlogout"
@@ -236,7 +236,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /setguildleader 123456789
+        /setguildleader gdk_25300000000000000
         ```
 
     ??? info "/renameplayer"
@@ -252,7 +252,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /renameplayer 123456789 NewNickname
+        /renameplayer steam_76500000000000000 NewNickname
         ```
 
     ??? info "/pgbroadcast"
@@ -483,7 +483,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /tp 123456789 987654321
+        /tp steam_76500000000000000 gdk_25300000000000000
         ```
 
     ??? info "/tp-coords"
@@ -501,7 +501,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /tp 123456789 100 200 50
+        /tp steam_76500000000000000 100 200 50
         ```
 
     ??? info "/tp-home"
@@ -517,7 +517,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /tp 123456789 home
+        /tp gdk_25300000000000000 home
         ```
 
     ??? info "/tp-oilrig"
@@ -533,7 +533,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /tp 123456789 oilrig
+        /tp steam_76500000000000000 oilrig
         ```
 
     ??? info "/tp-player"
@@ -548,7 +548,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /tp 123456789
+        /tp gdk_25300000000000000
         ```
 
 
@@ -567,7 +567,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /give 123456789 Sword 2
+        /give steam_76500000000000000 Sword 2
         ```
 
     ??? info "/giveitems"
@@ -583,7 +583,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /giveitems 123456789 Sword:2 Shield:1
+        /giveitems gdk_25300000000000000 Sword:2 Shield:1
         ```
 
     ??? info "/giveme"
@@ -616,8 +616,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /delitem 123456789 Sword 1
-        /delitem 123456789 Sword all
+        /delitem steam_76500000000000000 Sword 1
+        /delitem gdk_25300000000000000 Sword all
         ```
 
     ??? info "/delitems"
@@ -633,7 +633,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /delitems 123456789 Sword:1 Shield:all
+        /delitems steam_76500000000000000 Sword:1 Shield:all
         ```
 
     ??? info "/givepal"
@@ -650,7 +650,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /givepal 123456789 Pal001 10
+        /givepal gdk_25300000000000000 Pal001 10
         ```
 
     ??? info "/givepal_j"
@@ -668,7 +668,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /givepal_j 123456789 MyPalTemplate
+        /givepal_j steam_76500000000000000 MyPalTemplate
         ```
 
     ??? info "/givemepal"
@@ -715,7 +715,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /give_exp 123456789 1000
+        /give_exp gdk_25300000000000000 1000
         ```
 
     ??? info "/giveme_exp"
@@ -763,8 +763,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /clearinv 123456789 items
-        /clearinv 123456789 all
+        /clearinv steam_76500000000000000 items
+        /clearinv gdk_25300000000000000 all
         ```
 
 
@@ -782,8 +782,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /learntech 123456789 Tech001
-        /learntech 123456789 all
+        /learntech steam_76500000000000000 Tech001
+        /learntech gdk_25300000000000000 all
         ```
 
     ??? info "/unlearntech"
@@ -799,8 +799,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /unlearntech 123456789 Tech001
-        /unlearntech 123456789 all
+        /unlearntech gdk_25300000000000000 Tech001
+        /unlearntech steam_76500000000000000 all
         ```
 
     ??? info "/gettechids"
