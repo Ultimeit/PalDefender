@@ -210,18 +210,18 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/adminlogin"
-        **Syntax:** `/adminlogin`
+        **Syntax:** `/adminlogin <password>`
 
-        **Description:** Logs you into admin mode.
+        **Description:** Logs you into admin mode. Requires your admin password as an argument.
 
         **Arguments:**
-        - None
+        - `<password>`: The admin password.
 
         **Permissions:** `Chat`
 
         **Example:**
         ```
-        /adminlogin
+        /adminlogin mySecretPassword
         ```
 
     ??? info "/setguildleader"
