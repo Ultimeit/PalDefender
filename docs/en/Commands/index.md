@@ -365,6 +365,21 @@ At the current version there are only Admin and RCON commands available.
 
 
 ???+ info "World Commands"
+    ??? info "/alert"
+        **Syntax:** `/alert <message>`
+
+        **Description:** Sends an alert message to all players on the server. This message is usually displayed prominently on their screens.
+
+        **Arguments:**
+        - `<message>`: The message to broadcast as an alert.
+
+        **Permissions:** `RCON`
+
+        **Example:**
+        ```
+        /alert Server will restart in 5 minutes!
+        ```
+
     ??? info "/goto"
         **Syntax:** `/goto <X> <Y> [Z]`
 
