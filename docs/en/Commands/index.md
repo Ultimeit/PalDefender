@@ -386,6 +386,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Teleports you to the nearest base of the location.
 
+        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+
         **Arguments:**
         - `[X]`: (Optional) X coordinate.
         - `[Y]`: (Optional) Y coordinate.
@@ -401,7 +403,9 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/getnearestbase"
         **Syntax:** `/getnearestbase [X] [Y] [Z]`
 
-        **Description:** Tells you guild name which owns base nearest to your character.
+        **Description:** Tells you the guild name which owns the base nearest to your character.
+
+        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
         **Arguments:**
         - `[X]`: (Optional) X coordinate.
@@ -418,7 +422,9 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/killnearestbase"
         **Syntax:** `/killnearestbase [X] [Y] [Z]`
 
-        **Description:** Destroys nearest base (**Use with caution!**).
+        **Description:** Destroys the nearest base (**Use with caution!**).
+
+        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
         **Arguments:**
         - `[X]`: (Optional) X coordinate.
