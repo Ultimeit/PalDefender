@@ -686,18 +686,18 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/givemepal_j"
-        **Syntax:** `/givemepal_j <PalJSON>`
+        **Syntax:** `/givemepal_j <PalTemplate>`
 
-        **Description:** Gives yourself a Pal defined by a JSON blob.
+        **Description:** Gives yourself a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
 
         **Arguments:**
-        - `<PalJSON>`: JSON blob defining the Pal.
+        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /givemepal_j {"PalId": "Pal001", "Level": 10}
+        /givemepal_j MyPalTemplate
         ```
 
     ??? info "/give_exp"
