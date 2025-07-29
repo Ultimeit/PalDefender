@@ -799,10 +799,31 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives target user a pal egg with the specific pal inside and optionally adjusted level.
 
         **Arguments:**
-        - `<UserId>`: The ID of the player to receive the egg.
-        - `<EggId>`: The type of egg to give.
-        - `<PalId>`: The Pal that will be inside the egg.
-        - `[Level]`: (Optional) The level of the Pal inside the egg.
+
+        ??? quote "<UserId\>"
+            **Description:** The ID of the player to receive the egg.
+
+        ??? quote "<EggId\>"
+            **Description:** The type of egg to give.
+
+            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:  
+            - `PalEgg_Dark_01`–`PalEgg_Dark_05`  
+            - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`  
+            - `PalEgg_Earth_01`–`PalEgg_Earth_05`  
+            - `PalEgg_Electricity_01`–`PalEgg_Electricity_05`  
+            - `PalEgg_Fire_01`–`PalEgg_Fire_05`  
+            - `PalEgg_Ice_01`–`PalEgg_Ice_05`  
+            - `PalEgg_Leaf_01`–`PalEgg_Leaf_05`  
+            - `PalEgg_Normal_01`–`PalEgg_Normal_05`  
+            - `PalEgg_Water_01`–`PalEgg_Water_05`  
+
+        ??? quote "<PalId\>"
+            **Description:** The Pal that will be inside the egg.
+
+            **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+
+        ??? quote "[Level\]"
+            **Description:** (Optional) The level of the Pal inside the egg.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
