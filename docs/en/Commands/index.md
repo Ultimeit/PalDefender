@@ -971,18 +971,19 @@ At the current version there are only Admin and RCON commands available.
         /catwaifu
         ```
 
-    ??? warning "/exportpals"
-        **Syntax:** `/exportpals`
+    ??? success "/exportpals"
+        **Syntax:** `/exportpals [UserId]`
 
-        **Description:** (text still to be added)
+        **Description:** Export every Pal of a player to a PalTemplate file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
 
         **Arguments:**
-        - (text still to be added)
+        - `[UserId]`: (Optional) The ID of the player whose Pals will be exported. If omitted, exports your own Pals.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
+        /exportpals steam_76500000000000000
         /exportpals
         ```
 
