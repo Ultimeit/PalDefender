@@ -793,19 +793,22 @@ At the current version there are only Admin and RCON commands available.
         /summon PalSummon
         ```
 
-    ??? warning "/giveegg"
-        **Syntax:** `/giveegg`
+    ??? success "/giveegg"
+        **Syntax:** `/giveegg <UserId> <EggId> <PalId> [Level]`
 
-        **Description:** (text still to be added)
+        **Description:** Gives target user a pal egg with the specific pal inside and optionally adjusted level.
 
         **Arguments:**
-        - (text still to be added)
+        - `<UserId>`: The ID of the player to receive the egg.
+        - `<EggId>`: The type of egg to give.
+        - `<PalId>`: The Pal that will be inside the egg.
+        - `[Level]`: (Optional) The level of the Pal inside the egg.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /giveegg
+        /giveegg steam_76500000000000000 Egg_Fire Pal001 10
         ```
 
     ??? warning "/givemeegg"
