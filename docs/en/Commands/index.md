@@ -808,22 +808,44 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /giveegg steam_76500000000000000 Egg_Fire Pal001 10
+        /giveegg steam_76500000000000000 PalEgg_Ice_01 WeaselDragon 10
         ```
 
-    ??? warning "/givemeegg"
-        **Syntax:** `/givemeegg`
 
-        **Description:** (text still to be added)
+    ??? success "/givemeegg"
+        **Syntax:** `/givemeegg <EggId> <PalId> [Level]`
+
+        **Description:** Gives yourself a pal egg with the specific pal inside and optionally adjusted level.
 
         **Arguments:**
-        - (text still to be added)
+
+        ??? quote "<EggId\>"
+            **Description:** The type of egg to give yourself.
+
+            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:  
+            - `PalEgg_Dark_01`–`PalEgg_Dark_05`  
+            - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`  
+            - `PalEgg_Earth_01`–`PalEgg_Earth_05`  
+            - `PalEgg_Electricity_01`–`PalEgg_Electricity_05`  
+            - `PalEgg_Fire_01`–`PalEgg_Fire_05`  
+            - `PalEgg_Ice_01`–`PalEgg_Ice_05`  
+            - `PalEgg_Leaf_01`–`PalEgg_Leaf_05`  
+            - `PalEgg_Normal_01`–`PalEgg_Normal_05`  
+            - `PalEgg_Water_01`–`PalEgg_Water_05`  
+
+        ??? quote "<PalId\>"
+            **Description:**  The Pal that will be inside the egg.
+
+            **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+
+        ??? quote "[Level]"
+            **Description:**  (Optional) The level of the Pal inside the egg.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /givemeegg
+        /givemeegg PalEgg_Ice_01 WeaselDragon 10
         ```
 
     ??? warning "/giveegg_j"
