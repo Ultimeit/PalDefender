@@ -941,7 +941,7 @@ At the current version there are only Admin and RCON commands available.
         /givemeegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
-    ??? info "/jetragon"
+    ??? success "/jetragon"
         **Syntax:** `/jetragon`
 
         **Description:** Gives you an Admin-Jetragon Pal (it's faaas.... gone).
@@ -956,13 +956,13 @@ At the current version there are only Admin and RCON commands available.
         /jetragon
         ```
 
-    ??? warning "/catwaifu"
+    ??? success "/catwaifu"
         **Syntax:** `/catwaifu`
 
-        **Description:** (text still to be added)
+        **Description:** Gives you an Admin-Cat-Waifu that buffs your character stats.
 
         **Arguments:**
-        - (text still to be added)
+        - None
 
         **Permissions:** `Chat`, `Admin`
 
