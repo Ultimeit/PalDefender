@@ -23,9 +23,264 @@ At the current version there are only Admin and RCON commands available.
     Arguments have different types. The most common are <span class="var-string">strings</span>, <span class="var-number">numbers</span>, <span class="var-float">floats</span> and <span class="var-bool">booleans</span>. Some command even have complex types such as specific <span class="file">filenames</span> in a special directory or actually a <span class="var-filter">filter</span>.
     </p>
 
+??? note "RCON only"
+    ??? info "/getrconcmds"
+        **Syntax:** `/getrconcmds`
+
+        **Description:** Returns a list of every command with the required arg count which is usable by RCON.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `RCON`
+
+        **Example:**
+        ```
+        /getrconcmds
+        ```
+
+??? note "Server Management"
+    ??? info "/reloadcfg"
+        **Syntax:** `/reloadcfg`
+
+        **Description:** Reloads `Config.json`, `whitelist.json` and `banlist.txt`.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /reloadcfg
+        ```
+
+    ??? info "/addadminip"
+        **Syntax:** `/addadminip <IP>`
+
+        **Description:** Adds an IP address to admin whitelist.
+
+        **Arguments:**
+        - `<IP>`: The IP address to add as admin.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /addadminip 192.168.1.1
+        ```
+
+    ??? info "/setadmin"
+        **Syntax:** `/setadmin <UserId>`
+
+        **Description:** Temporarily grants/revokes admin from a player.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player to grant/revoke admin.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /setadmin steam_76500000000000000
+        ```
+
+    ??? info "/pgbroadcast"
+        **Syntax:** `/pgbroadcast <Message>`
+
+        **Description:** Send a message to all players in the server.
+
+        **Arguments:**
+        - `<Message>`: The message to broadcast.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /pgbroadcast "Server will restart soon."
+        ```
+
+    ??? info "/adminlogin"
+        **Syntax:** `/adminlogin <password>`
+
+        **Description:** Logs you into admin mode. Requires your admin password as an argument.
+
+        **Arguments:**
+        - `<password>`: The admin password.
+
+        **Permissions:** `Chat`
+
+        **Example:**
+        ```
+        /adminlogin mySecretPassword
+        ```
+
+    ??? info "/adminlogout"
+        **Syntax:** `/adminlogout`
+
+        **Description:** Logs you out of admin mode.
+
+        **Arguments:**
+        - None
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /adminlogout
+        ```
+
+    ??? warning "/iwantplayerlist"
+        **Syntax:** `/iwantplayerlist`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /iwantplayerlist
+        ```
+
+    ??? warning "/togglepvp"
+        **Syntax:** `/togglepvp`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /togglepvp
+        ```
+
+    ??? warning "/getpos"
+        **Syntax:** `/getpos`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /getpos
+        ```
+
+    ??? info "/settime"
+        **Syntax:** `/settime <hour>`
+
+        **Description:** Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`.
+
+        **Arguments:**
+        - `<hour>`: Hour value (0-23, day, night).
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /settime 12
+        /settime night
+        ```
+
+    ??? info "/alert"
+        **Syntax:** `/alert <message>`
+
+        **Description:** Sends an alert message to all players on the server. This message is usually displayed prominently on their screens.
+
+        **Arguments:**
+        - `<message>`: The message to broadcast as an alert.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /alert Server will restart in 5 minutes!
+        ```
+
+    ??? warning "/send"
+        **Syntax:** `/send`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /send
+        ```
+
+??? note "Base Management"
+    ??? info "/getnearestbase"
+        **Syntax:** `/getnearestbase [X] [Y] [Z]`
+
+        **Description:** Tells you the guild name which owns the base nearest to your character.
+
+        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+
+        **Arguments:**
+        - `[X]`: (Optional) X coordinate.
+        - `[Y]`: (Optional) Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /getnearestbase 100 200 50
+        ```
+
+    ??? info "/gotonearestbase"
+        **Syntax:** `/gotonearestbase [X] [Y] [Z]`
+
+        **Description:** Teleports you to the nearest base of the location.
+
+        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+
+        **Arguments:**
+        - `[X]`: (Optional) X coordinate.
+        - `[Y]`: (Optional) Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /gotonearestbase 100 200 50
+        ```
+
+    ??? info "/killnearestbase"
+        **Syntax:** `/killnearestbase [X] [Y] [Z]`
+
+        **Description:** Destroys the nearest base (**Use with caution!**).
+
+        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+
+        **Arguments:**
+        - `[X]`: (Optional) X coordinate.
+        - `[Y]`: (Optional) Y coordinate.
+        - `[Z]`: (Optional) Z coordinate.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /killnearestbase 100 200 50
+        ```
 
 
-???+ info "Server Management Commands"
+??? note "Player Management"
     ??? info "/kick"
         **Syntax:** `/kick <UserId> [Reason="Kicked by Admin."]`
 
@@ -164,40 +419,10 @@ At the current version there are only Admin and RCON commands available.
         /whitelist_get
         ```
 
-    ??? info "/addadminip"
-        **Syntax:** `/addadminip <IP>`
+    ??? info "/imcheater"
+        **Syntax:** `/imcheater`
 
-        **Description:** Adds an IP address to admin whitelist.
-
-        **Arguments:**
-        - `<IP>`: The IP address to add as admin.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /addadminip 192.168.1.1
-        ```
-
-    ??? info "/setadmin"
-        **Syntax:** `/setadmin <UserId>`
-
-        **Description:** Temporarily grants/revokes admin from a player.
-
-        **Arguments:**
-        - `<UserId>`: The ID of the player to grant/revoke admin.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /setadmin steam_76500000000000000
-        ```
-
-    ??? info "/adminlogout"
-        **Syntax:** `/adminlogout`
-
-        **Description:** Logs you out of admin mode.
+        **Description:** Use this to test how your server responds to a cheater.
 
         **Arguments:**
         - None
@@ -206,37 +431,70 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /adminlogout
+        /imcheater
         ```
 
-    ??? info "/adminlogin"
-        **Syntax:** `/adminlogin <password>`
+    ??? warning "/spectate"
+        **Syntax:** `/spectate`
 
-        **Description:** Logs you into admin mode. Requires your admin password as an argument.
+        **Description:** (text still to be added)
 
         **Arguments:**
-        - `<password>`: The admin password.
+        - (text still to be added)
 
-        **Permissions:** `Chat`
+        **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /adminlogin mySecretPassword
+        /spectate
         ```
 
-    ??? info "/setguildleader"
-        **Syntax:** `/setguildleader <UserId>`
+??? note "Player Character"
+    ??? info "/tp"
+        **Syntax:** `/tp <UserId1> <UserId2>`
 
-        **Description:** Makes target player the leader of his current guild.
+        **Description:** Teleports UserId1 to UserId2.
 
         **Arguments:**
-        - `<UserId>`: The ID of the player to make guild leader.
+        - `<UserId1>`: The player to teleport.
+        - `<UserId2>`: The target player.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /setguildleader gdk_25300000000000000
+        /tp steam_76500000000000000 gdk_25300000000000000
+        ```
+
+    ??? info "/give_exp"
+        **Syntax:** `/give_exp <UserId> <Amount>`
+
+        **Description:** Gives experience points to a player.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `<Amount>`: Amount of experience points.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /give_exp gdk_25300000000000000 1000
+        ```
+
+    ??? info "/giveme_exp"
+        **Syntax:** `/giveme_exp <Amount>`
+
+        **Description:** Gives experience points to yourself.
+
+        **Arguments:**
+        - `<Amount>`: Amount of experience points.
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /giveme_exp 1000
         ```
 
     ??? info "/renameplayer"
@@ -255,304 +513,70 @@ At the current version there are only Admin and RCON commands available.
         /renameplayer steam_76500000000000000 NewNickname
         ```
 
-    ??? info "/pgbroadcast"
-        **Syntax:** `/pgbroadcast <Message>`
+    ??? warning "/givestats"
+        **Syntax:** `/givestats`
 
-        **Description:** Send a message to all players in the server.
+        **Description:** (text still to be added)
 
         **Arguments:**
-        - `<Message>`: The message to broadcast.
+        - (text still to be added)
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /pgbroadcast "Server will restart soon."
+        /givestats
         ```
 
-    ??? info "/reloadcfg"
-        **Syntax:** `/reloadcfg`
+    ??? warning "/givemestats"
+        **Syntax:** `/givemestats`
 
-        **Description:** Reloads `Config.json`, `whitelist.json` and `banlist.txt`.
+        **Description:** (text still to be added)
 
         **Arguments:**
-        - None
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /reloadcfg
-        ```
-
-    ??? info "/getrconcmds"
-        **Syntax:** `/getrconcmds`
-
-        **Description:** Returns a list of every command with the required arg count which is usable by RCON.
-
-        **Arguments:**
-        - None
-
-        **Permissions:** `RCON`
-
-        **Example:**
-        ```
-        /getrconcmds
-        ```
-
-
-
-???+ info "Admin Exclusive Commands"
-    ??? info "/imcheater"
-        **Syntax:** `/imcheater`
-
-        **Description:** Use this to test how your server responds to a cheater.
-
-        **Arguments:**
-        - None
+        - (text still to be added)
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /imcheater
+        /givemestats
         ```
 
-    ??? info "/godmode"
-        **Syntax:** `/godmode [on/off]`
 
-        **Description:** Makes you invulnerable and allows one shotting anything.
+??? note "Guild Management"
+    ??? info "/setguildleader"
+        **Syntax:** `/setguildleader <UserId>`
+
+        **Description:** Makes target player the leader of his current guild.
 
         **Arguments:**
-        - `[on/off]`: (Optional) Enable or disable god mode.
-
-        **Permissions:** `Chat`, `Admin`
-
-        **Example:**
-        ```
-        /godmode on
-        ```
-
-    ??? info "/jetragon"
-        **Syntax:** `/jetragon`
-
-        **Description:** Gives you an extremely fast Jetragon named `PalGuardian`.
-
-        **Arguments:**
-        - None
-
-        **Permissions:** `Chat`, `Admin`
-
-        **Example:**
-        ```
-        /jetragon
-        ```
-
-    ??? info "/catwaifu"
-        **Syntax:** `/catwaifu`
-
-        **Description:** Gives you a Cat-Waifu (Katress) that buffs your character stats.
-
-        **Arguments:**
-        - None
-
-        **Permissions:** `Chat`, `Admin`
-
-        **Example:**
-        ```
-        /catwaifu
-        ```
-
-
-???+ info "World Commands"
-    ??? info "/alert"
-        **Syntax:** `/alert <message>`
-
-        **Description:** Sends an alert message to all players on the server. This message is usually displayed prominently on their screens.
-
-        **Arguments:**
-        - `<message>`: The message to broadcast as an alert.
-
-        **Permissions:** `RCON`
-
-        **Example:**
-        ```
-        /alert Server will restart in 5 minutes!
-        ```
-
-
-    ??? info "/gotonearestbase"
-        **Syntax:** `/gotonearestbase [X] [Y] [Z]`
-
-        **Description:** Teleports you to the nearest base of the location.
-
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
-
-        **Arguments:**
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
-
-        **Permissions:** `Chat`, `Admin`
-
-        **Example:**
-        ```
-        /gotonearestbase 100 200 50
-        ```
-
-    ??? info "/getnearestbase"
-        **Syntax:** `/getnearestbase [X] [Y] [Z]`
-
-        **Description:** Tells you the guild name which owns the base nearest to your character.
-
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
-
-        **Arguments:**
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `<UserId>`: The ID of the player to make guild leader.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /getnearestbase 100 200 50
+        /setguildleader gdk_25300000000000000
         ```
 
-    ??? info "/killnearestbase"
-        **Syntax:** `/killnearestbase [X] [Y] [Z]`
+    ??? warning "/exportguilds"
+        **Syntax:** `/exportguilds`
 
-        **Description:** Destroys the nearest base (**Use with caution!**).
-
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **Description:** (text still to be added)
 
         **Arguments:**
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - (text still to be added)
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /killnearestbase 100 200 50
-        ```
-
-    ??? info "/settime"
-        **Syntax:** `/settime <hour>`
-
-        **Description:** Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`.
-
-        **Arguments:**
-        - `<hour>`: Hour value (0-23, day, night).
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /settime 12
-        /settime night
-        ```
-
-    ??? info "/resetoilrig"
-        **Syntax:** `/resetoilrig <oilrig>`
-
-        **Description:** Resets the specified OilRigs. Only the rocket tower is unaffected. Argument can have following values: `lv30`, `lv55`, `lv60` and `all`.
-
-        **Arguments:**
-        - `<oilrig>`: Oilrig value (lv30, lv55, lv60, all).
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /resetoilrig lv30
-        /resetoilrig all
-        ```
-
-    ??? info "/tp"
-        **Syntax:** `/tp <UserId1> <UserId2>`
-
-        **Description:** Teleports UserId1 to UserId2.
-
-        **Arguments:**
-        - `<UserId1>`: The player to teleport.
-        - `<UserId2>`: The target player.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /tp steam_76500000000000000 gdk_25300000000000000
-        ```
-
-    ??? info "/tp-coords"
-        **Syntax:** `/tp <UserId> <X> <Y> <Z>`
-
-        **Description:** Teleports the player to coordinates.
-
-        **Arguments:**
-        - `<UserId>`: The player to teleport.
-        - `<X>`: X coordinate.
-        - `<Y>`: Y coordinate.
-        - `<Z>`: Z coordinate.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /tp steam_76500000000000000 100 200 50
-        ```
-
-    ??? info "/tp-home"
-        **Syntax:** `/tp <UserId> home`
-
-        **Description:** Teleports the player to their closest base.
-
-        **Arguments:**
-        - `<UserId>`: The player to teleport.
-        - `home`: Keyword for home base.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /tp gdk_25300000000000000 home
-        ```
-
-    ??? info "/tp-oilrig"
-        **Syntax:** `/tp <UserId> oilrig`
-
-        **Description:** Teleports the player to their closest oilrig.
-
-        **Arguments:**
-        - `<UserId>`: The player to teleport.
-        - `oilrig`: Keyword for oilrig.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /tp steam_76500000000000000 oilrig
-        ```
-
-    ??? info "/tp-player"
-        **Syntax:** `/tp <UserId>`
-
-        **Description:** Teleports you to the player.
-
-        **Arguments:**
-        - `<UserId>`: The player to teleport to.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /tp gdk_25300000000000000
+        /exportguilds
         ```
 
 
-???+ info "Item Commands"
+??? note "Items"
     ??? info "/give"
         **Syntax:** `/give <UserId> <ItemId> [Amount=1]`
 
@@ -620,6 +644,37 @@ At the current version there are only Admin and RCON commands available.
         /delitem gdk_25300000000000000 Sword all
         ```
 
+    ??? warning "/give_relic"
+        **Syntax:** `/give_relic`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /give_relic
+        ```
+
+    ??? warning "/giveme_relic"
+        **Syntax:** `/giveme_relic`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /giveme_relic
+        ```
+
+
     ??? info "/delitems"
         **Syntax:** `/delitems <UserId> <ItemId>[:<Amount>] ...`
 
@@ -636,6 +691,25 @@ At the current version there are only Admin and RCON commands available.
         /delitems steam_76500000000000000 Sword:1 Shield:all
         ```
 
+    ??? info "/clearinv"
+        **Syntax:** `/clearinv <UserId> [Container=items] ...`
+
+        **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
+
+        **Arguments:**
+        - `<UserId>`: The ID of the player.
+        - `[Container] ...`: (Optional) Containers to clear. Default: items.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /clearinv steam_76500000000000000 items
+        /clearinv gdk_25300000000000000 all
+        ```
+
+
+??? note "Pals"
     ??? info "/givepal"
         **Syntax:** `/givepal <UserId> <PalId> [Level=1]`
 
@@ -702,37 +776,6 @@ At the current version there are only Admin and RCON commands available.
         /givemepal_j MyPalTemplate
         ```
 
-    ??? info "/give_exp"
-        **Syntax:** `/give_exp <UserId> <Amount>`
-
-        **Description:** Gives experience points to a player.
-
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<Amount>`: Amount of experience points.
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /give_exp gdk_25300000000000000 1000
-        ```
-
-    ??? info "/giveme_exp"
-        **Syntax:** `/giveme_exp <Amount>`
-
-        **Description:** Gives experience points to yourself.
-
-        **Arguments:**
-        - `<Amount>`: Amount of experience points.
-
-        **Permissions:** `Chat`, `Admin`
-
-        **Example:**
-        ```
-        /giveme_exp 1000
-        ```
-
     ??? info "/summon"
         **Syntax:** `/summon <PalSummon>`
 
@@ -750,25 +793,128 @@ At the current version there are only Admin and RCON commands available.
         /summon PalSummon
         ```
 
-    ??? info "/clearinv"
-        **Syntax:** `/clearinv <UserId> [Container=items] ...`
+    ??? warning "/giveegg"
+        **Syntax:** `/giveegg`
 
-        **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
+        **Description:** (text still to be added)
 
         **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `[Container] ...`: (Optional) Containers to clear. Default: items.
+        - (text still to be added)
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /clearinv steam_76500000000000000 items
-        /clearinv gdk_25300000000000000 all
+        /giveegg
+        ```
+
+    ??? warning "/givemeegg"
+        **Syntax:** `/givemeegg`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /givemeegg
+        ```
+
+    ??? warning "/giveegg_j"
+        **Syntax:** `/giveegg_j`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /giveegg_j
+        ```
+
+    ??? warning "/givemeegg_j"
+        **Syntax:** `/givemeegg_j`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /givemeegg_j
+        ```
+
+    ??? warning "/jetragon"
+        **Syntax:** `/jetragon`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /jetragon
+        ```
+
+    ??? warning "/catwaifu"
+        **Syntax:** `/catwaifu`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /catwaifu
+        ```
+
+    ??? warning "/exportpals"
+        **Syntax:** `/exportpals`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /exportpals
+        ```
+
+    ??? warning "/deletepals"
+        **Syntax:** `/deletepals`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /deletepals
         ```
 
 
-???+ info "Technology Commands"
+??? note "Research Tree"
     ??? info "/learntech"
         **Syntax:** `/learntech <UserId> <TechID>`
 
@@ -803,6 +949,68 @@ At the current version there are only Admin and RCON commands available.
         /unlearntech steam_76500000000000000 all
         ```
 
+    ??? warning "/givetechpoints"
+        **Syntax:** `/givetechpoints`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /givetechpoints
+        ```
+
+    ??? warning "/givebosstechpoints"
+        **Syntax:** `/givebosstechpoints`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /givebosstechpoints
+        ```
+
+    ??? warning "/givemetechpoints"
+        **Syntax:** `/givemetechpoints`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /givemetechpoints
+        ```
+
+    ??? warning "/givemebosstechpoints"
+        **Syntax:** `/givemebosstechpoints`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /givemebosstechpoints
+        ```
+
+
+??? note "Data mining"
     ??? info "/gettechids"
         **Syntax:** `/gettechids`
 
@@ -816,4 +1024,19 @@ At the current version there are only Admin and RCON commands available.
         **Example:**
         ```
         /gettechids
+        ```
+
+    ??? warning "/getskinids"
+        **Syntax:** `/getskinids`
+
+        **Description:** (text still to be added)
+
+        **Arguments:**
+        - (text still to be added)
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /getskinids
         ```
