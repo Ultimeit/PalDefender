@@ -869,19 +869,40 @@ At the current version there are only Admin and RCON commands available.
         /givemeegg PalEgg_Ice_01 WeaselDragon 10
         ```
 
-    ??? warning "/giveegg_j"
-        **Syntax:** `/giveegg_j`
+    ??? success "/giveegg_j"
+        **Syntax:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** (text still to be added)
+        **Description:** Gives a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
 
         **Arguments:**
-        - (text still to be added)
+
+        ??? quote "<EggId\>"
+            **Description:** The type of egg to give.
+
+            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:  
+            - `PalEgg_Dark_01`–`PalEgg_Dark_05`  
+            - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`  
+            - `PalEgg_Earth_01`–`PalEgg_Earth_05`  
+            - `PalEgg_Electricity_01`–`PalEgg_Electricity_05`  
+            - `PalEgg_Fire_01`–`PalEgg_Fire_05`  
+            - `PalEgg_Ice_01`–`PalEgg_Ice_05`  
+            - `PalEgg_Leaf_01`–`PalEgg_Leaf_05`  
+            - `PalEgg_Normal_01`–`PalEgg_Normal_05`  
+            - `PalEgg_Water_01`–`PalEgg_Water_05`  
+
+        ??? quote "<PalTemplate\>"
+            **Description:** The name of the PalTemplate file to use.
+
+            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](/FileTypes/PalTemplate).
+
+        ??? quote "[Level]"
+            **Description:** (Optional) The level of the Pal inside the egg.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /giveegg_j
+        /giveegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
     ??? warning "/givemeegg_j"
