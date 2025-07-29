@@ -905,28 +905,49 @@ At the current version there are only Admin and RCON commands available.
         /giveegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
-    ??? warning "/givemeegg_j"
-        **Syntax:** `/givemeegg_j`
+    ??? success "/givemeegg_j"
+        **Syntax:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** (text still to be added)
+        **Description:** Gives yourself a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
 
         **Arguments:**
-        - (text still to be added)
+
+        ??? quote "<EggI\>"
+            **Description:** The type of egg to give yourself.
+
+            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:  
+            - `PalEgg_Dark_01`–`PalEgg_Dark_05`  
+            - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`  
+            - `PalEgg_Earth_01`–`PalEgg_Earth_05`  
+            - `PalEgg_Electricity_01`–`PalEgg_Electricity_05`  
+            - `PalEgg_Fire_01`–`PalEgg_Fire_05`  
+            - `PalEgg_Ice_01`–`PalEgg_Ice_05`  
+            - `PalEgg_Leaf_01`–`PalEgg_Leaf_05`  
+            - `PalEgg_Normal_01`–`PalEgg_Normal_05`  
+            - `PalEgg_Water_01`–`PalEgg_Water_05`  
+
+        ??? quote "<PalTemplate\>"
+            **Description:** The name of the PalTemplate file to use.
+
+            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](/FileTypes/PalTemplate).
+
+        ??? quote "[Level]"
+            **Description:** (Optional) The level of the Pal inside the egg.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /givemeegg_j
+        /givemeegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
-    ??? warning "/jetragon"
+    ??? info "/jetragon"
         **Syntax:** `/jetragon`
 
-        **Description:** (text still to be added)
+        **Description:** Gives you an Admin-Jetragon Pal (it's faaas.... gone).
 
         **Arguments:**
-        - (text still to be added)
+        - None
 
         **Permissions:** `Chat`, `Admin`
 
