@@ -993,19 +993,43 @@ At the current version there are only Admin and RCON commands available.
         /exportpals
         ```
 
-    ??? warning "/deletepals"
-        **Syntax:** `/deletepals`
+    ??? success "/deletepals"
+        **Syntax:** `/deletepals <UserId> <PalFilter>`
 
-        **Description:** (text still to be added)
+        **Description:** Deletes Pals from the specified user using advanced filters. The filter allows you to specify multiple criteria (such as Pal ID, level, gender, passives, etc.) in one command. Please test in a safe environment before using on important data.
 
         **Arguments:**
-        - (text still to be added)
+
+        ??? quote "<UserId\>"
+            **Description:** The ID of the player whose Pals will be deleted.
+
+        ??? quote "<PalFilter\>"  
+            **Description:** A set of filter keywords to select which Pals to delete.  
+            **Note:** Multiple keywords can be combined in one command.  
+            Available filter keywords:  
+            - `ID`: PalID or list of PalIDs (comma-separated)  
+            - `Nick`: String (name of the Pal)  
+            - `Gender`: `male` or `female`  
+            - `Level`: Number, supports symbols `<`, `>`, `<=`, `>=`, `=`, `!=`  
+            - `Rank`: Number, supports symbols `<`, `>`, `<=`, `>=`, `=`, `!=`  
+            - `Lucky`: `true` or `false` (shiny)  
+            - `Passives`: PassiveSkill or list of PassiveSkills (comma-separated)  
+            - `Limit`: Number (max number of Pals to delete)  
+
+            **Example filters:**  
+            - `ID Serpent, PinkLizard Level>10 Gender male Limit 3`  
+            - `ID Anubis Rank>=3`  
+            - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`  
+
+            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/beta/Wiki/Commands/deletepals.md).
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /deletepals
+        /deletepals 76567890987654321 ID Serpent, PinkLizard Level>10 Gender male Limit 3
+        /deletepals 76567890987654321 ID Anubis Rank>=3
+        /deletepals 76561198033277828 Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave
         ```
 
 
