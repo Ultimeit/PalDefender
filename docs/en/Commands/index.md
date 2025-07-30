@@ -1059,19 +1059,20 @@ At the current version there are only Admin and RCON commands available.
         /givetechpoints steam_76500000000000000 10
         ```
 
-    ??? warning "/givebosstechpoints"
-        **Syntax:** `/givebosstechpoints`
+    ??? success "/givebosstechpoints"
+        **Syntax:** `/givebosstechpoints <UserId> <Amount>`
 
-        **Description:** (text still to be added)
+        **Description:** Gives the target user X ancient technology points.
 
-        **Arguments:**
-        - (text still to be added)
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to receive the ancient technology points.  
+        - `<Amount>`: The number of ancient technology points to give.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /givebosstechpoints
+        /givebosstechpoints steam_76500000000000000 5
         ```
 
     ??? warning "/givemetechpoints"
