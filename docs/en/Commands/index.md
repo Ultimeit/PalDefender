@@ -192,19 +192,28 @@ At the current version there are only Admin and RCON commands available.
         /alert Server will restart in 5 minutes!
         ```
 
-    ??? warning "/send"
-        **Syntax:** `/send`
+    ??? success "/send"
+        **Syntax:** `/send <type> <UserId> <Message>`
 
-        **Description:** (text still to be added) This command is not released yet
+        **Description:** Allows you to send a message or log message to a specific player.
 
-        **Arguments:**
-        - (text still to be added)
+        **Arguments:**  
+        - `<type>`: The type of message to send. Possible values:  
+        -    - `msg`: Regular chat message.  
+        -    - `log`: Regular log message (white, disappears quickly, larger font).  
+        -    - `ilog`: Important log message (blue, stays longer).  
+        -    - `vilog`: Very important log message (blue, stays extremely long).  
+        - `<UserId>`: The ID of the player to receive the message.  
+        - `<Message>`: The message text to send.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /send
+        /send msg steam_76500000000000000 Dont miss out on Qonzer's sale!  
+        /send log steam_76500000000000000 Dont miss out on Qonzer's sale!  
+        /send ilog steam_76500000000000000 Dont miss out on Qonzer's sale!  
+        /send vilog steam_76500000000000000 Dont miss out on Qonzer's sale!  
         ```
 
 ??? note "Base Management"
