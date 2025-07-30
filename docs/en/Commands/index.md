@@ -434,13 +434,13 @@ At the current version there are only Admin and RCON commands available.
         /imcheater
         ```
 
-    ??? warning "/spectate"
+    ??? success "/spectate"
         **Syntax:** `/spectate`
 
-        **Description:** (text still to be added)
+        **Description:** Turns spectate mode on. Same as pressing hotkey `\`, but hotkey does not work for everyone, like console players.
 
         **Arguments:**
-        - (text still to be added)
+        - None
 
         **Permissions:** `Chat`, `Admin`
 
