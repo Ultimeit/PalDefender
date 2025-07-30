@@ -160,19 +160,20 @@ At the current version there are only Admin and RCON commands available.
         /togglepvp
         ```
 
-    ??? warning "/getpos"
-        **Syntax:** `/getpos`
+    ??? success "/getpos"
+        **Syntax:** `/getpos [UserId]`
 
-        **Description:** (text still to be added)
+        **Description:** Gets your current position in the world, which can be used for teleporting, summoning, and similar actions. If a [UserId] is provided, gets the position of that player instead.
 
         **Arguments:**
-        - (text still to be added)
+        - `[UserId]`: (Optional) The ID of the player whose position you want to get. If omitted, gets your own position.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
         /getpos
+        /getpos steam_76500000000000000
         ```
 
     ??? info "/settime"
