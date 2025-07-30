@@ -560,13 +560,13 @@ At the current version there are only Admin and RCON commands available.
         /setguildleader gdk_25300000000000000
         ```
 
-    ??? warning "/exportguilds"
+    ??? success "/exportguilds"
         **Syntax:** `/exportguilds`
 
-        **Description:** (text still to be added)
+        **Description:** Dumps every guild of the server into Pal/Binaries/Win64/PalDefender/guildexport.json.
 
         **Arguments:**
-        - (text still to be added)
+        - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -574,6 +574,7 @@ At the current version there are only Admin and RCON commands available.
         ```
         /exportguilds
         ```
+        Example output file: `Pal/Binaries/Win64/PalDefender/guildexport.json`
 
 
 ??? note "Items"
