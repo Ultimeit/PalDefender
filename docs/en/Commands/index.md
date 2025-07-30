@@ -1120,13 +1120,13 @@ At the current version there are only Admin and RCON commands available.
         /gettechids
         ```
 
-    ??? warning "/getskinids"
+    ??? success "/getskinids"
         **Syntax:** `/getskinids`
 
-        **Description:** (text still to be added)
+        **Description:** Returns a list of all available Pal Skin IDs. RCON gets JSON output.
 
         **Arguments:**
-        - (text still to be added)
+        - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
