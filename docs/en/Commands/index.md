@@ -133,7 +133,7 @@ At the current version there are only Admin and RCON commands available.
     ??? success "/iwantplayerlist"
         **Syntax:** `/iwantplayerlist`
 
-        **Description:** Displays a list of all players currently online. Useful for users who want to see a player list in-game.
+        **Description:** Enables the in-game player list overlay, allowing you to view every player's UserId and Player UID when you press ESC. Useful for server admins and players who want to see detailed player information directly in the game interface.
 
         **Arguments:**
         - None
