@@ -145,21 +145,6 @@ At the current version there are only Admin and RCON commands available.
         /iwantplayerlist
         ```
 
-    ??? failure "/togglepvp"
-        **Syntax:** `/togglepvp`
-
-        **Description:** (text still to be added) *It´s probably broken*
-
-        **Arguments:**
-        - (text still to be added)
-
-        **Permissions:** `Chat`, `RCON`, `Admin`
-
-        **Example:**
-        ```
-        /togglepvp
-        ```
-
     ??? success "/getpos"
         **Syntax:** `/getpos [UserId]`
 
