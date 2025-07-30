@@ -145,10 +145,10 @@ At the current version there are only Admin and RCON commands available.
         /iwantplayerlist
         ```
 
-    ??? warning "/togglepvp"
+    ??? failure "/togglepvp"
         **Syntax:** `/togglepvp`
 
-        **Description:** (text still to be added)
+        **Description:** (text still to be added) *It´s probably broken*
 
         **Arguments:**
         - (text still to be added)
