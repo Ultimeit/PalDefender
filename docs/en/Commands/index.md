@@ -230,10 +230,10 @@ At the current version there are only Admin and RCON commands available.
 
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
-        **Arguments:**
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        **Arguments:**  
+        - `[X]`: (Optional) X coordinate.  
+        - `[Y]`: (Optional) Y coordinate.  
+        - `[Z]`: (Optional) Z coordinate.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -249,10 +249,10 @@ At the current version there are only Admin and RCON commands available.
 
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
-        **Arguments:**
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        **Arguments:**  
+        - `[X]`: (Optional) X coordinate.  
+        - `[Y]`: (Optional) Y coordinate.  
+        - `[Z]`: (Optional) Z coordinate.  
 
         **Permissions:** `Chat`, `Admin`
 
@@ -268,10 +268,10 @@ At the current version there are only Admin and RCON commands available.
 
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
-        **Arguments:**
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        **Arguments:**  
+        - `[X]`: (Optional) X coordinate.  
+        - `[Y]`: (Optional) Y coordinate.  
+        - `[Z]`: (Optional) Z coordinate.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -287,9 +287,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Kicks a player from the server.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player to kick.
-        - `[Reason]`: (Optional) Reason for kicking. Default: "Kicked by Admin."
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to kick.  
+        - `[Reason]`: (Optional) Reason for kicking. Default: "Kicked by Admin."  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -303,9 +303,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Bans and kicks a player from the server.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player to ban.
-        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to ban.  
+        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -319,9 +319,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Bans a player's IP address and then kicks them from the server.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player to IP ban.
-        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to IP ban.  
+        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -456,9 +456,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Teleports UserId1 to UserId2.
 
-        **Arguments:**
-        - `<UserId1>`: The player to teleport.
-        - `<UserId2>`: The target player.
+        **Arguments:**  
+        - `<UserId1>`: The player to teleport.  
+        - `<UserId2>`: The target player.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -472,9 +472,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives experience points to a player.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<Amount>`: Amount of experience points.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<Amount>`: Amount of experience points.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -503,9 +503,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Renames a player's nickname.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<NewName>`: The new nickname.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<NewName>`: The new nickname.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -536,8 +536,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives yourself one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
 
-        **Arguments:**
-        - `[Count]`: (Optional) The number of Unused Status Points to give yourself (can be negative to subtract). Default: 1.
+        **Arguments:**  
+        - `[Count]`: (Optional) The number of Unused Status Points to give yourself (can be negative to subtract). Default: 1.  
 
         **Permissions:** `Chat`, `Admin`
 
@@ -587,10 +587,10 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives a player an item and if specified how many.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player to give the item to.
-        - `<ItemId>`: The item to give.
-        - `[Amount]`: (Optional) How many. Default: 1.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to give the item to.  
+        - `<ItemId>`: The item to give.  
+        - `[Amount]`: (Optional) How many. Default: 1.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -604,9 +604,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives a player more than 1 item in one command and if specified how many of each separated by a colon.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player to give the items to.
-        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to give the items to.  
+        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -620,9 +620,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives yourself an item and if specified how many.
 
-        **Arguments:**
-        - `<ItemId>`: The item to give yourself.
-        - `[Amount]`: (Optional) How many. Default: 1.
+        **Arguments:**  
+        - `<ItemId>`: The item to give yourself.  
+        - `[Amount]`: (Optional) How many. Default: 1.  
 
         **Permissions:** `Chat`, `Admin`
 
@@ -636,10 +636,10 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Deletes an item from a player and if specified how many. Default is `1` which will delete only 1 occurrence of that item. Use `all` instead of `1` to delete all occurrences.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<ItemId>`: The item to delete.
-        - `[Amount]`: (Optional) How many. Default: 1. Use `all` to delete all occurrences.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<ItemId>`: The item to delete.  
+        - `[Amount]`: (Optional) How many. Default: 1. Use `all` to delete all occurrences.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -654,9 +654,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives the player one or more Lifmunk Effigies.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.
-        - `<Amount>`: The number of Lifmunk Effigies to give.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.  
+        - `<Amount>`: The number of Lifmunk Effigies to give.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -686,9 +686,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Deletes more than 1 item from a player in one command and if specified how many of each separated by a colon. Use `all` instead of `1` to delete all occurrences.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -702,9 +702,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `[Container] ...`: (Optional) Containers to clear. Default: items.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `[Container] ...`: (Optional) Containers to clear. Default: items.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -721,10 +721,10 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives a Pal to a player at the specified level.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<PalId>`: The Pal to give.
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<PalId>`: The Pal to give.  
+        - `[Level]`: (Optional) Level of the Pal. Default: 1.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -740,9 +740,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
-        **Arguments:**
-        - `<UserID>`: The ID of the player.
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
+        **Arguments:**  
+        - `<UserID>`: The ID of the player.  
+        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -756,9 +756,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Gives yourself a Pal at the specified level.
 
-        **Arguments:**
-        - `<PalId>`: The Pal to give yourself.
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        **Arguments:**  
+        - `<PalId>`: The Pal to give yourself.  
+        - `[Level]`: (Optional) Level of the Pal. Default: 1.  
 
         **Permissions:** `Chat`, `Admin`
 
@@ -1039,9 +1039,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Lets a player learn a specific technology. Use `all` to unlock everything.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<TechID>`: The technology to learn. Use `all` to unlock everything.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<TechID>`: The technology to learn. Use `all` to unlock everything.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -1056,9 +1056,9 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Makes a player forget a specific technology. Use `all` to remove everything.
 
-        **Arguments:**
-        - `<UserId>`: The ID of the player.
-        - `<TechID>`: The technology to forget. Use `all` to remove everything.
+        **Arguments:**  
+        - `<UserId>`: The ID of the player.  
+        - `<TechID>`: The technology to forget. Use `all` to remove everything.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
