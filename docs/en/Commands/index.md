@@ -130,13 +130,13 @@ At the current version there are only Admin and RCON commands available.
         /adminlogout
         ```
 
-    ??? warning "/iwantplayerlist"
+    ??? success "/iwantplayerlist"
         **Syntax:** `/iwantplayerlist`
 
-        **Description:** (text still to be added)
+        **Description:** Displays a list of all players currently online. Useful for users who want to see a player list in-game.
 
         **Arguments:**
-        - (text still to be added)
+        - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
