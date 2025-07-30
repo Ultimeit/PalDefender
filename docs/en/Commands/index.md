@@ -1075,19 +1075,19 @@ At the current version there are only Admin and RCON commands available.
         /givebosstechpoints steam_76500000000000000 5
         ```
 
-    ??? warning "/givemetechpoints"
-        **Syntax:** `/givemetechpoints`
+    ??? success "/givemetechpoints"
+        **Syntax:** `/givemetechpoints <Amount>`
 
-        **Description:** (text still to be added)
+        **Description:** Gives yourself X technology points.
 
         **Arguments:**
-        - (text still to be added)
+        - `<Amount>`: The number of technology points to give yourself.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /givemetechpoints
+        em/givetechpoints 10
         ```
 
     ??? warning "/givemebosstechpoints"
