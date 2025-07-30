@@ -724,13 +724,14 @@ At the current version there are only Admin and RCON commands available.
         **Arguments:**  
         - `<UserId>`: The ID of the player.  
         - `<PalId>`: The Pal to give.  
+        - - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).  
         - `[Level]`: (Optional) Level of the Pal. Default: 1.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /givepal gdk_25300000000000000 Pal001 10
+        /givepal gdk_25300000000000000 WeaselDragon 10
         ```
 
     ??? info "/givepal_j"
@@ -758,13 +759,14 @@ At the current version there are only Admin and RCON commands available.
 
         **Arguments:**  
         - `<PalId>`: The Pal to give yourself.  
+        - - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).  
         - `[Level]`: (Optional) Level of the Pal. Default: 1.  
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /givemepal Pal001 10
+        /givemepal WeaselDragon 10
         ```
 
     ??? info "/givemepal_j"
