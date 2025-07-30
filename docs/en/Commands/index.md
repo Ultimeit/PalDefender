@@ -513,19 +513,21 @@ At the current version there are only Admin and RCON commands available.
         /renameplayer steam_76500000000000000 NewNickname
         ```
 
-    ??? warning "/givestats"
-        **Syntax:** `/givestats`
+    ??? success "/givestats"
+        **Syntax:** `/givestats <UserId> [Count=1]`
 
-        **Description:** (text still to be added)
+        **Description:** Gives the player one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
 
-        **Arguments:**
-        - (text still to be added)
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to receive the status points.  
+        - `[Count]`: (Optional) The number of Unused Status Points to give (can be negative to subtract). Default: 1.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /givestats
+        /givestats steam_76500000000000000 5
+        /givestats steam_76500000000000000 -2
         ```
 
     ??? warning "/givemestats"
