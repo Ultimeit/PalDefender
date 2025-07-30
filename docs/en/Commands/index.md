@@ -1090,19 +1090,19 @@ At the current version there are only Admin and RCON commands available.
         em/givetechpoints 10
         ```
 
-    ??? warning "/givemebosstechpoints"
-        **Syntax:** `/givemebosstechpoints`
+    ??? success "/givemebosstechpoints"
+        **Syntax:** `/givemebosstechpoints <Amount>`
 
-        **Description:** (text still to be added)
+        **Description:** Gives yourself X ancient technology points.
 
         **Arguments:**
-        - (text still to be added)
+        - `<Amount>`: The number of ancient technology points to give yourself.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /givemebosstechpoints
+        /givemebosstechpoints 5
         ```
 
 
