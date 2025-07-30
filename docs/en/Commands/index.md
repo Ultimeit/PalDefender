@@ -1043,19 +1043,20 @@ At the current version there are only Admin and RCON commands available.
         /unlearntech steam_76500000000000000 all
         ```
 
-    ??? warning "/givetechpoints"
-        **Syntax:** `/givetechpoints`
+    ??? success "/givetechpoints"
+        **Syntax:** `/givetechpoints <UserId> <Amount>`
 
-        **Description:** (text still to be added)
+        **Description:** Gives the target user X technology points.
 
-        **Arguments:**
-        - (text still to be added)
+        **Arguments:**  
+        - `<UserId>`: The ID of the player to receive the technology points.  
+        - `<Amount>`: The number of technology points to give.  
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /givetechpoints
+        /givetechpoints steam_76500000000000000 10
         ```
 
     ??? warning "/givebosstechpoints"
