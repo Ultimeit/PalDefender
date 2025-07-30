@@ -644,19 +644,20 @@ At the current version there are only Admin and RCON commands available.
         /delitem gdk_25300000000000000 Sword all
         ```
 
-    ??? warning "/give_relic"
-        **Syntax:** `/give_relic`
+    ??? success "/give_relic"
+        **Syntax:** `/give_relic <UserId> <Amount>`
 
-        **Description:** (text still to be added)
+        **Description:** Gives the player one or more Lifmunk Effigies.
 
         **Arguments:**
-        - (text still to be added)
+        - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.
+        - `<Amount>`: The number of Lifmunk Effigies to give.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /give_relic
+        /give_relic steam_76500000000000000 5
         ```
 
     ??? warning "/giveme_relic"
