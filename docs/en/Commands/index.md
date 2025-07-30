@@ -209,7 +209,7 @@ At the current version there are only Admin and RCON commands available.
     ??? warning "/send"
         **Syntax:** `/send`
 
-        **Description:** (text still to be added)
+        **Description:** (text still to be added) This command is not released yet
 
         **Arguments:**
         - (text still to be added)
