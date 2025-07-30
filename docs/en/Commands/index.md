@@ -660,19 +660,19 @@ At the current version there are only Admin and RCON commands available.
         /give_relic steam_76500000000000000 5
         ```
 
-    ??? warning "/giveme_relic"
-        **Syntax:** `/giveme_relic`
+    ??? success "/giveme_relic"
+        **Syntax:** `/giveme_relic <Amount>`
 
-        **Description:** (text still to be added)
+        **Description:** Gives yourself one or more Lifmunk Effigies.
 
         **Arguments:**
-        - (text still to be added)
+        - `<Amount>`: The number of Lifmunk Effigies to give yourself.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /giveme_relic
+        /giveme_relic 5
         ```
 
 
