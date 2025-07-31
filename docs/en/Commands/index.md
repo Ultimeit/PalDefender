@@ -130,7 +130,7 @@ At the current version there are only Admin and RCON commands available.
         /adminlogout
         ```
 
-    ??? success "/iwantplayerlist"
+    ??? info "/iwantplayerlist"
         **Syntax:** `/iwantplayerlist`
 
         **Description:** Enables the in-game player list overlay, allowing you to view every player's UserId and Player UID when you press ESC. Useful for server admins and players who want to see detailed player information directly in the game interface.
@@ -145,7 +145,7 @@ At the current version there are only Admin and RCON commands available.
         /iwantplayerlist
         ```
 
-    ??? success "/getpos"
+    ??? info "/getpos"
         **Syntax:** `/getpos [UserId]`
 
         **Description:** Gets your current position in the world, which can be used for teleporting, summoning, and similar actions. If a [UserId] is provided, gets the position of that player instead.
@@ -192,7 +192,7 @@ At the current version there are only Admin and RCON commands available.
         /alert Server will restart in 5 minutes!
         ```
 
-    ??? success "/send"
+    ??? info "/send"
         **Syntax:** `/send <type> <UserId> <Message>`
 
         **Description:** Allows you to send a message or log message to a specific player.
@@ -429,7 +429,7 @@ At the current version there are only Admin and RCON commands available.
         /imcheater
         ```
 
-    ??? success "/spectate"
+    ??? info "/spectate"
         **Syntax:** `/spectate`
 
         **Description:** Turns spectate mode on. Same as pressing hotkey `\`, but hotkey does not work for everyone, like console players.
@@ -508,7 +508,7 @@ At the current version there are only Admin and RCON commands available.
         /renameplayer steam_76500000000000000 NewNickname
         ```
 
-    ??? success "/givestats"
+    ??? info "/givestats"
         **Syntax:** `/givestats <UserId> [Count=1]`
 
         **Description:** Gives the player one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
@@ -525,7 +525,7 @@ At the current version there are only Admin and RCON commands available.
         /givestats steam_76500000000000000 -2
         ```
 
-    ??? success "/givemestats"
+    ??? info "/givemestats"
         **Syntax:** `/givemestats [Count=1]`
 
         **Description:** Gives yourself one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
@@ -558,7 +558,7 @@ At the current version there are only Admin and RCON commands available.
         /setguildleader gdk_25300000000000000
         ```
 
-    ??? success "/exportguilds"
+    ??? info "/exportguilds"
         **Syntax:** `/exportguilds`
 
         **Description:** Dumps every guild of the server into Pal/Binaries/Win64/PalDefender/guildexport.json.
@@ -643,7 +643,7 @@ At the current version there are only Admin and RCON commands available.
         /delitem gdk_25300000000000000 Sword all
         ```
 
-    ??? success "/give_relic"
+    ??? info "/give_relic"
         **Syntax:** `/give_relic <UserId> <Amount>`
 
         **Description:** Gives the player one or more Lifmunk Effigies.
@@ -659,7 +659,7 @@ At the current version there are only Admin and RCON commands available.
         /give_relic steam_76500000000000000 5
         ```
 
-    ??? success "/giveme_relic"
+    ??? info "/giveme_relic"
         **Syntax:** `/giveme_relic <Amount>`
 
         **Description:** Gives yourself one or more Lifmunk Effigies.
@@ -795,7 +795,7 @@ At the current version there are only Admin and RCON commands available.
         /summon PalSummon
         ```
 
-    ??? success "/giveegg"
+    ??? info "/giveegg"
         **Syntax:** `/giveegg <UserId> <EggId> <PalId> [Level]`
 
         **Description:** Gives target user a pal egg with the specific pal inside and optionally adjusted level.
@@ -835,7 +835,7 @@ At the current version there are only Admin and RCON commands available.
         ```
 
 
-    ??? success "/givemeegg"
+    ??? info "/givemeegg"
         **Syntax:** `/givemeegg <EggId> <PalId> [Level]`
 
         **Description:** Gives yourself a pal egg with the specific pal inside and optionally adjusted level.
@@ -871,7 +871,7 @@ At the current version there are only Admin and RCON commands available.
         /givemeegg PalEgg_Ice_01 WeaselDragon 10
         ```
 
-    ??? success "/giveegg_j"
+    ??? info "/giveegg_j"
         **Syntax:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
         **Description:** Gives a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
@@ -907,7 +907,7 @@ At the current version there are only Admin and RCON commands available.
         /giveegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
-    ??? success "/givemeegg_j"
+    ??? info "/givemeegg_j"
         **Syntax:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
         **Description:** Gives yourself a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
@@ -943,7 +943,7 @@ At the current version there are only Admin and RCON commands available.
         /givemeegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
-    ??? success "/jetragon"
+    ??? info "/jetragon"
         **Syntax:** `/jetragon`
 
         **Description:** Gives you an Admin-Jetragon Pal (it's faaas.... gone).
@@ -958,7 +958,7 @@ At the current version there are only Admin and RCON commands available.
         /jetragon
         ```
 
-    ??? success "/catwaifu"
+    ??? info "/catwaifu"
         **Syntax:** `/catwaifu`
 
         **Description:** Gives you an Admin-Cat-Waifu that buffs your character stats.
@@ -973,7 +973,7 @@ At the current version there are only Admin and RCON commands available.
         /catwaifu
         ```
 
-    ??? success "/exportpals"
+    ??? info "/exportpals"
         **Syntax:** `/exportpals [UserId]`
 
         **Description:** Export every Pal of a player to a PalTemplate file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
@@ -989,7 +989,7 @@ At the current version there are only Admin and RCON commands available.
         /exportpals
         ```
 
-    ??? success "/deletepals"
+    ??? info "/deletepals"
         **Syntax:** `/deletepals <UserId> <PalFilter>`
 
         **Description:** Deletes Pals from the specified user using advanced filters. The filter allows you to specify multiple criteria (such as Pal ID, level, gender, passives, etc.) in one command. Please test in a safe environment before using on important data.
@@ -1064,7 +1064,7 @@ At the current version there are only Admin and RCON commands available.
         /unlearntech steam_76500000000000000 all
         ```
 
-    ??? success "/givetechpoints"
+    ??? info "/givetechpoints"
         **Syntax:** `/givetechpoints <UserId> <Amount>`
 
         **Description:** Gives the target user X technology points.
@@ -1080,7 +1080,7 @@ At the current version there are only Admin and RCON commands available.
         /givetechpoints steam_76500000000000000 10
         ```
 
-    ??? success "/givebosstechpoints"
+    ??? info "/givebosstechpoints"
         **Syntax:** `/givebosstechpoints <UserId> <Amount>`
 
         **Description:** Gives the target user X ancient technology points.
@@ -1096,7 +1096,7 @@ At the current version there are only Admin and RCON commands available.
         /givebosstechpoints steam_76500000000000000 5
         ```
 
-    ??? success "/givemetechpoints"
+    ??? info "/givemetechpoints"
         **Syntax:** `/givemetechpoints <Amount>`
 
         **Description:** Gives yourself X technology points.
@@ -1111,7 +1111,7 @@ At the current version there are only Admin and RCON commands available.
         em/givetechpoints 10
         ```
 
-    ??? success "/givemebosstechpoints"
+    ??? info "/givemebosstechpoints"
         **Syntax:** `/givemebosstechpoints <Amount>`
 
         **Description:** Gives yourself X ancient technology points.
@@ -1143,7 +1143,7 @@ At the current version there are only Admin and RCON commands available.
         /gettechids
         ```
 
-    ??? success "/getskinids"
+    ??? info "/getskinids"
         **Syntax:** `/getskinids`
 
         **Description:** Returns a list of all available Pal Skin IDs. RCON gets JSON output.
