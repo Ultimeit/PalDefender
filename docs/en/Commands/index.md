@@ -541,6 +541,22 @@ At the current version there are only Admin and RCON commands available.
         /givemestats -2
         ```
 
+    ??? info "/godmode"
+        **Syntax:** `/godmode [on/off]`
+
+        **Description:** Grants invulnerability including status effect immunity, denies consumption of food and restores health upon activation. Optionally allows one-shotting everything, if enabled in the config.
+
+        **Arguments:**  
+        - `[on/off]`: (Optional) To explicitly enable or disable the godmode. Default: Toggles on and off.  
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /godmode
+        /godmode on
+        /godmode off
+        ```
 
 ??? note "Guild Management"
     ??? info "/setguildleader"
