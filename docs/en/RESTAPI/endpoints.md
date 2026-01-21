@@ -12,11 +12,13 @@
     Returns the running PalDefender build/version information.
 
     This is the simplest **health + compatibility** endpoint:
+
     - If this responds, your REST API is reachable
     - your token works
     - the server is alive
 
     ### When to use it
+
     - Sanity-check REST setup (URL/port/token)
     - Detect server/plugin version in tooling (dashboards, admin panels, scripts)
     - Guard client behavior by version (e.g., only show features if supported)
@@ -44,6 +46,7 @@
     This is a **directory** endpoint: it gives identifiers + basic metadata you can use to query individual guilds.
 
     ### When to use it
+
     - Build a guild selector dropdown in an admin UI
     - Discover guild IDs so you can call `GET /v1/pdapi/guild/<guild_id>`
     - Perform audits across guilds (e.g., list all guild names and owners)
@@ -105,6 +108,7 @@
 ??? info "GET `/v1/pdapi/guild/<guild_id>` — Guild details"
     ## GET `/v1/pdapi/guild/<guild_id>`
     ### Path parameters
+
     - `guild_id` (string): The guild identifier, usually obtained from `GET /v1/pdapi/guilds`
       Example: `EAF4C152-4B581B5E-4281D299-53459513`
 
@@ -114,6 +118,7 @@
     This is the **deep view**: members, camps/bases, and other guild-specific data your server exposes.
 
     ### When to use it
+
     - Display a guild detail page in admin tooling
     - Inspect members (names, online/offline status)
     - Inspect bases/camps and related guild structures
@@ -264,6 +269,7 @@
     ## POST `/v1/pdapi/give`
     ### What it does
     Grants rewards to a target player in a single server-side transaction-like operation:
+
     - EXP and/or
     - items and/or
     - pals and/or
@@ -272,6 +278,7 @@
 
     ### Core behavior
     This endpoint is intended to behave **atomically**:
+
     - either everything is granted
     - or nothing is granted
 
@@ -279,6 +286,7 @@
 
     ### Why this matters
     Admin tooling must not accidentally:
+
     - give EXP but not items
     - give some items but fail on later items
     - spawn pals without placing items
@@ -287,6 +295,7 @@
 
     ### What it can grant
     Depending on your implementation, the request may include:
+
     - `EXP` — adds experience
     - `Lifmunks` — adds Lifmunk Effigy points
     - `TechnologyPoints` — adds tech points
@@ -299,6 +308,7 @@
 
     ### Validation & common failure cases
     Typical reasons admins hit errors:
+
     - Inventory space: not enough room for all items → fail the entire request
     - Invalid IDs: unknown `ItemID`, `PalID`, `EggID`, or missing template file → fail
     - Invalid values:

@@ -30,6 +30,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Returns a list of every command with the required arg count which is usable by RCON.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `RCON`
@@ -46,6 +47,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Reloads `Config.json`, `whitelist.json` and `banlist.txt`.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -61,6 +63,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Adds an IP address to admin whitelist.
 
         **Arguments:**
+
         - `<IP>`: The IP address to add as admin.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -76,6 +79,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Temporarily grants/revokes admin from a player.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to grant/revoke admin.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -91,6 +95,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Send a message to all players in the server.
 
         **Arguments:**
+
         - `<Message>`: The message to broadcast.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -106,6 +111,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Logs you into admin mode. Requires your admin password as an argument.
 
         **Arguments:**
+
         - `<password>`: The admin password.
 
         **Permissions:** `Chat`
@@ -121,6 +127,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Logs you out of admin mode.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `Admin`
@@ -136,6 +143,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Enables the in-game player list overlay, allowing you to view every player's UserId and Player UID when you press ESC. Useful for server admins and players who want to see detailed player information directly in the game interface.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -151,6 +159,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gets your current position in the world, which can be used for teleporting, summoning, and similar actions. If a [UserId] is provided, gets the position of that player instead.
 
         **Arguments:**
+
         - `[UserId]`: (Optional) The ID of the player whose position you want to get. If omitted, gets your own position.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -167,6 +176,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`.
 
         **Arguments:**
+
         - `<hour>`: Hour value (0-23, day, night).
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -183,6 +193,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Sends an alert message to all players on the server. This message is usually displayed prominently on their screens.
 
         **Arguments:**
+
         - `<message>`: The message to broadcast as an alert.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -198,11 +209,12 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Allows you to send a message or log message to a specific player.
 
         **Arguments:**
+
         - `<type>`: The type of message to send. Possible values:
-        -    - `msg`: Regular chat message.
-        -    - `log`: Regular log message (white, disappears quickly, larger font).
-        -    - `ilog`: Important log message (blue, stays longer).
-        -    - `vilog`: Very important log message (blue, stays extremely long).
+             - `msg`: Regular chat message.
+             - `log`: Regular log message (white, disappears quickly, larger font).
+             - `ilog`: Important log message (blue, stays longer).
+             - `vilog`: Very important log message (blue, stays extremely long).
         - `<UserId>`: The ID of the player to receive the message.
         - `<Message>`: The message text to send.
 
@@ -225,6 +237,7 @@ At the current version there are only Admin and RCON commands available.
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
         **Arguments:**
+
         - `[X]`: (Optional) X coordinate.
         - `[Y]`: (Optional) Y coordinate.
         - `[Z]`: (Optional) Z coordinate.
@@ -244,6 +257,7 @@ At the current version there are only Admin and RCON commands available.
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
         **Arguments:**
+
         - `[X]`: (Optional) X coordinate.
         - `[Y]`: (Optional) Y coordinate.
         - `[Z]`: (Optional) Z coordinate.
@@ -263,6 +277,7 @@ At the current version there are only Admin and RCON commands available.
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
         **Arguments:**
+
         - `[X]`: (Optional) X coordinate.
         - `[Y]`: (Optional) Y coordinate.
         - `[Z]`: (Optional) Z coordinate.
@@ -282,6 +297,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Kicks a player from the server.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to kick.
         - `[Reason]`: (Optional) Reason for kicking. Default: "Kicked by Admin."
 
@@ -298,6 +314,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Bans and kicks a player from the server.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to ban.
         - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
 
@@ -314,6 +331,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Bans a player's IP address and then kicks them from the server.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to IP ban.
         - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
 
@@ -330,6 +348,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Bans an IP address from the server.
 
         **Arguments:**
+
         - `<IP>`: The IP address to ban.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -345,6 +364,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Removes an IP address from the banlist.
 
         **Arguments:**
+
         - `<IP>`: The IP address to unban.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -360,6 +380,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Shows you the IP address of a player.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -375,6 +396,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Adds a UserId to the whitelist.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to whitelist.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -390,6 +412,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Removes a UserId from the whitelist.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to remove from whitelist.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -405,6 +428,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Shows the full list of the whitelisted players.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -420,6 +444,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Use this to test how your server responds to a cheater.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `Admin`
@@ -435,6 +460,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Turns spectate mode on. Same as pressing hotkey `\`, but hotkey does not work for everyone, like console players.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `Admin`
@@ -451,6 +477,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Teleports UserId1 to UserId2.
 
         **Arguments:**
+
         - `<UserId1>`: The player to teleport.
         - `<UserId2>`: The target player.
 
@@ -467,6 +494,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives experience points to a player.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<Amount>`: Amount of experience points.
 
@@ -483,6 +511,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives experience points to yourself.
 
         **Arguments:**
+
         - `<Amount>`: Amount of experience points.
 
         **Permissions:** `Chat`, `Admin`
@@ -498,6 +527,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Renames a player's nickname.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<NewName>`: The new nickname.
 
@@ -514,6 +544,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives the player one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to receive the status points.
         - `[Count]`: (Optional) The number of Unused Status Points to give (can be negative to subtract). Default: 1.
 
@@ -531,6 +562,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
 
         **Arguments:**
+
         - `[Count]`: (Optional) The number of Unused Status Points to give yourself (can be negative to subtract). Default: 1.
 
         **Permissions:** `Chat`, `Admin`
@@ -547,6 +579,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Grants invulnerability including status effect immunity, denies consumption of food and restores health upon activation. Optionally allows one-shotting everything, if enabled in the config.
 
         **Arguments:**
+
         - `[on/off]`: (Optional) To explicitly enable or disable the godmode. Default: Toggles on and off.
 
         **Permissions:** `Chat`, `Admin`
@@ -565,6 +598,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Makes target player the leader of his current guild.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to make guild leader.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -580,6 +614,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Dumps every guild of the server into Pal/Binaries/Win64/PalDefender/guildexport.json.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -598,6 +633,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives a player an item and if specified how many.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to give the item to.
         - `<ItemId>`: The item to give.
         - `[Amount]`: (Optional) How many. Default: 1.
@@ -615,6 +651,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives a player more than 1 item in one command and if specified how many of each separated by a colon.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to give the items to.
         - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
 
@@ -631,6 +668,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself an item and if specified how many.
 
         **Arguments:**
+
         - `<ItemId>`: The item to give yourself.
         - `[Amount]`: (Optional) How many. Default: 1.
 
@@ -647,6 +685,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Deletes an item from a player and if specified how many. Default is `1` which will delete only 1 occurrence of that item. Use `all` instead of `1` to delete all occurrences.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<ItemId>`: The item to delete.
         - `[Amount]`: (Optional) How many. Default: 1. Use `all` to delete all occurrences.
@@ -665,6 +704,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives the player one or more Lifmunk Effigies.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.
         - `<Amount>`: The number of Lifmunk Effigies to give.
 
@@ -681,6 +721,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself one or more Lifmunk Effigies.
 
         **Arguments:**
+
         - `<Amount>`: The number of Lifmunk Effigies to give yourself.
 
         **Permissions:** `Chat`, `Admin`
@@ -697,6 +738,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Deletes more than 1 item from a player in one command and if specified how many of each separated by a colon. Use `all` instead of `1` to delete all occurrences.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
 
@@ -713,6 +755,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `[Container] ...`: (Optional) Containers to clear. Default: items.
 
@@ -732,9 +775,10 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives a Pal to a player at the specified level.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<PalId>`: The Pal to give.
-        - - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
         - `[Level]`: (Optional) Level of the Pal. Default: 1.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -752,6 +796,7 @@ At the current version there are only Admin and RCON commands available.
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
         **Arguments:**
+
         - `<UserID>`: The ID of the player.
         - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
 
@@ -768,8 +813,9 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself a Pal at the specified level.
 
         **Arguments:**
+
         - `<PalId>`: The Pal to give yourself.
-        - - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
         - `[Level]`: (Optional) Level of the Pal. Default: 1.
 
         **Permissions:** `Chat`, `Admin`
@@ -785,6 +831,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
 
         **Arguments:**
+
         - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
 
         **Permissions:** `Chat`, `Admin`
@@ -797,6 +844,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/spawnpal"
         **Syntax:**
         Any of the following works:
+
         - `/spawnpal <PalID>`
         - `/spawnpal <PalID> [Level]`
         - `/spawnpal <PalID> [x] [y] [z]`
@@ -823,7 +871,9 @@ At the current version there are only Admin and RCON commands available.
 
     ??? info "/spawnpal_j"
         **Syntax:**
+
         Any of the following works:
+
         - `/spawnpal_j <PalTemplate>`
         - `/spawnpal <PalTemplate> [x] [y] [z]`
 
@@ -832,6 +882,7 @@ At the current version there are only Admin and RCON commands available.
         **Note:** All stats, except level, are randomized.
 
         **Arguments:**
+
         - `<PalTemplate>`: The name of the PalTemplate file to use.
         - `[x]`: (Optional) x position of the pal. Default: Relative to player-invoker.
         - `[y]`: (Optional) y position of the pal. Default: Relative to player-invoker.
@@ -876,6 +927,7 @@ At the current version there are only Admin and RCON commands available.
             **Description:** The type of egg to give.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
             - `PalEgg_Earth_01`–`PalEgg_Earth_05`
@@ -913,6 +965,7 @@ At the current version there are only Admin and RCON commands available.
             **Description:** The type of egg to give yourself.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
             - `PalEgg_Earth_01`–`PalEgg_Earth_05`
@@ -949,6 +1002,7 @@ At the current version there are only Admin and RCON commands available.
             **Description:** The type of egg to give.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
             - `PalEgg_Earth_01`–`PalEgg_Earth_05`
@@ -985,6 +1039,7 @@ At the current version there are only Admin and RCON commands available.
             **Description:** The type of egg to give yourself.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
             - `PalEgg_Earth_01`–`PalEgg_Earth_05`
@@ -1031,6 +1086,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives you an Admin-Cat-Waifu that buffs your character stats.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `Admin`
@@ -1046,6 +1102,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Export every Pal of a player to a PalTemplate file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
 
         **Arguments:**
+
         - `[UserId]`: (Optional) The ID of the player whose Pals will be exported. If omitted, exports your own Pals.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -1068,8 +1125,11 @@ At the current version there are only Admin and RCON commands available.
 
         ??? quote "<PalFilter\>"
             **Description:** A set of filter keywords to select which Pals to delete.
+
             **Note:** Multiple keywords can be combined in one command.
+
             Available filter keywords:
+
             - `ID`: PalID or list of PalIDs (comma-separated)
             - `Nick`: String (name of the Pal)
             - `Gender`: `male` or `female`
@@ -1080,6 +1140,7 @@ At the current version there are only Admin and RCON commands available.
             - `Limit`: Number (max number of Pals to delete)
 
             **Example filters:**
+
             - `ID Serpent, PinkLizard Level>10 Gender male Limit 3`
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
@@ -1103,6 +1164,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Lets a player learn a specific technology. Use `all` to unlock everything.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<TechID>`: The technology to learn. Use `all` to unlock everything.
 
@@ -1120,6 +1182,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Makes a player forget a specific technology. Use `all` to remove everything.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player.
         - `<TechID>`: The technology to forget. Use `all` to remove everything.
 
@@ -1137,6 +1200,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives the target user X technology points.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to receive the technology points.
         - `<Amount>`: The number of technology points to give.
 
@@ -1153,6 +1217,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives the target user X ancient technology points.
 
         **Arguments:**
+
         - `<UserId>`: The ID of the player to receive the ancient technology points.
         - `<Amount>`: The number of ancient technology points to give.
 
@@ -1169,6 +1234,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself X technology points.
 
         **Arguments:**
+
         - `<Amount>`: The number of technology points to give yourself.
 
         **Permissions:** `Chat`, `Admin`
@@ -1184,6 +1250,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Gives yourself X ancient technology points.
 
         **Arguments:**
+
         - `<Amount>`: The number of ancient technology points to give yourself.
 
         **Permissions:** `Chat`, `Admin`
@@ -1201,6 +1268,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Returns a list of all available technology IDs. RCON gets JSON output.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -1216,6 +1284,7 @@ At the current version there are only Admin and RCON commands available.
         **Description:** Returns a list of all available Pal Skin IDs. RCON gets JSON output.
 
         **Arguments:**
+
         - None
 
         **Permissions:** `Chat`, `RCON`, `Admin`
