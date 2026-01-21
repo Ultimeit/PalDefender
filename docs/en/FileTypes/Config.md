@@ -21,9 +21,10 @@
 | `logPlayerIP`                  | bool   | Logs player IP address in relevant logs.                                  |
 | `logPlayerDeaths`              | bool   | Logs player deaths.                                                       |
 | `logPlayerLogins`              | bool   | Logs player login/logout events.                                          |
-| `logPlayerBuildings`           | bool   | Logs construction by players.                                             |
+| `logPlayerBuildings`           | bool   | Logs construction by players. (Build, Cancel, Dismantle)                  |
 | `logHelicopterKills`           | bool   | Logs kills by helicopters.                                                |
 | `logPlayerSummons`             | bool   | Logs player Pal summons.                                                  |
+| `logPlayerCaptures`            | bool   | Logs player Pal captures.                                                 |
 | `logCraftings`                 | bool   | Logs player craftings.                                                    |
 | `logTechUnlocks`               | bool   | Logs player technology unlockings.                                        |
 | `logOpenOilrigBoxes`           | bool   | Logs oilrig box interactions.                                             |
