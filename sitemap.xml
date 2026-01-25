@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/FAQ/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FAQ/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FAQ/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FAQ/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/Installation/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Installation/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Installation/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/Partnerships/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Partnerships/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Partnerships/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Partnerships/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/Commands/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Commands/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Commands/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Commands/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/FileTypes/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/FileTypes/Config/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/Config/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/Config/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/Config/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/FileTypes/PalSummon/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/PalSummon/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/PalSummon/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/PalSummon/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/FileTypes/PalTemplate/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/PalTemplate/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/PalTemplate/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/PalTemplate/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/RESTAPI/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/RESTAPI/authentication/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/authentication/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/authentication/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/authentication/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/RESTAPI/endpoints/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/endpoints/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/endpoints/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/endpoints/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/RESTAPI/Examples/Python/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/Examples/Python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/Examples/Python/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/Examples/Python/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/FAQ/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FAQ/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FAQ/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FAQ/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/Installation/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Installation/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/Partnerships/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Partnerships/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Partnerships/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Partnerships/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/Commands/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Commands/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Commands/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Commands/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/FileTypes/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/FileTypes/Config/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/Config/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/Config/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/Config/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/FileTypes/PalSummon/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/PalSummon/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/PalSummon/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/PalSummon/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/FileTypes/PalTemplate/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/PalTemplate/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/PalTemplate/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/PalTemplate/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/RESTAPI/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/RESTAPI/authentication/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/authentication/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/authentication/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/authentication/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/RESTAPI/endpoints/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/endpoints/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/endpoints/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/endpoints/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/de/RESTAPI/Examples/Python/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/Examples/Python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/Examples/Python/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/Examples/Python/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/FAQ/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FAQ/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FAQ/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FAQ/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/Installation/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Installation/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Installation/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/Partnerships/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Partnerships/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Partnerships/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Partnerships/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/Commands/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/Commands/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/Commands/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/Commands/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/FileTypes/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/FileTypes/Config/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/Config/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/Config/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/Config/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/FileTypes/PalSummon/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/PalSummon/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/PalSummon/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/PalSummon/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/FileTypes/PalTemplate/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/FileTypes/PalTemplate/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/FileTypes/PalTemplate/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/FileTypes/PalTemplate/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/RESTAPI/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/RESTAPI/authentication/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/authentication/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/authentication/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/authentication/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/RESTAPI/endpoints/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/endpoints/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/endpoints/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/endpoints/"/>
+    </url>
+    <url>
+        <loc>https://ultimeit.github.io/PalDefender/zh/RESTAPI/Examples/Python/</loc>
+        <lastmod>2026-01-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://ultimeit.github.io/PalDefender/zh/RESTAPI/Examples/Python/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://ultimeit.github.io/PalDefender/de/RESTAPI/Examples/Python/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://ultimeit.github.io/PalDefender/RESTAPI/Examples/Python/"/>
+    </url>
+</urlset>
