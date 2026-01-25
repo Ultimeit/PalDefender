@@ -1,3 +1,4 @@
+click==8.2.1
 mkdocs>=1.5.3
 mkdocs-material>=9.5.7
 pymdown-extensions>=10.5
