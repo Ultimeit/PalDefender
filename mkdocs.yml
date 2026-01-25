@@ -68,11 +68,6 @@ plugins:
           name: English
           default: true
         - locale: de
-          name: Deutsch
-        - locale: pt-BR
-          link: /pt-BR/
-          name: Brasileiro
+          name: Deutsch (German)
         - locale: zh
-          name: 简体中文
-        - locale: ja
-          name: 日本語
+          name: 简体中文 (Chinese)
