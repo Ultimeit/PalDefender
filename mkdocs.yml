@@ -1,6 +1,8 @@
 site_name: PalDefender Wiki
 site_author: "Zvend"
 site_description: "PalDefender (PalWorld Dedicated Server anticheat)"
+site_url: https://ultimeit.github.io/PalDefender/
+use_directory_urls: true
 repo_url: https://github.com/Ultimeit/PalDefender
 extra_css:
   - stylesheets/extra.css
