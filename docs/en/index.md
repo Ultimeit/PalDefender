@@ -1,8 +1,34 @@
 # Home
+
 ![PalDefender Logo](../assets/LogoWiki.jpg)
-<a href="https://ko-fi.com/T6T014OZZB" target="_blank">![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)</a>
 <a href="https://discord.com/invite/bdTxPbwSEW" target="_blank">![Discord Server](https://img.shields.io/badge/-Join%20our%20Discord-111111?style=for-the-badge&logo=discord)</a>
 <a href="https://www.nexusmods.com/palworld/mods/451" target="_blank">![Static Badge](https://img.shields.io/badge/-Nexus%20Mods-111111?style=for-the-badge&logo=nexusmods)</a>
+
+<div style="display:flex; align-items:center; gap:12px;">
+
+  <a href="https://ko-fi.com/T6T014OZZB" target="_blank">
+    <img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Ko-fi">
+  </a>
+
+  <form action="https://www.paypal.com/donate" method="post" target="_top" style="margin:0;">
+    <div id="donate-button-container">
+      <div id="donate-button"></div>
+      <script src="https://www.paypalobjects.com/donate/sdk/donate-sdk.js" charset="UTF-8"></script>
+      <script>
+        PayPal.Donation.Button({
+          env: 'production',
+          hosted_button_id: '6NVHHB52DSUZA',
+          image: {
+            src: 'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
+            alt: 'Donate with PayPal button',
+            title: 'PayPal - The safer, easier way to pay online!'
+          }
+        }).render('#donate-button');
+      </script>
+    </div>
+  </form>
+
+</div>
 
 ---
 
@@ -15,7 +41,7 @@ The code is closed source and we dont have any plans to release it.
 
 ## About
 
-PalDefender implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, this feature is in beta and is available exclusively for Windows-based dedicated servers. 
+PalDefender implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, this feature is in beta and is available exclusively for Windows-based dedicated servers.
 
 **Any experienced Linux dev is welcome to help us out.**
 
