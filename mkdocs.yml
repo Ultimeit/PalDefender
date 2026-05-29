@@ -31,9 +31,6 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.tracking
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.footer
     - toc.follow
     - search.suggest
     - search.highlight
@@ -99,8 +96,6 @@ plugins:
   - search
   - i18n:
       docs_structure: folder
-      reconfigure_material: true
-      reconfigure_search: true
       languages:
         - locale: en
           name: English
@@ -111,7 +106,6 @@ plugins:
           name: 简体中文 (Chinese)
 
 extra:
-  generator: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Ultimeit/PalDefender
