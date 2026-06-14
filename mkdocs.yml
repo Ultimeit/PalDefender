@@ -4,41 +4,73 @@ site_description: "PalDefender (PalWorld Dedicated Server anticheat)"
 site_url: https://ultimeit.github.io/PalDefender/
 use_directory_urls: true
 repo_url: https://github.com/Ultimeit/PalDefender
+repo_name: Ultimeit/PalDefender
+
 extra_css:
   - stylesheets/extra.css
+
 theme:
   name: material
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Inter
+    code: JetBrains Mono
   logo: assets/LogoWiki.png
+  favicon: assets/LogoWiki.png
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/shield-check-16
+      tip: octicons/zap-16
+      warning: octicons/alert-16
+      danger: octicons/flame-16
   features:
     - navigation.indexes
     - navigation.path
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
   palette:
-
-    # Light Mode
-    - scheme: default
-      toggle:
-        icon: material/weather-night
-        name: Light mode
-      primary: indigo
-      accent: deep orange
-
-    # Dark Mode
     - scheme: slate
+      media: "(prefers-color-scheme: dark)"
+      primary: custom
+      accent: custom
       toggle:
         icon: material/weather-sunny
-        name: Dark mode
-      primary: indigo
-      accent: blue grey
+        name: Switch to light mode
+    - scheme: default
+      media: "(prefers-color-scheme: light)"
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
 
 markdown_extensions:
   - attr_list
+  - md_in_html
   - tables
+  - footnotes
+  - def_list
+  - abbr
+  - admonition
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -46,6 +78,7 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      use_pygments: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences:
@@ -55,16 +88,14 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
-  - admonition
-  - pymdownx.details
-
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 
 plugins:
   - search
   - i18n:
       docs_structure: folder
-      reconfigure_material: true
-      reconfigure_search: true
       languages:
         - locale: en
           name: English
@@ -73,3 +104,9 @@ plugins:
           name: Deutsch (German)
         - locale: zh
           name: 简体中文 (Chinese)
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Ultimeit/PalDefender
+      name: PalDefender on GitHub
