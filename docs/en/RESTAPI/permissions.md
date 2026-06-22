@@ -1,4 +1,4 @@
-# 🔐 REST Permissions Table
+# Permissions
 
 > **Auth:** Bearer token required  
 > **Base path:** `/v1/pdapi`  
