@@ -11,3 +11,4 @@ This section documents the built-in PalDefender REST API (a small HTTP interface
 ## What’s in here
 - [Authentication & setup](authentication.md)
 - [Endpoints](Endpoints/index.md)
+- [Permissions](permissions.md)
