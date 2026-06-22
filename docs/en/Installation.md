@@ -20,6 +20,10 @@ Palworld_Server/
 │   │   └── Win64
 │   │       ├── config/
 │   │       ├── PalDefender/                      // Will be generated (Step 4)
+│   │       │   ├── Banlist.json
+│   │       │   ├── Config.json
+│   │       │   ├── Pals/
+│   │       │   └── RESTAPI/
 │   │       ├── <...>
 │   │       ├── PalDefender.dll                   << Put here (Step 2)
 │   │       ├── d3d9.dll                          << Put here (Step 2)
@@ -42,7 +46,6 @@ Palworld_Server/
 │           │     ├── Players/
 │           │     ├── Level.sav
 │           │     └── LevelMeta.sav
-│           └── banlist.txt
 ├── PalServer.exe
 ├── steamclient.dll
 └── <...>

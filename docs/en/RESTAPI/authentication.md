@@ -9,8 +9,7 @@
 On startup you should see logs similar to:
 ```
 [16:42:28][info] [RESTAPI] Loaded 'RESTConfig.json'.
-[16:42:28][info] [RESTAPI] Loaded 1 Bearer token.
-<...>
+[16:42:31][info] [RESTAPI] Loaded 1 Bearer token.
 [16:42:31][info] [RESTAPI] Running PalDefender RESTAPI on port 17993
 ```
 
@@ -30,9 +29,16 @@ Example token file:
 
 ```json
 {
-  "Token": "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa"
+  "Name": "AdminPanel",
+  "Token": "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa",
+  "Permissions": [
+    "REST.*"
+  ]
 }
 ```
+
+!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
+    `Permissions` may be a string or an array of strings. Use narrower permissions for public dashboards or automation that should not have full admin access.
 
 ## Headers
 Send the token via the standard Authorization header:

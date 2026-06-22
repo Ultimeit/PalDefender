@@ -1,14 +1,13 @@
 # PalDefender REST API
 
-Dieser Abschnitt dokumentiert die integrierte PalDefender REST API (eine kleine HTTP-Schnittstelle, die für den **lokalen / vertrauenswürdigen** Einsatz gedacht ist).
+This section documents the built-in PalDefender REST API (a small HTTP interface meant for **local / trusted** use).
 
-- **Standard-Basis-URL:** `http://127.0.0.1:17993`
-- **Authentifizierung:** Bearer-Token (bei allen Endpunkten erforderlich)
-- **Versions-Endpunkt:** `/v1/pdapi/version`
+- **Default base URL:** `http://127.0.0.1:17993`
+- **Auth:** Bearer token (required on all endpoints)
+- **Version endpoint:** `/v1/pdapi/version`
 
-> Sicherheitshinweis: Setze diesen Port **nicht** direkt dem öffentlichen Internet aus.
-> Wenn du Remote-Zugriff benötigst, verwende einen Reverse Proxy und geeignete Zugriffskontrollen.
+> Security note: do **not** expose this port directly to the public internet. If you need remote access, use a reverse proxy and proper access controls.
 
-## Inhalt
-- [Authentifizierung & Einrichtung](authentication.md)
-- [Endpunkte](endpoints.md)
+## What’s in here
+- [Authentication & setup](authentication.md)
+- [Endpoints](Endpoints/index.md)

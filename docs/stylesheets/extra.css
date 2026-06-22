@@ -432,6 +432,39 @@ html { scroll-behavior: smooth; }
   padding-left: 0;
 }
 
+.pd-badge {
+  --pd-badge-bg: var(--pd-amber);
+  --pd-badge-fg: #1f1300;
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35em;
+  padding: 0.08em 0.7em 0.08em 0.62em;
+  margin: 0 0.18em;
+  color: var(--pd-badge-fg);
+  background: var(--pd-badge-bg);
+  clip-path: polygon(0.18em 0, calc(100% - 0.42em) 0, 100% 50%, calc(100% - 0.42em) 100%, 0.18em 100%, 0 50%);
+  font-family: var(--var-font);
+  font-size: 0.72em;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: nowrap;
+  vertical-align: 0.08em;
+  border: 1px solid rgba(0,0,0,0.18);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.pd-badge--beta {
+  --pd-badge-bg: #facc15;
+  --pd-badge-fg: #241a00;
+}
+
+.pd-badge--deprecated {
+  --pd-badge-bg: #ef4444;
+  --pd-badge-fg: #fff7f7;
+}
+
 @media (max-width: 76.1875em) {
   .md-typeset    { font-size: 0.9rem; }
   .md-typeset h1 { font-size: 1.5rem; }

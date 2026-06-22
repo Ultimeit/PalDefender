@@ -1,10 +1,62 @@
 # FAQ
 
-<details><summary style="font-size:16px">I've accidentally banned myself/someone. How can I unban them?</summary>
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span> I've accidentally banned myself/someone. How can I unban them?</summary>
 
 <p style="font-size:14px">
-If you've banned their IP, for the time being you would need to edit <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Config.json</span> file and either reload the config (<span class="var-command">/reloadcfg</span>) or restart the server. If you've banned their account, you would need to remove their UserId from <span class="path-partial">../Pal/Saved/SaveGames/</span><span class="file-partial">banlist.txt</span> and restart the server afterwards.
+Use <span class="var-command">/unban &lt;UserId&gt;</span> for account bans and <span class="var-command">/unbanip &lt;IP&gt;</span> for IP bans. PalDefender ban records are stored in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span>. If you edit the file manually, stop the server first or reload configuration after editing.
 </p>
+
+</details>
+
+
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old IP-ban cleanup through Config.json</summary>
+
+<p style="font-size:14px">
+Older wiki versions told admins to remove IP bans from <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Config.json</span>. That path is deprecated for ban records. Use <span class="var-command">/unbanip &lt;IP&gt;</span> or edit <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span> instead.
+</p>
+
+</details>
+
+
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: I added or changed a PalTemplate or PalSummon file but the command fails.</summary>
+
+<ul>
+  <li>Make sure the file is valid JSON. Remove comments and trailing commas.</li>
+  <li>Templates belong in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/Pals/Templates/</span>.</li>
+  <li>Summons belong in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/Pals/Summons/</span>.</li>
+  <li>Use the filename without path, for example <span class="var-command">/summon ArenaBoss</span>.</li>
+  <li>For summon files, check that <code>PalTemplate</code>, <code>X</code>, <code>Y</code>, and <code>Z</code> are present.</li>
+  <li>For template files, check that <code>PalID</code> is present and uses a valid Pal ID.</li>
+</ul>
+
+</details>
+
+
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: Which ID should I use for commands: UserId, PlayerUId, name, or SteamID?</summary>
+
+<p>
+Most admin commands expect the player's UserId, such as <code>steam_...</code> or <code>gdk_...</code>. Use <span class="var-command">/iwantplayerlist</span> in-game to show IDs in the player list, or use REST/API tooling if you have it enabled.
+</p>
+
+</details>
+
+
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: Why does RCON require coordinates or a UserId for commands that work without them in chat?</summary>
+
+<p>
+RCON has no in-game player character, so PalDefender cannot infer your position or target. For commands like <span class="var-command">/getpos</span>, <span class="var-command">/tp</span>, <span class="var-command">/spawnpal</span>, and base-location commands, provide the target player or coordinates explicitly.
+</p>
+
+</details>
+
+
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: The REST API returns 401 or 403. What should I check?</summary>
+
+<ul>
+  <li><strong>401</strong>: Check the <code>Authorization: Bearer &lt;token&gt;</code> header and make sure the token file is not named <code>TokenExample.json</code>.</li>
+  <li><strong>403</strong>: Check token permissions and make sure the server has finished starting.</li>
+  <li>After changing tokens, restart the server or reload the API/token setup according to your host workflow.</li>
+</ul>
 
 </details>
 

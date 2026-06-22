@@ -1,16 +1,17 @@
 # Installation
 
-PalDefender ist von einer Windows-Umgebung abhängig. Wenn du deinen Palworld-Server auf einer Linux-basierten Maschine betreiben möchtest, musst du Wine oder Proton installieren.
+PalDefender is dependend on a windows environment, if you plan to host your Palworld server on a Linux based machine, you will need to install Wine or Proton.
 
-Die Installation des Palworld-Servers selbst wird hier nicht behandelt. Wir empfehlen, einen Server bei Qonzer zu mieten und dabei diesen[Schritten](./Partnerships.md#how-to-get-the-10-discount) zu folgen。
+Installing a Palworld server itself is not covered here. We suggest getting a server from Qonzer following those [Steps](./Partnerships.md#how-to-get-the-10-discount).
 
 ---
 
 ## Windows
 
-1. Lade <span class="file">PalDefender.zip</span> von <a href="https://github.com/Ultimeit/PalDefender/releases/latest/" target="_blank">GitHub/releases</a> herunter.
-2. Entpacke den Inhalt von <span class="file">PalDefender.zip</span> und kopiere ihn in das PalServer-Unterverzeichnis: <span class="path">.../Pal/Binaries/Win64/</span>
-3. Deine Ordnerstruktur sollte anschließend wie folgt aussehen:
+1. Donwload <span class="file">PalDefender_Windows.zip</span> from <a href="https://github.com/Ultimeit/PalDefender/releases/latest/" target="_blank">GitHub/releases</a>
+2. Extract the contents of <span class="file">PalDefender_Windows.zip</span> and place it into your PalServer sub-directory:
+<span class="path">.../Pal/Binaries/Win64/</span>
+3. Your structure should look like this:
 ```yaml
 Palworld_Server/
 ├── Engine/
@@ -18,10 +19,14 @@ Palworld_Server/
 │   ├── Binaries/
 │   │   └── Win64
 │   │       ├── config/
-│   │       ├── PalDefender/                      // Wird erzeugt (siehe Schritt 4)
+│   │       ├── PalDefender/                      // Will be generated (Step 4)
+│   │       │   ├── Banlist.json
+│   │       │   ├── Config.json
+│   │       │   ├── Pals/
+│   │       │   └── RESTAPI/
 │   │       ├── <...>
-│   │       ├── PalDefender.dll                   << Hier ablegen (siehe Schritt 2)
-│   │       ├── d3d9.dll                          << Hier ablegen (siehe Schritt 2)
+│   │       ├── PalDefender.dll                   << Put here (Step 2)
+│   │       ├── d3d9.dll                          << Put here (Step 2)
 │   │       ├── PalServer-Win64-Shipping-Cmd.exe
 │   │       └── PalServer-Win64-Shipping.exe
 │   ├── Content/
@@ -41,20 +46,19 @@ Palworld_Server/
 │           │     ├── Players/
 │           │     ├── Level.sav
 │           │     └── LevelMeta.sav
-│           └── banlist.txt
 ├── PalServer.exe
 ├── steamclient.dll
 └── <...>
 ```
-4. Starte den Server einmal, damit die PalDefender-Ordnerstruktur unter <span class="path">.../Pal/Binaries/Win64/PalDefender/</span> erzeugt wird. (siehe oben)
-5. Passe anschließend die Konfiguration nach deinen Wünschen an. Empfehlung: Aktiviere die Whitelist.
+4. Start your server once to generate the PalDefender file structure at <span class="path">.../Pal/Binaries/Win64/PalDefender/</span> (see above)
+5. Edit the configuration to your favors. We recommend turning on the whitelist.
 
 ---
 
-## Linux (Wine / Proton)
+## Linux (Wine/Proton)
 
-**Wine oder Proton müssen installiert sein**, andernfalls funktionieren die folgenden Schritte nicht.
+Wine or Proton **must** be installed, otherwise the following steps will not work.
 
-Die Einrichtung des Palworld-Servers unter Linux wird **nicht von PalDefender übernommen** und muss von dir selbst durchgeführt werden (inklusive Wine-/Proton-Konfiguration und Serverstart).
+The Palworld server setup on Linux is **not managed by PalDefender** and must be handled manually by you (Wine/Proton configuration, server startup, etc.).
 
-Sobald der Server unter Wine oder Proton **korrekt läuft**, kannst du die **Windows-Installationsanleitung unverändert übernehmen**, da sich die PalDefender-Installation dann nicht mehr unterscheidet.
+Once the server is running correctly under Wine or Proton, you can **follow the Windows installation instructions exactly**, as the PalDefender setup itself is identical.

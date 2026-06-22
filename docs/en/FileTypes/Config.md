@@ -32,11 +32,12 @@
 | `useAdminWhitelist`            | bool   | Enables admin IP whitelist. **The IPs have to bet set in `adminIPs`!**    |
 | `adminAutoLogin`               | bool   | Automatically logs in whitelisted admins into admin mode when joining.    |
 | `adminIPs`                     | array  | List of admin IPs allowed to use admin commands.                          |
-| `bannedIPs`                    | array  | List of IPs blocked from connecting.                                      |
+| `bannedIPs`                    | array  | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old IP ban storage. Use `Banlist.json` and `/banip` or `/unbanip` instead. |
 | `bannedChatWords`              | array  | Chat filter for blocked words (e.g., RMT ads).                            |
-| `bannedMessage`                | string | Message shown to banned players.                                          |
+| `bannedMessage`                | string | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old ban message setting for Config-based ban handling. |
 | `bannedNames`                  | array  | Disallowed player names (e.g., from cracked versions).                    |
 | `pvpMaxToBuildingDamage`       | int    | Max allowed PvP damage to buildings.                                      |
+| `pvpMaxToPlayerDamage`         | int    | <span class='pd-badge pd-badge--beta'>Beta</span> Max allowed PvP damage to players.                               |
 | `pvpMaxToPalDamage`            | int    | Max allowed PvP damage to Pals.                                           |
 | `pveMaxToPalBanThreshold`      | int    | PVE Pal damage threshold that triggers cheat detection.                   |
 | `treeLimiter`                  | float  | Max time a player can destroy 1 tree. (e.g. `0.1` = 1 tree every 100ms). This avoids huge lag during combat where rockets kill plenty of trees quickly. |
@@ -67,3 +68,14 @@
 | `doActionUponIllegalPalStats`  | bool   | Automatically reacts to illegal Pal stat exploits.                        |
 | `palStatsMaxRank`              | int    | Max allowed Pal enhancement rank (`-1` = auto-detect).                    |
 | `bannedTechnologies`           | array  | Blocks technologies from being learnt. Unlearns them upon joining.        |
+| `PalImport_Disabled`           | bool   | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy setting for Pal import rule migration. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_BanIfPalIsImpossible` | bool | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy setting for impossible Pal import punishment behavior. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_BannedPalIDs`       | array  | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy list of Pal IDs blocked from import. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_AllowGenderNone`    | bool   | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import rule for `Gender: "None"`. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxLevel`           | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max level. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxRank`            | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max partner skill rank. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxSoulHP`          | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul health. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxSoulATK`         | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul attack. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxSoulDEF`         | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul defense. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxSoulCS`          | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul craft speed. Prefer `Pals/ImportRules/Default.json`. |
+| `PalImport_MaxIV`              | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max IV value. Prefer `Pals/ImportRules/Default.json`. |

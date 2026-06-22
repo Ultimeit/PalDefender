@@ -1,37 +1,38 @@
-# 合作伙伴
+# Partnerships
 
 ---
 
 ## Qonzer
-Qonzer 是一家专注于专用游戏服务器托管的主机提供商，非常注重性能、透明度、公平服务和灵活的服务器管理。
+Qonzer is a hosting provider specializing in dedicated game server hosting, with a strong focus on
+performance, transparency, fair services, and flexible server management.
 
-> *我已经成为 Qonzer 的客户 1 年了，并且可以非常肯定地说，我对他们的服务非常满意，甚至超出预期。* <br>
+> *I've been a Qonzer customer for over 1 year, and I can confidently say that I’m more than satisfied with their service.* <br>
 > ~Zvend
 
+### This partnership brings some great benefits:
+- **10% Discount** – This applies to new customers only, but you’ll get 10% off every payment, even if you change the server's game or location!
+- **One-Click PalDefender Integration** – PalDefender is built into their service and can be activated instantly with a single click. No more witchcraft!
+- **Official PalDefender Test Server** – Qonzer has sponsored a server for us, and we are looking forward to getting it into production.
+- More in the Works – We are in close contact with Qonzer, and we’re working hard to make Palworld servers even more exciting for you.
+- More in the work
 
-### 此合作伙伴关系带来了一些巨大的好处：
-- **10% 折扣** – 这仅适用于新客户，但您每次付款都能享受 10% 折扣，即使您更改服务器的游戏或位置！
-- **一键 PalDefender 集成** – PalDefender 已内置到他们的服务中，只需单击一下即可立即激活。不再需要复杂的操作！
-- **官方 PalDefender 测试服务器** – Qonzer 为我们赞助了一台服务器，我们期待将其投入生产。
-- 更多功能正在开发中 – 我们与 Qonzer 保持密切联系，正在努力让 Palworld 服务器对您来说更加令人兴奋。
+### How to Get the **10% Discount**:
 
-### 如何获得 **10% 折扣**：
+1. Use the affiliate link: <a href="https://qonzer.com/aff.php?aff=61" target="_blank">https://qonzer.com/aff.php?aff=61</a>
+2. Navigate to Game Servers and select Palworld.
+3. Choose a Windows server.
+4. Configure your server settings and proceed to Review & Checkout.
+5. Enter the promo code `PalDefender` and complete your purchase.
+6. Done!
 
-1. 使用联盟链接：<a href="https://qonzer.com/aff.php?aff=61" target="_blank">https://qonzer.com/aff.php?aff=61</a>
-2. 导航到游戏服务器并选择 Palworld。
-3. 选择 Windows 服务器。
-4. 配置您的服务器设置并继续到审核和结账。
-5. 输入促销代码 `PalDefender` 并完成购买。
-6. 完成！
+**Want more than one server with the discount?** <br>
+Simply add multiple servers to your cart before checking out.
 
-**想要多个服务器享受折扣？** <br>
-只需在结账前将多个服务器添加到购物车即可。
+### I’m Already Paying for a Different Server Host but Want to Switch
 
-### 我已经在支付其他服务器主机费用，但想切换
+Open the live chat, mention that you’re coming from **PalDefender** and that you’d like to switch from your current hosting provider.
+Qonzer will gladly work something out for you — they are very friendly and extremely fair.
 
-打开在线聊天，提及您来自 **PalDefender**，并且您想从当前的主机提供商切换。
-Qonzer 会很乐意为您提供帮助——他们非常友好且极其公平。
-
-就我个人而言，我第一个月获得了巨大的折扣！
+Personally, I received a huge discount for my first month!
 
 ---

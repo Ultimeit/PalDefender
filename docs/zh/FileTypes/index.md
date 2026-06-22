@@ -1,48 +1,81 @@
-# 📁 文件类型
+# 📁 File Types
 
-**PalDefender** 支持一系列自定义文件类型，可用于配置服务器行为并扩展功能。
-目前支持：
+**PalDefender** supports a range of custom file types that can be used to configure your server’s behavior and extend its features.
+Currently supported:
 * `Config.json`
 * `WhiteList.json`
+* `Banlist.json` <span class='pd-badge pd-badge--beta'>Beta</span>
 * `PalTemplate.json`
 * `PalSummon.json`
+* `Pals/ImportRules/*.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+* `RESTAPI/RESTConfig.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+* `RESTAPI/Tokens/*.json` <span class='pd-badge pd-badge--beta'>Beta</span>
 
 ---
 
-## ⚡ 快速概览
+## ⚡ Quick Overview
 
 ### 🛠️ [Config.json](./Config.md)
 
-控制服务器行为、管理、日志和管理员设置。
+Controls server behavior, moderation, logging, and admin settings.
 
-* **安全：** 反作弊（警告、踢出、封禁、IP 封禁）、名称/词语过滤、SteamID 保护、非法属性/物品检测。
-* **日志：** 记录聊天、RCON、登录、死亡、召唤、建造活动、油井事件。
-* **管理员：** IP 白名单、自动登录、上帝模式/作弊、管理员操作可见性。
-* **公告：** MOTD、玩家死亡、召唤、惩罚与战利品事件。
-* **聊天与玩法限制：** 消息长度、冷却绕过、PvP/PvE 伤害上限、砍树限制。
-* **杂项：** RCON base64 支持、启动失败处理、可选中文命令模式。
+* **Security:** Anti-cheat (warn, kick, ban, IP-ban), name/word filtering, SteamID protection, illegal stat/item checks.
+* **Logging:** Tracks chat, RCON, logins, deaths, summons, building activity, oilrig events.
+* **Admin:** IP whitelisting, auto-login, godmode/cheats, visibility of admin actions.
+* **Announcements:** MOTD, player deaths, summons, punishments, and loot events.
+* **Chat & Gameplay Limits:** Message length, cooldown bypass, PvP/PvE damage caps, tree cutting limit.
+* **Misc:** RCON base64 support, startup failure handling, optional Chinese command mode.
 
 ---
 
 ### 👥 `WhiteList.json`
 
-定义允许加入服务器的人员。
-支持 **用户 ID** 和 **IP 地址**（包含掩码范围）。
+Defines who is allowed to join the server.
+Supports both **User IDs** and **IP addresses** (including masked ranges).
+
+---
+
+### 🚫 `Banlist.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+
+Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment tools.
+
+* Prefer `/ban`, `/unban`, `/banip`, `/unbanip`, or the REST API instead of editing this file manually.
+* If you must edit it manually, stop the server first or reload configuration after changes.
 
 ---
 
 ### 🧬 [PalTemplate.json](./PalTemplate.md)
 
-用于通过命令生成或给予自定义帕鲁。
+Used for spawning or giving customized Pals via commands.
 
-* 定义帕鲁的 **ID、昵称、性别、属性（HP/SP/MP）、饥饿、理智、闪光状态、技能、IVs、被动** 等。
-* 允许完整自定义帕鲁的 **战斗、实用与工作特性**。
+* Defines the Pal’s **ID, nickname, gender, stats (HP/SP/MP), hunger, sanity, shiny status, skills, IVs, passives**, and more.
+* Allows full customization of a Pal’s **combat, utility, and work traits**.
 
 ---
 
 ### 📍 [PalSummon.json](./PalSummon.md)
 
-在指定位置生成自定义帕鲁。
+Spawns a custom Pal at a specific location.
 
-* 引用 `PalTemplate`，设置 **世界坐标（X、Y、Z）**。
-* 配置如 **不可捕获** 等标志，并禁用特定 **状态效果**（例如中毒、溺水、燃烧等）。
+* References a `PalTemplate`, sets **world position (X, Y, Z)**.
+* Configures flags such as **uncapturable** and disables specific **status effects** (e.g., poison, drowning, burn, etc.).
+
+---
+
+### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md) <span class='pd-badge pd-badge--beta'>Beta</span>
+
+Controls how custom Pal templates are accepted.
+
+* Set global limits in `Pals/ImportRules/Default.json`.
+* Add per-Pal overrides with files such as `Pals/ImportRules/Anubis.json`.
+* Choose whether over-limit values are blocked or clamped.
+* Choose whether disallowed passives block imports or are removed.
+
+---
+
+### 🌐 REST API config files <span class='pd-badge pd-badge--beta'>Beta</span>
+
+REST API configuration lives in `RESTAPI/RESTConfig.json`, while bearer tokens live in `RESTAPI/Tokens/*.json`.
+
+* `RESTConfig.json` controls whether the API is enabled, the bind address, port, console logging, and CORS settings.
+* Each token file should contain a private token and permissions. Do not share token values publicly.
