@@ -1,13 +1,13 @@
 # PalDefender REST API
 
-本节记录了内置的 PalDefender REST API（一个用于**本地/受信任**使用的小型 HTTP 接口）。
+This section documents the built-in PalDefender REST API (a small HTTP interface meant for **local / trusted** use).
 
-- **默认基础 URL：** `http://127.0.0.1:17993`
-- **认证：** Bearer token（所有端点都需要）
-- **版本端点：** `/v1/pdapi/version`
+- **Default base URL:** `http://127.0.0.1:17993`
+- **Auth:** Bearer token (required on all endpoints)
+- **Version endpoint:** `/v1/pdapi/version`
 
-> 安全提示：**不要**将此端口直接暴露到公共互联网。如果您需要远程访问，请使用反向代理和适当的访问控制。
+> Security note: do **not** expose this port directly to the public internet. If you need remote access, use a reverse proxy and proper access controls.
 
-## 内容
-- [认证和设置](authentication.md)
-- [端点](endpoints.md)
+## What’s in here
+- [Authentication & setup](authentication.md)
+- [Endpoints](Endpoints/index.md)

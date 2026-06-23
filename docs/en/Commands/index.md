@@ -23,6 +23,9 @@ At the current version there are only Admin and RCON commands available.
     Arguments have different types. The most common are <span class="var-string">strings</span>, <span class="var-number">numbers</span>, <span class="var-float">floats</span> and <span class="var-bool">booleans</span>. Some command even have complex types such as specific <span class="file">filenames</span> in a special directory or actually a <span class="var-filter">filter</span>.
     </p>
 
+!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
+    Use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/items](https://paldeck.cc/items) for `ItemID`, [paldeck.cc/technology](https://paldeck.cc/technology) for `TechID`, [paldeck.cc/buildings](https://paldeck.cc/buildings) for `BuildingID`, [paldeck.cc/passives](https://paldeck.cc/passives) for `PassiveID`, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
+
 ??? note "RCON only"
     ??? info "/getrconcmds"
         **Syntax:** `/getrconcmds`
@@ -41,10 +44,26 @@ At the current version there are only Admin and RCON commands available.
         ```
 
 ??? note "Server Management"
+    ??? info "/version"
+        **Syntax:** `/version`
+
+        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Shows the Palworld game version and PalDefender version. RCON returns JSON output.
+
+        **Arguments:**
+
+        - None
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /version
+        ```
+
     ??? info "/reloadcfg"
         **Syntax:** `/reloadcfg`
 
-        **Description:** Reloads `Config.json`, `whitelist.json` and `banlist.txt`.
+        **Description:** Reloads `Config.json`, `WhiteList.json`, and PalDefender ban data.
 
         **Arguments:**
 
@@ -185,6 +204,22 @@ At the current version there are only Admin and RCON commands available.
         ```
         /settime 12
         /settime night
+        ```
+
+    ??? info "/togglepvp"
+        **Syntax:** `/togglepvp`
+
+        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Toggles server PvP on or off for the current running session.
+
+        **Arguments:**
+
+        - None
+
+        **Permissions:** `Chat`, `Admin`
+
+        **Example:**
+        ```
+        /togglepvp
         ```
 
     ??? info "/alert"
@@ -374,6 +409,23 @@ At the current version there are only Admin and RCON commands available.
         /unbanip 192.168.1.1
         ```
 
+    ??? info "/unban"
+        **Syntax:** `/unban <UserId> [Reason="Unbanned by admin."]`
+
+        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Removes a UserId from the PalDefender ban list.
+
+        **Arguments:**
+
+        - `<UserId>`: The UserId to unban.
+        - `[Reason]`: (Optional) Reason stored for the unban action.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /unban steam_76500000000000000 "Appeal accepted"
+        ```
+
     ??? info "/getip"
         **Syntax:** `/getip <UserId>`
 
@@ -472,20 +524,41 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Player Character"
     ??? info "/tp"
-        **Syntax:** `/tp <UserId1> <UserId2>`
+        **Syntax:**
+        Any of the following works:
 
-        **Description:** Teleports UserId1 to UserId2.
+        - `/tp <UserId>`
+        - `/tp <UserId1> <UserId2>`
+        - `/tp <X> <Y>`
+        - `/tp <X> <Y> <Z>`
+        - `/tp <UserId> <X> <Y>`
+        - `/tp <UserId> <X> <Y> <Z>`
+        - `/tp home`
+        - `/tp oilrig`
+        - `/tp oilrig:Lv30`
+        - `/tp oilrig:Lv55`
+        - `/tp oilrig:Lv60`
+
+        **Description:** Teleports yourself, or a specified player, to another player, coordinates, the nearest owned base, or an oilrig destination.
+
+        **Note:** <span class='pd-badge pd-badge--beta'>Beta</span> RCON must include the player being teleported because RCON has no in-game character.
 
         **Arguments:**
 
+        - `<UserId>`: A player to teleport to, or the player being teleported when more arguments are supplied.
         - `<UserId1>`: The player to teleport.
         - `<UserId2>`: The target player.
+        - `<X> <Y> [Z]`: Map coordinates. If `Z` is omitted, PalDefender tries to find a usable ground height.
+        - `home`: Teleports to the nearest owned base.
+        - `oilrig`, `oilrig:Lv30`, `oilrig:Lv55`, `oilrig:Lv60`: Teleports to an oilrig destination.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
         /tp steam_76500000000000000 gdk_25300000000000000
+        /tp 100 -250
+        /tp oilrig:Lv60
         ```
 
     ??? info "/give_exp"
@@ -778,7 +851,7 @@ At the current version there are only Admin and RCON commands available.
 
         - `<UserId>`: The ID of the player.
         - `<PalId>`: The Pal to give.
-            - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            - **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
         - `[Level]`: (Optional) Level of the Pal. Default: 1.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
@@ -798,7 +871,7 @@ At the current version there are only Admin and RCON commands available.
         **Arguments:**
 
         - `<UserID>`: The ID of the player.
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
+        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](../FileTypes/PalTemplate.md)).
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -815,7 +888,7 @@ At the current version there are only Admin and RCON commands available.
         **Arguments:**
 
         - `<PalId>`: The Pal to give yourself.
-            - **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            - **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
         - `[Level]`: (Optional) Level of the Pal. Default: 1.
 
         **Permissions:** `Chat`, `Admin`
@@ -832,7 +905,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Arguments:**
 
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](/FileTypes/PalTemplate)).
+        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](../FileTypes/PalTemplate.md)).
 
         **Permissions:** `Chat`, `Admin`
 
@@ -941,7 +1014,7 @@ At the current version there are only Admin and RCON commands available.
         ??? quote "<PalId\>"
             **Description:** The Pal that will be inside the egg.
 
-            **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level\]"
             **Description:** (Optional) The level of the Pal inside the egg.
@@ -979,7 +1052,7 @@ At the current version there are only Admin and RCON commands available.
         ??? quote "<PalId\>"
             **Description:**  The Pal that will be inside the egg.
 
-            **Note:** Use the Pal's developer name, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level]"
             **Description:**  (Optional) The level of the Pal inside the egg.
@@ -1016,7 +1089,7 @@ At the current version there are only Admin and RCON commands available.
         ??? quote "<PalTemplate\>"
             **Description:** The name of the PalTemplate file to use.
 
-            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](/FileTypes/PalTemplate).
+            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
 
         ??? quote "[Level]"
             **Description:** (Optional) The level of the Pal inside the egg.
@@ -1053,7 +1126,7 @@ At the current version there are only Admin and RCON commands available.
         ??? quote "<PalTemplate\>"
             **Description:** The name of the PalTemplate file to use.
 
-            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](/FileTypes/PalTemplate).
+            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
 
         ??? quote "[Level]"
             **Description:** (Optional) The level of the Pal inside the egg.
@@ -1145,7 +1218,7 @@ At the current version there are only Admin and RCON commands available.
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/beta/Wiki/Commands/deletepals.md).
+            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/<span class='pd-badge pd-badge--beta'>Beta</span>/Wiki/Commands/deletepals.md).
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -1195,14 +1268,14 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/givetechpoints"
-        **Syntax:** `/givetechpoints <UserId> <Amount>`
+        **Syntax:** `/givetechpoints <UserId> [Amount=1]`
 
         **Description:** Gives the target user X technology points.
 
         **Arguments:**
 
         - `<UserId>`: The ID of the player to receive the technology points.
-        - `<Amount>`: The number of technology points to give.
+        - `[Amount]`: (Optional) The number of technology points to give. Default: 1.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -1212,14 +1285,14 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/givebosstechpoints"
-        **Syntax:** `/givebosstechpoints <UserId> <Amount>`
+        **Syntax:** `/givebosstechpoints <UserId> [Amount=1]`
 
         **Description:** Gives the target user X ancient technology points.
 
         **Arguments:**
 
         - `<UserId>`: The ID of the player to receive the ancient technology points.
-        - `<Amount>`: The number of ancient technology points to give.
+        - `[Amount]`: (Optional) The number of ancient technology points to give. Default: 1.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -1229,29 +1302,29 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/givemetechpoints"
-        **Syntax:** `/givemetechpoints <Amount>`
+        **Syntax:** `/givemetechpoints [Amount=1]`
 
         **Description:** Gives yourself X technology points.
 
         **Arguments:**
 
-        - `<Amount>`: The number of technology points to give yourself.
+        - `[Amount]`: (Optional) The number of technology points to give yourself. Default: 1.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        em/givetechpoints 10
+        /givemetechpoints 10
         ```
 
     ??? info "/givemebosstechpoints"
-        **Syntax:** `/givemebosstechpoints <Amount>`
+        **Syntax:** `/givemebosstechpoints [Amount=1]`
 
         **Description:** Gives yourself X ancient technology points.
 
         **Arguments:**
 
-        - `<Amount>`: The number of ancient technology points to give yourself.
+        - `[Amount]`: (Optional) The number of ancient technology points to give yourself. Default: 1.
 
         **Permissions:** `Chat`, `Admin`
 

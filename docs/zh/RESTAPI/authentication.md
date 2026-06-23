@@ -1,51 +1,57 @@
-# 认证和设置
+# Authentication & Setup
 
-## 启用 API
+## Enabling the API
 
-1. 打开：`Win64/PalDefender/RESTAPI/RESTConfig.json`
-2. 将 `"Enabled"` 设置为 `true`
-3. 重启服务器。
+1. Open: `Win64/PalDefender/RESTAPI/RESTConfig.json`
+2. Set `"Enabled"` to `true`
+3. Restart the server.
 
-启动时，您应该看到类似以下的日志：
+On startup you should see logs similar to:
 ```
 [16:42:28][info] [RESTAPI] Loaded 'RESTConfig.json'.
-[16:42:28][info] [RESTAPI] Loaded 1 Bearer token.
-<...>
+[16:42:31][info] [RESTAPI] Loaded 1 Bearer token.
 [16:42:31][info] [RESTAPI] Running PalDefender RESTAPI on port 17993
 ```
 
-## 端口
+## Port
 
-- **默认端口：** `17993`
+- **Default port:** `17993`
 
-**不要公开暴露它。** 如果您想从 LAN/机器外部访问 API，请将其放在**反向代理**（nginx / Caddy / Traefik）后面，并在那里终止 TLS。将实际的 PalDefender REST API 绑定到 localhost 或私有接口。
+**Do not expose it publicly.** If you want to access the API from outside your LAN / machine, put it behind a **reverse proxy** (nginx / Caddy / Traefik) and terminate TLS there. Keep the actual PalDefender REST API bound to localhost or a private interface.
 
-## 令牌
+## Tokens
 
-- 启动服务器一次以生成示例令牌。
-- `Win64/PalDefender/RESTAPI/Tokens/` 内的每个 `.json` 文件都被视为有效令牌文件。（唯一的例外是文件 `TokenExample.json`！）
-- **为每个人/服务创建一个令牌**。令牌就是密码。
+- Start the server once to generate an example token.
+- Every `.json` file inside `Win64/PalDefender/RESTAPI/Tokens/` is treated as a valid token file. (Only exception is the file `TokenExample.json`!)
+- Make **one token per person/service**. Tokens are passwords.
 
-示例令牌文件：
+Example token file:
 
 ```json
 {
-  "Token": "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa"
+  "Name": "AdminPanel",
+  "Token": "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa",
+  "Permissions": [
+    "REST.*"
+  ]
 }
 ```
 
-## 请求头
-通过标准 Authorization 请求头发送令牌：
+!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
+    `Permissions` may be a string or an array of strings. Use narrower permissions for public dashboards or automation that should not have full admin access.
+
+## Headers
+Send the token via the standard Authorization header:
 ```
 Authorization: Bearer DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa
 ```
 
-Python 示例
+Python example
 ```py
 import requests
 
 base_url = "http://127.0.0.1:17993"
-# 不要这样做。永远不要在代码中存储令牌。使用类似 .env 的东西！这仅用于演示。
+# do not do this. Never store the token in any code. use smth like .env! This is only for demonstration.
 token = "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa"
 
 headers = {"Authorization": f"Bearer {token}"}

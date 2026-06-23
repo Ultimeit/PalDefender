@@ -1,17 +1,17 @@
-# 安装
+# Installation
 
-PalDefender 依赖于 Windows 环境，如果您计划在基于 Linux 的机器上托管 Palworld 服务器，您需要安装 Wine 或 Proton。
+PalDefender is dependend on a windows environment, if you plan to host your Palworld server on a Linux based machine, you will need to install Wine or Proton.
 
-本文不涵盖 Palworld 服务器本身的安装。我们建议按照这些[步骤](./Partnerships.md#how-to-get-the-10-discount)从 Qonzer 获取服务器。
+Installing a Palworld server itself is not covered here. We suggest getting a server from Qonzer following those [Steps](./Partnerships.md#how-to-get-the-10-discount).
 
 ---
 
 ## Windows
 
-1. 从 <a href="https://github.com/Ultimeit/PalDefender/releases/latest/" target="_blank">GitHub/releases</a> 下载 <span class="file">PalDefender_Windows.zip</span>
-2. 解压 <span class="file">PalDefender_Windows.zip</span> 的内容并将其放置到您的 PalServer 子目录中：
+1. Donwload <span class="file">PalDefender_Windows.zip</span> from <a href="https://github.com/Ultimeit/PalDefender/releases/latest/" target="_blank">GitHub/releases</a>
+2. Extract the contents of <span class="file">PalDefender_Windows.zip</span> and place it into your PalServer sub-directory:
 <span class="path">.../Pal/Binaries/Win64/</span>
-3. 您的目录结构应该如下所示：
+3. Your structure should look like this:
 ```yaml
 Palworld_Server/
 ├── Engine/
@@ -19,10 +19,14 @@ Palworld_Server/
 │   ├── Binaries/
 │   │   └── Win64
 │   │       ├── config/
-│   │       ├── PalDefender/                      // 将生成（步骤 4）
+│   │       ├── PalDefender/                      // Will be generated (Step 4)
+│   │       │   ├── Banlist.json
+│   │       │   ├── Config.json
+│   │       │   ├── Pals/
+│   │       │   └── RESTAPI/
 │   │       ├── <...>
-│   │       ├── PalDefender.dll                   << 放置于此（步骤 2）
-│   │       ├── d3d9.dll                          << 放置于此（步骤 2）
+│   │       ├── PalDefender.dll                   << Put here (Step 2)
+│   │       ├── d3d9.dll                          << Put here (Step 2)
 │   │       ├── PalServer-Win64-Shipping-Cmd.exe
 │   │       └── PalServer-Win64-Shipping.exe
 │   ├── Content/
@@ -42,20 +46,19 @@ Palworld_Server/
 │           │     ├── Players/
 │           │     ├── Level.sav
 │           │     └── LevelMeta.sav
-│           └── banlist.txt
 ├── PalServer.exe
 ├── steamclient.dll
 └── <...>
 ```
-4. 启动服务器一次以在 <span class="path">.../Pal/Binaries/Win64/PalDefender/</span> 生成 PalDefender 文件结构（见上文）
-5. 根据您的喜好编辑配置。我们建议开启白名单。
+4. Start your server once to generate the PalDefender file structure at <span class="path">.../Pal/Binaries/Win64/PalDefender/</span> (see above)
+5. Edit the configuration to your favors. We recommend turning on the whitelist.
 
 ---
 
 ## Linux (Wine/Proton)
 
-必须先安装 **Wine 或 Proton**，否则以下步骤将无法工作。
+Wine or Proton **must** be installed, otherwise the following steps will not work.
 
-Palworld 服务器在 Linux 下的部署 **不由 PalDefender 管理**，需要你自行完成（包括 Wine / Proton 的配置、服务器启动等）。
+The Palworld server setup on Linux is **not managed by PalDefender** and must be handled manually by you (Wine/Proton configuration, server startup, etc.).
 
-当服务器能够在 Wine 或 Proton 环境下 **正常运行** 后，**PalDefender 的安装步骤与 Windows 完全一致**，可以直接按照 Windows 的安装说明进行。
+Once the server is running correctly under Wine or Proton, you can **follow the Windows installation instructions exactly**, as the PalDefender setup itself is identical.

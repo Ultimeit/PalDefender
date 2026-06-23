@@ -2,4 +2,4 @@
 venv/*
 site/*
 /.idea
-RESTAPI-Reference/*
+Reference/*

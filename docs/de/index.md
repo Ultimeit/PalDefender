@@ -1,4 +1,4 @@
-# Startseite
+# Home
 
 ![PalDefender Logo](../assets/LogoWiki.jpg)
 <a href="https://discord.com/invite/bdTxPbwSEW" target="_blank">![Discord Server](https://img.shields.io/badge/-Join%20our%20Discord-111111?style=for-the-badge&logo=discord)</a>
@@ -32,44 +32,41 @@
 
 ---
 
-## Vorwort
-Dieses Wiki befindet sich derzeit im Aufbau und ist daher noch unvollständig. Wir würden uns freuen, wenn du Beiträge leistest oder auf Fehler hinweist, damit das Wiki Schritt für Schritt weiter wachsen kann.
+## Foreword
+We would appreciate if you contribute to the Wiki or point out mistakes, so the Wiki slowly and steady fills up.
 
-Der Quellcode ist **Closed Source** und es gibt derzeit **keine Pläne**, ihn zu veröffentlichen.
-
----
-
-## Über PalDefender
-
-PalDefender implementiert umfassende serverseitige Prüfmechanismen, um eine Vielzahl bekannter sowie bislang unbekannter Cheats, Exploits und Abstürze zu verhindern. Bevor eine Spieleraktion ausgeführt wird, prüft PalDefender diese auf potenziell verdächtiges oder manipulatives Verhalten.
-
-Abhängig von der Serverkonfiguration werden Spieler bei solchen Aktionen verwarnt, gekickt, gebannt oder IP-gesperrt. Diese Funktion befindet sich aktuell in der **Beta-Phase** und ist derzeit **ausschließlich für Windows-basierte Dedicated Server** verfügbar.
-
-**Erfahrene Linux-Entwickler sind ausdrücklich eingeladen, uns zu unterstützen.**
+The code is closed source and we dont have any plans to release it.
 
 ---
 
-## Autor(en)
+## About
 
-- <a href="https://github.com/Zvendson" target="_blank">Zvendson</a> (Derzeitiger Programmierer & Projektbetreuer)
-- <a href="https://github.com/Ultimeit" target="_blank">Ultimeit</a> (Ursprünglicher Entwickler)
+PalDefender implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, this feature is in <span class='pd-badge pd-badge--beta'>Beta</span> and is available exclusively for Windows-based dedicated servers.
 
+**Any experienced Linux dev is welcome to help us out.**
+
+---
+
+## Authors
+
+- <a href="https://github.com/Zvendson" target="_blank">Zvendson</a> (Current Maintainer)
+- <a href="https://github.com/Ultimeit" target="_blank">Ultimeit</a> (Original Creator)
 ---
 
 ## Credits
 
 - <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a>
-- <a href="https://www.unrealengine.com" target="_blank">Unreal Engine</a> – Epic Games
+- <a href="https://www.unrealengine.com" target="_blank">Unreal Engine</a> - Epic Games
 
 ---
 
-## Nachwort
+## Afterwords
 
 私たちは、<a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a>による素晴らしい仕事に感謝の意を表したいと思います。色鮮やかな世界や、パルとのダイナミックなインタラクション、そして創造的なデザインは、チームの献身と情熱を見事に表しています。コミュニティの一員として、私たちはPalServer向けのプラグインを開発し、セキュリティを強化し、潜在的な悪用から守ることでPalworldをサポートしています
 
 私たちは今後も、Palworldサーバーに最高水準のセキュリティと保護を提供できるよう努め続けます。皆様からのフィードバックは非常に貴重で、心から感謝しています。<br>
 ~ <a href="https://github.com/Zvendson" target="_blank">Zvend</a>
 
-> *Wir möchten <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a> für ihre beeindruckende Arbeit an Palworld danken. Die lebendige Welt, die dynamischen Interaktionen mit den Pals und das kreative Design zeigen die Hingabe und Leidenschaft des Teams. Als Community arbeiten wir daran, Palworld zu unterstützen, indem wir ein Plugin für den PalServer entwickeln, das die Sicherheit erhöht und vor möglichen Exploits schützt.*
->
-> *Wir werden weiterhin danach streben, das höchstmögliche Sicherheits- und Schutzniveau für euren Palworld-Server zu gewährleisten. Euer Feedback ist für uns unverzichtbar und wir danken euch herzlich dafür.*
+> *We want to express our gratitude to <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a> for their incredible work on Palworld. The vibrant world, dynamic interactions with Pals, and creative design showcase the team's dedication and passion. As a community, we are also working to support Palworld by developing a plugin for the PalServer that enhances security and protects it from potential exploits.*
+<br><br>
+*We will continue striving to provide the highest level of security and protection for your Palworld server. Your feedback is invaluable, and we truly appreciate it.*

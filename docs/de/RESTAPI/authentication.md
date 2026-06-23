@@ -1,53 +1,57 @@
-# Authentifizierung & Einrichtung
+# Authentication & Setup
 
-## API aktivieren
+## Enabling the API
 
-1. Öffne: `Win64/PalDefender/RESTAPI/RESTConfig.json`
-2. Setze `"Enabled"` auf `true`
-3. Starte den Server neu.
+1. Open: `Win64/PalDefender/RESTAPI/RESTConfig.json`
+2. Set `"Enabled"` to `true`
+3. Restart the server.
 
-Beim Start solltest du Logs ähnlich zu diesen sehen:
+On startup you should see logs similar to:
 ```
 [16:42:28][info] [RESTAPI] Loaded 'RESTConfig.json'.
-[16:42:28][info] [RESTAPI] Loaded 1 Bearer token.
-<...>
+[16:42:31][info] [RESTAPI] Loaded 1 Bearer token.
 [16:42:31][info] [RESTAPI] Running PalDefender RESTAPI on port 17993
 ```
 
 ## Port
 
-- **Standardport:** `17993`
+- **Default port:** `17993`
 
-**Nicht öffentlich zugänglich machen.**
-Wenn du von außerhalb deines LANs / deiner Maschine auf die API zugreifen möchtest, setze einen **Reverse Proxy** davor (nginx / Caddy / Traefik) und terminiere TLS dort. Die eigentliche PalDefender REST API sollte weiterhin nur an `localhost` oder ein privates Interface gebunden sein.
+**Do not expose it publicly.** If you want to access the API from outside your LAN / machine, put it behind a **reverse proxy** (nginx / Caddy / Traefik) and terminate TLS there. Keep the actual PalDefender REST API bound to localhost or a private interface.
 
 ## Tokens
 
-- Starte den Server einmal, um ein Beispiel-Token generieren zu lassen.
-- Jede `.json`-Datei im Verzeichnis `Win64/PalDefender/RESTAPI/Tokens/` wird als gültige Token-Datei behandelt.
-  (**Einzige Ausnahme:** `TokenExample.json`)
-- Erstelle **ein Token pro Person bzw. Dienst**. Tokens sind **Passwörter**.
+- Start the server once to generate an example token.
+- Every `.json` file inside `Win64/PalDefender/RESTAPI/Tokens/` is treated as a valid token file. (Only exception is the file `TokenExample.json`!)
+- Make **one token per person/service**. Tokens are passwords.
 
-Beispiel für eine Token-Datei:
+Example token file:
+
 ```json
 {
-  "Token": "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa"
+  "Name": "AdminPanel",
+  "Token": "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa",
+  "Permissions": [
+    "REST.*"
+  ]
 }
 ```
 
+!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
+    `Permissions` may be a string or an array of strings. Use narrower permissions for public dashboards or automation that should not have full admin access.
+
 ## Headers
-Sende das Token über den standardmäßigen Authorization-Header:
+Send the token via the standard Authorization header:
 ```
 Authorization: Bearer DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa
 ```
 
-Python-Beispiel
+Python example
 ```py
 import requests
 
 base_url = "http://127.0.0.1:17993"
-# Tu das nicht. Speichere Tokens niemals direkt im Code.
-# Verwende z. B. .env-Dateien. Dies dient nur der Demonstration.
+# do not do this. Never store the token in any code. use smth like .env! This is only for demonstration.
 token = "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa"
 
 headers = {"Authorization": f"Bearer {token}"}
