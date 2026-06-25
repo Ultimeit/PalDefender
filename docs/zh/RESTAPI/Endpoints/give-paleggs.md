@@ -24,6 +24,10 @@ None.
 
 JSON object with `PalEggs`, an array of egg grants. `EggID` is an [`ItemID`](https://paldeck.cc/items). Each egg must use either [`PalID`](https://paldeck.cc/pals) or `PalTemplate`, not both.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/give-paleggs.md"
+
 ## Error responses
 
 Error bodies use this shape:

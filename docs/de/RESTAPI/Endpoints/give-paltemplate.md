@@ -24,6 +24,10 @@ None.
 
 JSON object with `PalTemplates`, an array of template filenames. The `.json` extension may be included for clarity.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/give-paltemplate.md"
+
 ## Error responses
 
 Error bodies use this shape:

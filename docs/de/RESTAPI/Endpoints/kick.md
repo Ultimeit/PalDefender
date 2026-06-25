@@ -24,6 +24,10 @@ None.
 
 Optional JSON field: `Reason` string.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/kick.md"
+
 ## Error responses
 
 Error bodies use this shape:

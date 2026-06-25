@@ -24,6 +24,10 @@ None.
 
 JSON object with `Items`, an array of item grants. Each entry needs an [`ItemID`](https://paldeck.cc/items) and positive `Count`.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/give-items.md"
+
 ## Error responses
 
 Error bodies use this shape:

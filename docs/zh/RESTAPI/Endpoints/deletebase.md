@@ -24,6 +24,10 @@ None.
 
 Optional empty JSON object. Confirm the ID before sending the request.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/deletebase.md"
+
 ## Error responses
 
 Error bodies use this shape:

@@ -24,6 +24,10 @@ None.
 
 JSON object with at least one positive integer field: `EXP`, `Lifmunks`, `TechnologyPoints`, or `AncientTechnologyPoints`.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/give-progression.md"
+
 ## Error responses
 
 Error bodies use this shape:

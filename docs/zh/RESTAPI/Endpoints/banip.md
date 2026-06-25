@@ -24,6 +24,10 @@ None.
 
 Optional JSON fields: `Reason` string and `UserId` string when the IP ban should be associated with a user.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/banip.md"
+
 ## Error responses
 
 Error bodies use this shape:

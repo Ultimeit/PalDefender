@@ -30,6 +30,10 @@ None.
 
 No request body.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/banlist.md"
+
 ## Error responses
 
 Error bodies use this shape:

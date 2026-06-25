@@ -24,6 +24,10 @@ None.
 
 JSON object with `SendType`, `Message`, and either `UserID` or `UserIDs`. Optional `Sender` sets the displayed sender where supported. Common `SendType` values include `PlayerChat`, `PlayerGlobalChat`, `PlayerGuildChat`, `PlayerLogNormal`, `PlayerLogImportant`, and `PlayerLogVeryImportant`.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/send-player-message.md"
+
 ## Error responses
 
 Error bodies use this shape:

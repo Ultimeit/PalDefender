@@ -24,6 +24,10 @@ None.
 
 JSON object with `Message` string.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/alert.md"
+
 ## Error responses
 
 Error bodies use this shape:

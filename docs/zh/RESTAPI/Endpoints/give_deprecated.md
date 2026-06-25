@@ -6,6 +6,10 @@
     This legacy reward endpoint is deprecated. Prefer the split <span class='pd-badge pd-badge--beta'>Beta</span> reward endpoints: [give progression](./give-progression.md), [give items](./give-items.md), [give pals](./give-pals.md), [give pal templates](./give-paltemplate.md), and [give Pal eggs](./give-paleggs.md).
 
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/give_deprecated.md"
+
 ## Error responses
 
 This endpoint is deprecated and may not be present in current builds. When available, error bodies use the same REST error envelope as the current API.

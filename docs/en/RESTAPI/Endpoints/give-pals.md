@@ -24,6 +24,10 @@ None.
 
 JSON object with `Pals`, an array of Pal grants. Each entry needs a [`PalID`](https://paldeck.cc/pals) and positive `Level`.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/give-pals.md"
+
 ## Error responses
 
 Error bodies use this shape:

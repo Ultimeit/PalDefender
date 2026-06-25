@@ -24,6 +24,10 @@ None.
 
 `Technology` can be a single [`TechID`](https://paldeck.cc/technology), the string `"All"`, or an array of [`TechID`](https://paldeck.cc/technology) strings. Do not put `"All"` inside an array.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/learntech.md"
+
 ## Error responses
 
 Error bodies use this shape:

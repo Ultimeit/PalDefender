@@ -24,6 +24,10 @@ None.
 
 No request body.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/techs.md"
+
 ## Error responses
 
 Error bodies use this shape:

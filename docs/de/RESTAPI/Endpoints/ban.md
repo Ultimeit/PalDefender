@@ -24,6 +24,10 @@ None.
 
 Optional JSON fields: `Reason` string and `IP` boolean. Set `IP` to `true` only when you also want to ban the resolved IP address.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/ban.md"
+
 ## Error responses
 
 Error bodies use this shape:

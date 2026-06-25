@@ -24,6 +24,10 @@ None.
 
 JSON object with `Message` string and optional `Sender` string.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/broadcast.md"
+
 ## Error responses
 
 Error bodies use this shape:

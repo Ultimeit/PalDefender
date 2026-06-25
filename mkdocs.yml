@@ -9,6 +9,9 @@ repo_name: Ultimeit/PalDefender
 extra_css:
   - stylesheets/extra.css
 
+exclude_docs: |
+  _snippets/**
+
 theme:
   name: material
   font:
@@ -80,7 +83,9 @@ markdown_extensions:
       pygments_lang_class: true
       use_pygments: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

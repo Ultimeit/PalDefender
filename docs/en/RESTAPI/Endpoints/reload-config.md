@@ -24,6 +24,10 @@ None.
 
 Optional empty JSON object.
 
+## Response schema
+
+--8<-- "_snippets/restapi/schemas/reload-config.md"
+
 ## Error responses
 
 Error bodies use this shape:
