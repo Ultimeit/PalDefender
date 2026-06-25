@@ -2,19 +2,54 @@
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `Records` | object[] | Ban records that match the supplied filters. |
+| `Banlist` | object | Banlist data after applying query filters. |
 
-`Records[]` item schema:
+`Banlist` object schema:
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `EntryType` | string | Ban record type, such as user or IP. |
-| `UserId` | string | Banned user ID, when the record is user-related. |
-| `UserIP` | string | Banned IP address, when present. |
-| `Reason` | string | Reason recorded for the ban or unban operation. |
-| `Active` | boolean | Whether the ban record is currently active. |
-| `IssuerType` | string | Source type that created the record. |
-| `IssuerName` | string | Name of the actor that created the record. |
-| `IssuerIP` | string | IP metadata for the issuer, when available. |
-| `CreatedAt` | string | Record creation timestamp. |
-| `UpdatedAt` | string | Last update timestamp. |
+| `Version` | integer | Banlist file format version. |
+| `BannedMessage` | string | Message shown to banned players. |
+| `UserEntries` | object[] | User ban entries that match the supplied filters. |
+| `IPEntries` | object[] | IP ban entries that match the supplied filters. |
+
+`UserEntries[]` item schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `UserId` | string | Banned user ID. |
+| `Active` | boolean | Whether the ban is currently active. |
+| `BannedBy` | object | Issuer data for the ban action. |
+| `UnbannedBy` | object | Issuer data for the unban action, when present. |
+
+`IPEntries[]` item schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `IP` | string | Banned IP address. |
+| `Active` | boolean | Whether the ban is currently active. |
+| `BannedBy` | object | Issuer data for the ban action. |
+| `UnbannedBy` | object | Issuer data for the unban action, when present. |
+
+Issuer object schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Type` | string | Issuer type, such as `rest`, `player`, or `system`. |
+| `NameValue` | string | Issuer name, user ID, token, or type fallback. |
+| `IP` | string | Issuer IP address metadata. |
+| `Reason` | string | Reason recorded for the action. |
+| `Timestamp` | object | UTC timestamp components for the action. |
+
+Timestamp object schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `UTC` | integer | Unix timestamp in seconds. |
+| `Year` | integer | UTC year. |
+| `Month` | integer | UTC month. |
+| `Day` | integer | UTC day of month. |
+| `Hour` | integer | UTC hour. |
+| `Min` | integer | UTC minute. |
+| `Sec` | integer | UTC second. |
+| `Msec` | integer | Millisecond component. |

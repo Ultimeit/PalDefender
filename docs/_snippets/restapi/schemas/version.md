@@ -2,7 +2,16 @@
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `version` | string | Server version. |
-| `servername` | string | Server name. |
-| `description` | string | Server description. |
-| `worldguid` | string | World GUID. |
+| `Version` | object | PalDefender version details. |
+
+`Version` object schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Major` | integer | Major version number. |
+| `Minor` | integer | Minor version number. |
+| `Patch` | integer | Patch version number. |
+| `Build` | integer | Build number. |
+| `Version` | string | Short version string. |
+| `VersionLong` | string | Long version string. |
+| `Beta` | boolean | Whether this build is marked as beta. |

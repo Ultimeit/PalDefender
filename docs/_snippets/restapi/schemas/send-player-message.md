@@ -1,3 +1,6 @@
 ### 200 response schema
 
-No JSON response body is returned on success.
+| Field | Type | Description |
+|-------|------|-------------|
+| `Success` | boolean | `true` when the message was sent. |
+| `SentCount` | integer | Number of target players that received the message. |

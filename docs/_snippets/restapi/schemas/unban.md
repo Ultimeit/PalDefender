@@ -1,3 +1,6 @@
 ### 200 response schema
 
-No JSON response body is returned on success.
+| Field | Type | Description |
+|-------|------|-------------|
+| `Success` | boolean | `true` when the active user ban was removed. |
+| `UserId` | string | User ID that was unbanned. |

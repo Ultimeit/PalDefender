@@ -1,3 +1,5 @@
 ### 200 response schema
 
-No JSON response body is returned on success.
+| Field | Type | Description |
+|-------|------|-------------|
+| `Success` | boolean | `true` when the config reload was triggered. |

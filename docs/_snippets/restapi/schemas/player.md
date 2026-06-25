@@ -2,15 +2,26 @@
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `Name` | string | Player name. |
-| `AccountName` | string | Platform account name. |
-| `PlayerId` | string | Palworld player ID. |
-| `UserId` | string | Platform user ID. |
+| `Player` | object | Player details. |
+
+`Player` object schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Name` | string | Current or saved player name. |
+| `IP` | string | Player IP address, or an empty string when unavailable. |
 | `PlayerUID` | string | Player UID used by Palworld save data. |
-| `IP` | string | Player IP address, when available. |
-| `Ping` | number | Current player ping, when available. |
-| `LocationX` | number | Player location X coordinate, when available. |
-| `LocationY` | number | Player location Y coordinate, when available. |
-| `Level` | integer | Current player level. |
-| `BuildingCount` | integer | Number of buildings owned by the player. |
-| `IsOnline` | boolean | Whether the player is currently online. |
+| `UserId` | string | Platform user ID, or an empty string when unavailable. |
+| `GuildName` | string | Guild name, or an empty string when unavailable. |
+| `GuildUUID` | string | Guild UUID, or a zero GUID when unavailable. |
+| `Status` | string | Saved player account state. |
+| `WorldLocation` | object | Current or last saved world coordinates. |
+| `MapLocation` | object | Converted map coordinates. |
+
+Location object schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `x` | number | X coordinate. |
+| `y` | number | Y coordinate. |
+| `z` | number | Z coordinate. |

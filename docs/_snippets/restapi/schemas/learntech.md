@@ -1,3 +1,7 @@
 ### 200 response schema
 
-No JSON response body is returned on success.
+| Field | Type | Description |
+|-------|------|-------------|
+| `UnlockedCount` | integer | Number of technologies unlocked by this request. |
+| `Unlocked` | string[] | Technology IDs that were unlocked. |
+| `Skipped` | string[] | Technology IDs skipped because they were already unlocked. |

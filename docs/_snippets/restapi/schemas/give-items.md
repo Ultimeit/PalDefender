@@ -1,3 +1,11 @@
 ### 200 response schema
 
-No JSON response body is returned on success.
+| Field | Type | Description |
+|-------|------|-------------|
+| `Granted` | object | Counts granted by the request. |
+
+`Granted` object schema:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `Items` | integer | Total item units granted. |
