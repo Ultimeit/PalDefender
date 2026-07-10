@@ -1,44 +1,44 @@
-# Commands
+# Befehle
 
-## What Are Commands?
+## Was sind Befehle?
 
-Commands are special text-based instructions that allow you to interact with the game. By typing commands into the chat, you can perform actions like teleporting, spawning creatures, or managing players. Commands usually start with a <span class="var-command">/</span> followed by the command name and optional arguments.
+Befehle sind spezielle textbasierte Anweisungen, mit denen du mit dem Spiel interagieren kannst. Wenn du Befehle in den Chat eingibst, kannst du Aktionen wie Teleportieren, Spawnen von Kreaturen oder Spielerverwaltung ausführen. Befehle beginnen normalerweise mit <span class="var-command">/</span>, gefolgt vom Befehlsnamen und optionalen Argumenten.
 
-## Who Can Use Commands?
+## Wer kann Befehle verwenden?
 
-**Currently there is no command that non-admin player can use.**
-At the current version there are only Admin and RCON commands available.
+**Aktuell gibt es keinen Befehl, den Nicht-Admins verwenden können.**
+In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
-## Commands List
+## Befehlsliste
 
-!!! note "Command Syntax"
+!!! note "Befehlssyntax"
     <span class="var-command">/command_name&nbsp;</span><span class="var-command-arg">&lt;required_argument&gt;&nbsp;</span><span class="var-command-optional">[optional_argument={?}]</span>
     <br>
     <br>
     <p>
-    <span class="var-command-arg">&lt;required_argument&gt;</span> → Must be included.<br>
-    <span class="var-command-optional">[optional_argument={?}]</span> → Can be omitted. The <span class="var-command-optional">{?}</span> indicates the default value being used when omitted.
+    <span class="var-command-arg">&lt;required_argument&gt;</span> → Muss angegeben werden.<br>
+    <span class="var-command-optional">[optional_argument={?}]</span> → Kann weggelassen werden. <span class="var-command-optional">{?}</span> zeigt den Standardwert an, der dann verwendet wird.
     </p>
     <p>
-    Arguments have different types. The most common are <span class="var-string">strings</span>, <span class="var-number">numbers</span>, <span class="var-float">floats</span> and <span class="var-bool">booleans</span>. Some command even have complex types such as specific <span class="file">filenames</span> in a special directory or actually a <span class="var-filter">filter</span>.
+    Argumente haben unterschiedliche Typen. Am häufigsten sind <span class="var-string">Strings</span>, <span class="var-number">Zahlen</span>, <span class="var-float">Floats</span> und <span class="var-bool">Booleans</span>. Manche Befehle haben auch komplexe Typen wie bestimmte <span class="file">Dateinamen</span> in einem speziellen Ordner oder einen <span class="var-filter">Filter</span>.
     </p>
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
-    Use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/items](https://paldeck.cc/items) for `ItemID`, [paldeck.cc/technology](https://paldeck.cc/technology) for `TechID`, [paldeck.cc/buildings](https://paldeck.cc/buildings) for `BuildingID`, [paldeck.cc/passives](https://paldeck.cc/passives) for `PassiveID`, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
+!!! tip "ID-Suche"
+    Nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `PalID`, [paldeck.cc/items](https://paldeck.cc/items) für `ItemID`, [paldeck.cc/technology](https://paldeck.cc/technology) für `TechID`, [paldeck.cc/buildings](https://paldeck.cc/buildings) für `BuildingID`, [paldeck.cc/passives](https://paldeck.cc/passives) für `PassiveID` und [paldeck.cc/skills](https://paldeck.cc/skills) für Skill-IDs.
 
-??? note "RCON only"
+??? note "Nur RCON"
     ??? info "/getrconcmds"
         **Syntax:** `/getrconcmds`
 
-        **Description:** Returns a list of every command with the required arg count which is usable by RCON.
+        **Beschreibung:** Gibt eine Liste aller per RCON nutzbaren Befehle inklusive benötigter Argumentanzahl zurück.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `RCON`
+        **Berechtigungen:** `RCON`
 
-        **Example:**
+        **Beispiel:**
         ```
         /getrconcmds
         ```
@@ -47,15 +47,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/version"
         **Syntax:** `/version`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Shows the Palworld game version and PalDefender version. RCON returns JSON output.
+        **Beschreibung:** Zeigt die Palworld-Spielversion und die PalDefender-Version. RCON liefert JSON-Ausgabe zurück.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /version
         ```
@@ -63,15 +63,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/reloadcfg"
         **Syntax:** `/reloadcfg`
 
-        **Description:** Reloads `Config.json`, `WhiteList.json`, and PalDefender ban data.
+        **Beschreibung:** Lädt `Config.json`, `WhiteList.json` und PalDefender-Bandaten neu.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /reloadcfg
         ```
@@ -79,15 +79,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/addadminip"
         **Syntax:** `/addadminip <IP>`
 
-        **Description:** Adds an IP address to admin whitelist.
+        **Beschreibung:** Fügt der Admin-Whitelist eine IP-Adresse hinzu.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<IP>`: The IP address to add as admin.
+        - `<IP>`: Die IP-Adresse, die als Admin hinzugefügt wird.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /addadminip 192.168.1.1
         ```
@@ -95,15 +95,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/setadmin"
         **Syntax:** `/setadmin <UserId>`
 
-        **Description:** Temporarily grants/revokes admin from a player.
+        **Beschreibung:** Erteilt oder entzieht einem Spieler temporär Adminrechte.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to grant/revoke admin.
+        - `<UserId>`: Die ID des Spielers, dem Adminrechte erteilt/entzogen werden.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /setadmin steam_76500000000000000
         ```
@@ -111,15 +111,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/pgbroadcast"
         **Syntax:** `/pgbroadcast <Message>`
 
-        **Description:** Send a message to all players in the server.
+        **Beschreibung:** Sendet eine Nachricht an alle Spieler auf dem Server.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<Message>`: The message to broadcast.
+        - `<Message>`: Die zu sendende Broadcast-Nachricht.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /pgbroadcast "Server will restart soon."
         ```
@@ -127,15 +127,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/adminlogin"
         **Syntax:** `/adminlogin <password>`
 
-        **Description:** Logs you into admin mode. Requires your admin password as an argument.
+        **Beschreibung:** Meldet dich im Adminmodus an. Benötigt dein Adminpasswort als Argument.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<password>`: The admin password.
+        - `<password>`: Das Adminpasswort.
 
-        **Permissions:** `Chat`
+        **Berechtigungen:** `Chat`
 
-        **Example:**
+        **Beispiel:**
         ```
         /adminlogin mySecretPassword
         ```
@@ -143,15 +143,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/adminlogout"
         **Syntax:** `/adminlogout`
 
-        **Description:** Logs you out of admin mode.
+        **Beschreibung:** Meldet dich aus dem Adminmodus ab.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /adminlogout
         ```
@@ -159,15 +159,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/iwantplayerlist"
         **Syntax:** `/iwantplayerlist`
 
-        **Description:** Enables the in-game player list overlay, allowing you to view every player's UserId and Player UID when you press ESC. Useful for server admins and players who want to see detailed player information directly in the game interface.
+        **Beschreibung:** Aktiviert das Spielerlisten-Overlay im Spiel, sodass du beim Drücken von ESC die UserId und Player UID jedes Spielers sehen kannst. Nützlich für Serveradmins und Spieler, die detaillierte Spielerinformationen direkt im Spiel sehen möchten.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /iwantplayerlist
         ```
@@ -175,15 +175,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/getpos"
         **Syntax:** `/getpos [UserId]`
 
-        **Description:** Gets your current position in the world, which can be used for teleporting, summoning, and similar actions. If a [UserId] is provided, gets the position of that player instead.
+        **Beschreibung:** Zeigt deine aktuelle Weltposition an, die für Teleports, Beschwörungen und ähnliche Aktionen genutzt werden kann. Wenn eine [UserId] angegeben wird, wird stattdessen die Position dieses Spielers ausgegeben.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[UserId]`: (Optional) The ID of the player whose position you want to get. If omitted, gets your own position.
+        - `[UserId]`: (Optional) Die ID des Spielers, dessen Position du abrufen willst. Wenn weggelassen, wird deine eigene Position abgerufen.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /getpos
         /getpos steam_76500000000000000
@@ -192,15 +192,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/settime"
         **Syntax:** `/settime <hour>`
 
-        **Description:** Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`.
+        **Beschreibung:** Ändert die Zeit in Palworld. Die Stunde kann Werte von `0` bis `23` sowie `day` und `night` haben.
 
-        **Arguments:**
+        **Argumente:**
 
         - `<hour>`: Hour value (0-23, day, night).
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /settime 12
         /settime night
@@ -209,15 +209,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/togglepvp"
         **Syntax:** `/togglepvp`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Toggles server PvP on or off for the current running session.
+        **Beschreibung:** Schaltet Server-PvP für die laufende Sitzung ein oder aus.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /togglepvp
         ```
@@ -225,15 +225,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/alert"
         **Syntax:** `/alert <message>`
 
-        **Description:** Sends an alert message to all players on the server. This message is usually displayed prominently on their screens.
+        **Beschreibung:** Sendet eine Warnmeldung an alle Spieler auf dem Server. Diese Nachricht wird normalerweise gut sichtbar auf dem Bildschirm angezeigt.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<message>`: The message to broadcast as an alert.
+        - `<message>`: Die Nachricht, die als Warnung gesendet wird.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /alert Server will restart in 5 minutes!
         ```
@@ -241,21 +241,21 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/send"
         **Syntax:** `/send <type> <UserId> <Message>`
 
-        **Description:** Allows you to send a message or log message to a specific player.
+        **Beschreibung:** Ermöglicht das Senden einer Nachricht oder Lognachricht an einen bestimmten Spieler.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<type>`: The type of message to send. Possible values:
+        - `<type>`: Der Typ der zu sendenden Nachricht. Mögliche Werte:
              - `msg`: Regular chat message.
              - `log`: Regular log message (white, disappears quickly, larger font).
              - `ilog`: Important log message (blue, stays longer).
              - `vilog`: Very important log message (blue, stays extremely long).
-        - `<UserId>`: The ID of the player to receive the message.
-        - `<Message>`: The message text to send.
+        - `<UserId>`: Die ID des Spielers, der die Nachricht erhalten soll.
+        - `<Message>`: Der zu sendende Nachrichtentext.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /send msg steam_76500000000000000 Dont miss out on Qonzer's sale!
         /send log steam_76500000000000000 Dont miss out on Qonzer's sale!
@@ -267,19 +267,19 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/getnearestbase"
         **Syntax:** `/getnearestbase [X] [Y] [Z]`
 
-        **Description:** Tells you the guild name which owns the base nearest to your character.
+        **Beschreibung:** Zeigt den Gildennamen der Basis an, die deinem Charakter am nächsten ist.
 
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **Hinweis:** Bei Ausführung über **RCON** sind alle Positionsparameter (`[X]` `[Y]` `[Z]`) **erforderlich**, da RCON keinen Spielercharakter hat, aus dem eine Position abgeleitet werden kann.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `[X]`: (Optional) X-Koordinate.
+        - `[Y]`: (Optional) Y-Koordinate.
+        - `[Z]`: (Optional) Z-Koordinate.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /getnearestbase 100 200 50
         ```
@@ -287,19 +287,19 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/gotonearestbase"
         **Syntax:** `/gotonearestbase [X] [Y] [Z]`
 
-        **Description:** Teleports you to the nearest base of the location.
+        **Beschreibung:** Teleportiert dich zur nächstgelegenen Basis am Standort.
 
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **Hinweis:** Bei Ausführung über **RCON** sind alle Positionsparameter (`[X]` `[Y]` `[Z]`) **erforderlich**, da RCON keinen Spielercharakter hat, aus dem eine Position abgeleitet werden kann.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `[X]`: (Optional) X-Koordinate.
+        - `[Y]`: (Optional) Y-Koordinate.
+        - `[Z]`: (Optional) Z-Koordinate.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /gotonearestbase 100 200 50
         ```
@@ -307,19 +307,19 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/killnearestbase"
         **Syntax:** `/killnearestbase [X] [Y] [Z]`
 
-        **Description:** Destroys the nearest base (**Use with caution!**).
+        **Beschreibung:** Zerstört die nächstgelegene Basis (**mit Vorsicht verwenden!**).
 
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **Hinweis:** Bei Ausführung über **RCON** sind alle Positionsparameter (`[X]` `[Y]` `[Z]`) **erforderlich**, da RCON keinen Spielercharakter hat, aus dem eine Position abgeleitet werden kann.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `[X]`: (Optional) X-Koordinate.
+        - `[Y]`: (Optional) Y-Koordinate.
+        - `[Z]`: (Optional) Z-Koordinate.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /killnearestbase 100 200 50
         ```
@@ -329,16 +329,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/kick"
         **Syntax:** `/kick <UserId> [Reason="Kicked by Admin."]`
 
-        **Description:** Kicks a player from the server.
+        **Beschreibung:** Kickt einen Spieler vom Server.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to kick.
-        - `[Reason]`: (Optional) Reason for kicking. Default: "Kicked by Admin."
+        - `<UserId>`: Die ID des zu kickenden Spielers.
+        - `[Reason]`: (Optional) Grund für den Kick. Standard: "Kicked by Admin."
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /kick steam_76500000000000000 "Spamming in chat"
         ```
@@ -346,16 +346,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/ban"
         **Syntax:** `/ban <UserId> [Reason="Banned by Admin."]`
 
-        **Description:** Bans and kicks a player from the server.
+        **Beschreibung:** Bannt und kickt einen Spieler vom Server.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to ban.
-        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+        - `<UserId>`: Die ID des zu bannenden Spielers.
+        - `[Reason]`: (Optional) Grund für den Bann. Standard: "Banned by Admin."
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /ban gdk_25300000000000000 "Cheating"
         ```
@@ -363,16 +363,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/ipban"
         **Syntax:** `/ipban <UserId> [Reason="Banned by Admin."]`
 
-        **Description:** Bans a player's IP address and then kicks them from the server.
+        **Beschreibung:** Bannt die IP-Adresse eines Spielers und kickt ihn anschließend vom Server.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to IP ban.
-        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+        - `<UserId>`: Die ID des Spielers, dessen IP gebannt wird.
+        - `[Reason]`: (Optional) Grund für den Bann. Standard: "Banned by Admin."
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /ipban steam_76500000000000000
         ```
@@ -380,15 +380,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/banip"
         **Syntax:** `/banip <IP>`
 
-        **Description:** Bans an IP address from the server.
+        **Beschreibung:** Bannt eine IP-Adresse vom Server.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<IP>`: The IP address to ban.
+        - `<IP>`: Die zu bannende IP-Adresse.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /banip 192.168.1.1
         ```
@@ -396,15 +396,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/unbanip"
         **Syntax:** `/unbanip <IP>`
 
-        **Description:** Removes an IP address from the banlist.
+        **Beschreibung:** Entfernt eine IP-Adresse aus der Bannliste.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<IP>`: The IP address to unban.
+        - `<IP>`: Die zu entbannende IP-Adresse.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /unbanip 192.168.1.1
         ```
@@ -412,16 +412,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/unban"
         **Syntax:** `/unban <UserId> [Reason="Unbanned by admin."]`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Removes a UserId from the PalDefender ban list.
+        **Beschreibung:** Entfernt eine UserId aus der PalDefender-Bannliste.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The UserId to unban.
-        - `[Reason]`: (Optional) Reason stored for the unban action.
+        - `<UserId>`: Die zu entbannende UserId.
+        - `[Reason]`: (Optional) Grund, der für die Entbannung gespeichert wird.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /unban steam_76500000000000000 "Appeal accepted"
         ```
@@ -429,15 +429,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/getip"
         **Syntax:** `/getip <UserId>`
 
-        **Description:** Shows you the IP address of a player.
+        **Beschreibung:** Zeigt die IP-Adresse eines Spielers an.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
+        - `<UserId>`: Die ID des Spielers.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /getip gdk_25300000000000000
         ```
@@ -445,15 +445,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/whitelist_add"
         **Syntax:** `/whitelist_add <UserId>`
 
-        **Description:** Adds a UserId to the whitelist.
+        **Beschreibung:** Fügt eine UserId zur Whitelist hinzu.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to whitelist.
+        - `<UserId>`: Die ID des Spielers für die Whitelist.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /whitelist_add steam_76500000000000000
         ```
@@ -461,15 +461,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/whitelist_remove"
         **Syntax:** `/whitelist_remove <UserId>`
 
-        **Description:** Removes a UserId from the whitelist.
+        **Beschreibung:** Entfernt eine UserId aus der Whitelist.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to remove from whitelist.
+        - `<UserId>`: Die ID des Spielers, der von der Whitelist entfernt wird.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /whitelist_remove gdk_25300000000000000
         ```
@@ -477,15 +477,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/whitelist_get"
         **Syntax:** `/whitelist_get`
 
-        **Description:** Shows the full list of the whitelisted players.
+        **Beschreibung:** Zeigt die vollständige Liste der Spieler auf der Whitelist.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /whitelist_get
         ```
@@ -493,15 +493,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/imcheater"
         **Syntax:** `/imcheater`
 
-        **Description:** Use this to test how your server responds to a cheater.
+        **Beschreibung:** Damit kannst du testen, wie dein Server auf einen Cheater reagiert.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /imcheater
         ```
@@ -509,15 +509,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/spectate"
         **Syntax:** `/spectate`
 
-        **Description:** Turns spectate mode on. Same as pressing hotkey `\`, but hotkey does not work for everyone, like console players.
+        **Beschreibung:** Aktiviert den Zuschauermodus. Entspricht dem Hotkey `\`, der jedoch nicht bei allen Spielern funktioniert, zum Beispiel auf Konsolen.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /spectate
         ```
@@ -539,22 +539,22 @@ At the current version there are only Admin and RCON commands available.
         - `/tp oilrig:Lv55`
         - `/tp oilrig:Lv60`
 
-        **Description:** Teleports yourself, or a specified player, to another player, coordinates, the nearest owned base, or an oilrig destination.
+        **Beschreibung:** Teleportiert dich oder einen angegebenen Spieler zu einem anderen Spieler, Koordinaten, der nächsten eigenen Basis oder einem Ölturm-Ziel.
 
-        **Note:** <span class='pd-badge pd-badge--beta'>Beta</span> RCON must include the player being teleported because RCON has no in-game character.
+        **Note:** RCON must include the player being teleported because RCON has no in-game character.
 
-        **Arguments:**
+        **Argumente:**
 
         - `<UserId>`: A player to teleport to, or the player being teleported when more arguments are supplied.
-        - `<UserId1>`: The player to teleport.
-        - `<UserId2>`: The target player.
-        - `<X> <Y> [Z]`: Map coordinates. If `Z` is omitted, PalDefender tries to find a usable ground height.
+        - `<UserId1>`: Der Spieler, der teleportiert wird.
+        - `<UserId2>`: Der Zielspieler.
+        - `<X> <Y> [Z]`: Kartenkoordinaten. Wenn `Z` weggelassen wird, versucht PalDefender eine nutzbare Bodenhöhe zu finden.
         - `home`: Teleports to the nearest owned base.
         - `oilrig`, `oilrig:Lv30`, `oilrig:Lv55`, `oilrig:Lv60`: Teleports to an oilrig destination.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /tp steam_76500000000000000 gdk_25300000000000000
         /tp 100 -250
@@ -564,16 +564,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/give_exp"
         **Syntax:** `/give_exp <UserId> <Amount>`
 
-        **Description:** Gives experience points to a player.
+        **Beschreibung:** Gibt einem Spieler Erfahrungspunkte.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
+        - `<UserId>`: Die ID des Spielers.
         - `<Amount>`: Amount of experience points.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /give_exp gdk_25300000000000000 1000
         ```
@@ -581,15 +581,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/giveme_exp"
         **Syntax:** `/giveme_exp <Amount>`
 
-        **Description:** Gives experience points to yourself.
+        **Beschreibung:** Gibt dir selbst Erfahrungspunkte.
 
-        **Arguments:**
+        **Argumente:**
 
         - `<Amount>`: Amount of experience points.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /giveme_exp 1000
         ```
@@ -597,16 +597,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/renameplayer"
         **Syntax:** `/renameplayer <UserId> <NewName>`
 
-        **Description:** Renames a player's nickname.
+        **Beschreibung:** Ändert den Spitznamen eines Spielers.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
-        - `<NewName>`: The new nickname.
+        - `<UserId>`: Die ID des Spielers.
+        - `<NewName>`: Der neue Spitzname.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /renameplayer steam_76500000000000000 NewNickname
         ```
@@ -614,16 +614,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givestats"
         **Syntax:** `/givestats <UserId> [Count=1]`
 
-        **Description:** Gives the player one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
+        **Beschreibung:** Gibt dem Spieler einen oder mehrere ungenutzte Statuspunkte; negative Werte ziehen Punkte ab. Bereits verteilte Punkte werden nicht beeinflusst.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to receive the status points.
-        - `[Count]`: (Optional) The number of Unused Status Points to give (can be negative to subtract). Default: 1.
+        - `<UserId>`: Die ID des Spielers, der die Statuspunkte erhalten soll.
+        - `[Count]`: (Optional) Anzahl der ungenutzten Statuspunkte; negative Werte ziehen ab. Standard: 1.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givestats steam_76500000000000000 5
         /givestats steam_76500000000000000 -2
@@ -632,15 +632,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemestats"
         **Syntax:** `/givemestats [Count=1]`
 
-        **Description:** Gives yourself one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
+        **Beschreibung:** Gibt dir selbst einen oder mehrere ungenutzte Statuspunkte; negative Werte ziehen Punkte ab. Bereits verteilte Punkte werden nicht beeinflusst.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[Count]`: (Optional) The number of Unused Status Points to give yourself (can be negative to subtract). Default: 1.
+        - `[Count]`: (Optional) Anzahl der ungenutzten Statuspunkte für dich selbst; negative Werte ziehen ab. Standard: 1.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemestats 5
         /givemestats -2
@@ -649,15 +649,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/godmode"
         **Syntax:** `/godmode [on/off]`
 
-        **Description:** Grants invulnerability including status effect immunity, denies consumption of food and restores health upon activation. Optionally allows one-shotting everything, if enabled in the config.
+        **Beschreibung:** Gewährt Unverwundbarkeit inklusive Immunität gegen Statuseffekte, verhindert Nahrungsverbrauch und stellt beim Aktivieren Gesundheit wieder her. Optional kann alles mit einem Treffer getötet werden, wenn dies in der Config aktiviert ist.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[on/off]`: (Optional) To explicitly enable or disable the godmode. Default: Toggles on and off.
+        - `[on/off]`: (Optional) Aktiviert oder deaktiviert Godmode explizit. Standard: Umschalten.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /godmode
         /godmode on
@@ -668,15 +668,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/setguildleader"
         **Syntax:** `/setguildleader <UserId>`
 
-        **Description:** Makes target player the leader of his current guild.
+        **Beschreibung:** Macht den Zielspieler zum Leiter seiner aktuellen Gilde.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to make guild leader.
+        - `<UserId>`: Die ID des Spielers, der Gildenleiter werden soll.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /setguildleader gdk_25300000000000000
         ```
@@ -684,36 +684,36 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/exportguilds"
         **Syntax:** `/exportguilds`
 
-        **Description:** Dumps every guild of the server into Pal/Binaries/Win64/PalDefender/guildexport.json.
+        **Beschreibung:** Exportiert alle Gilden des Servers nach Pal/Binaries/Win64/PalDefender/guildexport.json.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /exportguilds
         ```
-        Example output file: `Pal/Binaries/Win64/PalDefender/guildexport.json`
+        Beispiel-Ausgabedatei: `Pal/Binaries/Win64/PalDefender/guildexport.json`
 
 
 ??? note "Items"
     ??? info "/give"
         **Syntax:** `/give <UserId> <ItemId> [Amount=1]`
 
-        **Description:** Gives a player an item and if specified how many.
+        **Beschreibung:** Gibt einem Spieler ein Item und optional eine bestimmte Anzahl.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to give the item to.
-        - `<ItemId>`: The item to give.
-        - `[Amount]`: (Optional) How many. Default: 1.
+        - `<UserId>`: Die ID des Spielers, der das Item erhalten soll.
+        - `<ItemId>`: Das zu gebende Item.
+        - `[Amount]`: (Optional) Anzahl. Standard: 1.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /give steam_76500000000000000 Sword 2
         ```
@@ -721,16 +721,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/giveitems"
         **Syntax:** `/giveitems <UserId> <ItemId>[:<Amount>] ...`
 
-        **Description:** Gives a player more than 1 item in one command and if specified how many of each separated by a colon.
+        **Beschreibung:** Gibt einem Spieler mehrere Items mit einem Befehl; Mengen können pro Item mit Doppelpunkt angegeben werden.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to give the items to.
+        - `<UserId>`: Die ID des Spielers, der die Items erhalten soll.
         - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /giveitems gdk_25300000000000000 Sword:2 Shield:1
         ```
@@ -738,16 +738,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/giveme"
         **Syntax:** `/giveme <ItemId> [Amount=1]`
 
-        **Description:** Gives yourself an item and if specified how many.
+        **Beschreibung:** Gibt dir selbst ein Item und optional eine bestimmte Anzahl.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<ItemId>`: The item to give yourself.
-        - `[Amount]`: (Optional) How many. Default: 1.
+        - `<ItemId>`: Das Item, das du dir selbst gibst.
+        - `[Amount]`: (Optional) Anzahl. Standard: 1.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /giveme Sword 3
         ```
@@ -755,69 +755,77 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/delitem"
         **Syntax:** `/delitem <UserId> <ItemId> [Amount=1]`
 
-        **Description:** Deletes an item from a player and if specified how many. Default is `1` which will delete only 1 occurrence of that item. Use `all` instead of `1` to delete all occurrences.
+        **Beschreibung:** Löscht ein Item bei einem Spieler und optional eine bestimmte Anzahl. Standard ist `1`, wodurch nur ein Exemplar gelöscht wird. Nutze `all` statt `1`, um alle Exemplare zu löschen.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
-        - `<ItemId>`: The item to delete.
-        - `[Amount]`: (Optional) How many. Default: 1. Use `all` to delete all occurrences.
+        - `<UserId>`: Die ID des Spielers.
+        - `<ItemId>`: Das zu löschende Item.
+        - `[Amount]`: (Optional) Anzahl. Standard: 1. Nutze `all`, um alle Vorkommen zu löschen.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /delitem steam_76500000000000000 Sword 1
         /delitem gdk_25300000000000000 Sword all
         ```
 
     ??? info "/give_relic"
-        **Syntax:** `/give_relic <UserId> <Amount>`
+        **Syntax:** `/give_relic <UserId> <RelicType> [Amount]`
 
-        **Description:** Gives the player one or more Lifmunk Effigies.
+        **Beschreibung:** Gibt dem Spieler einen oder mehrere Reliktpunkte des ausgewählten Typs.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.
-        - `<Amount>`: The number of Lifmunk Effigies to give.
+        - `<UserId>`: Die ID des Spielers, der die Reliktpunkte erhalten soll.
+        - `<RelicType>`: Der zu gewährende Relikt-Typ.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        - `[Amount]`: Optionale Anzahl der zu gewährenden Reliktpunkte. Standard ist `1`.
 
-        **Example:**
+        **Unterstützte Relikt-Typen:** `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+        **Beispiel:**
         ```
-        /give_relic steam_76500000000000000 5
+        /give_relic steam_76500000000000000 CapturePower 5
         ```
 
     ??? info "/giveme_relic"
-        **Syntax:** `/giveme_relic <Amount>`
+        **Syntax:** `/giveme_relic <RelicType> [Amount]`
 
-        **Description:** Gives yourself one or more Lifmunk Effigies.
+        **Beschreibung:** Gibt dir selbst einen oder mehrere Reliktpunkte des ausgewählten Typs.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<Amount>`: The number of Lifmunk Effigies to give yourself.
+        - `<RelicType>`: Der zu gewährende Relikt-Typ.
 
-        **Permissions:** `Chat`, `Admin`
+        - `[Amount]`: Optionale Anzahl der Reliktpunkte, die du dir selbst gibst. Standard ist `1`.
 
-        **Example:**
+        **Unterstützte Relikt-Typen:** `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
+
+        **Berechtigungen:** `Chat`, `Admin`
+
+        **Beispiel:**
         ```
-        /giveme_relic 5
+        /giveme_relic CapturePower 5
         ```
 
 
     ??? info "/delitems"
         **Syntax:** `/delitems <UserId> <ItemId>[:<Amount>] ...`
 
-        **Description:** Deletes more than 1 item from a player in one command and if specified how many of each separated by a colon. Use `all` instead of `1` to delete all occurrences.
+        **Beschreibung:** Löscht mehrere Items eines Spielers mit einem Befehl; Mengen können pro Item mit Doppelpunkt angegeben werden. Nutze `all` statt `1`, um alle Exemplare zu löschen.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
+        - `<UserId>`: Die ID des Spielers.
         - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /delitems steam_76500000000000000 Sword:1 Shield:all
         ```
@@ -825,16 +833,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/clearinv"
         **Syntax:** `/clearinv <UserId> [Container=items] ...`
 
-        **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
+        **Beschreibung:** Leert angegebene Container im Inventar eines Spielers. Verfügbare Container: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot` oder `all`.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
-        - `[Container] ...`: (Optional) Containers to clear. Default: items.
+        - `<UserId>`: Die ID des Spielers.
+        - `[Container] ...`: (Optional) Zu leerende Container. Standard: items.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /clearinv steam_76500000000000000 items
         /clearinv gdk_25300000000000000 all
@@ -845,18 +853,18 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givepal"
         **Syntax:** `/givepal <UserId> <PalId> [Level=1]`
 
-        **Description:** Gives a Pal to a player at the specified level.
+        **Beschreibung:** Gibt einem Spieler einen Pal auf dem angegebenen Level.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
-        - `<PalId>`: The Pal to give.
-            - **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        - `<UserId>`: Die ID des Spielers.
+        - `<PalId>`: Der zu gebende Pal.
+            - **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
+        - `[Level]`: (Optional) Level des Pals. Standard: 1.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givepal gdk_25300000000000000 WeaselDragon 10
         ```
@@ -864,18 +872,18 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givepal_j"
         **Syntax:** `/givepal_j <UserID> <PalTemplate>`
 
-        **Description:** Gives a player a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
+        **Beschreibung:** Gibt einem Spieler einen Pal aus einer PalTemplate-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserID>`: The ID of the player.
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](../FileTypes/PalTemplate.md)).
+        - `<UserID>`: Die ID des Spielers.
+        - `<PalTemplate>`: Der Name der PalTemplate-Datei (siehe [PalTemplate](../FileTypes/PalTemplate.md)).
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givepal_j steam_76500000000000000 MyPalTemplate
         ```
@@ -883,17 +891,17 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemepal"
         **Syntax:** `/givemepal <PalId> [Level=1]`
 
-        **Description:** Gives yourself a Pal at the specified level.
+        **Beschreibung:** Gibt dir selbst einen Pal auf dem angegebenen Level.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<PalId>`: The Pal to give yourself.
-            - **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        - `<PalId>`: Der Pal, den du dir selbst gibst.
+            - **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
+        - `[Level]`: (Optional) Level des Pals. Standard: 1.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemepal WeaselDragon 10
         ```
@@ -901,15 +909,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemepal_j"
         **Syntax:** `/givemepal_j <PalTemplate>`
 
-        **Description:** Gives yourself a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
+        **Beschreibung:** Gibt dir selbst einen Pal aus einer PalTemplate-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](../FileTypes/PalTemplate.md)).
+        - `<PalTemplate>`: Der Name der PalTemplate-Datei (siehe [PalTemplate](../FileTypes/PalTemplate.md)).
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemepal_j MyPalTemplate
         ```
@@ -923,20 +931,20 @@ At the current version there are only Admin and RCON commands available.
         - `/spawnpal <PalID> [x] [y] [z]`
         - `/spawnpal <PalID> [x] [y] [z] [Level]`
 
-        **Description:** Spawns a Pal relative or absolute to you. **RCON has to specify x, y and z!**
+        **Beschreibung:** Spawnt einen Pal relativ oder absolut zu dir. **RCON muss x, y und z angeben!**
 
         **Note:** All stats, except level, are randomized.
 
-        **Arguments:**
-        - `<PalID>`: The Pal to spawn.
-        - `[x]`: (Optional) x position of the pal. Default: Relative to player-invoker.
-        - `[y]`: (Optional) y position of the pal. Default: Relative to player-invoker.
-        - `[z]`: (Optional) z position of the pal. Default: Relative to player-invoker.
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        **Argumente:**
+        - `<PalID>`: Der zu spawnende Pal.
+        - `[x]`: (Optional) X-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
+        - `[y]`: (Optional) Y-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
+        - `[z]`: (Optional) Z-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
+        - `[Level]`: (Optional) Level des Pals. Standard: 1.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /spawnpal Anubis 255
         ```
@@ -950,20 +958,20 @@ At the current version there are only Admin and RCON commands available.
         - `/spawnpal_j <PalTemplate>`
         - `/spawnpal <PalTemplate> [x] [y] [z]`
 
-        **Description:** Spawns a Pal relative or absolute to you. **RCON has to specify x, y and z!**
+        **Beschreibung:** Spawnt einen Pal relativ oder absolut zu dir. **RCON muss x, y und z angeben!**
 
         **Note:** All stats, except level, are randomized.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<PalTemplate>`: The name of the PalTemplate file to use.
-        - `[x]`: (Optional) x position of the pal. Default: Relative to player-invoker.
-        - `[y]`: (Optional) y position of the pal. Default: Relative to player-invoker.
-        - `[z]`: (Optional) z position of the pal. Default: Relative to player-invoker.
+        - `<PalTemplate>`: Der Name der zu verwendenden PalTemplate-Datei.
+        - `[x]`: (Optional) X-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
+        - `[y]`: (Optional) Y-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
+        - `[z]`: (Optional) Z-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /spawnpal Anubis 255
         ```
@@ -972,16 +980,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/summon"
         **Syntax:** `/summon <PalSummon>`
 
-        **Description:** Spawns a Pal using the provided PalSummon file.
+        **Beschreibung:** Spawnt einen Pal anhand der angegebenen PalSummon-Datei.
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
-        **Arguments:**
-        - `<PalSummon>`: The name of the PalSummon file to use.
+        **Argumente:**
+        - `<PalSummon>`: Der Name der zu verwendenden PalSummon-Datei.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /summon PalSummon
         ```
@@ -989,15 +997,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/giveegg"
         **Syntax:** `/giveegg <UserId> <EggId> <PalId> [Level]`
 
-        **Description:** Gives target user a pal egg with the specific pal inside and optionally adjusted level.
+        **Beschreibung:** Gibt dem Zielbenutzer ein Pal-Ei mit einem bestimmten Pal und optional angepasstem Level.
 
-        **Arguments:**
+        **Argumente:**
 
         ??? quote "<UserId\>"
-            **Description:** The ID of the player to receive the egg.
+            **Beschreibung:** Die ID des Spielers, der das Ei erhalten soll.
 
         ??? quote "<EggId\>"
-            **Description:** The type of egg to give.
+            **Beschreibung:** Der Typ des zu gebenden Eis.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1012,16 +1020,16 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalId\>"
-            **Description:** The Pal that will be inside the egg.
+            **Beschreibung:** Der Pal, der im Ei enthalten sein wird.
 
-            **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level\]"
-            **Description:** (Optional) The level of the Pal inside the egg.
+            **Beschreibung:** (Optional) Das Level des Pals im Ei.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /giveegg steam_76500000000000000 PalEgg_Ice_01 WeaselDragon 10
         ```
@@ -1030,12 +1038,12 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemeegg"
         **Syntax:** `/givemeegg <EggId> <PalId> [Level]`
 
-        **Description:** Gives yourself a pal egg with the specific pal inside and optionally adjusted level.
+        **Beschreibung:** Gibt dir selbst ein Pal-Ei mit einem bestimmten Pal und optional angepasstem Level.
 
-        **Arguments:**
+        **Argumente:**
 
         ??? quote "<EggId\>"
-            **Description:** The type of egg to give yourself.
+            **Beschreibung:** Der Typ des Eis, das du dir selbst gibst.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1050,16 +1058,16 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalId\>"
-            **Description:**  The Pal that will be inside the egg.
+            **Beschreibung:** Der Pal, der im Ei enthalten sein wird.
 
-            **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level]"
-            **Description:**  (Optional) The level of the Pal inside the egg.
+            **Beschreibung:** (Optional) Das Level des Pals im Ei.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemeegg PalEgg_Ice_01 WeaselDragon 10
         ```
@@ -1067,12 +1075,12 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/giveegg_j"
         **Syntax:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** Gives a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
+        **Beschreibung:** Gibt ein Pal-Ei mit einem Pal aus einer PalTemplate-Datei und optional angepasstem Level.
 
-        **Arguments:**
+        **Argumente:**
 
         ??? quote "<EggId\>"
-            **Description:** The type of egg to give.
+            **Beschreibung:** Der Typ des zu gebenden Eis.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1087,16 +1095,16 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Description:** The name of the PalTemplate file to use.
+            **Beschreibung:** Der Name der zu verwendenden PalTemplate-Datei.
 
-            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
+            **Hinweis:** Du musst die Dateiendung .json nicht im Dateinamen angeben; das System hängt sie automatisch an, wenn sie fehlt. Siehe [PalTemplate](../FileTypes/PalTemplate.md).
 
         ??? quote "[Level]"
-            **Description:** (Optional) The level of the Pal inside the egg.
+            **Beschreibung:** (Optional) Das Level des Pals im Ei.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /giveegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
@@ -1104,12 +1112,12 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemeegg_j"
         **Syntax:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** Gives yourself a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
+        **Beschreibung:** Gibt dir selbst ein Pal-Ei mit einem Pal aus einer PalTemplate-Datei und optional angepasstem Level.
 
-        **Arguments:**
+        **Argumente:**
 
         ??? quote "<EggI\>"
-            **Description:** The type of egg to give yourself.
+            **Beschreibung:** Der Typ des Eis, das du dir selbst gibst.
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1124,16 +1132,16 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Description:** The name of the PalTemplate file to use.
+            **Beschreibung:** Der Name der zu verwendenden PalTemplate-Datei.
 
-            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
+            **Hinweis:** Du musst die Dateiendung .json nicht im Dateinamen angeben; das System hängt sie automatisch an, wenn sie fehlt. Siehe [PalTemplate](../FileTypes/PalTemplate.md).
 
         ??? quote "[Level]"
-            **Description:** (Optional) The level of the Pal inside the egg.
+            **Beschreibung:** (Optional) Das Level des Pals im Ei.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemeegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
@@ -1141,14 +1149,14 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/jetragon"
         **Syntax:** `/jetragon`
 
-        **Description:** Gives you an Admin-Jetragon Pal (it's faaas.... gone).
+        **Beschreibung:** Gibt dir einen Admin-Jetragon-Pal (er ist seeehr... schnell weg).
 
-        **Arguments:**
+        **Argumente:**
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /jetragon
         ```
@@ -1156,15 +1164,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/catwaifu"
         **Syntax:** `/catwaifu`
 
-        **Description:** Gives you an Admin-Cat-Waifu that buffs your character stats.
+        **Beschreibung:** Gibt dir eine Admin-Cat-Waifu, die deine Charakterwerte verstärkt.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /catwaifu
         ```
@@ -1172,15 +1180,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/exportpals"
         **Syntax:** `/exportpals [UserId]`
 
-        **Description:** Export every Pal of a player to a PalTemplate file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
+        **Beschreibung:** Exportiert jeden Pal eines Spielers als PalTemplate-Datei nach Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[UserId]`: (Optional) The ID of the player whose Pals will be exported. If omitted, exports your own Pals.
+        - `[UserId]`: (Optional) Die ID des Spielers, dessen Pals exportiert werden. Wenn weggelassen, werden deine eigenen Pals exportiert.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /exportpals steam_76500000000000000
         /exportpals
@@ -1189,15 +1197,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/deletepals"
         **Syntax:** `/deletepals <UserId> <PalFilter>`
 
-        **Description:** Deletes Pals from the specified user using advanced filters. The filter allows you to specify multiple criteria (such as Pal ID, level, gender, passives, etc.) in one command. Please test in a safe environment before using on important data.
+        **Beschreibung:** Löscht Pals eines angegebenen Benutzers mit erweiterten Filtern. Der Filter erlaubt mehrere Kriterien wie Pal-ID, Level, Geschlecht, Passives usw. in einem Befehl. Bitte zuerst in einer sicheren Umgebung testen.
 
-        **Arguments:**
+        **Argumente:**
 
         ??? quote "<UserId\>"
-            **Description:** The ID of the player whose Pals will be deleted.
+            **Beschreibung:** Die ID des Spielers, dessen Pals gelöscht werden.
 
         ??? quote "<PalFilter\>"
-            **Description:** A set of filter keywords to select which Pals to delete.
+            **Beschreibung:** Eine Gruppe von Filter-Schlüsselwörtern zur Auswahl der zu löschenden Pals.
 
             **Note:** Multiple keywords can be combined in one command.
 
@@ -1212,17 +1220,17 @@ At the current version there are only Admin and RCON commands available.
             - `Passives`: PassiveSkill or list of PassiveSkills (comma-separated)
             - `Limit`: Number (max number of Pals to delete)
 
-            **Example filters:**
+            **Beispielfilter:**
 
             - `ID Serpent, PinkLizard Level>10 Gender male Limit 3`
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/<span class='pd-badge pd-badge--beta'>Beta</span>/Wiki/Commands/deletepals.md).
+            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/master/Wiki/Commands/deletepals.md).
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /deletepals 76567890987654321 ID Serpent, PinkLizard Level>10 Gender male Limit 3
         /deletepals 76567890987654321 ID Anubis Rank>=3
@@ -1234,16 +1242,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/learntech"
         **Syntax:** `/learntech <UserId> <TechID>`
 
-        **Description:** Lets a player learn a specific technology. Use `all` to unlock everything.
+        **Beschreibung:** Lässt einen Spieler eine bestimmte Technologie lernen. Nutze `all`, um alles freizuschalten.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
-        - `<TechID>`: The technology to learn. Use `all` to unlock everything.
+        - `<UserId>`: Die ID des Spielers.
+        - `<TechID>`: Die zu lernende Technologie. Nutze `all`, um alles freizuschalten.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /learntech steam_76500000000000000 Tech001
         /learntech gdk_25300000000000000 all
@@ -1252,16 +1260,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/unlearntech"
         **Syntax:** `/unlearntech <UserId> <TechID>`
 
-        **Description:** Makes a player forget a specific technology. Use `all` to remove everything.
+        **Beschreibung:** Lässt einen Spieler eine bestimmte Technologie vergessen. Nutze `all`, um alles zu entfernen.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player.
-        - `<TechID>`: The technology to forget. Use `all` to remove everything.
+        - `<UserId>`: Die ID des Spielers.
+        - `<TechID>`: Die zu vergessende Technologie. Nutze `all`, um alles zu entfernen.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /unlearntech gdk_25300000000000000 Tech001
         /unlearntech steam_76500000000000000 all
@@ -1270,16 +1278,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givetechpoints"
         **Syntax:** `/givetechpoints <UserId> [Amount=1]`
 
-        **Description:** Gives the target user X technology points.
+        **Beschreibung:** Gibt dem Zielbenutzer X Technologiepunkte.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to receive the technology points.
-        - `[Amount]`: (Optional) The number of technology points to give. Default: 1.
+        - `<UserId>`: Die ID des Spielers, der Technologiepunkte erhalten soll.
+        - `[Amount]`: (Optional) Anzahl der zu gebenden Technologiepunkte. Standard: 1.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givetechpoints steam_76500000000000000 10
         ```
@@ -1287,16 +1295,16 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givebosstechpoints"
         **Syntax:** `/givebosstechpoints <UserId> [Amount=1]`
 
-        **Description:** Gives the target user X ancient technology points.
+        **Beschreibung:** Gibt dem Zielbenutzer X Antike-Technologiepunkte.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `<UserId>`: The ID of the player to receive the ancient technology points.
-        - `[Amount]`: (Optional) The number of ancient technology points to give. Default: 1.
+        - `<UserId>`: Die ID des Spielers, der Antike-Technologiepunkte erhalten soll.
+        - `[Amount]`: (Optional) Anzahl der zu gebenden Antike-Technologiepunkte. Standard: 1.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givebosstechpoints steam_76500000000000000 5
         ```
@@ -1304,15 +1312,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemetechpoints"
         **Syntax:** `/givemetechpoints [Amount=1]`
 
-        **Description:** Gives yourself X technology points.
+        **Beschreibung:** Gibt dir selbst X Technologiepunkte.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[Amount]`: (Optional) The number of technology points to give yourself. Default: 1.
+        - `[Amount]`: (Optional) Anzahl der Technologiepunkte für dich selbst. Standard: 1.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemetechpoints 10
         ```
@@ -1320,15 +1328,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemebosstechpoints"
         **Syntax:** `/givemebosstechpoints [Amount=1]`
 
-        **Description:** Gives yourself X ancient technology points.
+        **Beschreibung:** Gibt dir selbst X Antike-Technologiepunkte.
 
-        **Arguments:**
+        **Argumente:**
 
-        - `[Amount]`: (Optional) The number of ancient technology points to give yourself. Default: 1.
+        - `[Amount]`: (Optional) Anzahl der Antike-Technologiepunkte für dich selbst. Standard: 1.
 
-        **Permissions:** `Chat`, `Admin`
+        **Berechtigungen:** `Chat`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /givemebosstechpoints 5
         ```
@@ -1338,15 +1346,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/gettechids"
         **Syntax:** `/gettechids`
 
-        **Description:** Returns a list of all available technology IDs. RCON gets JSON output.
+        **Beschreibung:** Gibt eine Liste aller verfügbaren Technologie-IDs zurück. RCON erhält JSON-Ausgabe.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /gettechids
         ```
@@ -1354,15 +1362,15 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/getskinids"
         **Syntax:** `/getskinids`
 
-        **Description:** Returns a list of all available Pal Skin IDs. RCON gets JSON output.
+        **Beschreibung:** Gibt eine Liste aller verfügbaren Pal-Skin-IDs zurück. RCON erhält JSON-Ausgabe.
 
-        **Arguments:**
+        **Argumente:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **Beispiel:**
         ```
         /getskinids
         ```

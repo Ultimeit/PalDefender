@@ -1,53 +1,53 @@
 # GET /version
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/version`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/version`
 
-**Permission:** `REST.Version.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Version.Read`
 
-Use this endpoint as a health check and version check for tools, dashboards, and scripts.
+## Zweck
 
-## Path parameters
+Nutze diesen Endpunkt als Health-Check und Versionsprüfung für Tools, Dashboards und Skripte.
 
-None.
+## Pfadparameter
 
-## Query parameters
+Keine.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/version.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
 
-## Examples
+## Beispiele
 
 ### Health and version check
 
@@ -55,8 +55,8 @@ Error bodies use this shape:
 GET /v1/pdapi/version
 ```
 
-## Scenarios
+## Szenarien
 
-- Use it after configuring the REST API token to confirm authentication works.
-- Use it before calling Beta endpoints if your tool needs a minimum PalDefender version.
-- Use it for monitoring, because it is the smallest read-only request.
+- Nutze ihn nach dem Konfigurieren des REST-API-Tokens, um die Authentifizierung zu prüfen.
+- Nutze ihn vor weiteren Endpunktaufrufen, wenn dein Tool eine Mindestversion von PalDefender benötigt.
+- Nutze ihn für Monitoring, da es der kleinste schreibgeschützte Request ist.

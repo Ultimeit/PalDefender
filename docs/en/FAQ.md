@@ -1,6 +1,6 @@
 # FAQ
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span> I've accidentally banned myself/someone. How can I unban them?</summary>
+<details><summary style="font-size:16px">I've accidentally banned myself/someone. How can I unban them?</summary>
 
 <p style="font-size:14px">
 Use <span class="var-command">/unban &lt;UserId&gt;</span> for account bans and <span class="var-command">/unbanip &lt;IP&gt;</span> for IP bans. PalDefender ban records are stored in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span>. If you edit the file manually, stop the server first or reload configuration after editing.
@@ -18,7 +18,7 @@ Older wiki versions told admins to remove IP bans from <span class="path-partial
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: I added or changed a PalTemplate or PalSummon file but the command fails.</summary>
+<details><summary style="font-size:16px">I added or changed a PalTemplate or PalSummon file but the command fails.</summary>
 
 <ul>
   <li>Make sure the file is valid JSON. Remove comments and trailing commas.</li>
@@ -32,7 +32,7 @@ Older wiki versions told admins to remove IP bans from <span class="path-partial
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: Which ID should I use for commands: UserId, PlayerUId, name, or SteamID?</summary>
+<details><summary style="font-size:16px">Which ID should I use for commands: UserId, PlayerUId, name, or SteamID?</summary>
 
 <p>
 Most admin commands expect the player's UserId, such as <code>steam_...</code> or <code>gdk_...</code>. Use <span class="var-command">/iwantplayerlist</span> in-game to show IDs in the player list, or use REST/API tooling if you have it enabled.
@@ -41,7 +41,7 @@ Most admin commands expect the player's UserId, such as <code>steam_...</code> o
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: Why does RCON require coordinates or a UserId for commands that work without them in chat?</summary>
+<details><summary style="font-size:16px">Why does RCON require coordinates or a UserId for commands that work without them in chat?</summary>
 
 <p>
 RCON has no in-game player character, so PalDefender cannot infer your position or target. For commands like <span class="var-command">/getpos</span>, <span class="var-command">/tp</span>, <span class="var-command">/spawnpal</span>, and base-location commands, provide the target player or coordinates explicitly.
@@ -50,7 +50,7 @@ RCON has no in-game player character, so PalDefender cannot infer your position 
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: The REST API returns 401 or 403. What should I check?</summary>
+<details><summary style="font-size:16px">The REST API returns 401 or 403. What should I check?</summary>
 
 <ul>
   <li><strong>401</strong>: Check the <code>Authorization: Bearer &lt;token&gt;</code> header and make sure the token file is not named <code>TokenExample.json</code>.</li>

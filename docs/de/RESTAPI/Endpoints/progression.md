@@ -1,56 +1,56 @@
 # GET /progression/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/progression/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/progression/<player_identifier>`
 
-**Permission:** `REST.Progression.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Progression.Read`
 
-Reads player progression values such as EXP, level-related state, Lifmunk Effigies, and technology point totals.
+## Zweck
 
-## Path parameters
+Liest Fortschrittswerte eines Spielers wie EXP, levelbezogenen Status, Reliktsummen und Technologiepunkte.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/progression.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The target player, account, individual character data, record data, or technology data could not be resolved. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Zielspieler, Account, individuelle Charakterdaten, Record-Daten oder Technologiedaten konnten nicht aufgeloest werden. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 
-## Examples
+## Beispiele
 
 ### Read progression by PS5 UserID
 
@@ -64,7 +64,7 @@ GET /v1/pdapi/progression/ps5_c481a77e22004b9d
 GET /v1/pdapi/progression/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 ```
 
-## Scenarios
+## Szenarien
 
 - Confirm the current values before granting progression.
 - Verify a support action after [POST /give/progression](give-progression.md).

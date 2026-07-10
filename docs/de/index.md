@@ -1,4 +1,4 @@
-# Home
+# Startseite
 
 ![PalDefender Logo](../assets/LogoWiki.jpg)
 <a href="https://discord.com/invite/bdTxPbwSEW" target="_blank">![Discord Server](https://img.shields.io/badge/-Join%20our%20Discord-111111?style=for-the-badge&logo=discord)</a>
@@ -21,7 +21,7 @@
           image: {
             src: 'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
             alt: 'Donate with PayPal button',
-            title: 'PayPal - The safer, easier way to pay online!'
+            title: 'PayPal - Die sicherere und einfachere Art online zu bezahlen!'
           }
         }).render('#donate-button');
       </script>
@@ -32,41 +32,41 @@
 
 ---
 
-## Foreword
-We would appreciate if you contribute to the Wiki or point out mistakes, so the Wiki slowly and steady fills up.
+## Vorwort
+Wir freuen uns, wenn du zum Wiki beiträgst oder Fehler meldest, damit das Wiki Schritt für Schritt besser wird.
 
-The code is closed source and we dont have any plans to release it.
-
----
-
-## About
-
-PalDefender implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, this feature is in <span class='pd-badge pd-badge--beta'>Beta</span> and is available exclusively for Windows-based dedicated servers.
-
-**Any experienced Linux dev is welcome to help us out.**
+Der Code ist Closed Source und wir planen derzeit keine Veröffentlichung.
 
 ---
 
-## Authors
+## Über PalDefender
 
-- <a href="https://github.com/Zvendson" target="_blank">Zvendson</a> (Current Maintainer)
-- <a href="https://github.com/Ultimeit" target="_blank">Ultimeit</a> (Original Creator)
+PalDefender implementiert umfassende serverseitige Prüfungen, um viele bekannte und auch noch unbekannte Cheats, Exploits und Abstürze zu verhindern. Bevor eine Spieleraktion ausgeführt wird, prüft PalDefender auf mögliches Cheat-Verhalten. Je nach Serverkonfiguration werden Spieler bei solchen Aktionen gewarnt, gekickt, gebannt oder per IP gebannt. Aktuell ist PalDefender für Windows-basierte Dedicated Server verfügbar.
+
+**Erfahrene Linux-Entwickler sind herzlich eingeladen, uns zu unterstützen.**
+
 ---
 
-## Credits
+## Autoren
+
+- <a href="https://github.com/Zvendson" target="_blank">Zvendson</a> (Aktueller Maintainer)
+- <a href="https://github.com/Ultimeit" target="_blank">Ultimeit</a> (Ursprünglicher Ersteller)
+---
+
+## Danksagung
 
 - <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a>
 - <a href="https://www.unrealengine.com" target="_blank">Unreal Engine</a> - Epic Games
 
 ---
 
-## Afterwords
+## Schlusswort
 
 私たちは、<a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a>による素晴らしい仕事に感謝の意を表したいと思います。色鮮やかな世界や、パルとのダイナミックなインタラクション、そして創造的なデザインは、チームの献身と情熱を見事に表しています。コミュニティの一員として、私たちはPalServer向けのプラグインを開発し、セキュリティを強化し、潜在的な悪用から守ることでPalworldをサポートしています
 
 私たちは今後も、Palworldサーバーに最高水準のセキュリティと保護を提供できるよう努め続けます。皆様からのフィードバックは非常に貴重で、心から感謝しています。<br>
 ~ <a href="https://github.com/Zvendson" target="_blank">Zvend</a>
 
-> *We want to express our gratitude to <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a> for their incredible work on Palworld. The vibrant world, dynamic interactions with Pals, and creative design showcase the team's dedication and passion. As a community, we are also working to support Palworld by developing a plugin for the PalServer that enhances security and protects it from potential exploits.*
+> *Wir möchten <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a> für ihre großartige Arbeit an Palworld danken. Die lebendige Welt, die dynamischen Interaktionen mit Pals und das kreative Design zeigen die Hingabe und Leidenschaft des Teams. Als Community unterstützen wir Palworld ebenfalls, indem wir ein Plugin für den PalServer entwickeln, das die Sicherheit verbessert und vor möglichen Exploits schützt.*
 <br><br>
 *We will continue striving to provide the highest level of security and protection for your Palworld server. Your feedback is invaluable, and we truly appreciate it.*

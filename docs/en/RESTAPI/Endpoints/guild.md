@@ -1,6 +1,6 @@
 # GET /guild/{guild_id}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `GET /v1/pdapi/guild/<guild_id>`
 

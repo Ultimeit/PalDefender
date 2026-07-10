@@ -2,10 +2,7 @@
 
 use <https://paldeck.cc/creator> to create those files way easier!
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    Newly documented keys and instructions on this page are marked with <span class='pd-badge pd-badge--beta'>Beta</span>. They describe user-facing file behavior and may still be refined as the wiki is improved.
-
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
+!!! tip "ID lookup"
     Use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) for `Passives`, and [paldeck.cc/skills](https://paldeck.cc/skills) for `ActiveSkills` and `LearntSkills`.
 
 | Key                      | Type   | Description                                                                         |
@@ -21,12 +18,12 @@ use <https://paldeck.cc/creator> to create those files way easier!
 | `PartnerSkillLevel`      | int    | Level of the Pal’s partner skill. Cannot be lower than 1!                           |
 | `CondensedPals`          | int    | Number of Pals merged/condensed into this one.                                      |
 | `UnusedStatusPoints`     | int    | Available status points for manual distribution. Probably only used for players?    |
-| `FriendshipPoints`       | int    | <span class='pd-badge pd-badge--beta'>Beta</span> Friendship value for the Pal.                                               |
-| `PhysicalHealth`         | string | <span class='pd-badge pd-badge--beta'>Beta</span> Physical health state. Valid names include `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
-| `WorkerSick`             | string | <span class='pd-badge pd-badge--beta'>Beta</span> Worker sickness state. Valid names include `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
-| `ImportedCharacter`      | bool   | <span class='pd-badge pd-badge--beta'>Beta</span> Marks the Pal as an imported character.                                    |
+| `FriendshipPoints`       | int    | Friendship value for the Pal.                                               |
+| `PhysicalHealth`         | string | Physical health state. Valid names include `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
+| `WorkerSick`             | string | Worker sickness state. Valid names include `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
+| `ImportedCharacter`      | bool   | Marks the Pal as an imported character.                                    |
 | `HP` / `SP` / `MP`       | number | Base Health, Stamina, and Mana values.                                              |
-| `Shield`                 | number | <span class='pd-badge pd-badge--beta'>Beta</span> Shield value.                                                              |
+| `Shield`                 | number | Shield value.                                                              |
 | `Hunger` / `MaxHunger`   | int    | Current and max hunger values.                                                      |
 | `SAN`                    | int    | Sanity (mental stability of the Pal).                                               |
 | `Support`                | int    | Support level (used for AI behavior and skills).                                    |
@@ -39,7 +36,7 @@ use <https://paldeck.cc/creator> to create those files way easier!
 | `ExtraWorkSuitabilities` | object | Boosted work types and levels (e.g., `"Mining": 2`). Available work types: `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`.  |
 | `DisableWorkPreferences` | array  | Work types the Pal refuses to do. Available work types: `BaseCampBattle`, `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## Instruction set
 
 1. Create one JSON file per custom Pal in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
 2. Use a unique filename, for example `RaidRewardAnubis.json`. Commands can usually use `RaidRewardAnubis` or `RaidRewardAnubis.json`.
@@ -50,7 +47,7 @@ use <https://paldeck.cc/creator> to create those files way easier!
 7. Validate JSON before uploading. JSON does not allow comments or trailing commas.
 8. If a template imports but values are changed or blocked, check the server's `Pals/ImportRules/Default.json` and any per-Pal override files.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## Setup walkthrough
 
 1. Decide what the template is for: a simple admin reward, an event boss, a testing Pal, or a spawn template for a summon.
 2. Pick the `PalID` at [paldeck.cc/pals](https://paldeck.cc/pals). The display name is not always the file ID, so copy the ID exactly.
@@ -60,13 +57,13 @@ use <https://paldeck.cc/creator> to create those files way easier!
 6. Save the file in `Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
 7. Test with `/givemepal_j <filename>` first. After that, use the same template for `/givepal_j`, `/spawnpal_j`, `/giveegg_j`, the REST API, or `PalSummon.json`.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> example explanations
+## Example explanations
 
 The minimal example below creates a level 50 Anubis with three equipped attacks and two passives. It is suitable for testing because it has only the required `PalID` plus a few common fields.
 
 The larger example is intentionally extreme. It shows the available structure for souls, IVs, skills, passives, and work suitability overrides. On servers using import rules, high values may be clamped or blocked.
 
-## Minimal <span class='pd-badge pd-badge--beta'>Beta</span> example
+## Minimal example
 
 ```json
 {

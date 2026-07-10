@@ -1,6 +1,6 @@
 # GET /progression/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `GET /v1/pdapi/progression/<player_identifier>`
 
@@ -10,7 +10,7 @@
 
 ## Purpose
 
-Reads player progression values such as EXP, level-related state, Lifmunk Effigies, and technology point totals.
+Reads player progression values such as EXP, level-related state, relic totals, and technology point totals.
 
 ## Path parameters
 

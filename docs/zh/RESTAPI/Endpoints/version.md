@@ -1,53 +1,53 @@
 # GET /version
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/version`
 
-**Auth:** Bearer token
+**端点:** `GET /v1/pdapi/version`
 
-**Permission:** `REST.Version.Read`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Version.Read`
 
-Use this endpoint as a health check and version check for tools, dashboards, and scripts.
+## 用途
 
-## Path parameters
+将此端点用作工具、仪表盘和脚本的健康检查与版本检查。
 
-None.
+## 路径参数
 
-## Query parameters
+无。
 
-None.
+## 查询参数
 
-## Request body
+无。
 
-No request body.
+## 请求体
 
-## Response schema
+无请求体。
+
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/version.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
 
-## Examples
+## 示例
 
 ### Health and version check
 
@@ -55,8 +55,8 @@ Error bodies use this shape:
 GET /v1/pdapi/version
 ```
 
-## Scenarios
+## 使用场景
 
-- Use it after configuring the REST API token to confirm authentication works.
-- Use it before calling Beta endpoints if your tool needs a minimum PalDefender version.
-- Use it for monitoring, because it is the smallest read-only request.
+- 配置 REST API 令牌后使用它确认认证是否正常。
+- 如果工具需要最低 PalDefender 版本，请在调用其他端点前使用它。
+- 可用于监控，因为它是最小的只读请求。

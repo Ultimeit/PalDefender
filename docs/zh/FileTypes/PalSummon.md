@@ -1,46 +1,43 @@
 # 📄 `PalSummon.json`
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    Newly documented instructions on this page are marked with <span class='pd-badge pd-badge--beta'>Beta</span>. They are intended to make summon files easier to create and troubleshoot.
+!!! tip "相关 ID 查询"
+    召唤文件本身会引用一个 `PalTemplate`。如果需要编辑该模板，请使用 [paldeck.cc/pals](https://paldeck.cc/pals) 查询 `PalID`，[paldeck.cc/passives](https://paldeck.cc/passives) 查询被动词条，[paldeck.cc/skills](https://paldeck.cc/skills) 查询技能 ID。
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> related ID lookup"
-    The summon file itself references a `PalTemplate`. If you need to edit that template, use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) for passives, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
-
-| Key               | Type   | Description                                                                             |
+| 键               | 类型   | 描述                                                                             |
 | ----------------- | ------ | --------------------------------------------------------------------------------------- |
-| `PalTemplate`     | string | Required. File name of the `PalTemplate.json` to use (e.g., `"OPnubis.json"`). The file must exist in `Pals/Templates/`. |
-| `Uncapturable`    | bool   | Optional. If `true`, the Pal cannot be captured by players. Defaults to `false` if omitted. |
-| `X` / `Y` / `Z`   | float  | Required map coordinates where the Pal will be spawned. Use cmd `/getpos` to retrieve a player's current position. |
-| `DisableStatuses` | array  | Optional list of status effects to disable for this Pal. Invalid or empty status names are skipped. Available statuses: `DrownCheck`, `Poison`, `Stun`, `Coma`, `Sleep`, `Overwork`, `Drown`, `FallDamage`, `LavaDamage`, `Burn`, `Wetness`, `Freeze`, `Electrical`, `Muddy`, `IvyCling`, `Darkness`, `CollectItem`. |
+| `PalTemplate`     | string | 必填。要使用的 `PalTemplate.json` 文件名（例如 `"OPnubis.json"`）。该文件必须存在于 `Pals/Templates/`。 |
+| `Uncapturable`    | bool   | 可选。如果为 `true`，玩家无法捕获该 Pal。省略时默认为 `false`。 |
+| `X` / `Y` / `Z`   | float  | 必填。Pal 生成所在的地图坐标。使用 `/getpos` 获取玩家当前位置。 |
+| `DisableStatuses` | array  | 可选。要为该 Pal 禁用的状态效果列表。无效或空的状态名会被跳过。可用状态： `DrownCheck`, `Poison`, `Stun`, `Coma`, `Sleep`, `Overwork`, `Drown`, `FallDamage`, `LavaDamage`, `Burn`, `Wetness`, `Freeze`, `Electrical`, `Muddy`, `IvyCling`, `Darkness`, `CollectItem`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## 操作说明
 
-1. Create the referenced Pal template first in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
-2. Create the summon file in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/`.
-3. Name the summon file after the thing admins should type, for example `ArenaBoss.json` for `/summon ArenaBoss`.
-4. Get coordinates in-game with `/getpos`. When using RCON, pass a player ID to `/getpos <UserId>`.
-5. Keep `PalTemplate`, `X`, `Y`, and `Z` present. If any coordinate is missing, the summon should be treated as invalid.
-6. Use `Uncapturable: true` for event bosses, raid bosses, or decorative Pals that players should not own.
-7. Keep `DisableStatuses` short unless you have a reason to disable many states. Start with only the statuses that matter for the event.
-8. Validate JSON before uploading. JSON does not allow comments or trailing commas.
-9. Reload config or restart the server if your host does not pick up newly added files immediately.
+1. 先在 `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/` 创建被引用的 Pal 模板。
+2. 在 `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/` 创建召唤文件。
+3. 召唤文件名应对应管理员输入的参数，例如 `/summon ArenaBoss` 对应 `ArenaBoss.json`。
+4. 在游戏内使用 `/getpos` 获取坐标。使用 RCON 时，请向 `/getpos <UserId>` 传入玩家 ID。
+5. 必须保留 `PalTemplate`、`X`、`Y` 和 `Z`。缺少任何坐标都应视为召唤文件无效。
+6. 对活动 Boss、Raid Boss 或不应被玩家拥有的装饰性 Pal 使用 `Uncapturable: true`。
+7. 除非确实需要禁用大量状态，否则保持 `DisableStatuses` 简短。先只添加对活动重要的状态。
+8. 上传前验证 JSON。JSON 不允许注释或末尾多余逗号。
+9. 如果你的主机不会立即读取新增文件，请重新加载配置或重启服务器。
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## 设置步骤
 
-1. Create a template first, for example `Pals/Templates/ArenaBoss.json`.
-2. Test the template with `/givemepal_j ArenaBoss`. If the template fails there, fix the template before creating the summon file.
-3. Stand where the Pal should appear and run `/getpos`. Copy the returned `X`, `Y`, and `Z` values.
-4. Create `Pals/Summons/ArenaBossSpawn.json` and set `PalTemplate` to `ArenaBoss.json`.
-5. Run `/summon ArenaBossSpawn`.
-6. If the Pal appears too high, too low, or inside terrain, adjust `Z` first, then adjust `X` and `Y`.
+1. 先创建一个模板，例如 `Pals/Templates/ArenaBoss.json`。
+2. 使用 `/givemepal_j ArenaBoss` 测试模板。如果模板在这里失败，请先修复模板，再创建召唤文件。
+3. 站在希望 Pal 出现的位置并运行 `/getpos`。复制返回的 `X`、`Y` 和 `Z` 值。
+4. 创建 `Pals/Summons/ArenaBossSpawn.json`，并将 `PalTemplate` 设为 `ArenaBoss.json`。
+5. 执行 `/summon ArenaBossSpawn`。
+6. 如果 Pal 出现得太高、太低或卡在地形中，请先调整 `Z`，再调整 `X` 和 `Y`。
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> example explanations
+## 示例说明
 
-The minimal example below spawns `ArenaBoss.json` at a fixed coordinate, makes it uncapturable, and disables a short list of common crowd-control/status effects. This is useful for event bosses.
+下面的最小示例会在固定坐标生成 `ArenaBoss.json`，使其无法被捕获，并禁用一小组常见控制/状态效果。这适合活动 Boss。
 
-The full example shows the available `DisableStatuses` values. Do not copy every status by default; start with only the statuses that matter for your event.
+完整示例展示了可用的 `DisableStatuses` 值。不要默认复制所有状态；只从活动真正需要的状态开始。
 
-## Minimal <span class='pd-badge pd-badge--beta'>Beta</span> example
+## 最小示例
 
 ```json
 {
@@ -57,10 +54,10 @@ The full example shows the available `DisableStatuses` values. Do not copy every
 }
 ```
 
-## Example
+## 示例
 
-This file has to be stored at: `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/ExamplePalSummon.json`
-(`ExamplePalSummon` can be any unique name in that folder. This will be the command argument for `/summon`!)
+该文件必须保存到：`<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/ExamplePalSummon.json`
+（`ExamplePalSummon` 可以是该文件夹中任意唯一名称。它将作为 `/summon` 的命令参数！）
 
 ```json
 {

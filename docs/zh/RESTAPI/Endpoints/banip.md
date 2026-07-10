@@ -1,57 +1,57 @@
 # POST /banip/{ip}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/banip/<ip>`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/banip/<ip>`
 
-**Permission:** `REST.Punishments.BanIP`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Punishments.BanIP`
 
-Bans an IP address and records it in `Banlist.json`.
+## 用途
 
-## Path parameters
+封禁 IP 地址并记录到 `Banlist.json`。
+
+## 路径参数
 
 - `ip`: IP address to ban.
 
-## Query parameters
+## 查询参数
 
-None.
+无。
 
-## Request body
+## 请求体
 
-Optional JSON fields: `Reason` string and `UserId` string when the IP ban should be associated with a user.
+可选 JSON 字段：字符串 `Reason`；如果此 IP 封禁应关联到某个用户，也可提供字符串 `UserId`。
 
-## Response schema
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/banip.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
 
-## Examples
+## 示例
 
 ### Ban an IP only
 
@@ -78,8 +78,8 @@ POST /v1/pdapi/banip/198.51.100.87
 }
 ```
 
-## Scenarios
+## 使用场景
 
 - Stop repeated abuse from the same IP after staff review.
 - Associate `UserId` when known so the banlist is easier to audit.
-- Use [GET /banlist](banlist.md) with `ip` to verify the active record.
+- 使用带 `ip` 的 [GET /banlist](banlist.md) 验证活动记录。

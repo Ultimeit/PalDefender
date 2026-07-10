@@ -1,261 +1,261 @@
-# Commands
+# 命令
 
-## What Are Commands?
+## 什么是命令？
 
-Commands are special text-based instructions that allow you to interact with the game. By typing commands into the chat, you can perform actions like teleporting, spawning creatures, or managing players. Commands usually start with a <span class="var-command">/</span> followed by the command name and optional arguments.
+命令是特殊的文本指令，可用于与游戏交互。在聊天中输入命令后，你可以执行传送、生成生物或管理玩家等操作。命令通常以 <span class="var-command">/</span> 开头，后面跟命令名称和可选参数。
 
-## Who Can Use Commands?
+## 谁可以使用命令？
 
-**Currently there is no command that non-admin player can use.**
-At the current version there are only Admin and RCON commands available.
+**当前没有非管理员玩家可使用的命令。**
+当前版本只提供管理员命令和 RCON 命令。
 
-## Commands List
+## 命令列表
 
-!!! note "Command Syntax"
+!!! note "命令语法"
     <span class="var-command">/command_name&nbsp;</span><span class="var-command-arg">&lt;required_argument&gt;&nbsp;</span><span class="var-command-optional">[optional_argument={?}]</span>
     <br>
     <br>
     <p>
-    <span class="var-command-arg">&lt;required_argument&gt;</span> → Must be included.<br>
-    <span class="var-command-optional">[optional_argument={?}]</span> → Can be omitted. The <span class="var-command-optional">{?}</span> indicates the default value being used when omitted.
+    <span class="var-command-arg">&lt;required_argument&gt;</span> → 必须提供。<br>
+    <span class="var-command-optional">[optional_argument={?}]</span> → 可以省略。<span class="var-command-optional">{?}</span> 表示省略时使用的默认值。
     </p>
     <p>
-    Arguments have different types. The most common are <span class="var-string">strings</span>, <span class="var-number">numbers</span>, <span class="var-float">floats</span> and <span class="var-bool">booleans</span>. Some command even have complex types such as specific <span class="file">filenames</span> in a special directory or actually a <span class="var-filter">filter</span>.
+    参数有不同类型，最常见的是 <span class="var-string">字符串</span>、<span class="var-number">数字</span>、<span class="var-float">浮点数</span> 和 <span class="var-bool">布尔值</span>。有些命令还使用更复杂的类型，例如特殊目录中的 <span class="file">文件名</span>，或一个 <span class="var-filter">过滤器</span>。
     </p>
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
-    Use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/items](https://paldeck.cc/items) for `ItemID`, [paldeck.cc/technology](https://paldeck.cc/technology) for `TechID`, [paldeck.cc/buildings](https://paldeck.cc/buildings) for `BuildingID`, [paldeck.cc/passives](https://paldeck.cc/passives) for `PassiveID`, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
+!!! tip "ID 查询"
+    使用 [paldeck.cc/pals](https://paldeck.cc/pals) 查询 `PalID`，[paldeck.cc/items](https://paldeck.cc/items) 查询 `ItemID`，[paldeck.cc/technology](https://paldeck.cc/technology) 查询 `TechID`，[paldeck.cc/buildings](https://paldeck.cc/buildings) 查询 `BuildingID`，[paldeck.cc/passives](https://paldeck.cc/passives) 查询 `PassiveID`，[paldeck.cc/skills](https://paldeck.cc/skills) 查询技能 ID。
 
-??? note "RCON only"
+??? note "仅 RCON"
     ??? info "/getrconcmds"
-        **Syntax:** `/getrconcmds`
+        **语法:** `/getrconcmds`
 
-        **Description:** Returns a list of every command with the required arg count which is usable by RCON.
+        **描述:** 返回 RCON 可用的所有命令及其所需参数数量。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `RCON`
+        **权限:** `RCON`
 
-        **Example:**
+        **示例:**
         ```
         /getrconcmds
         ```
 
 ??? note "Server Management"
     ??? info "/version"
-        **Syntax:** `/version`
+        **语法:** `/version`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Shows the Palworld game version and PalDefender version. RCON returns JSON output.
+        **描述:** 显示 Palworld 游戏版本和 PalDefender 版本。RCON 返回 JSON 输出。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /version
         ```
 
     ??? info "/reloadcfg"
-        **Syntax:** `/reloadcfg`
+        **语法:** `/reloadcfg`
 
-        **Description:** Reloads `Config.json`, `WhiteList.json`, and PalDefender ban data.
+        **描述:** 重新加载 `Config.json`、`WhiteList.json` 和 PalDefender 封禁数据。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /reloadcfg
         ```
 
     ??? info "/addadminip"
-        **Syntax:** `/addadminip <IP>`
+        **语法:** `/addadminip <IP>`
 
-        **Description:** Adds an IP address to admin whitelist.
+        **描述:** 将 IP 地址添加到管理员白名单。
 
-        **Arguments:**
+        **参数:**
 
-        - `<IP>`: The IP address to add as admin.
+        - `<IP>`: 要添加为管理员的 IP 地址。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /addadminip 192.168.1.1
         ```
 
     ??? info "/setadmin"
-        **Syntax:** `/setadmin <UserId>`
+        **语法:** `/setadmin <UserId>`
 
-        **Description:** Temporarily grants/revokes admin from a player.
+        **描述:** 临时授予或撤销玩家的管理员权限。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to grant/revoke admin.
+        - `<UserId>`: 要授予/撤销管理员权限的玩家 ID。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /setadmin steam_76500000000000000
         ```
 
     ??? info "/pgbroadcast"
-        **Syntax:** `/pgbroadcast <Message>`
+        **语法:** `/pgbroadcast <Message>`
 
-        **Description:** Send a message to all players in the server.
+        **描述:** 向服务器上的所有玩家发送消息。
 
-        **Arguments:**
+        **参数:**
 
-        - `<Message>`: The message to broadcast.
+        - `<Message>`: 要广播的消息。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /pgbroadcast "Server will restart soon."
         ```
 
     ??? info "/adminlogin"
-        **Syntax:** `/adminlogin <password>`
+        **语法:** `/adminlogin <password>`
 
-        **Description:** Logs you into admin mode. Requires your admin password as an argument.
+        **描述:** 登录管理员模式。需要将管理员密码作为参数。
 
-        **Arguments:**
+        **参数:**
 
-        - `<password>`: The admin password.
+        - `<password>`: 管理员密码。
 
-        **Permissions:** `Chat`
+        **权限:** `Chat`
 
-        **Example:**
+        **示例:**
         ```
         /adminlogin mySecretPassword
         ```
 
     ??? info "/adminlogout"
-        **Syntax:** `/adminlogout`
+        **语法:** `/adminlogout`
 
-        **Description:** Logs you out of admin mode.
+        **描述:** 退出管理员模式。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /adminlogout
         ```
 
     ??? info "/iwantplayerlist"
-        **Syntax:** `/iwantplayerlist`
+        **语法:** `/iwantplayerlist`
 
-        **Description:** Enables the in-game player list overlay, allowing you to view every player's UserId and Player UID when you press ESC. Useful for server admins and players who want to see detailed player information directly in the game interface.
+        **描述:** 启用游戏内玩家列表叠加层，按 ESC 时可查看每名玩家的 UserId 和 Player UID。适合服务器管理员以及希望在游戏界面中直接查看详细玩家信息的玩家。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /iwantplayerlist
         ```
 
     ??? info "/getpos"
-        **Syntax:** `/getpos [UserId]`
+        **语法:** `/getpos [UserId]`
 
-        **Description:** Gets your current position in the world, which can be used for teleporting, summoning, and similar actions. If a [UserId] is provided, gets the position of that player instead.
+        **描述:** 获取你当前的世界坐标，可用于传送、召唤等操作。如果提供 [UserId]，则获取该玩家的位置。
 
-        **Arguments:**
+        **参数:**
 
-        - `[UserId]`: (Optional) The ID of the player whose position you want to get. If omitted, gets your own position.
+        - `[UserId]`: （可选）要获取位置的玩家 ID。省略时获取你自己的位置。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /getpos
         /getpos steam_76500000000000000
         ```
 
     ??? info "/settime"
-        **Syntax:** `/settime <hour>`
+        **语法:** `/settime <hour>`
 
-        **Description:** Changes the time in Palworld. Hour can have following values: `0` to `23`, `day` and `night`.
+        **描述:** 更改 Palworld 中的时间。小时可为 `0` 到 `23`，也可以是 `day` 或 `night`。
 
-        **Arguments:**
+        **参数:**
 
         - `<hour>`: Hour value (0-23, day, night).
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /settime 12
         /settime night
         ```
 
     ??? info "/togglepvp"
-        **Syntax:** `/togglepvp`
+        **语法:** `/togglepvp`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Toggles server PvP on or off for the current running session.
+        **描述:** 在当前运行会话中开启或关闭服务器 PvP。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /togglepvp
         ```
 
     ??? info "/alert"
-        **Syntax:** `/alert <message>`
+        **语法:** `/alert <message>`
 
-        **Description:** Sends an alert message to all players on the server. This message is usually displayed prominently on their screens.
+        **描述:** 向服务器上的所有玩家发送警报消息。该消息通常会醒目地显示在屏幕上。
 
-        **Arguments:**
+        **参数:**
 
-        - `<message>`: The message to broadcast as an alert.
+        - `<message>`: 要作为警报广播的消息。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /alert Server will restart in 5 minutes!
         ```
 
     ??? info "/send"
-        **Syntax:** `/send <type> <UserId> <Message>`
+        **语法:** `/send <type> <UserId> <Message>`
 
-        **Description:** Allows you to send a message or log message to a specific player.
+        **描述:** 允许你向指定玩家发送消息或日志消息。
 
-        **Arguments:**
+        **参数:**
 
-        - `<type>`: The type of message to send. Possible values:
+        - `<type>`: 要发送的消息类型。可选值：
              - `msg`: Regular chat message.
              - `log`: Regular log message (white, disappears quickly, larger font).
              - `ilog`: Important log message (blue, stays longer).
              - `vilog`: Very important log message (blue, stays extremely long).
-        - `<UserId>`: The ID of the player to receive the message.
-        - `<Message>`: The message text to send.
+        - `<UserId>`: 接收消息的玩家 ID。
+        - `<Message>`: 要发送的消息文本。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /send msg steam_76500000000000000 Dont miss out on Qonzer's sale!
         /send log steam_76500000000000000 Dont miss out on Qonzer's sale!
@@ -265,61 +265,61 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Base Management"
     ??? info "/getnearestbase"
-        **Syntax:** `/getnearestbase [X] [Y] [Z]`
+        **语法:** `/getnearestbase [X] [Y] [Z]`
 
-        **Description:** Tells you the guild name which owns the base nearest to your character.
+        **描述:** 显示离你角色最近的基地所属公会名称。
 
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
-        **Arguments:**
+        **参数:**
 
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `[X]`: （可选）X 坐标。
+        - `[Y]`: （可选）Y 坐标。
+        - `[Z]`: （可选）Z 坐标。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /getnearestbase 100 200 50
         ```
 
     ??? info "/gotonearestbase"
-        **Syntax:** `/gotonearestbase [X] [Y] [Z]`
+        **语法:** `/gotonearestbase [X] [Y] [Z]`
 
-        **Description:** Teleports you to the nearest base of the location.
+        **描述:** 将你传送到当前位置附近最近的基地。
 
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
-        **Arguments:**
+        **参数:**
 
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `[X]`: （可选）X 坐标。
+        - `[Y]`: （可选）Y 坐标。
+        - `[Z]`: （可选）Z 坐标。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /gotonearestbase 100 200 50
         ```
 
     ??? info "/killnearestbase"
-        **Syntax:** `/killnearestbase [X] [Y] [Z]`
+        **语法:** `/killnearestbase [X] [Y] [Z]`
 
-        **Description:** Destroys the nearest base (**Use with caution!**).
+        **描述:** 摧毁最近的基地（**请谨慎使用！**）。
 
         **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
 
-        **Arguments:**
+        **参数:**
 
-        - `[X]`: (Optional) X coordinate.
-        - `[Y]`: (Optional) Y coordinate.
-        - `[Z]`: (Optional) Z coordinate.
+        - `[X]`: （可选）X 坐标。
+        - `[Y]`: （可选）Y 坐标。
+        - `[Z]`: （可选）Z 坐标。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /killnearestbase 100 200 50
         ```
@@ -327,204 +327,204 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Player Management"
     ??? info "/kick"
-        **Syntax:** `/kick <UserId> [Reason="Kicked by Admin."]`
+        **语法:** `/kick <UserId> [Reason="Kicked by Admin."]`
 
-        **Description:** Kicks a player from the server.
+        **描述:** 将玩家踢出服务器。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to kick.
-        - `[Reason]`: (Optional) Reason for kicking. Default: "Kicked by Admin."
+        - `<UserId>`: 要踢出的玩家 ID。
+        - `[Reason]`: （可选）踢出原因。默认："Kicked by Admin."
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /kick steam_76500000000000000 "Spamming in chat"
         ```
 
     ??? info "/ban"
-        **Syntax:** `/ban <UserId> [Reason="Banned by Admin."]`
+        **语法:** `/ban <UserId> [Reason="Banned by Admin."]`
 
-        **Description:** Bans and kicks a player from the server.
+        **描述:** 封禁玩家并将其踢出服务器。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to ban.
-        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+        - `<UserId>`: 要封禁的玩家 ID。
+        - `[Reason]`: （可选）封禁原因。默认："Banned by Admin."
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /ban gdk_25300000000000000 "Cheating"
         ```
 
     ??? info "/ipban"
-        **Syntax:** `/ipban <UserId> [Reason="Banned by Admin."]`
+        **语法:** `/ipban <UserId> [Reason="Banned by Admin."]`
 
-        **Description:** Bans a player's IP address and then kicks them from the server.
+        **描述:** 封禁玩家的 IP 地址，然后将其踢出服务器。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to IP ban.
-        - `[Reason]`: (Optional) Reason for banning. Default: "Banned by Admin."
+        - `<UserId>`: 要进行 IP 封禁的玩家 ID。
+        - `[Reason]`: （可选）封禁原因。默认："Banned by Admin."
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /ipban steam_76500000000000000
         ```
 
     ??? info "/banip"
-        **Syntax:** `/banip <IP>`
+        **语法:** `/banip <IP>`
 
-        **Description:** Bans an IP address from the server.
+        **描述:** 封禁一个 IP 地址。
 
-        **Arguments:**
+        **参数:**
 
-        - `<IP>`: The IP address to ban.
+        - `<IP>`: 要封禁的 IP 地址。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /banip 192.168.1.1
         ```
 
     ??? info "/unbanip"
-        **Syntax:** `/unbanip <IP>`
+        **语法:** `/unbanip <IP>`
 
-        **Description:** Removes an IP address from the banlist.
+        **描述:** 从封禁列表中移除一个 IP 地址。
 
-        **Arguments:**
+        **参数:**
 
-        - `<IP>`: The IP address to unban.
+        - `<IP>`: 要解除封禁的 IP 地址。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /unbanip 192.168.1.1
         ```
 
     ??? info "/unban"
-        **Syntax:** `/unban <UserId> [Reason="Unbanned by admin."]`
+        **语法:** `/unban <UserId> [Reason="Unbanned by admin."]`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Removes a UserId from the PalDefender ban list.
+        **描述:** 从 PalDefender 封禁列表中移除一个 UserId。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The UserId to unban.
-        - `[Reason]`: (Optional) Reason stored for the unban action.
+        - `<UserId>`: 要解除封禁的 UserId。
+        - `[Reason]`: （可选）为解除封禁操作保存的原因。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /unban steam_76500000000000000 "Appeal accepted"
         ```
 
     ??? info "/getip"
-        **Syntax:** `/getip <UserId>`
+        **语法:** `/getip <UserId>`
 
-        **Description:** Shows you the IP address of a player.
+        **描述:** 显示玩家的 IP 地址。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
+        - `<UserId>`: 玩家的 ID。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /getip gdk_25300000000000000
         ```
 
     ??? info "/whitelist_add"
-        **Syntax:** `/whitelist_add <UserId>`
+        **语法:** `/whitelist_add <UserId>`
 
-        **Description:** Adds a UserId to the whitelist.
+        **描述:** 将 UserId 添加到白名单。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to whitelist.
+        - `<UserId>`: 要加入白名单的玩家 ID。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /whitelist_add steam_76500000000000000
         ```
 
     ??? info "/whitelist_remove"
-        **Syntax:** `/whitelist_remove <UserId>`
+        **语法:** `/whitelist_remove <UserId>`
 
-        **Description:** Removes a UserId from the whitelist.
+        **描述:** 从白名单中移除 UserId。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to remove from whitelist.
+        - `<UserId>`: 要从白名单移除的玩家 ID。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /whitelist_remove gdk_25300000000000000
         ```
 
     ??? info "/whitelist_get"
-        **Syntax:** `/whitelist_get`
+        **语法:** `/whitelist_get`
 
-        **Description:** Shows the full list of the whitelisted players.
+        **描述:** 显示白名单玩家的完整列表。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /whitelist_get
         ```
 
     ??? info "/imcheater"
-        **Syntax:** `/imcheater`
+        **语法:** `/imcheater`
 
-        **Description:** Use this to test how your server responds to a cheater.
+        **描述:** 用于测试服务器如何响应作弊者。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /imcheater
         ```
 
     ??? info "/spectate"
-        **Syntax:** `/spectate`
+        **语法:** `/spectate`
 
-        **Description:** Turns spectate mode on. Same as pressing hotkey `\`, but hotkey does not work for everyone, like console players.
+        **描述:** 开启旁观模式。效果与按下热键 `\` 相同，但该热键并非对所有人都有效，例如主机玩家。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /spectate
         ```
 
 ??? note "Player Character"
     ??? info "/tp"
-        **Syntax:**
+        **语法:**
         Any of the following works:
 
         - `/tp <UserId>`
@@ -539,22 +539,22 @@ At the current version there are only Admin and RCON commands available.
         - `/tp oilrig:Lv55`
         - `/tp oilrig:Lv60`
 
-        **Description:** Teleports yourself, or a specified player, to another player, coordinates, the nearest owned base, or an oilrig destination.
+        **描述:** 将你自己或指定玩家传送到另一名玩家、坐标、最近的己方基地或油田目标位置。
 
-        **Note:** <span class='pd-badge pd-badge--beta'>Beta</span> RCON must include the player being teleported because RCON has no in-game character.
+        **Note:** RCON must include the player being teleported because RCON has no in-game character.
 
-        **Arguments:**
+        **参数:**
 
         - `<UserId>`: A player to teleport to, or the player being teleported when more arguments are supplied.
-        - `<UserId1>`: The player to teleport.
-        - `<UserId2>`: The target player.
-        - `<X> <Y> [Z]`: Map coordinates. If `Z` is omitted, PalDefender tries to find a usable ground height.
+        - `<UserId1>`: 要传送的玩家。
+        - `<UserId2>`: 目标玩家。
+        - `<X> <Y> [Z]`: 地图坐标。如果省略 `Z`，PalDefender 会尝试寻找可用的地面高度。
         - `home`: Teleports to the nearest owned base.
         - `oilrig`, `oilrig:Lv30`, `oilrig:Lv55`, `oilrig:Lv60`: Teleports to an oilrig destination.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /tp steam_76500000000000000 gdk_25300000000000000
         /tp 100 -250
@@ -562,102 +562,102 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/give_exp"
-        **Syntax:** `/give_exp <UserId> <Amount>`
+        **语法:** `/give_exp <UserId> <Amount>`
 
-        **Description:** Gives experience points to a player.
+        **描述:** 给玩家经验值。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
+        - `<UserId>`: 玩家的 ID。
         - `<Amount>`: Amount of experience points.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /give_exp gdk_25300000000000000 1000
         ```
 
     ??? info "/giveme_exp"
-        **Syntax:** `/giveme_exp <Amount>`
+        **语法:** `/giveme_exp <Amount>`
 
-        **Description:** Gives experience points to yourself.
+        **描述:** 给自己经验值。
 
-        **Arguments:**
+        **参数:**
 
         - `<Amount>`: Amount of experience points.
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /giveme_exp 1000
         ```
 
     ??? info "/renameplayer"
-        **Syntax:** `/renameplayer <UserId> <NewName>`
+        **语法:** `/renameplayer <UserId> <NewName>`
 
-        **Description:** Renames a player's nickname.
+        **描述:** 修改玩家昵称。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
-        - `<NewName>`: The new nickname.
+        - `<UserId>`: 玩家的 ID。
+        - `<NewName>`: 新昵称。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /renameplayer steam_76500000000000000 NewNickname
         ```
 
     ??? info "/givestats"
-        **Syntax:** `/givestats <UserId> [Count=1]`
+        **语法:** `/givestats <UserId> [Count=1]`
 
-        **Description:** Gives the player one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
+        **描述:** 给玩家一个或多个未使用属性点；负数会扣除。不会影响已经分配的点数。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to receive the status points.
-        - `[Count]`: (Optional) The number of Unused Status Points to give (can be negative to subtract). Default: 1.
+        - `<UserId>`: 接收属性点的玩家 ID。
+        - `[Count]`: （可选）给予的未使用属性点数量，可为负数以扣除。默认：1。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givestats steam_76500000000000000 5
         /givestats steam_76500000000000000 -2
         ```
 
     ??? info "/givemestats"
-        **Syntax:** `/givemestats [Count=1]`
+        **语法:** `/givemestats [Count=1]`
 
-        **Description:** Gives yourself one or more Unused Status Points (negative value will subtract). Does not affect points that are already spent.
+        **描述:** 给自己一个或多个未使用属性点；负数会扣除。不会影响已经分配的点数。
 
-        **Arguments:**
+        **参数:**
 
-        - `[Count]`: (Optional) The number of Unused Status Points to give yourself (can be negative to subtract). Default: 1.
+        - `[Count]`: （可选）给自己的未使用属性点数量，可为负数以扣除。默认：1。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemestats 5
         /givemestats -2
         ```
 
     ??? info "/godmode"
-        **Syntax:** `/godmode [on/off]`
+        **语法:** `/godmode [on/off]`
 
-        **Description:** Grants invulnerability including status effect immunity, denies consumption of food and restores health upon activation. Optionally allows one-shotting everything, if enabled in the config.
+        **描述:** 授予无敌，包括免疫状态效果，阻止食物消耗，并在启用时恢复生命值。如果配置允许，也可以一击击杀所有目标。
 
-        **Arguments:**
+        **参数:**
 
-        - `[on/off]`: (Optional) To explicitly enable or disable the godmode. Default: Toggles on and off.
+        - `[on/off]`: （可选）明确启用或禁用无敌模式。默认：切换开关。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /godmode
         /godmode on
@@ -666,175 +666,183 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Guild Management"
     ??? info "/setguildleader"
-        **Syntax:** `/setguildleader <UserId>`
+        **语法:** `/setguildleader <UserId>`
 
-        **Description:** Makes target player the leader of his current guild.
+        **描述:** 将目标玩家设为其当前公会的会长。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to make guild leader.
+        - `<UserId>`: 要设为公会会长的玩家 ID。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /setguildleader gdk_25300000000000000
         ```
 
     ??? info "/exportguilds"
-        **Syntax:** `/exportguilds`
+        **语法:** `/exportguilds`
 
-        **Description:** Dumps every guild of the server into Pal/Binaries/Win64/PalDefender/guildexport.json.
+        **描述:** 将服务器上的所有公会导出到 Pal/Binaries/Win64/PalDefender/guildexport.json。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /exportguilds
         ```
-        Example output file: `Pal/Binaries/Win64/PalDefender/guildexport.json`
+        示例输出文件： `Pal/Binaries/Win64/PalDefender/guildexport.json`
 
 
 ??? note "Items"
     ??? info "/give"
-        **Syntax:** `/give <UserId> <ItemId> [Amount=1]`
+        **语法:** `/give <UserId> <ItemId> [Amount=1]`
 
-        **Description:** Gives a player an item and if specified how many.
+        **描述:** 给玩家一个物品，并可指定数量。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to give the item to.
-        - `<ItemId>`: The item to give.
-        - `[Amount]`: (Optional) How many. Default: 1.
+        - `<UserId>`: 接收物品的玩家 ID。
+        - `<ItemId>`: 要给予的物品。
+        - `[Amount]`: （可选）数量。默认：1。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /give steam_76500000000000000 Sword 2
         ```
 
     ??? info "/giveitems"
-        **Syntax:** `/giveitems <UserId> <ItemId>[:<Amount>] ...`
+        **语法:** `/giveitems <UserId> <ItemId>[:<Amount>] ...`
 
-        **Description:** Gives a player more than 1 item in one command and if specified how many of each separated by a colon.
+        **描述:** 在一个命令中给玩家多个物品，可用冒号为每个物品指定数量。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to give the items to.
+        - `<UserId>`: 接收物品的玩家 ID。
         - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /giveitems gdk_25300000000000000 Sword:2 Shield:1
         ```
 
     ??? info "/giveme"
-        **Syntax:** `/giveme <ItemId> [Amount=1]`
+        **语法:** `/giveme <ItemId> [Amount=1]`
 
-        **Description:** Gives yourself an item and if specified how many.
+        **描述:** 给自己一个物品，并可指定数量。
 
-        **Arguments:**
+        **参数:**
 
-        - `<ItemId>`: The item to give yourself.
-        - `[Amount]`: (Optional) How many. Default: 1.
+        - `<ItemId>`: 要给自己的物品。
+        - `[Amount]`: （可选）数量。默认：1。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /giveme Sword 3
         ```
 
     ??? info "/delitem"
-        **Syntax:** `/delitem <UserId> <ItemId> [Amount=1]`
+        **语法:** `/delitem <UserId> <ItemId> [Amount=1]`
 
-        **Description:** Deletes an item from a player and if specified how many. Default is `1` which will delete only 1 occurrence of that item. Use `all` instead of `1` to delete all occurrences.
+        **描述:** 从玩家身上删除物品，并可指定数量。默认值为 `1`，只删除一个。使用 `all` 替代 `1` 可删除全部。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
-        - `<ItemId>`: The item to delete.
-        - `[Amount]`: (Optional) How many. Default: 1. Use `all` to delete all occurrences.
+        - `<UserId>`: 玩家的 ID。
+        - `<ItemId>`: 要删除的物品。
+        - `[Amount]`：（可选）数量。默认：1。使用 `all` 删除所有匹配项。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /delitem steam_76500000000000000 Sword 1
         /delitem gdk_25300000000000000 Sword all
         ```
 
     ??? info "/give_relic"
-        **Syntax:** `/give_relic <UserId> <Amount>`
+        **语法:** `/give_relic <UserId> <RelicType> [Amount]`
 
-        **Description:** Gives the player one or more Lifmunk Effigies.
+        **描述:** 给玩家一个或多个指定类型的遗物点数。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.
-        - `<Amount>`: The number of Lifmunk Effigies to give.
+        - `<UserId>`: 接收遗物点数的玩家 ID。
+        - `<RelicType>`: 要授予的遗物类型。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        - `[Amount]`: 可选的遗物点数数量，默认值为 `1`。
 
-        **Example:**
+        **支持的遗物类型:** `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+        **示例:**
         ```
-        /give_relic steam_76500000000000000 5
+        /give_relic steam_76500000000000000 CapturePower 5
         ```
 
     ??? info "/giveme_relic"
-        **Syntax:** `/giveme_relic <Amount>`
+        **语法:** `/giveme_relic <RelicType> [Amount]`
 
-        **Description:** Gives yourself one or more Lifmunk Effigies.
+        **描述:** 给自己一个或多个指定类型的遗物点数。
 
-        **Arguments:**
+        **参数:**
 
-        - `<Amount>`: The number of Lifmunk Effigies to give yourself.
+        - `<RelicType>`: 要授予的遗物类型。
 
-        **Permissions:** `Chat`, `Admin`
+        - `[Amount]`: 给自己的可选遗物点数数量，默认值为 `1`。
 
-        **Example:**
+        **支持的遗物类型:** `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
+
+        **权限:** `Chat`, `Admin`
+
+        **示例:**
         ```
-        /giveme_relic 5
+        /giveme_relic CapturePower 5
         ```
 
 
     ??? info "/delitems"
-        **Syntax:** `/delitems <UserId> <ItemId>[:<Amount>] ...`
+        **语法:** `/delitems <UserId> <ItemId>[:<Amount>] ...`
 
-        **Description:** Deletes more than 1 item from a player in one command and if specified how many of each separated by a colon. Use `all` instead of `1` to delete all occurrences.
+        **描述:** 在一个命令中从玩家身上删除多个物品，可用冒号指定每种物品的数量。使用 `all` 替代 `1` 可删除全部。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
+        - `<UserId>`: 玩家的 ID。
         - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /delitems steam_76500000000000000 Sword:1 Shield:all
         ```
 
     ??? info "/clearinv"
-        **Syntax:** `/clearinv <UserId> [Container=items] ...`
+        **语法:** `/clearinv <UserId> [Container=items] ...`
 
-        **Description:** Clears specified containers from a player's inventory. Available containers: `items`, `keyitems`, `armor`, `weapons`, `food`, `dropslot`, or `all`.
+        **描述:** 清空玩家背包中的指定容器。可用容器包括 `items`、`keyitems`、`armor`、`weapons`、`food`、`dropslot` 或 `all`。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
-        - `[Container] ...`: (Optional) Containers to clear. Default: items.
+        - `<UserId>`: 玩家的 ID。
+        - `[Container] ...`: （可选）要清空的容器。默认：items。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /clearinv steam_76500000000000000 items
         /clearinv gdk_25300000000000000 all
@@ -843,79 +851,79 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Pals"
     ??? info "/givepal"
-        **Syntax:** `/givepal <UserId> <PalId> [Level=1]`
+        **语法:** `/givepal <UserId> <PalId> [Level=1]`
 
-        **Description:** Gives a Pal to a player at the specified level.
+        **描述:** 给玩家一只指定等级的帕鲁。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
-        - `<PalId>`: The Pal to give.
-            - **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        - `<UserId>`: 玩家的 ID。
+        - `<PalId>`: 要给予的帕鲁。
+            - **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
+        - `[Level]`: （可选）Pal 等级。默认：1。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givepal gdk_25300000000000000 WeaselDragon 10
         ```
 
     ??? info "/givepal_j"
-        **Syntax:** `/givepal_j <UserID> <PalTemplate>`
+        **语法:** `/givepal_j <UserID> <PalTemplate>`
 
-        **Description:** Gives a player a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
+        **描述:** 给玩家一只由 PalTemplate 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserID>`: The ID of the player.
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](../FileTypes/PalTemplate.md)).
+        - `<UserID>`: 玩家的 ID。
+        - `<PalTemplate>`: PalTemplate 文件名（见 [PalTemplate](../FileTypes/PalTemplate.md)）。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givepal_j steam_76500000000000000 MyPalTemplate
         ```
 
     ??? info "/givemepal"
-        **Syntax:** `/givemepal <PalId> [Level=1]`
+        **语法:** `/givemepal <PalId> [Level=1]`
 
-        **Description:** Gives yourself a Pal at the specified level.
+        **描述:** 给自己一只指定等级的帕鲁。
 
-        **Arguments:**
+        **参数:**
 
-        - `<PalId>`: The Pal to give yourself.
-            - **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        - `<PalId>`: 要给自己的帕鲁。
+            - **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
+        - `[Level]`: （可选）Pal 等级。默认：1。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemepal WeaselDragon 10
         ```
 
     ??? info "/givemepal_j"
-        **Syntax:** `/givemepal_j <PalTemplate>`
+        **语法:** `/givemepal_j <PalTemplate>`
 
-        **Description:** Gives yourself a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
+        **描述:** 给自己一只由 PalTemplate 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
 
-        **Arguments:**
+        **参数:**
 
-        - `<PalTemplate>`: The name of the PalTemplate file (see [PalTemplate](../FileTypes/PalTemplate.md)).
+        - `<PalTemplate>`: PalTemplate 文件名（见 [PalTemplate](../FileTypes/PalTemplate.md)）。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemepal_j MyPalTemplate
         ```
 
     ??? info "/spawnpal"
-        **Syntax:**
+        **语法:**
         Any of the following works:
 
         - `/spawnpal <PalID>`
@@ -923,81 +931,81 @@ At the current version there are only Admin and RCON commands available.
         - `/spawnpal <PalID> [x] [y] [z]`
         - `/spawnpal <PalID> [x] [y] [z] [Level]`
 
-        **Description:** Spawns a Pal relative or absolute to you. **RCON has to specify x, y and z!**
+        **描述:** 按相对或绝对坐标生成一只帕鲁。**RCON 必须指定 x、y 和 z！**
 
         **Note:** All stats, except level, are randomized.
 
-        **Arguments:**
-        - `<PalID>`: The Pal to spawn.
-        - `[x]`: (Optional) x position of the pal. Default: Relative to player-invoker.
-        - `[y]`: (Optional) y position of the pal. Default: Relative to player-invoker.
-        - `[z]`: (Optional) z position of the pal. Default: Relative to player-invoker.
-        - `[Level]`: (Optional) Level of the Pal. Default: 1.
+        **参数:**
+        - `<PalID>`: 要生成的帕鲁。
+        - `[x]`: （可选）Pal 的 X 坐标。默认：相对于执行命令的玩家。
+        - `[y]`: （可选）Pal 的 Y 坐标。默认：相对于执行命令的玩家。
+        - `[z]`: （可选）Pal 的 Z 坐标。默认：相对于执行命令的玩家。
+        - `[Level]`: （可选）Pal 等级。默认：1。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /spawnpal Anubis 255
         ```
         _Spawns an Anubis with level 255!_
 
     ??? info "/spawnpal_j"
-        **Syntax:**
+        **语法:**
 
         Any of the following works:
 
         - `/spawnpal_j <PalTemplate>`
         - `/spawnpal <PalTemplate> [x] [y] [z]`
 
-        **Description:** Spawns a Pal relative or absolute to you. **RCON has to specify x, y and z!**
+        **描述:** 按相对或绝对坐标生成一只帕鲁。**RCON 必须指定 x、y 和 z！**
 
         **Note:** All stats, except level, are randomized.
 
-        **Arguments:**
+        **参数:**
 
-        - `<PalTemplate>`: The name of the PalTemplate file to use.
-        - `[x]`: (Optional) x position of the pal. Default: Relative to player-invoker.
-        - `[y]`: (Optional) y position of the pal. Default: Relative to player-invoker.
-        - `[z]`: (Optional) z position of the pal. Default: Relative to player-invoker.
+        - `<PalTemplate>`: 要使用的 PalTemplate 文件名。
+        - `[x]`: （可选）Pal 的 X 坐标。默认：相对于执行命令的玩家。
+        - `[y]`: （可选）Pal 的 Y 坐标。默认：相对于执行命令的玩家。
+        - `[z]`: （可选）Pal 的 Z 坐标。默认：相对于执行命令的玩家。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /spawnpal Anubis 255
         ```
         _Spawns an Anubis with level 255!_
 
     ??? info "/summon"
-        **Syntax:** `/summon <PalSummon>`
+        **语法:** `/summon <PalSummon>`
 
-        **Description:** Spawns a Pal using the provided PalSummon file.
+        **描述:** 使用指定的 PalSummon 文件生成帕鲁。
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
-        **Arguments:**
-        - `<PalSummon>`: The name of the PalSummon file to use.
+        **参数:**
+        - `<PalSummon>`: 要使用的 PalSummon 文件名。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /summon PalSummon
         ```
 
     ??? info "/giveegg"
-        **Syntax:** `/giveegg <UserId> <EggId> <PalId> [Level]`
+        **语法:** `/giveegg <UserId> <EggId> <PalId> [Level]`
 
-        **Description:** Gives target user a pal egg with the specific pal inside and optionally adjusted level.
+        **描述:** 给目标用户一个包含指定帕鲁的帕鲁蛋，并可选择调整等级。
 
-        **Arguments:**
+        **参数:**
 
         ??? quote "<UserId\>"
-            **Description:** The ID of the player to receive the egg.
+            **描述:** 接收帕鲁蛋的玩家 ID。
 
         ??? quote "<EggId\>"
-            **Description:** The type of egg to give.
+            **描述:** 要给予的蛋类型。
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1012,30 +1020,30 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalId\>"
-            **Description:** The Pal that will be inside the egg.
+            **描述:** 蛋中包含的帕鲁。
 
-            **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
 
         ??? quote "[Level\]"
-            **Description:** (Optional) The level of the Pal inside the egg.
+            **描述:** （可选）蛋中帕鲁的等级。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /giveegg steam_76500000000000000 PalEgg_Ice_01 WeaselDragon 10
         ```
 
 
     ??? info "/givemeegg"
-        **Syntax:** `/givemeegg <EggId> <PalId> [Level]`
+        **语法:** `/givemeegg <EggId> <PalId> [Level]`
 
-        **Description:** Gives yourself a pal egg with the specific pal inside and optionally adjusted level.
+        **描述:** 给自己一个包含指定帕鲁的帕鲁蛋，并可选择调整等级。
 
-        **Arguments:**
+        **参数:**
 
         ??? quote "<EggId\>"
-            **Description:** The type of egg to give yourself.
+            **描述:** 要给自己的蛋类型。
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1050,29 +1058,29 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalId\>"
-            **Description:**  The Pal that will be inside the egg.
+            **描述:** 蛋中包含的帕鲁。
 
-            **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
 
         ??? quote "[Level]"
-            **Description:**  (Optional) The level of the Pal inside the egg.
+            **描述:** （可选）蛋中帕鲁的等级。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemeegg PalEgg_Ice_01 WeaselDragon 10
         ```
 
     ??? info "/giveegg_j"
-        **Syntax:** `/giveegg_j <EggId> <PalTemplate> [Level]`
+        **语法:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** Gives a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
+        **描述:** 给出一个帕鲁蛋，内部帕鲁由 PalTemplate 文件定义，并可选择调整等级。
 
-        **Arguments:**
+        **参数:**
 
         ??? quote "<EggId\>"
-            **Description:** The type of egg to give.
+            **描述:** 要给予的蛋类型。
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1087,29 +1095,29 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Description:** The name of the PalTemplate file to use.
+            **描述:** 要使用的 PalTemplate 文件名。
 
-            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
+            **注意：** 文件名不需要包含 .json 扩展名；如果缺失，系统会自动追加。参见 [PalTemplate](../FileTypes/PalTemplate.md)。
 
         ??? quote "[Level]"
-            **Description:** (Optional) The level of the Pal inside the egg.
+            **描述:** （可选）蛋中帕鲁的等级。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /giveegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
     ??? info "/givemeegg_j"
-        **Syntax:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
+        **语法:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** Gives yourself a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
+        **描述:** 给自己一个帕鲁蛋，内部帕鲁由 PalTemplate 文件定义，并可选择调整等级。
 
-        **Arguments:**
+        **参数:**
 
         ??? quote "<EggI\>"
-            **Description:** The type of egg to give yourself.
+            **描述:** 要给自己的蛋类型。
 
             **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
 
@@ -1124,80 +1132,80 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Description:** The name of the PalTemplate file to use.
+            **描述:** 要使用的 PalTemplate 文件名。
 
-            **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
+            **注意：** 文件名不需要包含 .json 扩展名；如果缺失，系统会自动追加。参见 [PalTemplate](../FileTypes/PalTemplate.md)。
 
         ??? quote "[Level]"
-            **Description:** (Optional) The level of the Pal inside the egg.
+            **描述:** （可选）蛋中帕鲁的等级。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemeegg_j PalEgg_Ice_01 MyPalTemplate 10
         ```
 
     ??? info "/jetragon"
-        **Syntax:** `/jetragon`
+        **语法:** `/jetragon`
 
-        **Description:** Gives you an Admin-Jetragon Pal (it's faaas.... gone).
+        **描述:** 给你一只管理员空涡龙帕鲁（它飞得太快了……）。
 
-        **Arguments:**
+        **参数:**
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /jetragon
         ```
 
     ??? info "/catwaifu"
-        **Syntax:** `/catwaifu`
+        **语法:** `/catwaifu`
 
-        **Description:** Gives you an Admin-Cat-Waifu that buffs your character stats.
+        **描述:** 给你一只管理员猫娘帕鲁，用于增强角色属性。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /catwaifu
         ```
 
     ??? info "/exportpals"
-        **Syntax:** `/exportpals [UserId]`
+        **语法:** `/exportpals [UserId]`
 
-        **Description:** Export every Pal of a player to a PalTemplate file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
+        **描述:** 将玩家的每只帕鲁导出为 PalTemplate 文件，位置为 Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/。
 
-        **Arguments:**
+        **参数:**
 
-        - `[UserId]`: (Optional) The ID of the player whose Pals will be exported. If omitted, exports your own Pals.
+        - `[UserId]`: （可选）要导出帕鲁的玩家 ID。省略时导出你自己的帕鲁。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /exportpals steam_76500000000000000
         /exportpals
         ```
 
     ??? info "/deletepals"
-        **Syntax:** `/deletepals <UserId> <PalFilter>`
+        **语法:** `/deletepals <UserId> <PalFilter>`
 
-        **Description:** Deletes Pals from the specified user using advanced filters. The filter allows you to specify multiple criteria (such as Pal ID, level, gender, passives, etc.) in one command. Please test in a safe environment before using on important data.
+        **描述:** 使用高级过滤器删除指定用户的帕鲁。过滤器允许在一个命令中指定多个条件，例如 Pal ID、等级、性别、被动技能等。用于重要数据前请先在安全环境中测试。
 
-        **Arguments:**
+        **参数:**
 
         ??? quote "<UserId\>"
-            **Description:** The ID of the player whose Pals will be deleted.
+            **描述:** 其帕鲁将被删除的玩家 ID。
 
         ??? quote "<PalFilter\>"
-            **Description:** A set of filter keywords to select which Pals to delete.
+            **描述:** 用于选择要删除哪些帕鲁的一组过滤关键字。
 
             **Note:** Multiple keywords can be combined in one command.
 
@@ -1212,17 +1220,17 @@ At the current version there are only Admin and RCON commands available.
             - `Passives`: PassiveSkill or list of PassiveSkills (comma-separated)
             - `Limit`: Number (max number of Pals to delete)
 
-            **Example filters:**
+            **示例过滤器：**
 
             - `ID Serpent, PinkLizard Level>10 Gender male Limit 3`
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/<span class='pd-badge pd-badge--beta'>Beta</span>/Wiki/Commands/deletepals.md).
+            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/master/Wiki/Commands/deletepals.md).
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /deletepals 76567890987654321 ID Serpent, PinkLizard Level>10 Gender male Limit 3
         /deletepals 76567890987654321 ID Anubis Rank>=3
@@ -1232,103 +1240,103 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Research Tree"
     ??? info "/learntech"
-        **Syntax:** `/learntech <UserId> <TechID>`
+        **语法:** `/learntech <UserId> <TechID>`
 
-        **Description:** Lets a player learn a specific technology. Use `all` to unlock everything.
+        **描述:** 让玩家学习指定科技。使用 `all` 可解锁全部。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
-        - `<TechID>`: The technology to learn. Use `all` to unlock everything.
+        - `<UserId>`: 玩家的 ID。
+        - `<TechID>`: 要学习的科技。使用 `all` 解锁全部。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /learntech steam_76500000000000000 Tech001
         /learntech gdk_25300000000000000 all
         ```
 
     ??? info "/unlearntech"
-        **Syntax:** `/unlearntech <UserId> <TechID>`
+        **语法:** `/unlearntech <UserId> <TechID>`
 
-        **Description:** Makes a player forget a specific technology. Use `all` to remove everything.
+        **描述:** 让玩家遗忘指定科技。使用 `all` 可移除全部。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player.
-        - `<TechID>`: The technology to forget. Use `all` to remove everything.
+        - `<UserId>`: 玩家的 ID。
+        - `<TechID>`: 要遗忘的科技。使用 `all` 移除全部。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /unlearntech gdk_25300000000000000 Tech001
         /unlearntech steam_76500000000000000 all
         ```
 
     ??? info "/givetechpoints"
-        **Syntax:** `/givetechpoints <UserId> [Amount=1]`
+        **语法:** `/givetechpoints <UserId> [Amount=1]`
 
-        **Description:** Gives the target user X technology points.
+        **描述:** 给目标用户 X 点科技点。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to receive the technology points.
-        - `[Amount]`: (Optional) The number of technology points to give. Default: 1.
+        - `<UserId>`: 接收科技点的玩家 ID。
+        - `[Amount]`: （可选）给予的科技点数量。默认：1。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givetechpoints steam_76500000000000000 10
         ```
 
     ??? info "/givebosstechpoints"
-        **Syntax:** `/givebosstechpoints <UserId> [Amount=1]`
+        **语法:** `/givebosstechpoints <UserId> [Amount=1]`
 
-        **Description:** Gives the target user X ancient technology points.
+        **描述:** 给目标用户 X 点古代科技点。
 
-        **Arguments:**
+        **参数:**
 
-        - `<UserId>`: The ID of the player to receive the ancient technology points.
-        - `[Amount]`: (Optional) The number of ancient technology points to give. Default: 1.
+        - `<UserId>`: 接收古代科技点的玩家 ID。
+        - `[Amount]`: （可选）给予的古代科技点数量。默认：1。
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givebosstechpoints steam_76500000000000000 5
         ```
 
     ??? info "/givemetechpoints"
-        **Syntax:** `/givemetechpoints [Amount=1]`
+        **语法:** `/givemetechpoints [Amount=1]`
 
-        **Description:** Gives yourself X technology points.
+        **描述:** 给自己 X 点科技点。
 
-        **Arguments:**
+        **参数:**
 
-        - `[Amount]`: (Optional) The number of technology points to give yourself. Default: 1.
+        - `[Amount]`: （可选）给自己的科技点数量。默认：1。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemetechpoints 10
         ```
 
     ??? info "/givemebosstechpoints"
-        **Syntax:** `/givemebosstechpoints [Amount=1]`
+        **语法:** `/givemebosstechpoints [Amount=1]`
 
-        **Description:** Gives yourself X ancient technology points.
+        **描述:** 给自己 X 点古代科技点。
 
-        **Arguments:**
+        **参数:**
 
-        - `[Amount]`: (Optional) The number of ancient technology points to give yourself. Default: 1.
+        - `[Amount]`: （可选）给自己的古代科技点数量。默认：1。
 
-        **Permissions:** `Chat`, `Admin`
+        **权限:** `Chat`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /givemebosstechpoints 5
         ```
@@ -1336,33 +1344,33 @@ At the current version there are only Admin and RCON commands available.
 
 ??? note "Data mining"
     ??? info "/gettechids"
-        **Syntax:** `/gettechids`
+        **语法:** `/gettechids`
 
-        **Description:** Returns a list of all available technology IDs. RCON gets JSON output.
+        **描述:** 返回所有可用科技 ID 的列表。RCON 会得到 JSON 输出。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /gettechids
         ```
 
     ??? info "/getskinids"
-        **Syntax:** `/getskinids`
+        **语法:** `/getskinids`
 
-        **Description:** Returns a list of all available Pal Skin IDs. RCON gets JSON output.
+        **描述:** 返回所有可用帕鲁皮肤 ID 的列表。RCON 会得到 JSON 输出。
 
-        **Arguments:**
+        **参数:**
 
         - None
 
-        **Permissions:** `Chat`, `RCON`, `Admin`
+        **权限:** `Chat`, `RCON`, `Admin`
 
-        **Example:**
+        **示例:**
         ```
         /getskinids
         ```

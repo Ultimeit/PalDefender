@@ -1,60 +1,60 @@
 # POST /deletebase/{base_camp_id}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/deletebase/<base_camp_id>`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/deletebase/<base_camp_id>`
 
-**Permission:** `REST.Base.Delete`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Base.Delete`
 
-Deletes a base/camp by its base camp ID. This is a destructive admin action.
+## 用途
 
-## Path parameters
+通过 Base Camp ID 删除基地/营地。这是破坏性管理员操作。
+
+## 路径参数
 
 - `base_camp_id`: Base camp identifier, usually copied from guild/base data.
 
-## Query parameters
+## 查询参数
 
-None.
+无。
 
-## Request body
+## 请求体
 
-Optional empty JSON object. Confirm the ID before sending the request.
+可选的空 JSON 对象。发送请求前请确认 ID。
 
-## Response schema
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/deletebase.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `INVALID_BASE_CAMP_ID` | The `base_camp_id` path value is not a valid GUID. |
-| `500` | `BASE_CAMP_MANAGER_UNAVAILABLE` | The server could not access `UPalBaseCampManager`. |
+| `500` | `BASE_CAMP_MANAGER_UNAVAILABLE` | 服务器无法访问 `UPalBaseCampManager`。 |
 | `404` | `BASE_CAMP_NOT_FOUND` | No base camp matched the supplied GUID. |
-| `500` | `DELETE_BASE_FAILED` | The base camp was found, but destruction/cleanup failed. |
+| `500` | `DELETE_BASE_FAILED` | 已找到 Base Camp，但销毁/清理失败。 |
 
-## Examples
+## 示例
 
 ### Delete a base camp by GUID
 
@@ -68,8 +68,8 @@ POST /v1/pdapi/deletebase/13b9e8d7-4f2c-42a1-b79e-fc2a9186e4d5
 POST /v1/pdapi/deletebase/81c2f0a4-6d7e-49fb-a11d-0d2f9f94b13c
 ```
 
-## Scenarios
+## 使用场景
 
 - Remove abandoned or broken bases after staff review.
-- Use [GET /guilds](guilds.md) and [GET /guild](guild.md) to identify the correct camp before deletion.
+- 删除前使用 [GET /guilds](guilds.md) 和 [GET /guild](guild.md) 确认正确的营地。
 - Do not use this endpoint for routine cleanup unless your staff process already verifies ownership and backups.

@@ -1,15 +1,15 @@
-# 📁 File Types
+# 📁 Dateitypen
 
 **PalDefender** supports a range of custom file types that can be used to configure your server’s behavior and extend its features.
 Currently supported:
 * `Config.json`
 * `WhiteList.json`
-* `Banlist.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+* `Banlist.json`
 * `PalTemplate.json`
 * `PalSummon.json`
-* `Pals/ImportRules/*.json` <span class='pd-badge pd-badge--beta'>Beta</span>
-* `RESTAPI/RESTConfig.json` <span class='pd-badge pd-badge--beta'>Beta</span>
-* `RESTAPI/Tokens/*.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+* `Pals/ImportRules/*.json`
+* `RESTAPI/RESTConfig.json`
+* `RESTAPI/Tokens/*.json`
 
 ---
 
@@ -35,12 +35,12 @@ Supports both **User IDs** and **IP addresses** (including masked ranges).
 
 ---
 
-### 🚫 `Banlist.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+### 🚫 `Banlist.json`
 
 Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment tools.
 
 * Prefer `/ban`, `/unban`, `/banip`, `/unbanip`, or the REST API instead of editing this file manually.
-* If you must edit it manually, stop the server first or reload configuration after changes.
+* Wenn du sie manuell bearbeiten musst, stoppe zuerst den Server oder lade die Konfiguration nach der Aenderung neu.
 
 ---
 
@@ -49,7 +49,7 @@ Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment t
 Used for spawning or giving customized Pals via commands.
 
 * Defines the Pal’s **ID, nickname, gender, stats (HP/SP/MP), hunger, sanity, shiny status, skills, IVs, passives**, and more.
-* Allows full customization of a Pal’s **combat, utility, and work traits**.
+* Erlaubt vollständige Anpassung der **Kampf-, Nutz- und Arbeitswerte** eines Pals.
 
 ---
 
@@ -62,18 +62,18 @@ Spawns a custom Pal at a specific location.
 
 ---
 
-### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md) <span class='pd-badge pd-badge--beta'>Beta</span>
+### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md)
 
 Controls how custom Pal templates are accepted.
 
-* Set global limits in `Pals/ImportRules/Default.json`.
-* Add per-Pal overrides with files such as `Pals/ImportRules/Anubis.json`.
-* Choose whether over-limit values are blocked or clamped.
-* Choose whether disallowed passives block imports or are removed.
+* Setze globale Limits in `Pals/ImportRules/Default.json`.
+* Füge Pal-spezifische Überschreibungen mit Dateien wie `Pals/ImportRules/Anubis.json` hinzu.
+* Lege fest, ob Werte oberhalb der Limits blockiert oder reduziert werden.
+* Lege fest, ob unerlaubte Passives den Import blockieren oder entfernt werden.
 
 ---
 
-### 🌐 REST API config files <span class='pd-badge pd-badge--beta'>Beta</span>
+### 🌐 REST API config files
 
 REST API configuration lives in `RESTAPI/RESTConfig.json`, while bearer tokens live in `RESTAPI/Tokens/*.json`.
 

@@ -1,58 +1,58 @@
 # POST /unban/{user_id}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/unban/<user_id>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/unban/<user_id>`
 
-**Permission:** `REST.Punishments.Unban`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Punishments.Unban`
+
+## Zweck
 
 Unbans a user ID in `Banlist.json`.
 
-## Path parameters
+## Pfadparameter
 
 - `user_id`: User ID to unban.
 
-## Query parameters
+## Query-Parameter
 
-None.
+Keine.
 
-## Request body
+## Request-Body
 
-Optional JSON field: `Reason` string.
+Optionales JSON-Feld: `Reason` als String.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/unban.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
-| `404` | `BAN_NOT_FOUND` | The supplied `user_id` is not actively banned. |
+| `404` | `BAN_NOT_FOUND` | Die angegebene `user_id` ist nicht aktiv gebannt. |
 
-## Examples
+## Beispiele
 
 ### Unban a Steam user
 
@@ -76,8 +76,8 @@ POST /v1/pdapi/unban/ps5_c481a77e22004b9d
 {}
 ```
 
-## Scenarios
+## Szenarien
 
 - Remove a user ban after appeal approval.
 - Keep a reason for the audit trail.
-- Use [GET /banlist](banlist.md) with `userId` or `q` to verify the result.
+- Nutze [GET /banlist](banlist.md) mit `userId` oder `q`, um das Ergebnis zu prüfen.

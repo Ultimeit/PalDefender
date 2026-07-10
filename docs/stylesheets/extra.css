@@ -455,10 +455,6 @@ html { scroll-behavior: smooth; }
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.35);
 }
 
-.pd-badge--beta {
-  --pd-badge-bg: #facc15;
-  --pd-badge-fg: #241a00;
-}
 
 .pd-badge--deprecated {
   --pd-badge-bg: #ef4444;

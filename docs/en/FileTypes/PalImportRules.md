@@ -1,11 +1,9 @@
 # 📄 `Pals/ImportRules/*.json`
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    This page is new <span class='pd-badge pd-badge--beta'>Beta</span> documentation for Pal import rule files. It only describes public configuration behavior.
 
 Pal import rules control which `PalTemplate.json` files are allowed, blocked, or adjusted when imported by commands or API actions.
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
+!!! tip "ID lookup"
     Use [paldeck.cc/pals](https://paldeck.cc/pals) for `AllowedPalIDs`, `BannedPalIDs`, and per-Pal rule filenames. Use [paldeck.cc/passives](https://paldeck.cc/passives) for `DisallowedPassives`.
 
 ## File locations
@@ -34,7 +32,7 @@ Pal import rules control which `PalTemplate.json` files are allowed, blocked, or
 | `PalSouls` | object | Maximum allowed Pal soul values: `Health`, `Attack`, `Defense`, `CraftSpeed`. |
 | `IVs` | object | Maximum allowed IV values: `Health`, `AttackMelee`, `AttackShot`, `Defense`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## Instruction set
 
 1. Start with `Default.json`. Use it for server-wide policy.
 2. Use per-Pal files only when one Pal needs different limits.
@@ -45,7 +43,7 @@ Pal import rules control which `PalTemplate.json` files are allowed, blocked, or
 7. Use `RemoveFromPal` for passives if you prefer automatic cleanup over a failed import.
 8. Keep IDs exact and validate JSON before uploading.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## Setup walkthrough
 
 1. Open or create `Pals/ImportRules/Default.json`.
 2. Decide the global Pal policy:
@@ -60,7 +58,7 @@ Pal import rules control which `PalTemplate.json` files are allowed, blocked, or
 6. Add a per-Pal override only when a specific Pal needs stricter or looser limits than the global file.
 7. Test with a small `PalTemplate.json` first before importing large templates.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> common setups
+## Common setups
 
 ### Allow most Pals, block a few
 

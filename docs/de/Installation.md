@@ -1,17 +1,17 @@
 # Installation
 
-PalDefender is dependend on a windows environment, if you plan to host your Palworld server on a Linux based machine, you will need to install Wine or Proton.
+PalDefender benoetigt eine Windows-Umgebung. Wenn du deinen Palworld-Server auf einem Linux-basierten System hosten willst, musst du Wine oder Proton installieren.
 
-Installing a Palworld server itself is not covered here. We suggest getting a server from Qonzer following those [Steps](./Partnerships.md#how-to-get-the-10-discount).
+Die Installation des Palworld-Servers selbst wird hier nicht behandelt. Wir empfehlen einen Server von Qonzer; folge dafür diesen [Schritten](./Partnerships.md).
 
 ---
 
 ## Windows
 
-1. Donwload <span class="file">PalDefender_Windows.zip</span> from <a href="https://github.com/Ultimeit/PalDefender/releases/latest/" target="_blank">GitHub/releases</a>
-2. Extract the contents of <span class="file">PalDefender_Windows.zip</span> and place it into your PalServer sub-directory:
+1. Lade <span class="file">PalDefender_Windows.zip</span> von <a href="https://github.com/Ultimeit/PalDefender/releases/latest/" target="_blank">GitHub/releases</a> herunter.
+2. Entpacke den Inhalt von <span class="file">PalDefender_Windows.zip</span> und lege ihn in dein PalServer-Unterverzeichnis:
 <span class="path">.../Pal/Binaries/Win64/</span>
-3. Your structure should look like this:
+3. Deine Struktur sollte so aussehen:
 ```yaml
 Palworld_Server/
 ├── Engine/
@@ -19,14 +19,14 @@ Palworld_Server/
 │   ├── Binaries/
 │   │   └── Win64
 │   │       ├── config/
-│   │       ├── PalDefender/                      // Will be generated (Step 4)
+│   │       ├── PalDefender/                      // Wird generiert (Schritt 4)
 │   │       │   ├── Banlist.json
 │   │       │   ├── Config.json
 │   │       │   ├── Pals/
 │   │       │   └── RESTAPI/
 │   │       ├── <...>
-│   │       ├── PalDefender.dll                   << Put here (Step 2)
-│   │       ├── d3d9.dll                          << Put here (Step 2)
+│   │       ├── PalDefender.dll                   << Hier ablegen (Schritt 2)
+│   │       ├── d3d9.dll                          << Hier ablegen (Schritt 2)
 │   │       ├── PalServer-Win64-Shipping-Cmd.exe
 │   │       └── PalServer-Win64-Shipping.exe
 │   ├── Content/
@@ -50,15 +50,15 @@ Palworld_Server/
 ├── steamclient.dll
 └── <...>
 ```
-4. Start your server once to generate the PalDefender file structure at <span class="path">.../Pal/Binaries/Win64/PalDefender/</span> (see above)
-5. Edit the configuration to your favors. We recommend turning on the whitelist.
+4. Starte deinen Server einmal, damit PalDefender die Dateistruktur unter <span class="path">.../Pal/Binaries/Win64/PalDefender/</span> erzeugt (siehe oben).
+5. Passe die Konfiguration nach deinen Wuenschen an. Wir empfehlen, die Whitelist zu aktivieren.
 
 ---
 
 ## Linux (Wine/Proton)
 
-Wine or Proton **must** be installed, otherwise the following steps will not work.
+Wine oder Proton **muss** installiert sein, sonst funktionieren die folgenden Schritte nicht.
 
-The Palworld server setup on Linux is **not managed by PalDefender** and must be handled manually by you (Wine/Proton configuration, server startup, etc.).
+Die Palworld-Servereinrichtung unter Linux wird **nicht von PalDefender verwaltet** und muss von dir manuell vorgenommen werden (Wine-/Proton-Konfiguration, Serverstart usw.).
 
-Once the server is running correctly under Wine or Proton, you can **follow the Windows installation instructions exactly**, as the PalDefender setup itself is identical.
+Sobald der Server korrekt unter Wine oder Proton läuft, kannst du **exakt der Windows-Installationsanleitung folgen**, da die PalDefender-Einrichtung identisch ist.

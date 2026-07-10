@@ -3,7 +3,7 @@
 <span class='pd-badge pd-badge--deprecated'>Deprecated</span>
 
 !!! warning "<span class='pd-badge pd-badge--deprecated'>Deprecated</span> legacy endpoint"
-    This legacy reward endpoint is deprecated. Prefer the split <span class='pd-badge pd-badge--beta'>Beta</span> reward endpoints: [give progression](./give-progression.md), [give items](./give-items.md), [give pals](./give-pals.md), [give pal templates](./give-paltemplate.md), and [give Pal eggs](./give-paleggs.md).
+    This legacy reward endpoint is deprecated. Prefer the split  reward endpoints: [give progression](./give-progression.md), [give items](./give-items.md), [give pals](./give-pals.md), [give pal templates](./give-paltemplate.md), and [give Pal eggs](./give-paleggs.md).
 
 
 ## Response schema
@@ -90,7 +90,7 @@ POST /v1/pdapi/give
     Depending on your implementation, the request may include:
 
     - `EXP` — adds experience
-    - `Lifmunks` — adds Lifmunk Effigy points
+    - `Relics` — adds relic points keyed by relic type
     - `TechnologyPoints` — adds tech points
     - `AncientTechnologyPoints` — adds ancient tech points
     - `UnlockTechnology` / `Techs[]` — learn technologies

@@ -41,7 +41,7 @@ The code is closed source and we dont have any plans to release it.
 
 ## About
 
-PalDefender implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, this feature is in <span class='pd-badge pd-badge--beta'>Beta</span> and is available exclusively for Windows-based dedicated servers.
+PalDefender implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, PalDefender is available for Windows-based dedicated servers.
 
 **Any experienced Linux dev is welcome to help us out.**
 

@@ -1,57 +1,57 @@
 # GET /guild/{guild_id}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/guild/<guild_id>`
 
-**Auth:** Bearer token
+**端点:** `GET /v1/pdapi/guild/<guild_id>`
 
-**Permission:** `REST.Guild.Read`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Guild.Read`
 
-Returns one guild with detailed member and base/camp information.
+## 用途
 
-## Path parameters
+返回一个公会及其详细成员和基地/营地信息。
+
+## 路径参数
 
 - `guild_id`: Guild identifier, usually copied from [GET /guilds](guilds.md).
 
-## Query parameters
+## 查询参数
 
-None.
+无。
 
-## Request body
+## 请求体
 
-No request body.
+无请求体。
 
-## Response schema
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/guild.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `404` | `GUILD_NOT_FOUND` | No guild matched the supplied `guild_id`. |
 
-## Examples
+## 示例
 
 ### Read guild roster and camps
 
@@ -65,8 +65,8 @@ GET /v1/pdapi/guild/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
 GET /v1/pdapi/guild/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 ```
 
-## Scenarios
+## 使用场景
 
 - Investigate base ownership before deleting a base.
 - Review guild members and camp data for support requests.
-- Use camp IDs from the response carefully with [POST /deletebase](deletebase.md).
+- 使用响应中的 Camp ID 调用 [POST /deletebase](deletebase.md) 时请谨慎。

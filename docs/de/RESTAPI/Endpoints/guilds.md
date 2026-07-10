@@ -1,56 +1,56 @@
 # GET /guilds
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/guilds`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/guilds`
 
-**Permission:** `REST.Guilds.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Guilds.Read`
 
-Lists known guilds with summary information. Use this endpoint to discover guild IDs before requesting a specific guild.
+## Zweck
 
-## Path parameters
+Listet bekannte Gilden mit Zusammenfassung auf. Nutze diesen Endpunkt, um Gilden-IDs zu finden, bevor du eine bestimmte Gilde abfragst.
 
-None.
+## Pfadparameter
 
-## Query parameters
+Keine.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/guilds.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 
-## Examples
+## Beispiele
 
 ### List all guilds
 
@@ -64,7 +64,7 @@ GET /v1/pdapi/guilds
 GET /v1/pdapi/guilds
 ```
 
-## Scenarios
+## Szenarien
 
 - Build a guild selector in an admin panel.
 - Find the `guild_id` for [GET /guild](guild.md).

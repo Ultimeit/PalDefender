@@ -1,58 +1,58 @@
 # POST /unbanip/{ip}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/unbanip/<ip>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/unbanip/<ip>`
 
-**Permission:** `REST.Punishments.UnbanIP`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Punishments.UnbanIP`
+
+## Zweck
 
 Unbans an IP address in `Banlist.json`.
 
-## Path parameters
+## Pfadparameter
 
 - `ip`: IP address to unban.
 
-## Query parameters
+## Query-Parameter
 
-None.
+Keine.
 
-## Request body
+## Request-Body
 
-Optional JSON field: `Reason` string.
+Optionales JSON-Feld: `Reason` als String.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/unbanip.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
-| `404` | `BAN_NOT_FOUND` | The supplied `ip` is not actively banned. |
+| `404` | `BAN_NOT_FOUND` | Die angegebene `ip` ist nicht aktiv gebannt. |
 
-## Examples
+## Beispiele
 
 ### Unban an IP with reason
 
@@ -76,8 +76,8 @@ POST /v1/pdapi/unbanip/198.51.100.87
 {}
 ```
 
-## Scenarios
+## Szenarien
 
 - Remove an IP ban after investigation.
-- Use when a player is still blocked after user-level unban because the IP record remains active.
-- Use [GET /banlist](banlist.md) with `ip` to verify the result.
+- Nutzen, wenn ein Spieler nach einem User-Unban weiterhin blockiert ist, weil der IP-Eintrag noch aktiv ist.
+- Nutze [GET /banlist](banlist.md) mit `ip`, um das Ergebnis zu prüfen.

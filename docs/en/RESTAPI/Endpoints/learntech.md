@@ -1,6 +1,6 @@
 # POST /learntech/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/learntech/<player_identifier>`
 

@@ -1,6 +1,6 @@
 # GET /players
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `GET /v1/pdapi/players`
 

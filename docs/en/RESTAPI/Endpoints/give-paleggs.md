@@ -1,6 +1,6 @@
 # POST /give/paleggs/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/give/paleggs/<player_identifier>`
 

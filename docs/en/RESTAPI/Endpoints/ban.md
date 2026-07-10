@@ -1,6 +1,6 @@
 # POST /ban/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/ban/<player_identifier>`
 

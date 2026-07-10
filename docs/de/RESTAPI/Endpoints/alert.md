@@ -1,60 +1,60 @@
 # POST /Alert
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/Alert`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/Alert`
 
-**Permission:** `REST.Messages.Alert`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Messages.Alert`
 
-Sends an alert message to the server.
+## Zweck
 
-## Path parameters
+Sendet eine Warnmeldung an den Server.
 
-None.
+## Pfadparameter
 
-## Query parameters
+Keine.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-JSON object with `Message` string.
+## Request-Body
 
-## Response schema
+JSON-Objekt mit dem String `Message`.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/alert.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `VALIDATION_FAILED` | `Message` is missing, empty, or not a string. |
-| `400` | `BROADCAST_ALERT_FAILED` | The server failed to send the alert message. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `400` | `VALIDATION_FAILED` | `Message` fehlt, ist leer oder kein String. |
+| `400` | `BROADCAST_ALERT_FAILED` | Der Server konnte die Warnmeldung nicht senden. |
 
-## Examples
+## Beispiele
 
-### Send restart alert
+### Neustart-Warnung senden
 
 ```http
 POST /v1/pdapi/Alert
@@ -66,7 +66,7 @@ POST /v1/pdapi/Alert
 }
 ```
 
-### Send multiline alert
+### Mehrzeilige Warnung senden
 
 ```http
 POST /v1/pdapi/Alert
@@ -78,8 +78,8 @@ POST /v1/pdapi/Alert
 }
 ```
 
-## Scenarios
+## Szenarien
 
-- Send high-priority server warnings.
-- Use after a broadcast when players need a final urgent notice.
-- Keep alerts short so they are readable in-game.
+- Sende wichtige Serverwarnungen.
+- Nutze dies nach einer Broadcast-Nachricht, wenn Spieler einen letzten dringenden Hinweis benötigen.
+- Halte Warnungen kurz, damit sie im Spiel lesbar bleiben.

@@ -1,56 +1,56 @@
 # GET /items/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/items/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/items/<player_identifier>`
 
-**Permission:** `REST.Items.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Items.Read`
 
-Lists the target player's items. Item identifiers in responses can be searched on [paldeck.cc/items](https://paldeck.cc/items).
+## Zweck
 
-## Path parameters
+Listet die Items des Zielspielers. Item-Identifier aus Antworten können auf [paldeck.cc/items](https://paldeck.cc/items) gesucht werden.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/items.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The target player, player state, inventory data, or common inventory container could not be resolved. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Zielspieler, Player State, Inventardaten oder gemeinsamer Inventarcontainer konnten nicht aufgeloest werden. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 
-## Examples
+## Beispiele
 
 ### Read inventory for a Steam player
 
@@ -64,7 +64,7 @@ GET /v1/pdapi/items/steam_76561198087654321
 GET /v1/pdapi/items/gdk_2533274812345678
 ```
 
-## Scenarios
+## Szenarien
 
 - Check inventory before giving compensation.
 - Confirm an [`ItemID`](https://paldeck.cc/items) before using [POST /give/items](give-items.md).

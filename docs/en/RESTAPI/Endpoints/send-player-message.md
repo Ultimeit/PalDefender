@@ -1,6 +1,6 @@
 # POST /SendPlayerMessage
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/SendPlayerMessage`
 
@@ -22,7 +22,7 @@ None.
 
 ## Request body
 
-JSON object with `SendType`, `Message`, and either `UserID` or `UserIDs`. Optional `Sender` sets the displayed sender where supported. Common `SendType` values include `PlayerChat`, `PlayerGlobalChat`, `PlayerGuildChat`, `PlayerLogNormal`, `PlayerLogImportant`, and `PlayerLogVeryImportant`.
+JSON object with `SendType`, `Message`, and either `UserID` or `UserIDs`. Common `SendType` values include `PlayerChat`, `PlayerGlobalChat`, `PlayerGuildChat`, `PlayerLogNormal`, `PlayerLogImportant`, and `PlayerLogVeryImportant`.
 
 ## Response schema
 
@@ -66,8 +66,7 @@ POST /v1/pdapi/SendPlayerMessage
 {
     "SendType": "PlayerChat",
     "UserID": "steam_76561198012345678",
-    "Message": "Your shop order has arrived.",
-    "Sender": "Admin"
+    "Message": "Your shop order has arrived."
 }
 ```
 

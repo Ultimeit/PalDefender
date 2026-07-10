@@ -1,59 +1,59 @@
 # POST /Broadcast
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/Broadcast`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/Broadcast`
 
-**Permission:** `REST.Messages.Broadcast`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Messages.Broadcast`
 
-Broadcasts a chat message to the server.
+## 用途
 
-## Path parameters
+向服务器广播聊天消息。
 
-None.
+## 路径参数
 
-## Query parameters
+无。
 
-None.
+## 查询参数
 
-## Request body
+无。
 
-JSON object with `Message` string and optional `Sender` string.
+## 请求体
 
-## Response schema
+JSON 对象，包含必填字符串 `Message`。
+
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/broadcast.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `VALIDATION_FAILED` | `Message` is missing, empty, or not a string. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
+| `400` | `VALIDATION_FAILED` | `Message` 缺失、为空或不是字符串。 |
 
-## Examples
+## 示例
 
-### Broadcast as SYSTEM
+### 广播重启提醒
 
 ```http
 POST /v1/pdapi/Broadcast
@@ -65,21 +65,8 @@ POST /v1/pdapi/Broadcast
 }
 ```
 
-### Broadcast with sender name
+## 使用场景
 
-```http
-POST /v1/pdapi/Broadcast
-```
-
-```json
-{
-    "Sender": "Admin",
-    "Message": "World boss event starts now."
-}
-```
-
-## Scenarios
-
-- Announce scheduled maintenance.
-- Send automated event start messages.
-- Use [POST /Alert](alert.md) when the message should be an alert instead of normal broadcast chat.
+- 公告计划维护。
+- 发送自动活动开始消息。
+- 如果消息应作为警报而不是普通广播聊天发送，请使用 [POST /Alert](alert.md)。

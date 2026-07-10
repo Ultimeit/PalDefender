@@ -17,7 +17,7 @@
 | Field | Type | Description |
 |-------|------|-------------|
 | `Player` | object | Player level, EXP, and unused status points. |
-| `Currencies` | object | Lifmunk and technology point totals. |
+| `Currencies` | object | Relic and technology point totals. |
 | `Bosses` | object | Boss defeat counters and flags. |
 | `Captures` | object | Pal capture and butcher counters. |
 | `Activities` | object | Crafting, dungeon, fishing, treasure, and other activity counters. |
@@ -34,7 +34,7 @@
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `lifmunks` | integer | Lifmunk Effigy point total. |
+| `relics` | object | Relic point totals keyed by relic type. |
 | `technologyPoints` | integer | Technology point total. |
 | `ancientTechnologyPoints` | integer | Ancient technology point total. |
 

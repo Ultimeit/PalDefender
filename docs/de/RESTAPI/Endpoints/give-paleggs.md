@@ -1,60 +1,60 @@
 # POST /give/paleggs/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/give/paleggs/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/give/paleggs/<player_identifier>`
 
-**Permission:** `REST.PalEggs.Give`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.PalEggs.Give`
 
-Gives one or more Pal eggs to the target player.
+## Zweck
 
-## Path parameters
+Gibt dem Zielspieler ein oder mehrere Pal-Eier.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-JSON object with `PalEggs`, an array of egg grants. `EggID` is an [`ItemID`](https://paldeck.cc/items). Each egg must use either [`PalID`](https://paldeck.cc/pals) or `PalTemplate`, not both.
+## Request-Body
 
-## Response schema
+JSON-Objekt mit `PalEggs`, einem Array von Ei-Vergaben. `EggID` ist eine [`ItemID`](https://paldeck.cc/items). Jedes Ei muss entweder [`PalID`](https://paldeck.cc/pals) oder `PalTemplate` verwenden, nicht beides.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/give-paleggs.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `INVALID_REQUEST` | The body does not contain a `PalEggs` array. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `400` | `INVALID_REQUEST` | Der Body enthält kein `PalEggs`-Array. |
 | `400` | `VALIDATION_FAILED` | One or more egg grants are invalid, cannot be imported, or do not fit in inventory. |
 
-## Examples
+## Beispiele
 
-### Give a leveled egg to a Steam player
+### Ei mit Level an einen Steam-Spieler geben
 
 ```http
 POST /v1/pdapi/give/paleggs/steam_76561198012345678
@@ -68,7 +68,7 @@ POST /v1/pdapi/give/paleggs/steam_76561198012345678
 }
 ```
 
-### Give template-backed egg by PlayerUID
+### Template-basiertes Ei per PlayerUID geben
 
 ```http
 POST /v1/pdapi/give/paleggs/6d2e8b40-73ef-4f11-9bb8-2e91a36e2f09
@@ -82,8 +82,8 @@ POST /v1/pdapi/give/paleggs/6d2e8b40-73ef-4f11-9bb8-2e91a36e2f09
 }
 ```
 
-## Scenarios
+## Szenarien
 
-- Give event eggs without spawning the Pal immediately.
-- Use `PalID` for simple eggs and `PalTemplate` for custom egg contents.
-- The request can fail if the egg [`ItemID`](https://paldeck.cc/items) is invalid or the player inventory has no space.
+- Event-Eier vergeben, ohne den Pal sofort zu spawnen.
+- Nutze `PalID` für einfache Eier und `PalTemplate` für benutzerdefinierte Ei-Inhalte.
+- Die Anfrage kann fehlschlagen, wenn die Ei-[`ItemID`](https://paldeck.cc/items) ungültig ist oder das Inventar des Spielers keinen Platz hat.

@@ -1,9 +1,8 @@
 # Python Example
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
     This example uses the current split REST reward endpoints.
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
+!!! tip "ID lookup"
     Use [paldeck.cc/items](https://paldeck.cc/items) for `ItemID`, [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, and [paldeck.cc/technology](https://paldeck.cc/technology) for `TechID`.
 
 ```py
@@ -41,7 +40,10 @@ def test_guild(guild_id: str):
 def test_rewards(user_id: str):
     progression = {
         "EXP": 100000,
-        "Lifmunks": 25,
+        "Relics": {
+            "CapturePower": 25,
+            "MoveSpeed": 5,
+        },
         "TechnologyPoints": 10,
         "AncientTechnologyPoints": 5,
     }

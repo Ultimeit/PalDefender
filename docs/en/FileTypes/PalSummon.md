@@ -1,9 +1,6 @@
 # 📄 `PalSummon.json`
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    Newly documented instructions on this page are marked with <span class='pd-badge pd-badge--beta'>Beta</span>. They are intended to make summon files easier to create and troubleshoot.
-
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> related ID lookup"
+!!! tip "Related ID lookup"
     The summon file itself references a `PalTemplate`. If you need to edit that template, use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) for passives, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
 
 | Key               | Type   | Description                                                                             |
@@ -13,7 +10,7 @@
 | `X` / `Y` / `Z`   | float  | Required map coordinates where the Pal will be spawned. Use cmd `/getpos` to retrieve a player's current position. |
 | `DisableStatuses` | array  | Optional list of status effects to disable for this Pal. Invalid or empty status names are skipped. Available statuses: `DrownCheck`, `Poison`, `Stun`, `Coma`, `Sleep`, `Overwork`, `Drown`, `FallDamage`, `LavaDamage`, `Burn`, `Wetness`, `Freeze`, `Electrical`, `Muddy`, `IvyCling`, `Darkness`, `CollectItem`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## Instruction set
 
 1. Create the referenced Pal template first in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
 2. Create the summon file in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/`.
@@ -25,7 +22,7 @@
 8. Validate JSON before uploading. JSON does not allow comments or trailing commas.
 9. Reload config or restart the server if your host does not pick up newly added files immediately.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## Setup walkthrough
 
 1. Create a template first, for example `Pals/Templates/ArenaBoss.json`.
 2. Test the template with `/givemepal_j ArenaBoss`. If the template fails there, fix the template before creating the summon file.
@@ -34,13 +31,13 @@
 5. Run `/summon ArenaBossSpawn`.
 6. If the Pal appears too high, too low, or inside terrain, adjust `Z` first, then adjust `X` and `Y`.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> example explanations
+## Example explanations
 
 The minimal example below spawns `ArenaBoss.json` at a fixed coordinate, makes it uncapturable, and disables a short list of common crowd-control/status effects. This is useful for event bosses.
 
 The full example shows the available `DisableStatuses` values. Do not copy every status by default; start with only the statuses that matter for your event.
 
-## Minimal <span class='pd-badge pd-badge--beta'>Beta</span> example
+## Minimal example
 
 ```json
 {

@@ -1,62 +1,62 @@
 # POST /SendPlayerMessage
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/SendPlayerMessage`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/SendPlayerMessage`
 
-**Permission:** `REST.Messages.Send.PlayerChat`<br>`REST.Messages.Send.GlobalChat`<br>`REST.Messages.Send.GuildChat`<br>`REST.Messages.Send.Log.Normal`<br>`REST.Messages.Send.Log.Important`<br>`REST.Messages.Send.Log.VeryImportant`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Messages.Send.PlayerChat`<br>`REST.Messages.Send.GlobalChat`<br>`REST.Messages.Send.GuildChat`<br>`REST.Messages.Send.Log.Normal`<br>`REST.Messages.Send.Log.Important`<br>`REST.Messages.Send.Log.VeryImportant`
 
-Sends a message to one or more target players.
+## 用途
 
-## Path parameters
+向一个或多个目标玩家发送消息。
 
-None.
+## 路径参数
 
-## Query parameters
+无。
 
-None.
+## 查询参数
 
-## Request body
+无。
 
-JSON object with `SendType`, `Message`, and either `UserID` or `UserIDs`. Optional `Sender` sets the displayed sender where supported. Common `SendType` values include `PlayerChat`, `PlayerGlobalChat`, `PlayerGuildChat`, `PlayerLogNormal`, `PlayerLogImportant`, and `PlayerLogVeryImportant`.
+## 请求体
 
-## Response schema
+JSON 对象，包含 `SendType`、`Message`，以及 `UserID` 或 `UserIDs`。常见 `SendType` 值包括 `PlayerChat`、`PlayerGlobalChat`、`PlayerGuildChat`、`PlayerLogNormal`、`PlayerLogImportant` 和 `PlayerLogVeryImportant`。
+
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/send-player-message.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `EMPTY_BODY` | The request body is empty. |
-| `400` | `INVALID_JSON` | The request body is not valid JSON. |
-| `400` | `VALIDATION_FAILED` | `SendType`, `Message`, `UserID`, or `UserIDs` is missing, empty, duplicated, or has the wrong type. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `EMPTY_BODY` | 请求体为空。 |
+| `400` | `INVALID_JSON` | 请求体不是有效 JSON。 |
+| `400` | `VALIDATION_FAILED` | `SendType`、`Message`、`UserID` 或 `UserIDs` 缺失、为空、重复，或类型错误。 |
 | `400` | `PLAYER_NOT_FOUND` | One or more target user IDs or player UIDs could not be found. |
 | `400` | `SEND_MESSAGE_FAILED` | Validation passed, but the server rejected the message send operation. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 
-## Examples
+## 示例
 
-### Send player chat to one user
+### 向单个用户发送玩家聊天
 
 ```http
 POST /v1/pdapi/SendPlayerMessage
@@ -66,12 +66,11 @@ POST /v1/pdapi/SendPlayerMessage
 {
     "SendType": "PlayerChat",
     "UserID": "steam_76561198012345678",
-    "Message": "Your shop order has arrived.",
-    "Sender": "Admin"
+    "Message": "Your shop order has arrived."
 }
 ```
 
-### Send important log to mixed targets
+### 向多个类型目标发送重要日志
 
 ```http
 POST /v1/pdapi/SendPlayerMessage
@@ -85,12 +84,12 @@ POST /v1/pdapi/SendPlayerMessage
         "6d2e8b40-73ef-4f11-9bb8-2e91a36e2f09",
         "gdk_2533274812345678"
     ],
-    "Message": "The event starts in 10 minutes."
+    "Message": "活动将在 10 分钟后开始。"
 }
 ```
 
-## Scenarios
+## 使用场景
 
-- Send direct restart warnings to selected players.
-- Send support replies from an admin panel.
-- Use `UserID` for one target and `UserIDs` for multiple targets, not both.
+- 向选定玩家发送直接重启警告。
+- 从管理员面板发送支持回复。
+- 单个目标使用 `UserID`，多个目标使用 `UserIDs`，不要同时使用。

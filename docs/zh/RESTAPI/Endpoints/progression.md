@@ -1,56 +1,56 @@
 # GET /progression/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/progression/<player_identifier>`
 
-**Auth:** Bearer token
+**端点:** `GET /v1/pdapi/progression/<player_identifier>`
 
-**Permission:** `REST.Progression.Read`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Progression.Read`
 
-Reads player progression values such as EXP, level-related state, Lifmunk Effigies, and technology point totals.
+## 用途
 
-## Path parameters
+读取玩家进度值，例如 EXP、等级相关状态、遗物总数和科技点总数。
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## 路径参数
 
-## Query parameters
+- `player_identifier`: 目标玩家的 `UserId` 或 `PlayerUID`。
 
-None.
+## 查询参数
 
-## Request body
+无。
 
-No request body.
+## 请求体
 
-## Response schema
+无请求体。
+
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/progression.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The target player, account, individual character data, record data, or technology data could not be resolved. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 无法解析目标玩家、账号、个人角色数据、记录数据或科技数据。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 
-## Examples
+## 示例
 
 ### Read progression by PS5 UserID
 
@@ -64,7 +64,7 @@ GET /v1/pdapi/progression/ps5_c481a77e22004b9d
 GET /v1/pdapi/progression/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 ```
 
-## Scenarios
+## 使用场景
 
 - Confirm the current values before granting progression.
 - Verify a support action after [POST /give/progression](give-progression.md).

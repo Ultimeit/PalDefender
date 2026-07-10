@@ -23,7 +23,7 @@ At the current version there are only Admin and RCON commands available.
     Arguments have different types. The most common are <span class="var-string">strings</span>, <span class="var-number">numbers</span>, <span class="var-float">floats</span> and <span class="var-bool">booleans</span>. Some command even have complex types such as specific <span class="file">filenames</span> in a special directory or actually a <span class="var-filter">filter</span>.
     </p>
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
+!!! tip "ID lookup"
     Use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/items](https://paldeck.cc/items) for `ItemID`, [paldeck.cc/technology](https://paldeck.cc/technology) for `TechID`, [paldeck.cc/buildings](https://paldeck.cc/buildings) for `BuildingID`, [paldeck.cc/passives](https://paldeck.cc/passives) for `PassiveID`, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
 
 ??? note "RCON only"
@@ -47,7 +47,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/version"
         **Syntax:** `/version`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Shows the Palworld game version and PalDefender version. RCON returns JSON output.
+        **Description:** Shows the Palworld game version and PalDefender version. RCON returns JSON output.
 
         **Arguments:**
 
@@ -209,7 +209,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/togglepvp"
         **Syntax:** `/togglepvp`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Toggles server PvP on or off for the current running session.
+        **Description:** Toggles server PvP on or off for the current running session.
 
         **Arguments:**
 
@@ -412,7 +412,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/unban"
         **Syntax:** `/unban <UserId> [Reason="Unbanned by admin."]`
 
-        **Description:** <span class='pd-badge pd-badge--beta'>Beta</span> Removes a UserId from the PalDefender ban list.
+        **Description:** Removes a UserId from the PalDefender ban list.
 
         **Arguments:**
 
@@ -541,7 +541,7 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Teleports yourself, or a specified player, to another player, coordinates, the nearest owned base, or an oilrig destination.
 
-        **Note:** <span class='pd-badge pd-badge--beta'>Beta</span> RCON must include the player being teleported because RCON has no in-game character.
+        **Note:** RCON must include the player being teleported because RCON has no in-game character.
 
         **Arguments:**
 
@@ -772,36 +772,44 @@ At the current version there are only Admin and RCON commands available.
         ```
 
     ??? info "/give_relic"
-        **Syntax:** `/give_relic <UserId> <Amount>`
+        **Syntax:** `/give_relic <UserId> <RelicType> [Amount]`
 
-        **Description:** Gives the player one or more Lifmunk Effigies.
+        **Description:** Gives the player one or more relic points of the selected type.
 
         **Arguments:**
 
-        - `<UserId>`: The ID of the player to receive the Lifmunk Effigies.
-        - `<Amount>`: The number of Lifmunk Effigies to give.
+        - `<UserId>`: The ID of the player to receive the relic points.
+        - `<RelicType>`: The relic type to grant.
+
+        - `[Amount]`: Optional number of relic points to give. Defaults to `1`.
+
+        **Supported relic types:** `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
         **Example:**
         ```
-        /give_relic steam_76500000000000000 5
+        /give_relic steam_76500000000000000 CapturePower 5
         ```
 
     ??? info "/giveme_relic"
-        **Syntax:** `/giveme_relic <Amount>`
+        **Syntax:** `/giveme_relic <RelicType> [Amount]`
 
-        **Description:** Gives yourself one or more Lifmunk Effigies.
+        **Description:** Gives yourself one or more relic points of the selected type.
 
         **Arguments:**
 
-        - `<Amount>`: The number of Lifmunk Effigies to give yourself.
+        - `<RelicType>`: The relic type to grant.
+
+        - `[Amount]`: Optional number of relic points to give yourself. Defaults to `1`.
+
+        **Supported relic types:** `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
 
         **Permissions:** `Chat`, `Admin`
 
         **Example:**
         ```
-        /giveme_relic 5
+        /giveme_relic CapturePower 5
         ```
 
 
@@ -1050,12 +1058,12 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalId\>"
-            **Description:**  The Pal that will be inside the egg.
+            **Description:** The Pal that will be inside the egg.
 
             **Note:** Use the Pal ID, e.g., `WeaselDragon` (Chillet). See the full list at [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level]"
-            **Description:**  (Optional) The level of the Pal inside the egg.
+            **Description:** (Optional) The level of the Pal inside the egg.
 
         **Permissions:** `Chat`, `Admin`
 
@@ -1218,7 +1226,7 @@ At the current version there are only Admin and RCON commands available.
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/<span class='pd-badge pd-badge--beta'>Beta</span>/Wiki/Commands/deletepals.md).
+            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/master/Wiki/Commands/deletepals.md).
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 

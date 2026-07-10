@@ -1,61 +1,61 @@
 # POST /give/items/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/give/items/<player_identifier>`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/give/items/<player_identifier>`
 
-**Permission:** `REST.Items.Give`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Items.Give`
 
-Gives one or more items to the target player.
+## 用途
 
-## Path parameters
+给目标玩家一个或多个物品。
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## 路径参数
 
-## Query parameters
+- `player_identifier`: 目标玩家的 `UserId` 或 `PlayerUID`。
 
-None.
+## 查询参数
 
-## Request body
+无。
 
-JSON object with `Items`, an array of item grants. Each entry needs an [`ItemID`](https://paldeck.cc/items) and positive `Count`.
+## 请求体
 
-## Response schema
+JSON 对象，包含 `Items` 物品发放数组。每个条目都需要一个 [`ItemID`](https://paldeck.cc/items) 和正数 `Count`。
+
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/give-items.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `INVALID_REQUEST` | The body does not contain an `Items` array. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
+| `400` | `INVALID_REQUEST` | 请求体不包含 `Items` 数组。 |
 | `400` | `VALIDATION_FAILED` | One or more item grants are invalid, unsupported, too large, or do not fit in inventory. |
 | `500` | `GRANT_FAILED` | Validation passed, but the server failed while adding items to the inventory. |
 
-## Examples
+## 示例
 
-### Give ammo and a launcher to a Steam player
+### 向 Steam 玩家发放弹药和发射器
 
 ```http
 POST /v1/pdapi/give/items/steam_76561198012345678
@@ -70,7 +70,7 @@ POST /v1/pdapi/give/items/steam_76561198012345678
 }
 ```
 
-### Give currency to a PS5 player
+### 向 PS5 玩家发放货币
 
 ```http
 POST /v1/pdapi/give/items/ps5_0f4b8c2d91aa34ef
@@ -84,8 +84,8 @@ POST /v1/pdapi/give/items/ps5_0f4b8c2d91aa34ef
 }
 ```
 
-## Scenarios
+## 使用场景
 
-- Use for compensation packages after a rollback.
-- Use for shop integrations where a trusted service grants purchased items.
+- 用于回档后的补偿礼包。
+- 用于可信服务发放已购买物品的商店集成。
 - Validate the [`ItemID`](https://paldeck.cc/items) first; display names are not always valid IDs.

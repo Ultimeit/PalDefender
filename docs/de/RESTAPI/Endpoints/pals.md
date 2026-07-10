@@ -1,58 +1,58 @@
 # GET /pals/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/pals/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/pals/<player_identifier>`
 
-**Permission:** `REST.Pals.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Pals.Read`
 
-Lists the target player's Pals. Pal identifiers in responses can be searched on [paldeck.cc/pals](https://paldeck.cc/pals).
+## Zweck
 
-## Path parameters
+Listet die Pals des Zielspielers. Pal-Identifier aus Antworten können auf [paldeck.cc/pals](https://paldeck.cc/pals) gesucht werden.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/pals.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `404` | `PLAYER_NOT_FOUND` | No online player matched the supplied `player_identifier`. |
-| `404` | `PLAYER_STATE_NOT_FOUND` | The player exists, but their `APalPlayerState` was unavailable. |
+| `404` | `PLAYER_STATE_NOT_FOUND` | Der Spieler existiert, aber sein `APalPlayerState` war nicht verfügbar. |
 
-## Examples
+## Beispiele
 
 ### Read Pals for a PS5 player
 
@@ -66,7 +66,7 @@ GET /v1/pdapi/pals/ps5_0f4b8c2d91aa34ef
 GET /v1/pdapi/pals/6d2e8b40-73ef-4f11-9bb8-2e91a36e2f09
 ```
 
-## Scenarios
+## Szenarien
 
 - Review a player before support actions.
 - Confirm that a reward Pal arrived after using [POST /give/pals](give-pals.md) or [POST /give/paltemplate](give-paltemplate.md).

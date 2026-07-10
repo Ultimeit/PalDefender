@@ -1,60 +1,60 @@
 # POST /give/pals/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/give/pals/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/give/pals/<player_identifier>`
 
-**Permission:** `REST.Pals.Give`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Pals.Give`
 
-Gives one or more Pals by ID and level.
+## Zweck
 
-## Path parameters
+Gibt einen oder mehrere Pals anhand von ID und Level.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-JSON object with `Pals`, an array of Pal grants. Each entry needs a [`PalID`](https://paldeck.cc/pals) and positive `Level`.
+## Request-Body
 
-## Response schema
+JSON-Objekt mit `Pals`, einem Array von Pal-Vergaben. Jeder Eintrag benötigt eine [`PalID`](https://paldeck.cc/pals) und ein positives `Level`.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/give-pals.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `INVALID_REQUEST` | The body does not contain a `Pals` array. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `400` | `INVALID_REQUEST` | Der Body enthält kein `Pals`-Array. |
 | `400` | `VALIDATION_FAILED` | One or more Pal grants are invalid, or the player has insufficient Pal storage space. |
 
-## Examples
+## Beispiele
 
-### Give a starter Pal to a GDK player
+### Starter-Pal an einen GDK-Spieler geben
 
 ```http
 POST /v1/pdapi/give/pals/gdk_2533274812345678
@@ -68,7 +68,7 @@ POST /v1/pdapi/give/pals/gdk_2533274812345678
 }
 ```
 
-### Give event Pals by PlayerUID
+### Event-Pals per PlayerUID geben
 
 ```http
 POST /v1/pdapi/give/pals/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
@@ -83,8 +83,8 @@ POST /v1/pdapi/give/pals/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
 }
 ```
 
-## Scenarios
+## Szenarien
 
-- Give simple Pal rewards without maintaining a template file.
-- Use for random reward scripts that only vary `PalID` and `Level`.
-- The request can fail if the player cannot be found, the [`PalID`](https://paldeck.cc/pals) is invalid, or there is not enough Pal storage space.
+- Einfache Pal-Belohnungen vergeben, ohne eine Template-Datei zu pflegen.
+- Für zufällige Belohnungsskripte nutzen, die nur `PalID` und `Level` variieren.
+- Die Anfrage kann fehlschlagen, wenn der Spieler nicht gefunden wird, die [`PalID`](https://paldeck.cc/pals) ungültig ist oder nicht genug Pal-Speicherplatz vorhanden ist.

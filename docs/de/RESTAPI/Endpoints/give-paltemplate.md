@@ -1,60 +1,60 @@
 # POST /give/paltemplate/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/give/paltemplate/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/give/paltemplate/<player_identifier>`
 
-**Permission:** `REST.PalTemplates.Give`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.PalTemplates.Give`
 
-Gives one or more Pals from files in `Pals/Templates/`.
+## Zweck
 
-## Path parameters
+Gibt einen oder mehrere Pals aus Dateien in `Pals/Templates/`.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-JSON object with `PalTemplates`, an array of template filenames. The `.json` extension may be included for clarity.
+## Request-Body
 
-## Response schema
+JSON-Objekt mit `PalTemplates`, einem Array von Template-Dateinamen. Die Endung `.json` kann zur Klarheit angegeben werden.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/give-paltemplate.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `INVALID_REQUEST` | The body does not contain a `PalTemplates` array. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `400` | `INVALID_REQUEST` | Der Body enthält kein `PalTemplates`-Array. |
 | `400` | `VALIDATION_FAILED` | One or more template filenames are invalid, cannot be imported, or do not fit in Pal storage. |
 
-## Examples
+## Beispiele
 
-### Give one template Pal to a Steam player
+### Einen Template-Pal an einen Steam-Spieler geben
 
 ```http
 POST /v1/pdapi/give/paltemplate/steam_76561198087654321
@@ -68,7 +68,7 @@ POST /v1/pdapi/give/paltemplate/steam_76561198087654321
 }
 ```
 
-### Give raid reward templates to a PS5 player
+### Raid-Belohnungs-Templates an einen PS5-Spieler geben
 
 ```http
 POST /v1/pdapi/give/paltemplate/ps5_c481a77e22004b9d
@@ -83,8 +83,8 @@ POST /v1/pdapi/give/paltemplate/ps5_c481a77e22004b9d
 }
 ```
 
-## Scenarios
+## Szenarien
 
-- Use when rewards need specific skills, passives, IVs, souls, nickname, or work suitability values.
-- Use [FileTypes/PalTemplates](../../FileTypes/PalTemplate.md) to create the template first.
+- Nutzen, wenn Belohnungen bestimmte Skills, Passives, IVs, Souls, Spitznamen oder Arbeits-Eignungswerte brauchen.
+- Erstelle das Template zuerst über [FileTypes/PalTemplates](../../FileTypes/PalTemplate.md).
 - Import rules in `Pals/ImportRules/` can block or adjust templates before they are granted.

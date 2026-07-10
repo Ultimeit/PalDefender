@@ -1,56 +1,56 @@
 # GET /techs/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/techs/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/techs/<player_identifier>`
 
-**Permission:** `REST.Techs.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Techs.Read`
 
-Lists technology information for a player. Technology identifiers can be searched on [paldeck.cc/technology](https://paldeck.cc/technology).
+## Zweck
 
-## Path parameters
+Listet Technologieinformationen eines Spielers auf. Technologie-IDs können auf [paldeck.cc/technology](https://paldeck.cc/technology) gesucht werden.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/techs.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The target player, player account, technology data, or technology table could not be resolved. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Zielspieler, Player Account, Technologiedaten oder Technologietabelle konnten nicht aufgeloest werden. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 
-## Examples
+## Beispiele
 
 ### Read unlocked techs by UserID
 
@@ -64,7 +64,7 @@ GET /v1/pdapi/techs/gdk_2533274812345678
 GET /v1/pdapi/techs/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
 ```
 
-## Scenarios
+## Szenarien
 
 - Check whether a player already has a [`TechID`](https://paldeck.cc/technology) before learning or forgetting it.
 - Build an admin page that separates unlocked and available technologies.

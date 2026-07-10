@@ -1,60 +1,60 @@
 # POST /deletebase/{base_camp_id}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/deletebase/<base_camp_id>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/deletebase/<base_camp_id>`
 
-**Permission:** `REST.Base.Delete`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Base.Delete`
 
-Deletes a base/camp by its base camp ID. This is a destructive admin action.
+## Zweck
 
-## Path parameters
+Löscht eine Basis/ein Camp anhand der Base-Camp-ID. Das ist eine destruktive Admin-Aktion.
+
+## Pfadparameter
 
 - `base_camp_id`: Base camp identifier, usually copied from guild/base data.
 
-## Query parameters
+## Query-Parameter
 
-None.
+Keine.
 
-## Request body
+## Request-Body
 
-Optional empty JSON object. Confirm the ID before sending the request.
+Optionales leeres JSON-Objekt. Bestätige die ID, bevor du die Anfrage sendest.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/deletebase.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `INVALID_BASE_CAMP_ID` | The `base_camp_id` path value is not a valid GUID. |
-| `500` | `BASE_CAMP_MANAGER_UNAVAILABLE` | The server could not access `UPalBaseCampManager`. |
+| `500` | `BASE_CAMP_MANAGER_UNAVAILABLE` | Der Server konnte nicht auf `UPalBaseCampManager` zugreifen. |
 | `404` | `BASE_CAMP_NOT_FOUND` | No base camp matched the supplied GUID. |
-| `500` | `DELETE_BASE_FAILED` | The base camp was found, but destruction/cleanup failed. |
+| `500` | `DELETE_BASE_FAILED` | Das Base Camp wurde gefunden, aber Zerstoerung/Bereinigung ist fehlgeschlagen. |
 
-## Examples
+## Beispiele
 
 ### Delete a base camp by GUID
 
@@ -68,8 +68,8 @@ POST /v1/pdapi/deletebase/13b9e8d7-4f2c-42a1-b79e-fc2a9186e4d5
 POST /v1/pdapi/deletebase/81c2f0a4-6d7e-49fb-a11d-0d2f9f94b13c
 ```
 
-## Scenarios
+## Szenarien
 
 - Remove abandoned or broken bases after staff review.
-- Use [GET /guilds](guilds.md) and [GET /guild](guild.md) to identify the correct camp before deletion.
+- Nutze [GET /guilds](guilds.md) und [GET /guild](guild.md), um vor dem Löschen das richtige Camp zu identifizieren.
 - Do not use this endpoint for routine cleanup unless your staff process already verifies ownership and backups.

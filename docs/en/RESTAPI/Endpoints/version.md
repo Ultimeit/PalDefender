@@ -1,6 +1,6 @@
 # GET /version
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `GET /v1/pdapi/version`
 
@@ -58,5 +58,5 @@ GET /v1/pdapi/version
 ## Scenarios
 
 - Use it after configuring the REST API token to confirm authentication works.
-- Use it before calling Beta endpoints if your tool needs a minimum PalDefender version.
+- Use it before calling endpoints if your tool needs a minimum PalDefender version.
 - Use it for monitoring, because it is the smallest read-only request.

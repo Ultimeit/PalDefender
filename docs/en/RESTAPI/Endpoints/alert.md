@@ -1,6 +1,6 @@
 # POST /Alert
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/Alert`
 

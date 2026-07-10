@@ -1,57 +1,57 @@
 # POST /banip/{ip}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/banip/<ip>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/banip/<ip>`
 
-**Permission:** `REST.Punishments.BanIP`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Punishments.BanIP`
 
-Bans an IP address and records it in `Banlist.json`.
+## Zweck
 
-## Path parameters
+Bannt eine IP-Adresse und speichert sie in `Banlist.json`.
+
+## Pfadparameter
 
 - `ip`: IP address to ban.
 
-## Query parameters
+## Query-Parameter
 
-None.
+Keine.
 
-## Request body
+## Request-Body
 
-Optional JSON fields: `Reason` string and `UserId` string when the IP ban should be associated with a user.
+Optionale JSON-Felder: `Reason` als String und `UserId` als String, wenn der IP-Bann einem Benutzer zugeordnet werden soll.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/banip.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
 
-## Examples
+## Beispiele
 
 ### Ban an IP only
 
@@ -78,8 +78,8 @@ POST /v1/pdapi/banip/198.51.100.87
 }
 ```
 
-## Scenarios
+## Szenarien
 
 - Stop repeated abuse from the same IP after staff review.
 - Associate `UserId` when known so the banlist is easier to audit.
-- Use [GET /banlist](banlist.md) with `ip` to verify the active record.
+- Nutze [GET /banlist](banlist.md) mit `ip`, um den aktiven Eintrag zu prüfen.

@@ -1,72 +1,69 @@
 # 📄 `PalTemplate.json`
 
-use <https://paldeck.cc/creator> to create those files way easier!
+Mit <https://paldeck.cc/creator> kannst du diese Dateien deutlich einfacher erstellen.
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    Newly documented keys and instructions on this page are marked with <span class='pd-badge pd-badge--beta'>Beta</span>. They describe user-facing file behavior and may still be refined as the wiki is improved.
+!!! tip "ID-Suche"
+    Nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) für `Passives` und [paldeck.cc/skills](https://paldeck.cc/skills) für `ActiveSkills` und `LearntSkills`.
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
-    Use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) for `Passives`, and [paldeck.cc/skills](https://paldeck.cc/skills) for `ActiveSkills` and `LearntSkills`.
-
-| Key                      | Type   | Description                                                                         |
+| Schlüssel                      | Typ   | Beschreibung                                                                         |
 | ------------------------ | ------ | ----------------------------------------------------------------------------------- |
-| `PalID`                  | string | Internal ID of the Pal to spawn. Search valid [`PalID`](https://paldeck.cc/pals) values on Paldeck. |
-| `UniqueNPCID`            | string | Internal ID of the Pal to spawn NPCs.                                               |
-| `Nickname`               | string | Optional nickname given to the Pal.                                                 |
-| `SkinId`                 | string | Skin override for the Pal (used for custom appearances). Use cmd `/getskinids` to retrieve IDs. |
-| `Gender`                 | string | `"Male"`, `"Female"` or `"None"`.                                                   |
-| `Level`                  | int    | The level of the pal.                                                               |
-| `Exp`                    | int    | Experience points.                                                                  |
-| `Shiny`                  | bool   | Whether the Pal is shiny.                                                           |
-| `PartnerSkillLevel`      | int    | Level of the Pal’s partner skill. Cannot be lower than 1!                           |
-| `CondensedPals`          | int    | Number of Pals merged/condensed into this one.                                      |
-| `UnusedStatusPoints`     | int    | Available status points for manual distribution. Probably only used for players?    |
-| `FriendshipPoints`       | int    | <span class='pd-badge pd-badge--beta'>Beta</span> Friendship value for the Pal.                                               |
-| `PhysicalHealth`         | string | <span class='pd-badge pd-badge--beta'>Beta</span> Physical health state. Valid names include `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
-| `WorkerSick`             | string | <span class='pd-badge pd-badge--beta'>Beta</span> Worker sickness state. Valid names include `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
-| `ImportedCharacter`      | bool   | <span class='pd-badge pd-badge--beta'>Beta</span> Marks the Pal as an imported character.                                    |
-| `HP` / `SP` / `MP`       | number | Base Health, Stamina, and Mana values.                                              |
-| `Shield`                 | number | <span class='pd-badge pd-badge--beta'>Beta</span> Shield value.                                                              |
-| `Hunger` / `MaxHunger`   | int    | Current and max hunger values.                                                      |
-| `SAN`                    | int    | Sanity (mental stability of the Pal).                                               |
-| `Support`                | int    | Support level (used for AI behavior and skills).                                    |
-| `CraftSpeed`             | int    | Crafting speed multiplier.                                                          |
-| `PalSouls`               | object | Passive soul bonuses. Contains: `Health`, `Attack`, `Defense`, `CraftSpeed`. Recommended normal values are controlled by your import rules. |
-| `IVs`                    | object | Individual stat values. Contains: `Health`, `AttackMelee`, `AttackShot`, `Defense`. Recommended normal values are controlled by your import rules. |
-| `ActiveSkills`           | array  | List of currently equipped skills (Max 3). If more than 3 are provided, the extra entries are treated as learned skills. Search valid [skill IDs](https://paldeck.cc/skills) on Paldeck. |
-| `LearntSkills`           | array  | Skills the Pal has learned and can swap to. Avoid putting active skills here. Search valid [skill IDs](https://paldeck.cc/skills) on Paldeck. |
-| `Passives`               | array  | Passive traits the Pal has. Normal Pals should use up to 4 passives. Search valid [`PassiveID`](https://paldeck.cc/passives) values on Paldeck. |
-| `ExtraWorkSuitabilities` | object | Boosted work types and levels (e.g., `"Mining": 2`). Available work types: `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`.  |
-| `DisableWorkPreferences` | array  | Work types the Pal refuses to do. Available work types: `BaseCampBattle`, `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`. |
+| `PalID`                  | string | Interne ID des Pals, der erzeugt werden soll. Gültige [`PalID`](https://paldeck.cc/pals)-Werte findest du auf Paldeck. |
+| `UniqueNPCID`            | string | Interne ID des Pals, der als NPC erzeugt werden soll. |
+| `Nickname`               | string | Optionaler Spitzname für den Pal. |
+| `SkinId`                 | string | Skin-Override für den Pal (für benutzerdefinierte Optik). Nutze `/getskinids`, um IDs abzurufen. |
+| `Gender`                 | string | `"Male"`, `"Female"` oder `"None"`. |
+| `Level`                  | int    | Das Level des Pals.                                                               |
+| `Exp`                    | int    | Erfahrungspunkte. |
+| `Shiny`                  | bool   | Gibt an, ob der Pal shiny ist. |
+| `PartnerSkillLevel`      | int    | Level der Partnerfähigkeit des Pals. Darf nicht kleiner als 1 sein! |
+| `CondensedPals`          | int    | Anzahl der Pals, die in diesen Pal verdichtet wurden. |
+| `UnusedStatusPoints`     | int    | Verfügbare Statuspunkte zur manuellen Verteilung. Vermutlich nur für Spieler relevant. |
+| `FriendshipPoints`       | int    | Freundschaftswert des Pals. |
+| `PhysicalHealth`         | string | Körperlicher Gesundheitszustand. Gültige Namen sind unter anderem `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
+| `WorkerSick`             | string | Krankheitszustand des Arbeiters. Gültige Namen sind unter anderem `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
+| `ImportedCharacter`      | bool   | Markiert den Pal als importierten Charakter. |
+| `HP` / `SP` / `MP`       | number | Basiswerte für Gesundheit, Ausdauer und Mana. |
+| `Shield`                 | number | Schildwert. |
+| `Hunger` / `MaxHunger`   | int    | Aktueller und maximaler Hungerwert. |
+| `SAN`                    | int    | Sanity-Wert, also die mentale Stabilität des Pals. |
+| `Support`                | int    | Support-Level, das für KI-Verhalten und Skills verwendet wird. |
+| `CraftSpeed`             | int    | Multiplikator für Handwerksgeschwindigkeit. |
+| `PalSouls`               | object | Passive Soul-Boni. Enthält `Health`, `Attack`, `Defense`, `CraftSpeed`. Empfohlene Normalwerte werden über deine Importregeln gesteuert. |
+| `IVs`                    | object | Individuelle Statuswerte. Enthält `Health`, `AttackMelee`, `AttackShot`, `Defense`. Empfohlene Normalwerte werden über deine Importregeln gesteuert. |
+| `ActiveSkills`           | array  | Liste der aktuell ausgerüsteten Skills (max. 3). Wenn mehr als 3 Einträge angegeben werden, gelten die zusätzlichen Einträge als gelernte Skills. Gültige [Skill-IDs](https://paldeck.cc/skills) findest du auf Paldeck. |
+| `LearntSkills`           | array  | Skills, die der Pal gelernt hat und einwechseln kann. Aktive Skills sollten hier nicht stehen. Gültige [Skill-IDs](https://paldeck.cc/skills) findest du auf Paldeck. |
+| `Passives`               | array  | Passive Eigenschaften des Pals. Normale Pals sollten höchstens 4 Passives verwenden. Gültige [`PassiveID`](https://paldeck.cc/passives)-Werte findest du auf Paldeck. |
+| `ExtraWorkSuitabilities` | object | Verstärkte Arbeitstypen und Level (z. B. `"Mining": 2`). Verfügbare Arbeitstypen: `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`. |
+| `DisableWorkPreferences` | array  | Arbeitstypen, die der Pal verweigert. Verfügbare Arbeitstypen: `BaseCampBattle`, `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## Anleitung
 
-1. Create one JSON file per custom Pal in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
-2. Use a unique filename, for example `RaidRewardAnubis.json`. Commands can usually use `RaidRewardAnubis` or `RaidRewardAnubis.json`.
-3. Always include `PalID`. Everything else is optional, but missing values use PalDefender or Palworld defaults.
-4. Keep `Level` at `1` or higher and `PartnerSkillLevel` at `1` or higher.
-5. Put only the 3 equipped attacks in `ActiveSkills`; put extra known attacks in `LearntSkills`.
-6. Use exact IDs for Pals, skills, passives, skins, and work types. Wrong IDs may fail to import or may be ignored.
-7. Validate JSON before uploading. JSON does not allow comments or trailing commas.
-8. If a template imports but values are changed or blocked, check the server's `Pals/ImportRules/Default.json` and any per-Pal override files.
+1. Erstelle pro benutzerdefiniertem Pal eine JSON-Datei in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
+2. Nutze einen eindeutigen Dateinamen, zum Beispiel `RaidRewardAnubis.json`. Befehle können meist `RaidRewardAnubis` oder `RaidRewardAnubis.json` verwenden.
+3. `PalID` muss immer vorhanden sein. Alles andere ist optional; fehlende Werte verwenden die Standardwerte von PalDefender oder Palworld.
+4. `Level` und `PartnerSkillLevel` müssen jeweils `1` oder höher sein.
+5. Trage nur die 3 ausgerüsteten Angriffe in `ActiveSkills` ein. Zusätzliche bekannte Angriffe gehören in `LearntSkills`.
+6. Nutze exakte IDs für Pals, Skills, Passives, Skins und Arbeitstypen. Falsche IDs können den Import fehlschlagen lassen oder ignoriert werden.
+7. Validiere JSON vor dem Hochladen. JSON erlaubt keine Kommentare oder nachgestellten Kommas.
+8. Wenn ein Template importiert wird, Werte aber geändert oder blockiert werden, prüfe `Pals/ImportRules/Default.json` und alle Pal-spezifischen Überschreibungen auf dem Server.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## Einrichtungsschritte
 
-1. Decide what the template is for: a simple admin reward, an event boss, a testing Pal, or a spawn template for a summon.
-2. Pick the `PalID` at [paldeck.cc/pals](https://paldeck.cc/pals). The display name is not always the file ID, so copy the ID exactly.
-3. Add only the fields you want to control. A short template is easier to debug than a very large one.
-4. Choose skills from [paldeck.cc/skills](https://paldeck.cc/skills). Put the three equipped attacks in `ActiveSkills`; add extra known attacks to `LearntSkills`.
-5. Choose passives from [paldeck.cc/passives](https://paldeck.cc/passives). For normal usage, keep up to four passives unless your server intentionally allows more.
-6. Save the file in `Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
-7. Test with `/givemepal_j <filename>` first. After that, use the same template for `/givepal_j`, `/spawnpal_j`, `/giveegg_j`, the REST API, or `PalSummon.json`.
+1. Lege fest, wofür das Template gedacht ist: einfache Admin-Belohnung, Eventboss, Test-Pal oder Spawn-Template für eine Summon-Datei.
+2. Wähle die `PalID` auf [paldeck.cc/pals](https://paldeck.cc/pals). Der Anzeigename ist nicht immer die Datei-ID, kopiere die ID daher exakt.
+3. Füge nur die Felder hinzu, die du wirklich steuern willst. Ein kurzes Template ist leichter zu debuggen als ein sehr großes.
+4. Wähle Skills auf [paldeck.cc/skills](https://paldeck.cc/skills). Die drei ausgerüsteten Angriffe gehören in `ActiveSkills`; zusätzliche bekannte Angriffe in `LearntSkills`.
+5. Wähle Passives auf [paldeck.cc/passives](https://paldeck.cc/passives). Für normale Nutzung sollten es höchstens vier Passives sein, außer dein Server erlaubt bewusst mehr.
+6. Speichere die Datei in `Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
+7. Teste zuerst mit `/givemepal_j <filename>`. Danach kannst du dasselbe Template für `/givepal_j`, `/spawnpal_j`, `/giveegg_j`, die REST API oder `PalSummon.json` verwenden.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> example explanations
+## Erklärung der Beispiele
 
-The minimal example below creates a level 50 Anubis with three equipped attacks and two passives. It is suitable for testing because it has only the required `PalID` plus a few common fields.
+Das Minimalbeispiel unten erstellt einen Anubis auf Level 50 mit drei ausgerüsteten Angriffen und zwei Passives. Es eignet sich zum Testen, weil es nur die erforderliche `PalID` plus einige gängige Felder enthält.
 
-The larger example is intentionally extreme. It shows the available structure for souls, IVs, skills, passives, and work suitability overrides. On servers using import rules, high values may be clamped or blocked.
+Das größere Beispiel ist absichtlich extrem. Es zeigt die verfügbare Struktur für Souls, IVs, Skills, Passives und Überschreibungen der Arbeitseignung. Auf Servern mit Importregeln können hohe Werte begrenzt oder blockiert werden.
 
-## Minimal <span class='pd-badge pd-badge--beta'>Beta</span> example
+## Minimalbeispiel
 
 ```json
 {
@@ -89,10 +86,10 @@ The larger example is intentionally extreme. It shows the available structure fo
 }
 ```
 
-## Example
+## Beispiel
 
-This file has to be stored at: `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/ExamplePalTemplate.json`
-(`ExamplePalTemplate` can be any unique name in that folder. This will be the command argument for `/givepal_j` and `/spawnpal_j`!)
+Diese Datei muss hier gespeichert werden: `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/ExamplePalTemplate.json`
+(`ExamplePalTemplate` kann ein beliebiger eindeutiger Name in diesem Ordner sein. Das ist später das Befehlsargument für `/givepal_j` und `/spawnpal_j`!)
 
 ```json
 {

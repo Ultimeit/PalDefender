@@ -1,6 +1,6 @@
 # POST /unban/{user_id}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/unban/<user_id>`
 

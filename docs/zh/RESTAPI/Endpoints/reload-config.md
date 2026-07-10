@@ -1,53 +1,53 @@
 # POST /ReloadConfig
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/ReloadConfig`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/ReloadConfig`
 
-**Permission:** `REST.Reload.Config`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Reload.Config`
+
+## 用途
 
 Reloads PalDefender configuration without requiring a full server restart.
 
-## Path parameters
+## 路径参数
 
-None.
+无。
 
-## Query parameters
+## 查询参数
 
-None.
+无。
 
-## Request body
+## 请求体
 
-Optional empty JSON object.
+可选的空 JSON 对象。
 
-## Response schema
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/reload-config.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
 
-## Examples
+## 示例
 
 ### Reload configuration
 
@@ -61,8 +61,8 @@ POST /v1/pdapi/ReloadConfig
 POST /v1/pdapi/ReloadConfig
 ```
 
-## Scenarios
+## 使用场景
 
 - Apply edits to supported configuration files.
 - Reload after updating `Banlist.json`, import rules, or other runtime-readable PalDefender files.
-- If a change does not take effect after reload, restart the server during a maintenance window.
+- 如果更改在重新加载后没有生效，请在维护窗口期间重启服务器。

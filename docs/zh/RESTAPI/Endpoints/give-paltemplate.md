@@ -1,60 +1,60 @@
 # POST /give/paltemplate/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/give/paltemplate/<player_identifier>`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/give/paltemplate/<player_identifier>`
 
-**Permission:** `REST.PalTemplates.Give`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.PalTemplates.Give`
 
-Gives one or more Pals from files in `Pals/Templates/`.
+## 用途
 
-## Path parameters
+从 `Pals/Templates/` 文件中给出一个或多个帕鲁。
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## 路径参数
 
-## Query parameters
+- `player_identifier`: 目标玩家的 `UserId` 或 `PlayerUID`。
 
-None.
+## 查询参数
 
-## Request body
+无。
 
-JSON object with `PalTemplates`, an array of template filenames. The `.json` extension may be included for clarity.
+## 请求体
 
-## Response schema
+JSON 对象，包含 `PalTemplates` 模板文件名数组。为了清晰起见，可以包含 `.json` 扩展名。
+
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/give-paltemplate.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `INVALID_REQUEST` | The body does not contain a `PalTemplates` array. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
+| `400` | `INVALID_REQUEST` | 请求体不包含 `PalTemplates` 数组。 |
 | `400` | `VALIDATION_FAILED` | One or more template filenames are invalid, cannot be imported, or do not fit in Pal storage. |
 
-## Examples
+## 示例
 
-### Give one template Pal to a Steam player
+### 向 Steam 玩家发放一个模板 Pal
 
 ```http
 POST /v1/pdapi/give/paltemplate/steam_76561198087654321
@@ -68,7 +68,7 @@ POST /v1/pdapi/give/paltemplate/steam_76561198087654321
 }
 ```
 
-### Give raid reward templates to a PS5 player
+### 向 PS5 玩家发放 Raid 奖励模板
 
 ```http
 POST /v1/pdapi/give/paltemplate/ps5_c481a77e22004b9d
@@ -83,8 +83,8 @@ POST /v1/pdapi/give/paltemplate/ps5_c481a77e22004b9d
 }
 ```
 
-## Scenarios
+## 使用场景
 
-- Use when rewards need specific skills, passives, IVs, souls, nickname, or work suitability values.
-- Use [FileTypes/PalTemplates](../../FileTypes/PalTemplate.md) to create the template first.
+- 当奖励需要指定技能、被动、IV、souls、昵称或工作适应性数值时使用。
+- 先使用 [FileTypes/PalTemplates](../../FileTypes/PalTemplate.md) 创建模板。
 - Import rules in `Pals/ImportRules/` can block or adjust templates before they are granted.

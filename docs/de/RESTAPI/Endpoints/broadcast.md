@@ -1,59 +1,59 @@
 # POST /Broadcast
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/Broadcast`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/Broadcast`
 
-**Permission:** `REST.Messages.Broadcast`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Messages.Broadcast`
 
-Broadcasts a chat message to the server.
+## Zweck
 
-## Path parameters
+Sendet eine Chatnachricht an den Server.
 
-None.
+## Pfadparameter
 
-## Query parameters
+Keine.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-JSON object with `Message` string and optional `Sender` string.
+## Request-Body
 
-## Response schema
+JSON-Objekt mit dem erforderlichen String `Message`.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/broadcast.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `VALIDATION_FAILED` | `Message` is missing, empty, or not a string. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `400` | `VALIDATION_FAILED` | `Message` fehlt, ist leer oder kein String. |
 
-## Examples
+## Beispiele
 
-### Broadcast as SYSTEM
+### Neustart-Hinweis senden
 
 ```http
 POST /v1/pdapi/Broadcast
@@ -65,21 +65,8 @@ POST /v1/pdapi/Broadcast
 }
 ```
 
-### Broadcast with sender name
+## Szenarien
 
-```http
-POST /v1/pdapi/Broadcast
-```
-
-```json
-{
-    "Sender": "Admin",
-    "Message": "World boss event starts now."
-}
-```
-
-## Scenarios
-
-- Announce scheduled maintenance.
-- Send automated event start messages.
-- Use [POST /Alert](alert.md) when the message should be an alert instead of normal broadcast chat.
+- Kündige geplante Wartungen an.
+- Sende automatische Event-Startmeldungen.
+- Nutze [POST /Alert](alert.md), wenn die Nachricht ein Alarm statt normaler Broadcast-Chat sein soll.

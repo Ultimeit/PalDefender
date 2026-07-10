@@ -1,59 +1,59 @@
 # GET /banlist
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/banlist`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/banlist`
 
-**Permission:** `REST.Banlist.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Banlist.Read`
 
-Reads ban records from the ban list. Ban-related data is stored in `Banlist.json`, not `Config.json`.
+## Zweck
 
-## Path parameters
+Liest Bann-Eintraege aus der Bannliste. Bannbezogene Daten werden in `Banlist.json` gespeichert, nicht in `Config.json`.
 
-None.
+## Pfadparameter
 
-## Query parameters
+Keine.
+
+## Query-Parameter
 
 - `active`: `true`, `false`, or `1` to filter active state.
-- `entryType`: Filter by ban entry type.
+- `entryType`: Nach Bann-Eintragstyp filtern.
 - `userId`: Filter by user ID.
 - `ip` or `userIP`: Filter by IP address.
-- `issuerType`, `issuerName`, `issuerIP`: Filter by issuer metadata.
+- `issuerType`, `issuerName`, `issuerIP`: Nach Aussteller-Metadaten filtern.
 - `reason`: Filter by reason text.
 - `q`: General text search.
 
-## Request body
+## Request-Body
 
-No request body.
+Kein Request-Body.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/banlist.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
 
-## Examples
+## Beispiele
 
 ### List all ban records
 
@@ -73,7 +73,7 @@ GET /v1/pdapi/banlist?active=true&userId=steam_76561198012345678
 GET /v1/pdapi/banlist?ip=203.0.113.42
 ```
 
-## Scenarios
+## Szenarien
 
 - Check whether a player or IP is currently banned.
 - Search by reason or issuer before unbanning.

@@ -1,58 +1,58 @@
 # POST /kick/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/kick/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/kick/<player_identifier>`
 
-**Permission:** `REST.Punishments.Kick`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Punishments.Kick`
 
-Kicks an online player without creating a ban record.
+## Zweck
 
-## Path parameters
+Kickt einen Online-Spieler, ohne einen Banneintrag zu erstellen.
+
+## Pfadparameter
 
 - `player_identifier`: `UserId`, `PlayerUID`, or another supported player identifier.
 
-## Query parameters
+## Query-Parameter
 
-None.
+Keine.
 
-## Request body
+## Request-Body
 
-Optional JSON field: `Reason` string.
+Optionales JSON-Feld: `Reason` als String.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/kick.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
-| `404` | `PLAYER_NOT_FOUND` | The target player is not online or could not be found. |
+| `404` | `PLAYER_NOT_FOUND` | Der Zielspieler ist nicht online oder konnte nicht gefunden werden. |
 
-## Examples
+## Beispiele
 
 ### Kick a GDK player with reason
 
@@ -76,8 +76,8 @@ POST /v1/pdapi/kick/steam_76561198087654321
 {}
 ```
 
-## Scenarios
+## Szenarien
 
 - Remove a player before maintenance.
 - Kick a stuck player so they can reconnect.
-- Use [POST /ban](ban.md) instead when the player should not be allowed back.
+- Nutze stattdessen [POST /ban](ban.md), wenn der Spieler nicht zurückkehren dürfen soll.

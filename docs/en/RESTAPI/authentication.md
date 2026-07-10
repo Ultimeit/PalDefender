@@ -37,7 +37,6 @@ Example token file:
 }
 ```
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
     `Permissions` may be a string or an array of strings. Use narrower permissions for public dashboards or automation that should not have full admin access.
 
 ## Headers

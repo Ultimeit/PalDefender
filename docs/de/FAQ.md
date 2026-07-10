@@ -1,71 +1,71 @@
 # FAQ
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span> I've accidentally banned myself/someone. How can I unban them?</summary>
+<details><summary style="font-size:16px">Ich habe mich/jemanden versehentlich gebannt. Wie kann ich den Bann aufheben?</summary>
 
 <p style="font-size:14px">
-Use <span class="var-command">/unban &lt;UserId&gt;</span> for account bans and <span class="var-command">/unbanip &lt;IP&gt;</span> for IP bans. PalDefender ban records are stored in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span>. If you edit the file manually, stop the server first or reload configuration after editing.
+Nutze <span class="var-command">/unban &lt;UserId&gt;</span> für Account-Banns und <span class="var-command">/unbanip &lt;IP&gt;</span> für IP-Banns. PalDefender speichert Bann-Einträge in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span>. Wenn du die Datei manuell bearbeitest, stoppe zuerst den Server oder lade die Konfiguration danach neu.
 </p>
 
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old IP-ban cleanup through Config.json</summary>
+<details><summary style="font-size:16px"><span class='pd-badge pd-badge--deprecated'>Veraltet</span> Alte IP-Bann-Bereinigung über Config.json</summary>
 
 <p style="font-size:14px">
-Older wiki versions told admins to remove IP bans from <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Config.json</span>. That path is deprecated for ban records. Use <span class="var-command">/unbanip &lt;IP&gt;</span> or edit <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span> instead.
+Ältere Wiki-Versionen haben Admins angewiesen, IP-Banns aus <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Config.json</span> zu entfernen. Dieser Speicherort ist für Bann-Einträge veraltet. Nutze stattdessen <span class="var-command">/unbanip &lt;IP&gt;</span> oder bearbeite <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Banlist.json</span>.
 </p>
 
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: I added or changed a PalTemplate or PalSummon file but the command fails.</summary>
+<details><summary style="font-size:16px">Ich habe eine PalTemplate- oder PalSummon-Datei hinzugefuegt/geaendert, aber der Befehl schlaegt fehl.</summary>
 
 <ul>
-  <li>Make sure the file is valid JSON. Remove comments and trailing commas.</li>
-  <li>Templates belong in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/Pals/Templates/</span>.</li>
-  <li>Summons belong in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/Pals/Summons/</span>.</li>
-  <li>Use the filename without path, for example <span class="var-command">/summon ArenaBoss</span>.</li>
-  <li>For summon files, check that <code>PalTemplate</code>, <code>X</code>, <code>Y</code>, and <code>Z</code> are present.</li>
-  <li>For template files, check that <code>PalID</code> is present and uses a valid Pal ID.</li>
+  <li>Stelle sicher, dass die Datei gültiges JSON ist. Entferne Kommentare und nachgestellte Kommas.</li>
+  <li>Templates gehoeren nach <span class="path-partial">../Pal/Binaries/Win64/PalDefender/Pals/Templates/</span>.</li>
+  <li>Summons gehoeren nach <span class="path-partial">../Pal/Binaries/Win64/PalDefender/Pals/Summons/</span>.</li>
+  <li>Nutze den Dateinamen ohne Pfad, zum Beispiel <span class="var-command">/summon ArenaBoss</span>.</li>
+  <li>Prüfe bei Summon-Dateien, dass <code>PalTemplate</code>, <code>X</code>, <code>Y</code> und <code>Z</code> vorhanden sind.</li>
+  <li>Prüfe bei Template-Dateien, dass <code>PalID</code> vorhanden ist und eine gültige Pal-ID verwendet.</li>
 </ul>
 
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: Which ID should I use for commands: UserId, PlayerUId, name, or SteamID?</summary>
+<details><summary style="font-size:16px">Welche ID soll ich für Befehle verwenden: UserId, PlayerUId, Name oder SteamID?</summary>
 
 <p>
-Most admin commands expect the player's UserId, such as <code>steam_...</code> or <code>gdk_...</code>. Use <span class="var-command">/iwantplayerlist</span> in-game to show IDs in the player list, or use REST/API tooling if you have it enabled.
+Die meisten Admin-Befehle erwarten die UserId des Spielers, zum Beispiel <code>steam_...</code> oder <code>gdk_...</code>. Nutze im Spiel <span class="var-command">/iwantplayerlist</span>, um IDs in der Spielerliste anzuzeigen, oder nutze REST/API-Werkzeuge, wenn sie aktiviert sind.
 </p>
 
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: Why does RCON require coordinates or a UserId for commands that work without them in chat?</summary>
+<details><summary style="font-size:16px">Warum braucht RCON Koordinaten oder eine UserId für Befehle, die im Chat ohne funktionieren?</summary>
 
 <p>
-RCON has no in-game player character, so PalDefender cannot infer your position or target. For commands like <span class="var-command">/getpos</span>, <span class="var-command">/tp</span>, <span class="var-command">/spawnpal</span>, and base-location commands, provide the target player or coordinates explicitly.
+RCON hat keinen Spielercharakter im Spiel, daher kann PalDefender deine Position oder dein Ziel nicht ableiten. Gib bei Befehlen wie <span class="var-command">/getpos</span>, <span class="var-command">/tp</span>, <span class="var-command">/spawnpal</span> und Basispositions-Befehlen den Zielspieler oder die Koordinaten explizit an.
 </p>
 
 </details>
 
 
-<details><summary style="font-size:16px"><span class='pd-badge pd-badge--beta'>Beta</span>: The REST API returns 401 or 403. What should I check?</summary>
+<details><summary style="font-size:16px">Die REST API gibt 401 oder 403 zurück. Was soll ich prüfen?</summary>
 
 <ul>
-  <li><strong>401</strong>: Check the <code>Authorization: Bearer &lt;token&gt;</code> header and make sure the token file is not named <code>TokenExample.json</code>.</li>
-  <li><strong>403</strong>: Check token permissions and make sure the server has finished starting.</li>
-  <li>After changing tokens, restart the server or reload the API/token setup according to your host workflow.</li>
+  <li><strong>401</strong>: Prüfe den Header <code>Authorization: Bearer &lt;token&gt;</code> und stelle sicher, dass die Token-Datei nicht <code>TokenExample.json</code> heißt.</li>
+  <li><strong>403</strong>: Prüfe die Token-Berechtigungen und stelle sicher, dass der Server vollständig gestartet ist.</li>
+  <li>Starte den Server nach Token-Aenderungen neu oder lade die API-/Token-Einrichtung passend zu deinem Hosting-Workflow neu.</li>
 </ul>
 
 </details>
 
 
 
-<details><summary style="font-size:16px">I cannot login as an admin, it says that admin commands are whitelist protected.</summary>
+<details><summary style="font-size:16px">Ich kann mich nicht als Admin einloggen, weil Admin-Befehle durch die Whitelist geschuetzt sind.</summary>
 
 <p>
-Make sure you have added your IP to <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Config.json</span> like this:
+Stelle sicher, dass du deine IP so in <span class="path-partial">../Pal/Binaries/Win64/PalDefender/</span><span class="file-partial">Config.json</span> eingetragen hast:
 </p>
 ```json
 "useAdminWhitelist": true,
@@ -78,39 +78,39 @@ Make sure you have added your IP to <span class="path-partial">../Pal/Binaries/W
 ```
 
 <p>
-Alternatively, you can set <span class="config-value">useAdminWhitelist</span> to <span class="var-bool">false</span> but that is not recommended, since cheaters are known to have some kind of exploit to obtain admin password.
+Alternativ kannst du <span class="config-value">useAdminWhitelist</span> auf <span class="var-bool">false</span> setzen. Das wird aber nicht empfohlen, da Cheater bekanntermassen Wege haben, an das Admin-Passwort zu gelangen.
 </p>
 
 </details>
 
 
 
-<details><summary style="font-size:16px">My server crashes on startup.</summary>
+<details><summary style="font-size:16px">Mein Server stuerzt beim Start ab.</summary>
 <ul>
-  <li>Ensure PalDefender is the only one mod running - delete all other mods and see if the problem persists.</li>
-  <li>Check if PalDefender is on the newest version.</li>
-  <li>Check out our <a href="https://discord.gg/paldefender" target="_blank">discord</a> for any announcements.</li>
-  <li>Rename `PalDefender` directory in <span class="path">../Pal/Binaries/Win64/</span> and restart the server.</li>
-  <li>In certain cases installing <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170" target="_blank">VC++ redistributable</a> can help.</li>
+  <li>Stelle sicher, dass PalDefender der einzige aktive Mod ist. Entferne alle anderen Mods und pruefe, ob das Problem bestehen bleibt.</li>
+  <li>Prüfe, ob PalDefender auf der neuesten Version ist.</li>
+  <li>Prüfe unseren <a href="https://discord.gg/paldefender" target="_blank">Discord</a> auf Ankündigungen.</li>
+  <li>Benenne den Ordner `PalDefender` in <span class="path">../Pal/Binaries/Win64/</span> um und starte den Server neu.</li>
+  <li>In manchen Faellen hilft die Installation des <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170" target="_blank">VC++ Redistributable</a>.</li>
 </ul>
 
 </details>
 
 
-<details><summary style="font-size:16px">I cannot see certain symbols properly in my server console.</summary>
+<details><summary style="font-size:16px">Ich sehe bestimmte Zeichen in meiner Serverkonsole nicht richtig.</summary>
 
 <p>
-Please use Windows Terminal (or any alternative with proper unicode support) instead of default windows console.
+Nutze bitte Windows Terminal oder eine Alternative mit guter Unicode-Unterstuetzung statt der Standard-Windows-Konsole.
 </p>
 
 </details>
 
 
 
-<details><summary style="font-size:16px">How can I report crashes?</summary>
+<details><summary style="font-size:16px">Wie kann ich Abstuerze melden?</summary>
 
 <p>
-Send following files in the <a href="https://github.com/Ultimeit/PalDefender/issues" target="_blank">issue section</a>:
+Sende folgende Dateien im <a href="https://github.com/Ultimeit/PalDefender/issues" target="_blank">Issue-Bereich</a>:
 <ul>
   <li><span class="path-partial">.../Pal/Saved/Crashes/&lt;random numbers&gt;/</span><span class="file-partial">CrashContext.runtime-xml</span>
   <li><span class="path-partial">.../Pal/Binaries/Win64/PalDefender/Logs/</span><span class="file-partial">&lt;recent logs&gt;</span>
@@ -118,8 +118,7 @@ Send following files in the <a href="https://github.com/Ultimeit/PalDefender/iss
 </p>
 
 <p>
-Make sure to drop any information you could see or assume that might be the reason. Dont forget the PalDefender version! Any information can be valuable!
+Fuege alle Informationen hinzu, die du gesehen hast oder als Ursache vermutest. Vergiss die PalDefender-Version nicht! Jede Information kann wertvoll sein!
 </p>
 
 </details>
-

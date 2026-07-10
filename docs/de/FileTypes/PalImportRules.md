@@ -1,70 +1,68 @@
 # 📄 `Pals/ImportRules/*.json`
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    This page is new <span class='pd-badge pd-badge--beta'>Beta</span> documentation for Pal import rule files. It only describes public configuration behavior.
 
-Pal import rules control which `PalTemplate.json` files are allowed, blocked, or adjusted when imported by commands or API actions.
+Pal-Importregeln steuern, welche `PalTemplate.json`-Dateien beim Import über Befehle oder API-Aktionen erlaubt, blockiert oder angepasst werden.
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
-    Use [paldeck.cc/pals](https://paldeck.cc/pals) for `AllowedPalIDs`, `BannedPalIDs`, and per-Pal rule filenames. Use [paldeck.cc/passives](https://paldeck.cc/passives) for `DisallowedPassives`.
+!!! tip "ID-Suche"
+    Nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `AllowedPalIDs`, `BannedPalIDs` und Dateinamen für Pal-spezifische Regeln. Nutze [paldeck.cc/passives](https://paldeck.cc/passives) für `DisallowedPassives`.
 
-## File locations
+## Dateipfade
 
-| File | Purpose |
+| Datei | Zweck |
 | ---- | ------- |
-| `<...>/Pal/Binaries/Win64/PalDefender/Pals/ImportRules/Default.json` | Global import rules for all Pal templates. |
-| `<...>/Pal/Binaries/Win64/PalDefender/Pals/ImportRules/<PalID>.json` | Optional per-Pal override. Search the [`PalID`](https://paldeck.cc/pals) on Paldeck, then use that exact ID as the filename. Example: `Anubis.json`. |
-| `<...>/Pal/Binaries/Win64/PalDefender/Pals/ImportRules/ExampleOverride.json` | Example file generated for reference. It is not a real Pal rule until copied and renamed. |
+| `<...>/Pal/Binaries/Win64/PalDefender/Pals/ImportRules/Default.json` | Globale Importregeln für alle Pal-Templates. |
+| `<...>/Pal/Binaries/Win64/PalDefender/Pals/ImportRules/<PalID>.json` | Optionale Pal-spezifische Überschreibung. Suche die [`PalID`](https://paldeck.cc/pals) auf Paldeck und nutze genau diese ID als Dateinamen. Beispiel: `Anubis.json`. |
+| `<...>/Pal/Binaries/Win64/PalDefender/Pals/ImportRules/ExampleOverride.json` | Als Referenz generierte Beispieldatei. Sie ist erst eine echte Pal-Regel, wenn sie kopiert und umbenannt wurde. |
 
-## Keys
+## Schlüssel
 
-| Key | Type | Description |
+| Schlüssel | Typ | Beschreibung |
 | --- | ---- | ----------- |
-| `PalSelectionMode` | string | `Default.json` only. `AllowAllExceptBanned` allows every Pal except `BannedPalIDs`. `AllowOnlyListed` allows only `AllowedPalIDs`. |
-| `AllowedPalIDs` | array | `Default.json` only. [`PalID`](https://paldeck.cc/pals) values allowed when `PalSelectionMode` is `AllowOnlyListed`. |
-| `BannedPalIDs` | array | `Default.json` only. [`PalID`](https://paldeck.cc/pals) values that are always denied. |
-| `MaxValueLimitAction` | string | `BlockImport` denies templates above configured limits. `ClampToMaxValues` lowers values to the configured limits. |
-| `DisallowedPassivesAction` | string | `BlockImport` denies templates with listed passives. `RemoveFromPal` removes listed passives before import. |
-| `DisallowedPassives` | array | [`PassiveID`](https://paldeck.cc/passives) values affected by `DisallowedPassivesAction`. |
-| `Disabled` | bool | If `true`, disables import checks for the matching rule set. |
-| `BanIfPalIsImpossible` | bool | If `true`, PalDefender can punish impossible Pal imports according to server settings. |
-| `AllowGenderNone` | bool | If `false`, templates using `Gender: "None"` can be rejected by import checks. |
-| `MaxLevel` | int | Highest allowed Pal level for imported templates. |
-| `MaxRank` | int | Highest allowed partner skill rank for imported templates. |
-| `PalSouls` | object | Maximum allowed Pal soul values: `Health`, `Attack`, `Defense`, `CraftSpeed`. |
-| `IVs` | object | Maximum allowed IV values: `Health`, `AttackMelee`, `AttackShot`, `Defense`. |
+| `PalSelectionMode` | string | Nur in `Default.json`. `AllowAllExceptBanned` erlaubt alle Pals außer `BannedPalIDs`. `AllowOnlyListed` erlaubt nur `AllowedPalIDs`. |
+| `AllowedPalIDs` | array | Nur in `Default.json`. [`PalID`](https://paldeck.cc/pals)-Werte, die bei `PalSelectionMode: "AllowOnlyListed"` erlaubt sind. |
+| `BannedPalIDs` | array | Nur in `Default.json`. [`PalID`](https://paldeck.cc/pals)-Werte, die immer abgelehnt werden. |
+| `MaxValueLimitAction` | string | `BlockImport` lehnt Templates oberhalb der konfigurierten Limits ab. `ClampToMaxValues` reduziert Werte auf die konfigurierten Limits. |
+| `DisallowedPassivesAction` | string | `BlockImport` lehnt Templates mit gelisteten Passives ab. `RemoveFromPal` entfernt gelistete Passives vor dem Import. |
+| `DisallowedPassives` | array | [`PassiveID`](https://paldeck.cc/passives)-Werte, auf die `DisallowedPassivesAction` angewendet wird. |
+| `Disabled` | bool | Wenn `true`, werden Importprüfungen für dieses Regelset deaktiviert. |
+| `BanIfPalIsImpossible` | bool | Wenn `true`, kann PalDefender unmögliche Pal-Importe gemäß Servereinstellungen bestrafen. |
+| `AllowGenderNone` | bool | Wenn `false`, können Templates mit `Gender: "None"` durch Importprüfungen abgelehnt werden. |
+| `MaxLevel` | int | Höchstes erlaubtes Pal-Level für importierte Templates. |
+| `MaxRank` | int | Höchster erlaubter Partner-Skill-Rang für importierte Templates. |
+| `PalSouls` | object | Maximal erlaubte Pal-Soul-Werte: `Health`, `Attack`, `Defense`, `CraftSpeed`. |
+| `IVs` | object | Maximal erlaubte IV-Werte: `Health`, `AttackMelee`, `AttackShot`, `Defense`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## Anleitung
 
-1. Start with `Default.json`. Use it for server-wide policy.
-2. Use per-Pal files only when one Pal needs different limits.
-3. Per-Pal files must be named with the Pal ID, for example `Anubis.json`.
-4. Do not put `PalSelectionMode`, `AllowedPalIDs`, or `BannedPalIDs` in per-Pal files. Those belong in `Default.json`.
-5. Use `BlockImport` if you want strict moderation.
-6. Use `ClampToMaxValues` if you prefer to accept templates but reduce over-limit values.
-7. Use `RemoveFromPal` for passives if you prefer automatic cleanup over a failed import.
-8. Keep IDs exact and validate JSON before uploading.
+1. Beginne mit `Default.json`. Nutze sie für serverweite Regeln.
+2. Nutze Dateien pro Pal nur, wenn ein bestimmter Pal andere Limits braucht.
+3. Pal-spezifische Dateien müssen nach der Pal-ID benannt werden, zum Beispiel `Anubis.json`.
+4. Setze `PalSelectionMode`, `AllowedPalIDs` und `BannedPalIDs` nicht in Pal-spezifische Dateien. Diese Werte gehören in `Default.json`.
+5. Nutze `BlockImport`, wenn du strikte Moderation willst.
+6. Nutze `ClampToMaxValues`, wenn du Templates akzeptieren, aber zu hohe Werte reduzieren willst.
+7. Nutze `RemoveFromPal` für Passives, wenn du automatische Bereinigung statt fehlgeschlagenem Import bevorzugst.
+8. IDs müssen exakt stimmen. Validiere JSON, bevor du es hochlädst.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## Einrichtungsschritte
 
-1. Open or create `Pals/ImportRules/Default.json`.
-2. Decide the global Pal policy:
-   - Use `AllowAllExceptBanned` when most Pals are allowed and you only want to block a few.
-   - Use `AllowOnlyListed` when imports should be limited to a curated list.
-3. Decide the moderation style:
-   - Use `BlockImport` for strict servers where invalid templates should fail.
-   - Use `ClampToMaxValues` when you want to accept templates but reduce over-limit levels, ranks, souls, or IVs.
-   - Use `RemoveFromPal` for passives when you want to strip unwanted passives instead of rejecting the entire template.
-4. Add disallowed passives from [paldeck.cc/passives](https://paldeck.cc/passives).
-5. Add banned or allowed Pals from [paldeck.cc/pals](https://paldeck.cc/pals).
-6. Add a per-Pal override only when a specific Pal needs stricter or looser limits than the global file.
-7. Test with a small `PalTemplate.json` first before importing large templates.
+1. Öffne oder erstelle `Pals/ImportRules/Default.json`.
+2. Lege die globale Pal-Regel fest:
+   - Nutze `AllowAllExceptBanned`, wenn die meisten Pals erlaubt sind und du nur wenige blockieren willst.
+   - Nutze `AllowOnlyListed`, wenn Importe auf eine kuratierte Liste beschränkt werden sollen.
+3. Lege fest, wie streng moderiert werden soll:
+   - Nutze `BlockImport` für strikte Server, auf denen ungültige Templates fehlschlagen sollen.
+   - Nutze `ClampToMaxValues`, wenn du Templates akzeptieren, aber zu hohe Level, Ranks, Souls oder IVs reduzieren willst.
+   - Nutze `RemoveFromPal` für Passives, wenn du unerwünschte Passives entfernen statt das gesamte Template ablehnen willst.
+4. Füge unerlaubte Passives von [paldeck.cc/passives](https://paldeck.cc/passives) hinzu.
+5. Füge gebannte oder erlaubte Pals von [paldeck.cc/pals](https://paldeck.cc/pals) hinzu.
+6. Lege eine Pal-spezifische Überschreibung nur an, wenn ein bestimmter Pal strengere oder lockerere Limits braucht als die globale Datei.
+7. Teste zuerst mit einer kleinen `PalTemplate.json`, bevor du große Templates importierst.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> common setups
+## Häufige Setups
 
-### Allow most Pals, block a few
+### Die meisten Pals erlauben, einige blockieren
 
-Use this when normal admin rewards are allowed, but certain Pals should not be imported.
+Nutze das, wenn normale Admin-Belohnungen erlaubt sind, bestimmte Pals aber nicht importiert werden sollen.
 
 ```json
 {
@@ -99,9 +97,9 @@ Use this when normal admin rewards are allowed, but certain Pals should not be i
 }
 ```
 
-### Only allow a curated list
+### Nur eine kuratierte Liste erlauben
 
-Use this when player-imported templates should be limited to approved Pals.
+Nutze das, wenn von Spielern importierte Templates auf freigegebene Pals beschränkt werden sollen.
 
 ```json
 {
@@ -138,9 +136,9 @@ Use this when player-imported templates should be limited to approved Pals.
 }
 ```
 
-In this setup, only the three listed `PalID` values can be imported. Over-limit values are reduced to the configured maximums, and the listed passives are removed from the Pal.
+In diesem Setup können nur die drei gelisteten `PalID`-Werte importiert werden. Werte oberhalb der Limits werden auf die konfigurierten Maximalwerte reduziert, und die gelisteten Passives werden vom Pal entfernt.
 
-## Default example
+## Standardbeispiel
 
 ```json
 {
@@ -175,7 +173,7 @@ In this setup, only the three listed `PalID` values can be imported. Over-limit 
 }
 ```
 
-## Per-Pal override example
+## Beispiel für eine Pal-spezifische Überschreibung
 
 ### `Anubis.json`
 ```json

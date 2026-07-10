@@ -1,53 +1,53 @@
 # POST /ReloadConfig
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/ReloadConfig`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/ReloadConfig`
 
-**Permission:** `REST.Reload.Config`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Reload.Config`
+
+## Zweck
 
 Reloads PalDefender configuration without requiring a full server restart.
 
-## Path parameters
+## Pfadparameter
 
-None.
+Keine.
 
-## Query parameters
+## Query-Parameter
 
-None.
+Keine.
 
-## Request body
+## Request-Body
 
-Optional empty JSON object.
+Optionales leeres JSON-Objekt.
 
-## Response schema
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/reload-config.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
 
-## Examples
+## Beispiele
 
 ### Reload configuration
 
@@ -61,8 +61,8 @@ POST /v1/pdapi/ReloadConfig
 POST /v1/pdapi/ReloadConfig
 ```
 
-## Scenarios
+## Szenarien
 
 - Apply edits to supported configuration files.
 - Reload after updating `Banlist.json`, import rules, or other runtime-readable PalDefender files.
-- If a change does not take effect after reload, restart the server during a maintenance window.
+- Wenn eine Änderung nach dem Neuladen nicht wirksam wird, starte den Server während eines Wartungsfensters neu.

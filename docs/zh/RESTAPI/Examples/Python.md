@@ -1,17 +1,16 @@
-# Python Example
+# Python 示例
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    This example uses the current split REST reward endpoints.
+    此示例使用当前拆分后的 REST 奖励端点。
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> ID lookup"
-    Use [paldeck.cc/items](https://paldeck.cc/items) for `ItemID`, [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, and [paldeck.cc/technology](https://paldeck.cc/technology) for `TechID`.
+!!! tip "ID 查询"
+    使用 [paldeck.cc/items](https://paldeck.cc/items) 查询 `ItemID`，使用 [paldeck.cc/pals](https://paldeck.cc/pals) 查询 `PalID`，使用 [paldeck.cc/technology](https://paldeck.cc/technology) 查询 `TechID`。
 
 ```py
 import random
 import requests
 
 url = "http://127.0.0.1:17993"
-# Do not store real tokens in code. Use an environment variable or secret manager.
+# 不要在代码中保存真实令牌。请使用环境变量或 Secret Manager。
 auth_token = "DblJITQxmavSbIWyYIEwHiND2SkMsq1LGesgmlhgzNgu230TGRlNFoWp5cavqgoa"
 headers = {"Authorization": f"Bearer {auth_token}"}
 
@@ -41,7 +40,10 @@ def test_guild(guild_id: str):
 def test_rewards(user_id: str):
     progression = {
         "EXP": 100000,
-        "Lifmunks": 25,
+        "Relics": {
+            "CapturePower": 25,
+            "MoveSpeed": 5,
+        },
         "TechnologyPoints": 10,
         "AncientTechnologyPoints": 5,
     }

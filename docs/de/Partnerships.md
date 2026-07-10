@@ -1,38 +1,37 @@
-# Partnerships
+# Partnerschaften
 
 ---
 
 ## Qonzer
-Qonzer is a hosting provider specializing in dedicated game server hosting, with a strong focus on
-performance, transparency, fair services, and flexible server management.
+Qonzer ist ein Hosting-Anbieter mit Schwerpunkt auf dediziertem Gameserver-Hosting, starker Performance,
+Transparenz, fairen Leistungen und flexibler Serververwaltung.
 
-> *I've been a Qonzer customer for over 1 year, and I can confidently say that I’m more than satisfied with their service.* <br>
+> *Ich bin seit über einem Jahr Qonzer-Kunde und kann ehrlich sagen, dass ich mit ihrem Service mehr als zufrieden bin.* <br>
 > ~Zvend
 
-### This partnership brings some great benefits:
-- **10% Discount** – This applies to new customers only, but you’ll get 10% off every payment, even if you change the server's game or location!
-- **One-Click PalDefender Integration** – PalDefender is built into their service and can be activated instantly with a single click. No more witchcraft!
-- **Official PalDefender Test Server** – Qonzer has sponsored a server for us, and we are looking forward to getting it into production.
-- More in the Works – We are in close contact with Qonzer, and we’re working hard to make Palworld servers even more exciting for you.
-- More in the work
+### Diese Partnerschaft bringt einige Vorteile:
+- **10% Rabatt** - Das gilt nur für Neukunden, aber du bekommst 10% Rabatt auf jede Zahlung, selbst wenn du Spiel oder Standort des Servers wechselst!
+- **PalDefender-Integration mit einem Klick** - PalDefender ist in den Service integriert und kann sofort mit einem Klick aktiviert werden. Keine Magie mehr!
+- **Offizieller PalDefender-Testserver** - Qonzer hat uns einen Server gesponsert, und wir freuen uns darauf, ihn produktiv zu nutzen.
+- **Mehr ist in Arbeit** - Wir stehen in engem Kontakt mit Qonzer und arbeiten daran, Palworld-Server für dich noch spannender zu machen.
 
-### How to Get the **10% Discount**:
+### So bekommst du die **10% Rabatt**:
 
-1. Use the affiliate link: <a href="https://qonzer.com/aff.php?aff=61" target="_blank">https://qonzer.com/aff.php?aff=61</a>
-2. Navigate to Game Servers and select Palworld.
-3. Choose a Windows server.
-4. Configure your server settings and proceed to Review & Checkout.
-5. Enter the promo code `PalDefender` and complete your purchase.
-6. Done!
+1. Nutze den Affiliate-Link: <a href="https://qonzer.com/aff.php?aff=61" target="_blank">https://qonzer.com/aff.php?aff=61</a>
+2. Gehe zu Game Servers und wähle Palworld aus.
+3. Wähle einen Windows-Server.
+4. Konfiguriere deine Servereinstellungen und gehe zu Review & Checkout.
+5. Gib den Promo-Code `PalDefender` ein und schliesse den Kauf ab.
+6. Fertig!
 
-**Want more than one server with the discount?** <br>
-Simply add multiple servers to your cart before checking out.
+**Du willst mehr als einen Server mit Rabatt?** <br>
+Lege einfach mehrere Server in den Warenkorb, bevor du bezahlst.
 
-### I’m Already Paying for a Different Server Host but Want to Switch
+### Ich bezahle bereits einen anderen Server-Host, möchte aber wechseln
 
-Open the live chat, mention that you’re coming from **PalDefender** and that you’d like to switch from your current hosting provider.
-Qonzer will gladly work something out for you — they are very friendly and extremely fair.
+Öffne den Live-Chat, erwähne, dass du von **PalDefender** kommst und von deinem aktuellen Hosting-Anbieter wechseln möchtest.
+Qonzer findet gerne eine Lösung für dich - sie sind sehr freundlich und extrem fair.
 
-Personally, I received a huge discount for my first month!
+Ich persönlich habe für meinen ersten Monat einen großen Rabatt bekommen!
 
 ---

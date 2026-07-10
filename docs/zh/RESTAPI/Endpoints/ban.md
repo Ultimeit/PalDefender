@@ -1,58 +1,58 @@
 # POST /ban/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/ban/<player_identifier>`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/ban/<player_identifier>`
 
-**Permission:** `REST.Punishments.Ban`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Punishments.Ban`
 
-Bans a user and records the ban in `Banlist.json`. The target may be kicked if currently online.
+## 用途
 
-## Path parameters
+封禁用户并将记录写入 `Banlist.json`。如果目标当前在线，可能会被踢出。
+
+## 路径参数
 
 - `player_identifier`: `UserId`, `PlayerUID`, or another supported player identifier.
 
-## Query parameters
+## 查询参数
 
-None.
+无。
 
-## Request body
+## 请求体
 
-Optional JSON fields: `Reason` string and `IP` boolean. Set `IP` to `true` only when you also want to ban the resolved IP address.
+可选 JSON 字段：字符串 `Reason` 和布尔值 `IP`。只有在同时想封禁解析出的 IP 地址时，才将 `IP` 设为 `true`。
 
-## Response schema
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/ban.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
 | `400` | `IP_UNAVAILABLE` | `IP` was `true`, but the server could not resolve an IP for the target user. |
 
-## Examples
+## 示例
 
 ### Ban a Steam user
 
@@ -79,8 +79,8 @@ POST /v1/pdapi/ban/ps5_0f4b8c2d91aa34ef
 }
 ```
 
-## Scenarios
+## 使用场景
 
 - Ban a player by `UserId` after moderation review.
 - Include a clear reason so future staff can understand the banlist entry.
-- Use [GET /banlist](banlist.md) to verify the active record. Ban-related data is no longer managed in `Config.json`.
+- 使用 [GET /banlist](banlist.md) 验证活动记录。封禁相关数据不再由 `Config.json` 管理。

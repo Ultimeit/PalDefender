@@ -1,6 +1,6 @@
 # POST /Broadcast
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/Broadcast`
 
@@ -22,7 +22,7 @@ None.
 
 ## Request body
 
-JSON object with `Message` string and optional `Sender` string.
+JSON object with a required `Message` string.
 
 ## Response schema
 
@@ -53,7 +53,7 @@ Error bodies use this shape:
 
 ## Examples
 
-### Broadcast as SYSTEM
+### Broadcast a restart warning
 
 ```http
 POST /v1/pdapi/Broadcast
@@ -62,19 +62,6 @@ POST /v1/pdapi/Broadcast
 ```json
 {
     "Message": "Restart in 15 minutes."
-}
-```
-
-### Broadcast with sender name
-
-```http
-POST /v1/pdapi/Broadcast
-```
-
-```json
-{
-    "Sender": "Admin",
-    "Message": "World boss event starts now."
 }
 ```
 

@@ -4,12 +4,12 @@
 Currently supported:
 * `Config.json`
 * `WhiteList.json`
-* `Banlist.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+* `Banlist.json`
 * `PalTemplate.json`
 * `PalSummon.json`
-* `Pals/ImportRules/*.json` <span class='pd-badge pd-badge--beta'>Beta</span>
-* `RESTAPI/RESTConfig.json` <span class='pd-badge pd-badge--beta'>Beta</span>
-* `RESTAPI/Tokens/*.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+* `Pals/ImportRules/*.json`
+* `RESTAPI/RESTConfig.json`
+* `RESTAPI/Tokens/*.json`
 
 ---
 
@@ -35,7 +35,7 @@ Supports both **User IDs** and **IP addresses** (including masked ranges).
 
 ---
 
-### 🚫 `Banlist.json` <span class='pd-badge pd-badge--beta'>Beta</span>
+### 🚫 `Banlist.json`
 
 Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment tools.
 
@@ -62,7 +62,7 @@ Spawns a custom Pal at a specific location.
 
 ---
 
-### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md) <span class='pd-badge pd-badge--beta'>Beta</span>
+### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md)
 
 Controls how custom Pal templates are accepted.
 
@@ -73,7 +73,7 @@ Controls how custom Pal templates are accepted.
 
 ---
 
-### 🌐 REST API config files <span class='pd-badge pd-badge--beta'>Beta</span>
+### 🌐 REST API config files
 
 REST API configuration lives in `RESTAPI/RESTConfig.json`, while bearer tokens live in `RESTAPI/Tokens/*.json`.
 

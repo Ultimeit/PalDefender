@@ -1,60 +1,63 @@
 # POST /give/progression/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/give/progression/<player_identifier>`
 
-**Auth:** Bearer token
+**Endpunkt:** `POST /v1/pdapi/give/progression/<player_identifier>`
 
-**Permission:** `REST.Progression.Give`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Progression.Give`
 
-Grants progression values to a player.
+## Zweck
 
-## Path parameters
+Gewährt einem Spieler Fortschrittswerte.
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+## Pfadparameter
 
-## Query parameters
+- `player_identifier`: `UserId` oder `PlayerUID` des Zielspielers.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-JSON object with at least one positive integer field: `EXP`, `Lifmunks`, `TechnologyPoints`, or `AncientTechnologyPoints`.
+## Request-Body
 
-## Response schema
+JSON-Objekt mit mindestens einer unterstützten Vergabe: positive Ganzzahl `EXP`, positive Ganzzahl `TechnologyPoints`, positive Ganzzahl `AncientTechnologyPoints` oder `Relics` als nicht leeres Objekt, das Relikt-Typen positive Ganzzahlen zuordnet.
+
+
+Unterstützte Relikt-Typen: `CapturePower`, `HungerReduction`, `SwimSpeed`, `FoodDecayReduction`, `JumpPower`, `GliderSpeed`, `ClimbSpeed`, `StatusAilmentResist`, `StaminaReduction`, `SphereHoming`, `ExpBonus`, `RainbowPassiveRate`, `MoveSpeed`.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/give-progression.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `400` | `INVALID_REQUEST` | The body does not include any of `EXP`, `Lifmunks`, `TechnologyPoints`, or `AncientTechnologyPoints`. |
-| `400` | `VALIDATION_FAILED` | A supplied progression value is missing, non-integer, non-positive, or required progression internals are unavailable. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `400` | `INVALID_REQUEST` | Der Body enthält keines der Felder `EXP`, `Relics`, `TechnologyPoints` oder `AncientTechnologyPoints`. |
+| `400` | `VALIDATION_FAILED` | Ein angegebener Fortschrittswert fehlt, ist keine Ganzzahl, ist nicht positiv oder benötigte Fortschrittsdaten sind nicht verfügbar. |
 
-## Examples
+## Beispiele
 
-### Give EXP to a GDK player
+### EXP an einen GDK-Spieler geben
 
 ```http
 POST /v1/pdapi/give/progression/gdk_2533274898765432
@@ -66,7 +69,7 @@ POST /v1/pdapi/give/progression/gdk_2533274898765432
 }
 ```
 
-### Give points and Lifmunks by PlayerUID
+### Punkte und Relikte per PlayerUID geben
 
 ```http
 POST /v1/pdapi/give/progression/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
@@ -74,14 +77,17 @@ POST /v1/pdapi/give/progression/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
 
 ```json
 {
-    "Lifmunks": 5,
+    "Relics": {
+        "CapturePower": 5,
+        "MoveSpeed": 2
+    },
     "TechnologyPoints": 10,
     "AncientTechnologyPoints": 2
 }
 ```
 
-## Scenarios
+## Szenarien
 
-- Compensate players after a save rollback.
-- Add technology points without unlocking a specific technology.
-- Use [POST /learntech](learntech.md) instead when you want to unlock a specific [`TechID`](https://paldeck.cc/technology).
+- Kompensiere Spieler nach einem Save-Rollback.
+- Füge Technologiepunkte hinzu, ohne eine bestimmte Technologie freizuschalten.
+- Nutze stattdessen [POST /learntech](learntech.md), wenn du eine bestimmte [`TechID`](https://paldeck.cc/technology) freischalten willst.

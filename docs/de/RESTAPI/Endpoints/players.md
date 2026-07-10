@@ -1,57 +1,57 @@
 # GET /players
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `GET /v1/pdapi/players`
 
-**Auth:** Bearer token
+**Endpunkt:** `GET /v1/pdapi/players`
 
-**Permission:** `REST.Players.Read`
+**Auth:** Bearer-Token
 
-## Purpose
+**Berechtigung:** `REST.Players.Read`
 
-Lists known players with identifying and status information. Use it to build player selectors for admin tools.
+## Zweck
 
-## Path parameters
+Listet bekannte Spieler mit Identifikations- und Statusinformationen. Nutze dies, um Spielerauswahlen für Admin-Tools zu bauen.
 
-None.
+## Pfadparameter
 
-## Query parameters
+Keine.
 
-None.
+## Query-Parameter
 
-## Request body
+Keine.
 
-No request body.
+## Request-Body
 
-## Response schema
+Kein Request-Body.
+
+## Antwortschema
 
 --8<-- "_snippets/restapi/schemas/players.md"
 
-## Error responses
+## Fehlerantworten
 
-Error bodies use this shape:
+Fehlerantworten verwenden dieses Format:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
+        "Message": "Für Menschen lesbare Nachricht",
         "Details": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | Fehlercode | Wann es passiert |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
-| `500` | `PLAYER_MANAGER_UNAVAILABLE` | The server could not access the Palworld player manager. |
+| `401` | `INVALID_TOKEN` | Der `Authorization`-Header fehlt, ist fehlerhaft oder passt zu keinem konfigurierten Bearer-Token. |
+| `403` | `MISSING_PERMISSION` | Das Token ist gültig, enthält aber nicht die Berechtigung für diesen Endpunkt. |
+| `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
+| `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
+| `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
+| `500` | `PLAYER_MANAGER_UNAVAILABLE` | Der Server konnte nicht auf den Palworld Player Manager zugreifen. |
 
-## Examples
+## Beispiele
 
 ### List all known players
 
@@ -65,7 +65,7 @@ GET /v1/pdapi/players
 GET /v1/pdapi/players
 ```
 
-## Scenarios
+## Szenarien
 
 - Build a dropdown of online and known players.
 - Find the correct `UserId` or `PlayerUID` before calling reward, punishment, or inventory endpoints.

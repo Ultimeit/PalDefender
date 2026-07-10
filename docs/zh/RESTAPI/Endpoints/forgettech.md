@@ -1,58 +1,58 @@
 # POST /forgettech/{player_identifier}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
 
-**Endpoint:** `POST /v1/pdapi/forgettech/<player_identifier>`
 
-**Auth:** Bearer token
+**端点:** `POST /v1/pdapi/forgettech/<player_identifier>`
 
-**Permission:** `REST.Techs.Forget`
+**认证:** Bearer 令牌
 
-## Purpose
+**权限:** `REST.Techs.Forget`
+
+## 用途
 
 Forgets one, many, or all technologies for a player.
 
-## Path parameters
+## 路径参数
 
-- `player_identifier`: `UserId` or `PlayerUID` for the target player.
+- `player_identifier`: 目标玩家的 `UserId` 或 `PlayerUID`。
 
-## Query parameters
+## 查询参数
 
-None.
+无。
 
-## Request body
+## 请求体
 
 `Technology` can be a single [`TechID`](https://paldeck.cc/technology), the string `"All"`, or an array of [`TechID`](https://paldeck.cc/technology) strings. Do not put `"All"` inside an array.
 
-## Response schema
+## 响应结构
 
 --8<-- "_snippets/restapi/schemas/forgettech.md"
 
-## Error responses
+## 错误响应
 
-Error bodies use this shape:
+错误响应使用以下格式:
 
 ```json
 {
     "Error": {
         "Code": "ERROR_CODE",
-        "Message": "Human-readable message",
-        "Details": {}
+        "Message": "人类可读的消息",
+        "详情": {}
     }
 }
 ```
 
-| HTTP | Error code | When it happens |
+| HTTP | 错误代码 | 发生条件 |
 |------|------------|-----------------|
-| `401` | `INVALID_TOKEN` | The `Authorization` header is missing, malformed, or does not match a configured bearer token. |
-| `403` | `MISSING_PERMISSION` | The token is valid, but it does not include this endpoint permission. |
-| `400` | `INVALID_JSON` | A request body was supplied, but it could not be parsed as JSON. |
-| `400` | `REQUEST_FAILED` | The game-thread callback threw an exception, or a shared player/resource resolver failed. |
-| `500` | `REQUEST_TIMEOUT` | The internal game-thread callback did not complete within 5 seconds. |
+| `401` | `INVALID_TOKEN` | `Authorization` 头缺失、格式错误，或与配置的 Bearer 令牌不匹配。 |
+| `403` | `MISSING_PERMISSION` | 令牌有效，但不包含此端点权限。 |
+| `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
+| `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
+| `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `INVALID_REQUEST` | `Technology` is missing, or it is not a string/array in the expected format. |
 | `400` | `VALIDATION_FAILED` | The `Technology` array contains a non-string, `All`, or an invalid technology identifier. |
 
-## Examples
+## 示例
 
 ### Forget one technology for a GDK player
 
@@ -93,7 +93,7 @@ POST /v1/pdapi/forgettech/steam_76561198012345678
 }
 ```
 
-## Scenarios
+## 使用场景
 
 - Remove a technology granted by mistake.
 - Reset a test account with `"All"`.

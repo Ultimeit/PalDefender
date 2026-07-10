@@ -37,7 +37,6 @@
 | `bannedMessage`                | string | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old ban message setting for Config-based ban handling. |
 | `bannedNames`                  | array  | Disallowed player names (e.g., from cracked versions).                    |
 | `pvpMaxToBuildingDamage`       | int    | Max allowed PvP damage to buildings.                                      |
-| `pvpMaxToPlayerDamage`         | int    | <span class='pd-badge pd-badge--beta'>Beta</span> Max allowed PvP damage to players.                               |
 | `pvpMaxToPalDamage`            | int    | Max allowed PvP damage to Pals.                                           |
 | `pveMaxToPalBanThreshold`      | int    | PVE Pal damage threshold that triggers cheat detection.                   |
 | `treeLimiter`                  | float  | Max time a player can destroy 1 tree. (e.g. `0.1` = 1 tree every 100ms). This avoids huge lag during combat where rockets kill plenty of trees quickly. |

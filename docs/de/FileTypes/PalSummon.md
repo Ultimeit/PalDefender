@@ -1,46 +1,43 @@
 # 📄 `PalSummon.json`
 
-!!! note "<span class='pd-badge pd-badge--beta'>Beta</span>"
-    Newly documented instructions on this page are marked with <span class='pd-badge pd-badge--beta'>Beta</span>. They are intended to make summon files easier to create and troubleshoot.
+!!! tip "Zugehörige ID-Suche"
+    Die Summon-Datei verweist selbst auf ein `PalTemplate`. Wenn du dieses Template bearbeiten musst, nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) für Passives und [paldeck.cc/skills](https://paldeck.cc/skills) für Skill-IDs.
 
-!!! tip "<span class='pd-badge pd-badge--beta'>Beta</span> related ID lookup"
-    The summon file itself references a `PalTemplate`. If you need to edit that template, use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) for passives, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.
-
-| Key               | Type   | Description                                                                             |
+| Schlüssel               | Typ   | Beschreibung                                                                             |
 | ----------------- | ------ | --------------------------------------------------------------------------------------- |
-| `PalTemplate`     | string | Required. File name of the `PalTemplate.json` to use (e.g., `"OPnubis.json"`). The file must exist in `Pals/Templates/`. |
-| `Uncapturable`    | bool   | Optional. If `true`, the Pal cannot be captured by players. Defaults to `false` if omitted. |
-| `X` / `Y` / `Z`   | float  | Required map coordinates where the Pal will be spawned. Use cmd `/getpos` to retrieve a player's current position. |
-| `DisableStatuses` | array  | Optional list of status effects to disable for this Pal. Invalid or empty status names are skipped. Available statuses: `DrownCheck`, `Poison`, `Stun`, `Coma`, `Sleep`, `Overwork`, `Drown`, `FallDamage`, `LavaDamage`, `Burn`, `Wetness`, `Freeze`, `Electrical`, `Muddy`, `IvyCling`, `Darkness`, `CollectItem`. |
+| `PalTemplate`     | string | Erforderlich. Dateiname der zu verwendenden `PalTemplate.json` (z. B. `"OPnubis.json"`). Die Datei muss in `Pals/Templates/` existieren. |
+| `Uncapturable`    | bool   | Optional. Wenn `true`, kann der Pal nicht von Spielern gefangen werden. Ohne Angabe gilt `false`. |
+| `X` / `Y` / `Z`   | float  | Erforderliche Kartenkoordinaten, an denen der Pal gespawnt wird. Nutze `/getpos`, um die aktuelle Position eines Spielers abzurufen. |
+| `DisableStatuses` | array  | Optionale Liste von Statuseffekten, die für diesen Pal deaktiviert werden. Ungültige oder leere Statusnamen werden übersprungen. Verfügbare Status: `DrownCheck`, `Poison`, `Stun`, `Coma`, `Sleep`, `Overwork`, `Drown`, `FallDamage`, `LavaDamage`, `Burn`, `Wetness`, `Freeze`, `Electrical`, `Muddy`, `IvyCling`, `Darkness`, `CollectItem`. |
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> instruction set
+## Anleitung
 
-1. Create the referenced Pal template first in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
-2. Create the summon file in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/`.
-3. Name the summon file after the thing admins should type, for example `ArenaBoss.json` for `/summon ArenaBoss`.
-4. Get coordinates in-game with `/getpos`. When using RCON, pass a player ID to `/getpos <UserId>`.
-5. Keep `PalTemplate`, `X`, `Y`, and `Z` present. If any coordinate is missing, the summon should be treated as invalid.
-6. Use `Uncapturable: true` for event bosses, raid bosses, or decorative Pals that players should not own.
-7. Keep `DisableStatuses` short unless you have a reason to disable many states. Start with only the statuses that matter for the event.
-8. Validate JSON before uploading. JSON does not allow comments or trailing commas.
-9. Reload config or restart the server if your host does not pick up newly added files immediately.
+1. Erstelle zuerst das referenzierte Pal-Template in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
+2. Erstelle die Summon-Datei in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/`.
+3. Benenne die Summon-Datei nach dem Argument, das Admins eingeben sollen, zum Beispiel `ArenaBoss.json` für `/summon ArenaBoss`.
+4. Ermittle Koordinaten im Spiel mit `/getpos`. Bei RCON gib eine Spieler-ID an: `/getpos <UserId>`.
+5. `PalTemplate`, `X`, `Y` und `Z` müssen vorhanden sein. Fehlt eine Koordinate, sollte die Summon-Datei als ungültig gelten.
+6. Nutze `Uncapturable: true` für Eventbosse, Raidbosse oder dekorative Pals, die Spieler nicht besitzen sollen.
+7. Halte `DisableStatuses` kurz, außer du hast einen Grund, viele Zustände zu deaktivieren. Beginne nur mit den Statuswerten, die für das Event wichtig sind.
+8. Validiere JSON vor dem Hochladen. JSON erlaubt keine Kommentare oder nachgestellten Kommas.
+9. Lade die Konfiguration neu oder starte den Server neu, falls dein Host neu hinzugefügte Dateien nicht sofort übernimmt.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> setup walkthrough
+## Einrichtungsschritte
 
-1. Create a template first, for example `Pals/Templates/ArenaBoss.json`.
-2. Test the template with `/givemepal_j ArenaBoss`. If the template fails there, fix the template before creating the summon file.
-3. Stand where the Pal should appear and run `/getpos`. Copy the returned `X`, `Y`, and `Z` values.
-4. Create `Pals/Summons/ArenaBossSpawn.json` and set `PalTemplate` to `ArenaBoss.json`.
-5. Run `/summon ArenaBossSpawn`.
-6. If the Pal appears too high, too low, or inside terrain, adjust `Z` first, then adjust `X` and `Y`.
+1. Erstelle zuerst ein Template, zum Beispiel `Pals/Templates/ArenaBoss.json`.
+2. Teste das Template mit `/givemepal_j ArenaBoss`. Wenn es dort fehlschlaegt, repariere zuerst das Template, bevor du die Summon-Datei erstellst.
+3. Stelle dich an die Stelle, an der der Pal erscheinen soll, und führe `/getpos` aus. Kopiere die zurückgegebenen Werte `X`, `Y` und `Z`.
+4. Erstelle `Pals/Summons/ArenaBossSpawn.json` und setze `PalTemplate` auf `ArenaBoss.json`.
+5. Führe `/summon ArenaBossSpawn` aus.
+6. Wenn der Pal zu hoch, zu niedrig oder im Gelände erscheint, passe zuerst `Z` an und danach `X` und `Y`.
 
-## <span class='pd-badge pd-badge--beta'>Beta</span> example explanations
+## Erklärung der Beispiele
 
-The minimal example below spawns `ArenaBoss.json` at a fixed coordinate, makes it uncapturable, and disables a short list of common crowd-control/status effects. This is useful for event bosses.
+Das Minimalbeispiel unten spawnt `ArenaBoss.json` an festen Koordinaten, macht ihn unfangbar und deaktiviert eine kurze Liste üblicher Kontroll-/Statuseffekte. Das ist für Eventbosse nützlich.
 
-The full example shows the available `DisableStatuses` values. Do not copy every status by default; start with only the statuses that matter for your event.
+Das vollständige Beispiel zeigt die verfügbaren `DisableStatuses`-Werte. Kopiere nicht standardmäßig jeden Status; beginne nur mit den Werten, die für dein Event wichtig sind.
 
-## Minimal <span class='pd-badge pd-badge--beta'>Beta</span> example
+## Minimalbeispiel
 
 ```json
 {
@@ -57,10 +54,10 @@ The full example shows the available `DisableStatuses` values. Do not copy every
 }
 ```
 
-## Example
+## Beispiel
 
-This file has to be stored at: `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/ExamplePalSummon.json`
-(`ExamplePalSummon` can be any unique name in that folder. This will be the command argument for `/summon`!)
+Diese Datei muss hier gespeichert werden: `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/ExamplePalSummon.json`
+(`ExamplePalSummon` kann ein beliebiger eindeutiger Name in diesem Ordner sein. Das ist später das Befehlsargument für `/summon`!)
 
 ```json
 {

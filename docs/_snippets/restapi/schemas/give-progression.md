@@ -10,7 +10,7 @@
 | Field | Type | Description |
 |-------|------|-------------|
 | `EXP` | integer | EXP granted, when requested. |
-| `Lifmunks` | integer | Lifmunk Effigy points granted, when requested. |
+| `Relics` | object | Relic point amounts granted by relic type, when requested. |
 | `TechnologyPoints` | integer | Technology points granted, when requested. |
 | `AncientTechnologyPoints` | integer | Ancient technology points granted, when requested. |
 
@@ -18,6 +18,6 @@
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `Lifmunks` | integer | Updated Lifmunk Effigy point total, when `Lifmunks` was granted. |
+| `Relics` | object | Updated relic point totals by relic type, when `Relics` was granted. |
 | `TechnologyPoints` | integer | Updated technology point total, when `TechnologyPoints` was granted. |
 | `AncientTechnologyPoints` | integer | Updated ancient technology point total, when `AncientTechnologyPoints` was granted. |

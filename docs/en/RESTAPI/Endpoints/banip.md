@@ -1,6 +1,6 @@
 # POST /banip/{ip}
 
-<span class='pd-badge pd-badge--beta'>Beta</span>
+
 
 **Endpoint:** `POST /v1/pdapi/banip/<ip>`
 
