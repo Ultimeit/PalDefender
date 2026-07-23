@@ -1,4 +1,4 @@
-# 📁 文件类型
+# :octicons-file-directory-16: 文件类型
 
 **PalDefender** 支持多种自定义文件类型，可用于配置服务器行为并扩展功能。
 当前支持：
@@ -13,9 +13,9 @@
 
 ---
 
-## ⚡ 快速概览
+## :octicons-zap-16: 快速概览
 
-### 🛠️ [Config.json](./Config.md)
+### :octicons-tools-16: [Config.json](./Config.md)
 
 控制服务器行为、管理规则、日志记录和管理员设置。
 
@@ -28,14 +28,14 @@
 
 ---
 
-### 👥 `WhiteList.json`
+### :octicons-people-16: `WhiteList.json`
 
 定义谁可以加入服务器。
 同时支持 **User ID** 和 **IP 地址**（包括掩码范围）。
 
 ---
 
-### 🚫 `Banlist.json`
+### :octicons-blocked-16: `Banlist.json`
 
 存储 PalDefender 的封禁记录，供封禁、解封、IP 封禁和 REST 处罚工具使用。
 
@@ -44,7 +44,7 @@
 
 ---
 
-### 🧬 [PalTemplate.json](./PalTemplate.md)
+### :material-dna: [PalTemplate.json](./PalTemplate.md)
 
 用于通过命令生成或发放自定义 Pals。
 
@@ -53,7 +53,7 @@
 
 ---
 
-### 📍 [PalSummon.json](./PalSummon.md)
+### :octicons-location-16: [PalSummon.json](./PalSummon.md)
 
 在指定位置生成自定义 Pal。
 
@@ -62,7 +62,7 @@
 
 ---
 
-### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md)
+### :octicons-list-unordered-16: [Pals/ImportRules/*.json](./PalImportRules.md)
 
 控制自定义 Pal 模板如何被接受。
 
@@ -73,7 +73,7 @@
 
 ---
 
-### 🌐 REST API 配置文件
+### :octicons-globe-16: REST API 配置文件
 
 REST API 配置位于 `RESTAPI/RESTConfig.json`，Bearer 令牌位于 `RESTAPI/Tokens/*.json`。
 

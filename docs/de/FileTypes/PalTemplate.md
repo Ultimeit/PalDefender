@@ -1,4 +1,4 @@
-# 📄 `PalTemplate.json`
+# :octicons-file-16: `PalTemplate.json`
 
 Mit <https://paldeck.cc/creator> kannst du diese Dateien deutlich einfacher erstellen.
 

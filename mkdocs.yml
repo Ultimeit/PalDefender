@@ -6,26 +6,87 @@ use_directory_urls: true
 repo_url: https://github.com/Ultimeit/PalDefender
 repo_name: Ultimeit/PalDefender
 
+nav:
+  - Home: index.md
+  - Installation: Installation.md
+  - Commands:
+      - Overview: Commands/index.md
+      - GetRCONCmds: Commands/GetRCONCmds.md
+      - Server Management: Commands/ServerManagement.md
+      - Base Management: Commands/BaseManagement.md
+      - Player Management: Commands/PlayerManagement.md
+      - Player Character: Commands/PlayerCharacter.md
+      - Guild Management: Commands/GuildManagement.md
+      - Items: Commands/Items.md
+      - Pals: Commands/Pals.md
+      - Research Tree: Commands/ResearchTree.md
+      - Data Mining: Commands/DataMining.md
+  - File Types:
+      - Overview: FileTypes/index.md
+      - Config: FileTypes/Config.md
+      - Pal Import Rules: FileTypes/PalImportRules.md
+      - Pal Summon: FileTypes/PalSummon.md
+      - Pal Template: FileTypes/PalTemplate.md
+  - REST API:
+      - Overview: RESTAPI/index.md
+      - Authentication: RESTAPI/authentication.md
+      - Endpoints:
+          - Overview: RESTAPI/Endpoints/index.md
+          - Alert: RESTAPI/Endpoints/alert.md
+          - Ban: RESTAPI/Endpoints/ban.md
+          - Banip: RESTAPI/Endpoints/banip.md
+          - Banlist: RESTAPI/Endpoints/banlist.md
+          - Broadcast: RESTAPI/Endpoints/broadcast.md
+          - Deletebase: RESTAPI/Endpoints/deletebase.md
+          - Forgettech: RESTAPI/Endpoints/forgettech.md
+          - Give Items: RESTAPI/Endpoints/give-items.md
+          - Give Paleggs: RESTAPI/Endpoints/give-paleggs.md
+          - Give Pals: RESTAPI/Endpoints/give-pals.md
+          - Give Paltemplate: RESTAPI/Endpoints/give-paltemplate.md
+          - Give Progression: RESTAPI/Endpoints/give-progression.md
+          - Give_Deprecated: RESTAPI/Endpoints/give_deprecated.md
+          - Guild: RESTAPI/Endpoints/guild.md
+          - Guilds: RESTAPI/Endpoints/guilds.md
+          - Items: RESTAPI/Endpoints/items.md
+          - Kick: RESTAPI/Endpoints/kick.md
+          - Learntech: RESTAPI/Endpoints/learntech.md
+          - Pals: RESTAPI/Endpoints/pals.md
+          - Player: RESTAPI/Endpoints/player.md
+          - Players: RESTAPI/Endpoints/players.md
+          - Progression: RESTAPI/Endpoints/progression.md
+          - Reload Config: RESTAPI/Endpoints/reload-config.md
+          - Send Player Message: RESTAPI/Endpoints/send-player-message.md
+          - Techs: RESTAPI/Endpoints/techs.md
+          - Unban: RESTAPI/Endpoints/unban.md
+          - Unbanip: RESTAPI/Endpoints/unbanip.md
+          - Version: RESTAPI/Endpoints/version.md
+      - Examples:
+          - Python: RESTAPI/Examples/Python.md
+  - FAQ: FAQ.md
+  - Partnerships: Partnerships.md
 extra_css:
   - stylesheets/extra.css
 
-exclude_docs: |
-  _snippets/**
-
 theme:
   name: material
+  custom_dir: overrides
   font:
-    text: Inter
+    text: Nunito
     code: JetBrains Mono
   logo: assets/LogoWiki.png
   favicon: assets/LogoWiki.png
   icon:
     repo: fontawesome/brands/github
     admonition:
-      note: octicons/shield-check-16
-      tip: octicons/zap-16
+      note: octicons/pencil-16
+      tip: octicons/light-bulb-16
       warning: octicons/alert-16
       danger: octicons/flame-16
+      info: octicons/info-16
+      success: octicons/check-circle-16
+      question: octicons/question-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
   features:
     - navigation.indexes
     - navigation.path
@@ -83,9 +144,7 @@ markdown_extensions:
       pygments_lang_class: true
       use_pygments: true
   - pymdownx.inlinehilite
-  - pymdownx.snippets:
-      base_path: docs
-      check_paths: true
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

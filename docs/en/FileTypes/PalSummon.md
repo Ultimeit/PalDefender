@@ -1,4 +1,4 @@
-# 📄 `PalSummon.json`
+# :octicons-file-16: `PalSummon.json`
 
 !!! tip "Related ID lookup"
     The summon file itself references a `PalTemplate`. If you need to edit that template, use [paldeck.cc/pals](https://paldeck.cc/pals) for `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) for passives, and [paldeck.cc/skills](https://paldeck.cc/skills) for skill IDs.

@@ -1,4 +1,4 @@
-# 📄 `PalSummon.json`
+# :octicons-file-16: `PalSummon.json`
 
 !!! tip "相关 ID 查询"
     召唤文件本身会引用一个 `PalTemplate`。如果需要编辑该模板，请使用 [paldeck.cc/pals](https://paldeck.cc/pals) 查询 `PalID`，[paldeck.cc/passives](https://paldeck.cc/passives) 查询被动词条，[paldeck.cc/skills](https://paldeck.cc/skills) 查询技能 ID。

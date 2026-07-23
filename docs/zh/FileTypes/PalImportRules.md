@@ -1,4 +1,4 @@
-# 📄 `Pals/ImportRules/*.json`
+# :octicons-file-16: `Pals/ImportRules/*.json`
 
 
 Pal 导入规则用于控制通过命令或 API 操作导入 `PalTemplate.json` 时，哪些模板允许导入、应被阻止，或需要自动调整。

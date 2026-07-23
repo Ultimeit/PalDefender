@@ -58,6 +58,7 @@ POST /v1/pdapi/give
 }
 ```
 
+## POST `/v1/pdapi/give` — Grant EXP / items / pals / eggs (atomic) { .toc-only }
 ??? info "POST `/v1/pdapi/give` — Grant EXP / items / pals / eggs (atomic)"
     ## POST `/v1/pdapi/give`
     ### What it does

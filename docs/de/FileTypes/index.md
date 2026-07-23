@@ -1,4 +1,4 @@
-# 📁 Dateitypen
+# :octicons-file-directory-16: Dateitypen
 
 **PalDefender** supports a range of custom file types that can be used to configure your server’s behavior and extend its features.
 Currently supported:
@@ -13,9 +13,9 @@ Currently supported:
 
 ---
 
-## ⚡ Quick Overview
+## :octicons-zap-16: Quick Overview
 
-### 🛠️ [Config.json](./Config.md)
+### :octicons-tools-16: [Config.json](./Config.md)
 
 Controls server behavior, moderation, logging, and admin settings.
 
@@ -28,14 +28,14 @@ Controls server behavior, moderation, logging, and admin settings.
 
 ---
 
-### 👥 `WhiteList.json`
+### :octicons-people-16: `WhiteList.json`
 
 Defines who is allowed to join the server.
 Supports both **User IDs** and **IP addresses** (including masked ranges).
 
 ---
 
-### 🚫 `Banlist.json`
+### :octicons-blocked-16: `Banlist.json`
 
 Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment tools.
 
@@ -44,7 +44,7 @@ Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment t
 
 ---
 
-### 🧬 [PalTemplate.json](./PalTemplate.md)
+### :material-dna: [PalTemplate.json](./PalTemplate.md)
 
 Used for spawning or giving customized Pals via commands.
 
@@ -53,7 +53,7 @@ Used for spawning or giving customized Pals via commands.
 
 ---
 
-### 📍 [PalSummon.json](./PalSummon.md)
+### :octicons-location-16: [PalSummon.json](./PalSummon.md)
 
 Spawns a custom Pal at a specific location.
 
@@ -62,7 +62,7 @@ Spawns a custom Pal at a specific location.
 
 ---
 
-### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md)
+### :octicons-list-unordered-16: [Pals/ImportRules/*.json](./PalImportRules.md)
 
 Controls how custom Pal templates are accepted.
 
@@ -73,7 +73,7 @@ Controls how custom Pal templates are accepted.
 
 ---
 
-### 🌐 REST API config files
+### :octicons-globe-16: REST API config files
 
 REST API configuration lives in `RESTAPI/RESTConfig.json`, while bearer tokens live in `RESTAPI/Tokens/*.json`.
 

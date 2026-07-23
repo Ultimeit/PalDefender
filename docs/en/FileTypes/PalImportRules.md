@@ -1,4 +1,4 @@
-# 📄 `Pals/ImportRules/*.json`
+# :octicons-file-16: `Pals/ImportRules/*.json`
 
 
 Pal import rules control which `PalTemplate.json` files are allowed, blocked, or adjusted when imported by commands or API actions.

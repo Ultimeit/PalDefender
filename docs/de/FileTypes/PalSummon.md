@@ -1,4 +1,4 @@
-# 📄 `PalSummon.json`
+# :octicons-file-16: `PalSummon.json`
 
 !!! tip "Zugehörige ID-Suche"
     Die Summon-Datei verweist selbst auf ein `PalTemplate`. Wenn du dieses Template bearbeiten musst, nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) für Passives und [paldeck.cc/skills](https://paldeck.cc/skills) für Skill-IDs.
