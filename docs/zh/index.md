@@ -35,8 +35,6 @@
 ## 前言
 如果你能为 Wiki 做贡献或指出错误，我们会非常感谢，这样 Wiki 就能逐步完善。
 
-PalDefender 源代码已在 [pal_anticheat 仓库](https://github.com/Ultimeit/pal_anticheat)公开。欢迎贡献代码和提交问题报告。
-
 ---
 
 ## 关于 PalDefender

@@ -35,8 +35,6 @@
 ## Foreword
 We would appreciate if you contribute to the Wiki or point out mistakes, so the Wiki slowly and steady fills up.
 
-The PalDefender source is publicly available in the [pal_anticheat repository](https://github.com/Ultimeit/pal_anticheat). Contributions and issue reports are welcome.
-
 ---
 
 ## About

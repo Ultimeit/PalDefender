@@ -37,6 +37,7 @@
 | `logPlayerBuildings` | bool | `true` | 记录受支持的建造、取消、拆除和 Palbox 移动活动。 |
 | `logPlayerSummons` | bool | `true` | 记录玩家召唤 Raid Boss。 |
 | `logPlayerCaptures` | bool | `true` | 保留的兼容设置。由于可用事件不可靠，1.9.0 已禁用捕获日志。 |
+| `logPlayerDamage` | bool | `false` | 在服务器控制台记录玩家造成的伤害事件及其原始/基础伤害值；此功能独立于伤害作弊检测。 |
 | `BannedCampWorker` | array | Panthalus 变体 | 禁止分配到基地的 Character ID。匹配不区分大小写；`BOSS_...` 等变体必须单独列出。 |
 | `logHelicopterKills` | bool | `true` | 记录战斗直升机击杀。 |
 | `logCraftings` | bool | `true` | 记录玩家制作。 |
@@ -123,7 +124,7 @@
 
 | 键 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |
-| `antiDupeEnabled` | bool | `true` | 旧 AntiDupe 功能的兼容开关；在当前公开 1.9.0 构建中无效。 |
+| `antiDupeEnabled` | bool | `true` | 旧 AntiDupe 功能的兼容开关；在当前发布版本中无效。 |
 | `antiDupeBuildRateLimitSeconds` | float | `1.5` | 旧建造最小间隔；目前无效。 |
 | `antiDupeDismantleRateLimitSeconds` | float | `1.5` | 旧拆除最小间隔；目前无效。 |
 | `antiDupeShowBlockMessage` | bool | `true` | 旧阻止消息开关；目前无效。 |
@@ -140,9 +141,11 @@
 | `staminaCheatDetectionEnabled` | bool | `true` | 启用可疑耐力操作检测。 |
 | `baseCampDupeDetectionEnabled` | bool | `true` | 启用基地复制检测。 |
 | `damageCheatDetectionEnabled` | bool | `true` | 启用伤害作弊检测。 |
+| `damageCheatDetectionTolerancePercent` | float | `5.0` | 报告的原始伤害与重建的 `BasePower × AttackWithBuff` 数值之间允许的百分比偏差。 |
+| `damageCheatDetectionWeaponBasePowerMultiplier` | float | `1.5` | 武器 `BasePower` 相对于已装备武器静态 `AttackValue` 所允许的最大倍数。 |
 | `ammoCheatDetectionEnabled` | bool | `true` | 启用弹药/武器状态作弊检测。 |
 
-为保持配置兼容，仍会生成 `antiDupe...` 键，但旧 AntiDupe 功能在当前公开 1.9.0 构建中已禁用。在该功能重新启用前，请勿依赖这些选项。
+为保持配置兼容，仍会生成 `antiDupe...` 键，但旧 AntiDupe 功能在当前发布版本中已禁用。在该功能重新启用前，请勿依赖这些选项。
 
 ## 旧版迁移键
 

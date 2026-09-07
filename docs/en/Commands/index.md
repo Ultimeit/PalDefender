@@ -1034,6 +1034,18 @@ At the current version there are only Admin and RCON commands available.
         ```
         _Spawns an Anubis with level 255!_
 
+    ??? info "/spawnpal_ex"
+        **Syntax:** Same as `/spawnpal`.
+
+        **Description:** Spawns a Pal exactly like `/spawnpal`, but enables damage tracking. When the Pal dies or is captured, PalDefender logs the full damage ranking and sends it to `PalWebhooks.webhookURL_Summons` when that webhook is configured. If `announceAdminSummonsKill` is enabled, participating online players also receive a result dialog showing the top five and their own rank. The highest damage dealer is marked as the winner. This command does not use a PalTemplate or PalSummon file and does not grant rewards.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /spawnpal_ex Anubis 230 -486 4097 80
+        ```
+
     ??? info "/spawnnpc"
         **Syntax:** `/spawnnpc <NPCID|CharacterID> [Level=1]` or `/spawnnpc <NPCID|CharacterID> <X> <Y> [Z] [Level=1]`
 
@@ -1070,6 +1082,18 @@ At the current version there are only Admin and RCON commands available.
         **Example:**
         ```
         /spawnpal_j ArenaBoss 230 -486 4097
+        ```
+
+    ??? info "/spawnpal_ex_j"
+        **Syntax:** `/spawnpal_ex_j <PalTemplate> [x] [y] [z]`
+
+        **Description:** Uses the same PalTemplate and coordinate handling as `/spawnpal_j`, but enables damage tracking. When the Pal dies or is captured, PalDefender logs the full damage ranking and sends it to `PalWebhooks.webhookURL_Summons` when that webhook is configured. If `announceAdminSummonsKill` is enabled, participating online players also receive a result dialog showing the top five and their own rank. The highest damage dealer is marked as the winner. This command does not use PalSummon rewards.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /spawnpal_ex_j ArenaBoss 230 -486 4097
         ```
 
     ??? info "/summon"

@@ -37,6 +37,7 @@
 | `logPlayerBuildings` | bool | `true` | Logs supported build, cancellation, dismantle, and Palbox-move activity. |
 | `logPlayerSummons` | bool | `true` | Logs player raid-boss summons. |
 | `logPlayerCaptures` | bool | `true` | Reserved compatibility setting. Capture logging is disabled in 1.9.0 because the available event is unreliable. |
+| `logPlayerDamage` | bool | `false` | Logs player-originated damage events and their reported native/base damage values to the server console. Works independently of damage cheat detection. |
 | `BannedCampWorker` | array | Panthalus variants | Character IDs that cannot be assigned at a base. Matching is case-insensitive; variants such as `BOSS_...` must be listed separately. |
 | `logHelicopterKills` | bool | `true` | Logs combat-helicopter kills. |
 | `logCraftings` | bool | `true` | Logs player crafting. |
@@ -123,7 +124,7 @@
 
 | Key | Type | Default | Description |
 | --- | --- | --- | --- |
-| `antiDupeEnabled` | bool | `true` | Compatibility switch for the legacy AntiDupe feature; inactive in the current public 1.9.0 build. |
+| `antiDupeEnabled` | bool | `true` | Compatibility switch for the legacy AntiDupe feature; inactive in the current release build. |
 | `antiDupeBuildRateLimitSeconds` | float | `1.5` | Legacy minimum interval between builds; currently inactive. |
 | `antiDupeDismantleRateLimitSeconds` | float | `1.5` | Legacy minimum interval between dismantles; currently inactive. |
 | `antiDupeShowBlockMessage` | bool | `true` | Legacy block-message switch; currently inactive. |
@@ -140,9 +141,11 @@
 | `staminaCheatDetectionEnabled` | bool | `true` | Enables suspicious stamina-action detection. |
 | `baseCampDupeDetectionEnabled` | bool | `true` | Enables base-camp duplication detection. |
 | `damageCheatDetectionEnabled` | bool | `true` | Enables damage cheat detection. |
+| `damageCheatDetectionTolerancePercent` | float | `5.0` | Permitted percentage difference between reported native damage and the reconstructed `BasePower × AttackWithBuff` value. |
+| `damageCheatDetectionWeaponBasePowerMultiplier` | float | `1.5` | Maximum permitted weapon `BasePower` as a multiplier of the equipped weapon's static `AttackValue`. |
 | `ammoCheatDetectionEnabled` | bool | `true` | Enables ammunition/weapon-state cheat detection. |
 
-The `antiDupe...` keys are still generated for configuration compatibility, but the legacy AntiDupe feature is disabled in the current public 1.9.0 build. Do not rely on these controls until the feature is enabled again.
+The `antiDupe...` keys are still generated for configuration compatibility, but the legacy AntiDupe feature is disabled in the current release build. Do not rely on these controls until the feature is enabled again.
 
 ## Legacy migration keys
 

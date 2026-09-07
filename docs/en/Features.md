@@ -1,6 +1,6 @@
 # Features and current status
 
-This page summarizes the user-facing feature switches in PalDefender 1.9.0. For exact defaults, see [`Config.json`](./FileTypes/Config.md).
+This page summarizes the user-facing feature switches in PalDefender 1.9.1. For exact defaults, see [`Config.json`](./FileTypes/Config.md).
 
 ## Active protection
 
@@ -9,7 +9,7 @@ This page summarizes the user-facing feature switches in PalDefender 1.9.0. For 
 - Invalid item, Pal-stat, workbench-recipe, Doctor Surgi, emergency-respawn, and other server-action checks remain part of the central validation layer.
 - `BannedCampWorker` blocks configured Character IDs from being assigned at a base.
 
-The legacy feature controlled by the `antiDupe...` keys is compiled out of the current public 1.9.0 build. The newer base-camp duplication detector is separate and controlled by `baseCampDupeDetectionEnabled`.
+The legacy feature controlled by the `antiDupe...` keys is compiled out of the current release build. The newer base-camp duplication detector is separate and controlled by `baseCampDupeDetectionEnabled`.
 
 ## Administration and events
 

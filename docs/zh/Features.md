@@ -1,6 +1,6 @@
 # 功能与当前状态
 
-本页概述 PalDefender 1.9.0 中面向用户的功能开关。准确的默认值请参阅 [`Config.json`](./FileTypes/Config.md)。
+本页概述 PalDefender 1.9.1 中面向用户的功能开关。准确的默认值请参阅 [`Config.json`](./FileTypes/Config.md)。
 
 ## 当前启用的防护
 
@@ -9,7 +9,7 @@
 - 无效物品、Pal 属性、工作台配方、Doctor Surgi、紧急重生以及其他服务器操作检查仍属于中央验证层。
 - `BannedCampWorker` 会阻止配置的 Character ID 被分配到基地。
 
-由 `antiDupe...` 键控制的旧功能在当前公开 1.9.0 构建中已被编译禁用。新的基地复制检测是独立功能，由 `baseCampDupeDetectionEnabled` 控制。
+由 `antiDupe...` 键控制的旧功能在当前发布版本中已被编译禁用。新的基地复制检测是独立功能，由 `baseCampDupeDetectionEnabled` 控制。
 
 ## 管理与事件
 

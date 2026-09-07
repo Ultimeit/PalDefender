@@ -1033,6 +1033,18 @@
         ```
         _生成一只 255 级的阿努比斯！_
 
+    ??? info "/spawnpal_ex"
+        **语法:** 与 `/spawnpal` 相同。
+
+        **描述:** 与 `/spawnpal` 完全相同地生成帕鲁，但会启用伤害统计。帕鲁死亡或被捕获时，PalDefender 会记录完整的伤害排名；如果已配置 `PalWebhooks.webhookURL_Summons`，还会将排名发送到该 Webhook。启用 `announceAdminSummonsKill` 时，参与战斗的在线玩家还会收到结果窗口，其中显示前五名和自己的排名。伤害最高者会标记为获胜者。此命令不使用 PalTemplate 或 PalSummon 文件，也不会发放奖励。
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+        **示例:**
+        ```
+        /spawnpal_ex Anubis 230 -486 4097 80
+        ```
+
     ??? info "/spawnnpc"
         **语法:** `/spawnnpc <NPCID|CharacterID> [Level=1]` 或 `/spawnnpc <NPCID|CharacterID> <X> <Y> [Z] [Level=1]`
 
@@ -1069,6 +1081,18 @@
         **示例:**
         ```
         /spawnpal_j ArenaBoss 230 -486 4097
+        ```
+
+    ??? info "/spawnpal_ex_j"
+        **语法:** `/spawnpal_ex_j <PalTemplate> [x] [y] [z]`
+
+        **描述:** 使用与 `/spawnpal_j` 相同的 PalTemplate 和坐标处理，但会启用伤害统计。帕鲁死亡或被捕获时，PalDefender 会记录完整的伤害排名；如果已配置 `PalWebhooks.webhookURL_Summons`，还会将排名发送到该 Webhook。启用 `announceAdminSummonsKill` 时，参与战斗的在线玩家还会收到结果窗口，其中显示前五名和自己的排名。伤害最高者会标记为获胜者。此命令不使用 PalSummon 奖励。
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+        **示例:**
+        ```
+        /spawnpal_ex_j ArenaBoss 230 -486 4097
         ```
 
     ??? info "/summon"

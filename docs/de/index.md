@@ -35,8 +35,6 @@
 ## Vorwort
 Wir freuen uns, wenn du zum Wiki beiträgst oder Fehler meldest, damit das Wiki Schritt für Schritt besser wird.
 
-Der PalDefender-Quellcode ist öffentlich im [pal_anticheat-Repository](https://github.com/Ultimeit/pal_anticheat) verfügbar. Beiträge und Fehlerberichte sind willkommen.
-
 ---
 
 ## Über PalDefender

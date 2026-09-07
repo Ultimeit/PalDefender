@@ -37,6 +37,7 @@
 | `logPlayerBuildings` | bool | `true` | Protokolliert unterstützte Bau-, Abbruch-, Demontage- und Palbox-Verschiebeaktionen. |
 | `logPlayerSummons` | bool | `true` | Protokolliert Raid-Boss-Beschwörungen durch Spieler. |
 | `logPlayerCaptures` | bool | `true` | Reservierter Kompatibilitätsschlüssel. Capture-Logging ist in 1.9.0 wegen des unzuverlässigen Events deaktiviert. |
+| `logPlayerDamage` | bool | `false` | Protokolliert von Spielern verursachte Damage-Events mit den gemeldeten Native-/Base-Damage-Werten in der Serverkonsole. Funktioniert unabhängig von der Damage-Cheat-Erkennung. |
 | `BannedCampWorker` | array | Panthalus-Varianten | Character-IDs, die nicht an einer Basis eingesetzt werden dürfen. Der Vergleich ignoriert Groß-/Kleinschreibung; Varianten wie `BOSS_...` müssen separat aufgeführt werden. |
 | `logHelicopterKills` | bool | `true` | Protokolliert Abschüsse des Kampfhubschraubers. |
 | `logCraftings` | bool | `true` | Protokolliert Herstellung durch Spieler. |
@@ -123,7 +124,7 @@
 
 | Schlüssel | Typ | Standard | Beschreibung |
 | --- | --- | --- | --- |
-| `antiDupeEnabled` | bool | `true` | Kompatibilitätsschalter der alten AntiDupe-Funktion; im aktuellen öffentlichen 1.9.0-Build inaktiv. |
+| `antiDupeEnabled` | bool | `true` | Kompatibilitätsschalter der alten AntiDupe-Funktion; im aktuellen Release-Build inaktiv. |
 | `antiDupeBuildRateLimitSeconds` | float | `1.5` | Altes Mindestintervall zwischen Bauaktionen; derzeit inaktiv. |
 | `antiDupeDismantleRateLimitSeconds` | float | `1.5` | Altes Mindestintervall zwischen Demontagen; derzeit inaktiv. |
 | `antiDupeShowBlockMessage` | bool | `true` | Alter Schalter für Blockiermeldungen; derzeit inaktiv. |
@@ -140,9 +141,11 @@
 | `staminaCheatDetectionEnabled` | bool | `true` | Aktiviert die Erkennung verdächtiger Stamina-Aktionen. |
 | `baseCampDupeDetectionEnabled` | bool | `true` | Aktiviert die BaseCamp-Dupe-Erkennung. |
 | `damageCheatDetectionEnabled` | bool | `true` | Aktiviert die Damage-Cheat-Erkennung. |
+| `damageCheatDetectionTolerancePercent` | float | `5.0` | Zulässige prozentuale Abweichung zwischen gemeldetem Native Damage und dem rekonstruierten Wert `BasePower × AttackWithBuff`. |
+| `damageCheatDetectionWeaponBasePowerMultiplier` | float | `1.5` | Maximal zulässige Waffen-`BasePower` als Faktor des statischen `AttackValue` der ausgerüsteten Waffe. |
 | `ammoCheatDetectionEnabled` | bool | `true` | Aktiviert die Erkennung manipulierter Munitions-/Waffenzustände. |
 
-Die `antiDupe...`-Schlüssel werden zur Konfigurationskompatibilität weiterhin erzeugt, die alte AntiDupe-Funktion ist im aktuellen öffentlichen 1.9.0-Build jedoch deaktiviert. Verlasse dich nicht auf diese Optionen, bis die Funktion wieder aktiviert wird.
+Die `antiDupe...`-Schlüssel werden zur Konfigurationskompatibilität weiterhin erzeugt, die alte AntiDupe-Funktion ist im aktuellen Release-Build jedoch deaktiviert. Verlasse dich nicht auf diese Optionen, bis die Funktion wieder aktiviert wird.
 
 ## Alte Migrationsschlüssel
 

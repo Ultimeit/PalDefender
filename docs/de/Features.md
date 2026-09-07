@@ -1,6 +1,6 @@
 # Funktionen und aktueller Stand
 
-Diese Seite fasst die benutzerrelevanten Funktionsschalter in PalDefender 1.9.0 zusammen. Die genauen Standardwerte findest du unter [`Config.json`](./FileTypes/Config.md).
+Diese Seite fasst die benutzerrelevanten Funktionsschalter in PalDefender 1.9.1 zusammen. Die genauen Standardwerte findest du unter [`Config.json`](./FileTypes/Config.md).
 
 ## Aktive Schutzfunktionen
 
@@ -9,7 +9,7 @@ Diese Seite fasst die benutzerrelevanten Funktionsschalter in PalDefender 1.9.0 
 - Prüfungen für ungültige Gegenstände, Pal-Werte, Werkbankrezepte, Doctor Surgi, Notfall-Respawn und weitere Serveraktionen bleiben Bestandteil der zentralen Validierung.
 - `BannedCampWorker` verhindert, dass konfigurierte Character-IDs an einer Basis eingesetzt werden.
 
-Die alte, durch die `antiDupe...`-Schlüssel gesteuerte Funktion ist im aktuellen öffentlichen 1.9.0-Build deaktiviert. Die neuere BaseCamp-Dupe-Erkennung ist davon unabhängig und wird über `baseCampDupeDetectionEnabled` gesteuert.
+Die alte, durch die `antiDupe...`-Schlüssel gesteuerte Funktion ist im aktuellen Release-Build deaktiviert. Die neuere BaseCamp-Dupe-Erkennung ist davon unabhängig und wird über `baseCampDupeDetectionEnabled` gesteuert.
 
 ## Administration und Events
 

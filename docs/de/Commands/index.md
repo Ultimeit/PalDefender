@@ -1034,6 +1034,18 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ```
         _Erzeugt einen Anubis auf Stufe 255!_
 
+    ??? info "/spawnpal_ex"
+        **Syntax:** Identisch zu `/spawnpal`.
+
+        **Beschreibung:** Spawnt einen Pal genau wie `/spawnpal`, aktiviert jedoch das Damage-Tracking. Wenn der Pal stirbt oder gefangen wird, protokolliert PalDefender die vollständige Schadensrangliste und sendet sie an `PalWebhooks.webhookURL_Summons`, sofern dieser Webhook konfiguriert ist. Ist `announceAdminSummonsKill` aktiviert, erhalten teilnehmende Online-Spieler außerdem einen Ergebnisdialog mit den ersten fünf Plätzen und ihrem eigenen Rang. Der Spieler mit dem höchsten Schaden wird als Gewinner markiert. Dieser Befehl verwendet keine PalTemplate- oder PalSummon-Datei und vergibt keine Belohnungen.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+        **Beispiel:**
+        ```
+        /spawnpal_ex Anubis 230 -486 4097 80
+        ```
+
     ??? info "/spawnnpc"
         **Syntax:** `/spawnnpc <NPCID|CharacterID> [Level=1]` oder `/spawnnpc <NPCID|CharacterID> <X> <Y> [Z] [Level=1]`
 
@@ -1070,6 +1082,18 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         **Beispiel:**
         ```
         /spawnpal_j ArenaBoss 230 -486 4097
+        ```
+
+    ??? info "/spawnpal_ex_j"
+        **Syntax:** `/spawnpal_ex_j <PalTemplate> [x] [y] [z]`
+
+        **Beschreibung:** Verwendet dasselbe PalTemplate und dieselbe Koordinatenverarbeitung wie `/spawnpal_j`, aktiviert jedoch das Damage-Tracking. Wenn der Pal stirbt oder gefangen wird, protokolliert PalDefender die vollständige Schadensrangliste und sendet sie an `PalWebhooks.webhookURL_Summons`, sofern dieser Webhook konfiguriert ist. Ist `announceAdminSummonsKill` aktiviert, erhalten teilnehmende Online-Spieler außerdem einen Ergebnisdialog mit den ersten fünf Plätzen und ihrem eigenen Rang. Der Spieler mit dem höchsten Schaden wird als Gewinner markiert. Dieser Befehl verwendet keine PalSummon-Belohnungen.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+        **Beispiel:**
+        ```
+        /spawnpal_ex_j ArenaBoss 230 -486 4097
         ```
 
     ??? info "/summon"
