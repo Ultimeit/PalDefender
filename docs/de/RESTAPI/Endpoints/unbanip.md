@@ -26,7 +26,7 @@ Optionales JSON-Feld: `Reason` als String.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/unbanip.md"
+--8<-- "_snippets/de/restapi/schemas/unbanip.md"
 
 ## Fehlerantworten
 
@@ -49,12 +49,12 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | Ein optionales Anfragefeld besitzt den falschen JSON-Typ. |
 | `404` | `BAN_NOT_FOUND` | Die angegebene `ip` ist nicht aktiv gebannt. |
 
 ## Beispiele
 
-### Unban an IP with reason
+### Eine IP mit Begründung entsperren
 
 ```http
 POST /v1/pdapi/unbanip/203.0.113.42
@@ -66,7 +66,7 @@ POST /v1/pdapi/unbanip/203.0.113.42
 }
 ```
 
-### Unban an IP with default reason
+### Eine IP mit Standardbegründung entsperren
 
 ```http
 POST /v1/pdapi/unbanip/198.51.100.87
@@ -78,6 +78,6 @@ POST /v1/pdapi/unbanip/198.51.100.87
 
 ## Szenarien
 
-- Remove an IP ban after investigation.
+- Eine IP-Sperre nach der Untersuchung aufheben.
 - Nutzen, wenn ein Spieler nach einem User-Unban weiterhin blockiert ist, weil der IP-Eintrag noch aktiv ist.
 - Nutze [GET /banlist](banlist.md) mit `ip`, um das Ergebnis zu prüfen.

@@ -2,13 +2,13 @@
 
 <span class='pd-badge pd-badge--deprecated'>已废弃</span>
 
-!!! warning "<span class='pd-badge pd-badge--deprecated'>已废弃</span> legacy endpoint"
-    此旧版奖励端点已废弃。建议改用拆分后的奖励端点：[give progression](./give-progression.md)、[give items](./give-items.md)、[give pals](./give-pals.md)、[give pal templates](./give-paltemplate.md) 和 [give Pal eggs](./give-paleggs.md)。
+!!! warning "<span class='pd-badge pd-badge--deprecated'>已废弃</span> 旧版端点"
+    此旧版奖励端点已废弃。建议改用拆分后的奖励端点：[发放进度](./give-progression.md)、[发放物品](./give-items.md)、[发放帕鲁](./give-pals.md)、[发放帕鲁模板](./give-paltemplate.md) 和 [发放帕鲁蛋](./give-paleggs.md)。
 
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/give_deprecated.md"
+--8<-- "_snippets/zh/restapi/schemas/give_deprecated.md"
 
 ## 错误响应
 
@@ -24,7 +24,7 @@
 
 ## 示例
 
-### Grant EXP and items
+### 发放经验和物品
 
 ```http
 POST /v1/pdapi/give
@@ -40,7 +40,7 @@ POST /v1/pdapi/give
 }
 ```
 
-### Grant Pals and eggs
+### 发放帕鲁和蛋
 
 ```http
 POST /v1/pdapi/give
@@ -58,46 +58,46 @@ POST /v1/pdapi/give
 }
 ```
 
-??? info "POST `/v1/pdapi/give` — Grant EXP / items / pals / eggs (atomic)"
+??? info "POST `/v1/pdapi/give` — 原子化发放经验 / 物品 / 帕鲁 / 蛋"
     ## POST `/v1/pdapi/give`
-    ### What it does
-    Grants rewards to a target player in a single server-side transaction-like operation:
+    ### 功能
+    通过一次类似事务的服务器端操作向目标玩家发放奖励：
 
-    - EXP and/or
-    - items and/or
-    - pals and/or
-    - eggs
-    depending on the request body.
+    - 经验和/或
+    - 物品和/或
+    - 帕鲁和/或
+    - 蛋，
+    具体取决于请求体。
 
-    ### Core behavior
+    ### 核心行为
     此端点设计为**原子性**执行：
 
-    - either everything is granted
-    - or nothing is granted
+    - 要么全部发放，
+    - 要么全部不发放。
 
     如果任意部分失败（输入无效、背包空间不足、ID 无效等），服务器应拒绝整个请求，而不是只应用其中一部分。
 
-    ### Why this matters
-    Admin tooling must not accidentally:
+    ### 为什么这很重要
+    管理工具不得意外出现以下情况：
 
-    - give EXP but not items
-    - give some items but fail on later items
-    - spawn pals without placing items
+    - 发放经验但未发放物品，
+    - 发放部分物品后在后续物品处失败，
+    - 生成帕鲁但未放置物品。
 
-    Atomic behavior avoids messy states and “support tickets from hell”.
+    原子行为可避免不一致状态和棘手的支持工单。
 
-    ### What it can grant
-    Depending on your implementation, the request may include:
+    ### 可发放内容
+    根据具体实现，请求可能包含：
 
-    - `EXP` — adds experience
-    - `Relics` — adds relic points keyed by relic type
-    - `TechnologyPoints` — adds tech points
-    - `AncientTechnologyPoints` — adds ancient tech points
-    - `UnlockTechnology` / `Techs[]` — learn technologies
-    - `Items[]` — give one or more items with counts
-    - `Pals[]` — give pals by ID + level
-    - `PalTemplates[]` — import pal templates by filename
-    - `PalEggs[]` — eggs by ID + pal ID / template, optionally with level
+    - `EXP` — 增加经验值
+    - `Relics` — 按遗物类型增加遗物点数
+    - `TechnologyPoints` — 增加科技点
+    - `AncientTechnologyPoints` — 增加古代科技点
+    - `UnlockTechnology` / `Techs[]` — 学习科技
+    - `Items[]` — 发放一个或多个物品及其数量
+    - `Pals[]` — 按 ID 和等级发放帕鲁
+    - `PalTemplates[]` — 按文件名导入帕鲁模板
+    - `PalEggs[]` — 按蛋 ID 和帕鲁 ID/模板发放蛋，可选指定等级
 
 
     ### 错误响应
@@ -128,18 +128,18 @@ POST /v1/pdapi/give
     }
     ```
 
-    ### Validation & common failure cases
+    ### 验证与常见失败情况
     管理员遇到错误的常见原因：
 
-    - Inventory space: not enough room for all items → fail the entire request
-    - Invalid IDs: unknown `ItemID`, `PalID`, `EggID`, or missing template file → fail
-    - Invalid values:
-        - negative / zero counts (depending on rules)
-        - invalid levels (too low/high, or non-numeric)
-        - missing required fields (e.g., no `UserID`)
-    - Player not found / not loaded:
-        - user ID not known
-        - player not currently online (depending on how your server handles offline grants)
+    - 库存空间：无法容纳全部物品 → 整个请求失败
+    - 无效 ID：未知的 `ItemID`、`PalID`、`EggID` 或缺少模板文件 → 请求失败
+    - 无效值：
+        - 负数或零数量（取决于规则）
+        - 无效等级（过低、过高或非数字）
+        - 缺少必填字段（例如没有 `UserID`）
+    - 找不到或未加载玩家：
+        - 用户 ID 未知
+        - 玩家当前不在线（取决于服务器处理离线发放的方式）
 
     ### 返回
     错误数量和错误消息。如果 `status` 不是 200，请查看 `Errors` 了解发生了多少个错误；`Error` 包含失败项的详细列表。

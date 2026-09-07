@@ -26,7 +26,7 @@ JSON-Objekt mit `PalEggs`, einem Array von Ei-Vergaben. `EggID` ist eine [`ItemI
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/give-paleggs.md"
+--8<-- "_snippets/de/restapi/schemas/give-paleggs.md"
 
 ## Fehlerantworten
 

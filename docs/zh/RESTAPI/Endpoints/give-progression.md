@@ -29,7 +29,7 @@ JSON 对象，至少包含一种支持的授予内容：正整数 `EXP`、正整
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/give-progression.md"
+--8<-- "_snippets/zh/restapi/schemas/give-progression.md"
 
 ## 错误响应
 
@@ -40,7 +40,7 @@ JSON 对象，至少包含一种支持的授予内容：正整数 `EXP`、正整
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```

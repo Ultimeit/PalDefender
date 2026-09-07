@@ -24,6 +24,8 @@ Pal import rules control which `PalTemplate.json` files are allowed, blocked, or
 | `MaxValueLimitAction` | string | `BlockImport` denies templates above configured limits. `ClampToMaxValues` lowers values to the configured limits. |
 | `DisallowedPassivesAction` | string | `BlockImport` denies templates with listed passives. `RemoveFromPal` removes listed passives before import. |
 | `DisallowedPassives` | array | [`PassiveID`](https://paldeck.cc/passives) values affected by `DisallowedPassivesAction`. |
+| `ConditionMode` | string | `None` applies the rule normally. `RequirePalCaptureCount` permits importing a Pal only after that player has captured enough Pals of the same species. |
+| `RequiredCaptureCount` | int | Required same-species capture count when `ConditionMode` is `RequirePalCaptureCount` (default `5`). |
 | `Disabled` | bool | If `true`, disables import checks for the matching rule set. |
 | `BanIfPalIsImpossible` | bool | If `true`, PalDefender can punish impossible Pal imports according to server settings. |
 | `AllowGenderNone` | bool | If `false`, templates using `Gender: "None"` can be rejected by import checks. |
@@ -77,6 +79,8 @@ Use this when normal admin rewards are allowed, but certain Pals should not be i
     "DisallowedPassives": [
         "Legend"
     ],
+    "ConditionMode": "None",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "AllowGenderNone": false,
@@ -116,6 +120,8 @@ Use this when player-imported templates should be limited to approved Pals.
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "RequirePalCaptureCount",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "AllowGenderNone": false,
@@ -150,6 +156,8 @@ In this setup, only the three listed `PalID` values can be imported. Over-limit 
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "None",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "BannedPalIDs": [
@@ -184,6 +192,8 @@ In this setup, only the three listed `PalID` values can be imported. Over-limit 
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "RequirePalCaptureCount",
+    "RequiredCaptureCount": 5,
     "AllowGenderNone": false,
     "MaxLevel": 10,
     "MaxRank": 3,

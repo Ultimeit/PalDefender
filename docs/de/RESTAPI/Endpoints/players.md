@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/players.md"
+--8<-- "_snippets/de/restapi/schemas/players.md"
 
 ## Fehlerantworten
 
@@ -53,13 +53,13 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### List all known players
+### Alle bekannten Spieler auflisten
 
 ```http
 GET /v1/pdapi/players
 ```
 
-### Refresh an admin player selector
+### Eine Spielerauswahl im Adminbereich aktualisieren
 
 ```http
 GET /v1/pdapi/players
@@ -67,11 +67,11 @@ GET /v1/pdapi/players
 
 ## Szenarien
 
-- Build a dropdown of online and known players.
-- Find the correct `UserId` or `PlayerUID` before calling reward, punishment, or inventory endpoints.
-- Audit who is online before sending a message or scheduled maintenance warning.
+- Eine Auswahlliste der Online- und bekannten Spieler erstellen.
+- Vor dem Aufruf von Belohnungs-, Straf- oder Inventarendpunkten die richtige `UserId` oder `PlayerUID` ermitteln.
+- Vor einer Nachricht oder geplanten Wartungswarnung prüfen, wer online ist.
 
 ## Related
 
-- [GET /player](player.md) for one player.
-- [POST /kick](kick.md), [POST /ban](ban.md), and reward endpoints use the same player identifier style.
+- [GET /player](player.md) für einen einzelnen Spieler.
+- [POST /kick](kick.md), [POST /ban](ban.md) und Belohnungsendpunkte verwenden dieselbe Art von Spielerkennung.

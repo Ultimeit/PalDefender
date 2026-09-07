@@ -26,7 +26,7 @@ JSON-Objekt mit `Items`, einem Array von Item-Vergaben. Jeder Eintrag benötigt 
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/give-items.md"
+--8<-- "_snippets/de/restapi/schemas/give-items.md"
 
 ## Fehlerantworten
 
@@ -51,7 +51,7 @@ Fehlerantworten verwenden dieses Format:
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `INVALID_REQUEST` | Der Body enthält kein `Items`-Array. |
 | `400` | `VALIDATION_FAILED` | One or more item grants are invalid, unsupported, too large, or do not fit in inventory. |
-| `500` | `GRANT_FAILED` | Validation passed, but the server failed while adding items to the inventory. |
+| `500` | `GRANT_FAILED` | Die Validierung war erfolgreich, aber der Server konnte die Gegenstände nicht zum Inventar hinzufügen. |
 
 ## Beispiele
 
@@ -88,4 +88,4 @@ POST /v1/pdapi/give/items/ps5_0f4b8c2d91aa34ef
 
 - Für Entschädigungspakete nach einem Rollback nutzen.
 - Für Shop-Integrationen nutzen, bei denen ein vertrauenswürdiger Dienst gekaufte Items vergibt.
-- Validate the [`ItemID`](https://paldeck.cc/items) first; display names are not always valid IDs.
+- Prüfe zuerst die [`ItemID`](https://paldeck.cc/items); Anzeigenamen sind nicht immer gültige IDs.

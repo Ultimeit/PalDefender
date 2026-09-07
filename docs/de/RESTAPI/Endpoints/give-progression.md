@@ -29,7 +29,7 @@ Unterstützte Relikt-Typen: `CapturePower`, `HungerReduction`, `SwimSpeed`, `Foo
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/give-progression.md"
+--8<-- "_snippets/de/restapi/schemas/give-progression.md"
 
 ## Fehlerantworten
 

@@ -10,13 +10,12 @@ performance, transparency, fair services, and flexible server management.
 > ~Zvend
 
 ### This partnership brings some great benefits:
-- **10% Discount** – This applies to new customers only, but you’ll get 10% off every payment, even if you change the server's game or location!
+- **Permanent 15% Discount** – New and existing customers receive 15% off every payment for each new server ordered with the promo code. The discount cannot be added by upgrading a server that was originally purchased without the code; order a new server with the code to receive the benefit.
 - **One-Click PalDefender Integration** – PalDefender is built into their service and can be activated instantly with a single click. No more witchcraft!
 - **Official PalDefender Test Server** – Qonzer has sponsored a server for us, and we are looking forward to getting it into production.
-- More in the Works – We are in close contact with Qonzer, and we’re working hard to make Palworld servers even more exciting for you.
-- More in the work
+- **More in the Works** – We are in close contact with Qonzer, and we’re working hard to make Palworld servers even more exciting for you.
 
-### How to Get the **10% Discount**:
+### How to Get the **Permanent 15% Discount**:
 
 1. Use the affiliate link: <a href="https://qonzer.com/aff.php?aff=61" target="_blank">https://qonzer.com/aff.php?aff=61</a>
 2. Navigate to Game Servers and select Palworld.
@@ -25,8 +24,11 @@ performance, transparency, fair services, and flexible server management.
 5. Enter the promo code `PalDefender` and complete your purchase.
 6. Done!
 
+!!! important
+    The promotion is not limited to new customers. However, it must be applied while ordering a new server. Upgrading an existing server purchased without the code will not add the discount; order a new server with `PalDefender` instead.
+
 **Want more than one server with the discount?** <br>
-Simply add multiple servers to your cart before checking out.
+Simply add multiple new servers to your cart before checking out and apply the promo code to the order.
 
 ### I’m Already Paying for a Different Server Host but Want to Switch
 

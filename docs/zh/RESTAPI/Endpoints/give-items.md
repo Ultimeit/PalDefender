@@ -26,7 +26,7 @@ JSON 对象，包含 `Items` 物品发放数组。每个条目都需要一个 [`
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/give-items.md"
+--8<-- "_snippets/zh/restapi/schemas/give-items.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ JSON 对象，包含 `Items` 物品发放数组。每个条目都需要一个 [`
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -51,7 +51,7 @@ JSON 对象，包含 `Items` 物品发放数组。每个条目都需要一个 [`
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `INVALID_REQUEST` | 请求体不包含 `Items` 数组。 |
 | `400` | `VALIDATION_FAILED` | One or more item grants are invalid, unsupported, too large, or do not fit in inventory. |
-| `500` | `GRANT_FAILED` | Validation passed, but the server failed while adding items to the inventory. |
+| `500` | `GRANT_FAILED` | 验证通过，但服务器向库存添加物品时失败。 |
 
 ## 示例
 
@@ -88,4 +88,4 @@ POST /v1/pdapi/give/items/ps5_0f4b8c2d91aa34ef
 
 - 用于回档后的补偿礼包。
 - 用于可信服务发放已购买物品的商店集成。
-- Validate the [`ItemID`](https://paldeck.cc/items) first; display names are not always valid IDs.
+- 首先验证 [`ItemID`](https://paldeck.cc/items)；显示名称不一定是有效 ID。

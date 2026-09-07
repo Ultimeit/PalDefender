@@ -10,7 +10,7 @@
 
 ## 用途
 
-Forgets one, many, or all technologies for a player.
+移除玩家的一项、多项或全部科技。
 
 ## 路径参数
 
@@ -22,11 +22,11 @@ Forgets one, many, or all technologies for a player.
 
 ## 请求体
 
-`Technology` can be a single [`TechID`](https://paldeck.cc/technology), the string `"All"`, or an array of [`TechID`](https://paldeck.cc/technology) strings. Do not put `"All"` inside an array.
+`Technology` 可以是单个 [`TechID`](https://paldeck.cc/technology)、字符串 `"All"`，或由 [`TechID`](https://paldeck.cc/technology) 字符串组成的数组。请勿将 `"All"` 放入数组中。
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/forgettech.md"
+--8<-- "_snippets/zh/restapi/schemas/forgettech.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ Forgets one, many, or all technologies for a player.
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,12 +49,12 @@ Forgets one, many, or all technologies for a player.
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `400` | `INVALID_REQUEST` | `Technology` is missing, or it is not a string/array in the expected format. |
-| `400` | `VALIDATION_FAILED` | The `Technology` array contains a non-string, `All`, or an invalid technology identifier. |
+| `400` | `INVALID_REQUEST` | 缺少 `Technology`，或它不是预期格式的字符串/数组。 |
+| `400` | `VALIDATION_FAILED` | `Technology` 数组包含非字符串值、`All` 或无效的科技标识符。 |
 
 ## 示例
 
-### Forget one technology for a GDK player
+### 移除 GDK 玩家的一个科技
 
 ```http
 POST /v1/pdapi/forgettech/gdk_2533274812345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/forgettech/gdk_2533274812345678
 }
 ```
 
-### Forget several technologies by PlayerUID
+### 按 PlayerUID 移除多个科技
 
 ```http
 POST /v1/pdapi/forgettech/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
@@ -81,7 +81,7 @@ POST /v1/pdapi/forgettech/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
 }
 ```
 
-### Forget all technologies for a Steam player
+### 移除 Steam 玩家的全部科技
 
 ```http
 POST /v1/pdapi/forgettech/steam_76561198012345678
@@ -95,6 +95,6 @@ POST /v1/pdapi/forgettech/steam_76561198012345678
 
 ## 使用场景
 
-- Remove a technology granted by mistake.
-- Reset a test account with `"All"`.
-- Confirm the current state with [GET /techs](techs.md) before and after the request.
+- 移除误授予的科技。
+- 使用 `"All"` 重置测试账户。
+- 在请求前后使用 [GET /techs](techs.md) 确认当前状态。

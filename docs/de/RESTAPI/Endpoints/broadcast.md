@@ -26,7 +26,7 @@ JSON-Objekt mit dem erforderlichen String `Message`.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/broadcast.md"
+--8<-- "_snippets/de/restapi/schemas/broadcast.md"
 
 ## Fehlerantworten
 

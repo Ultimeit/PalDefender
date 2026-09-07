@@ -18,13 +18,13 @@ Keine.
 
 ## Query-Parameter
 
-- `active`: `true`, `false`, or `1` to filter active state.
+- `active`: `true`, `false` oder `1`, um nach dem Aktivstatus zu filtern.
 - `entryType`: Nach Bann-Eintragstyp filtern.
 - `userId`: Filter by user ID.
 - `ip` or `userIP`: Filter by IP address.
 - `issuerType`, `issuerName`, `issuerIP`: Nach Aussteller-Metadaten filtern.
-- `reason`: Filter by reason text.
-- `q`: General text search.
+- `reason`: Nach dem Begründungstext filtern.
+- `q`: Allgemeine Textsuche.
 
 ## Request-Body
 
@@ -32,7 +32,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/banlist.md"
+--8<-- "_snippets/de/restapi/schemas/banlist.md"
 
 ## Fehlerantworten
 
@@ -55,19 +55,19 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### List all ban records
+### Alle Sperreinträge auflisten
 
 ```http
 GET /v1/pdapi/banlist
 ```
 
-### Find active records for a Steam user
+### Aktive Einträge eines Steam-Benutzers finden
 
 ```http
 GET /v1/pdapi/banlist?active=true&userId=steam_76561198012345678
 ```
 
-### Search records by IP
+### Einträge nach IP durchsuchen
 
 ```http
 GET /v1/pdapi/banlist?ip=203.0.113.42
@@ -75,9 +75,9 @@ GET /v1/pdapi/banlist?ip=203.0.113.42
 
 ## Szenarien
 
-- Check whether a player or IP is currently banned.
-- Search by reason or issuer before unbanning.
-- Build a moderation dashboard that reads from `Banlist.json` through the API.
+- Prüfen, ob ein Spieler oder eine IP derzeit gesperrt ist.
+- Vor einer Entsperrung nach Grund oder Aussteller suchen.
+- Ein Moderations-Dashboard erstellen, das `Banlist.json` über die API liest.
 
 ## Related
 

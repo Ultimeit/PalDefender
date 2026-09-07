@@ -9,12 +9,12 @@
 
 Implements comprehensive server-side validation to prevent a wide range of known and some yet undiscovered cheats, exploits, and crashes. Before executing any player action, PalDefender checks for potential cheating behavior. Depending on the server's configuration, players attempting such actions are warned, kicked, banned, or IP banned. Currently, PalDefender is available for Windows-based dedicated servers. **Any experienced Linux dev is welcome to help us out.**
 
-The code is closed source and we dont have any plans to release it.
+The PalDefender source is publicly available in the [pal_anticheat repository](https://github.com/Ultimeit/pal_anticheat). Contributions and issue reports are welcome.
 
 ## **Get the best servers for modding at [Qonzer](https://qonzer.com/aff.php?aff=61) *(Affiliate Link)*.** 
 *They support PalDefender right out of the box—no special setup or technical knowledge needed. It just works.*
 
-**A 10% Discount code for qonzer servers can be found on our Discord! Check out the server-host channel.**
+**Use promo code `PalDefender` for a permanent 15% discount when ordering a new Qonzer server. It is available to new and existing customers, but cannot be added by upgrading a server originally purchased without the code.**
 
 
 ## PalDefender Wiki

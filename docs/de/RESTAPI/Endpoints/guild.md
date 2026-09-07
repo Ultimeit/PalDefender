@@ -14,7 +14,7 @@ Gibt eine Gilde mit detaillierten Mitglieder- und Basis-/Campdaten zurück.
 
 ## Pfadparameter
 
-- `guild_id`: Guild identifier, usually copied from [GET /guilds](guilds.md).
+- `guild_id`: Gildenkennung, üblicherweise aus [GET /guilds](guilds.md) kopiert.
 
 ## Query-Parameter
 
@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/guild.md"
+--8<-- "_snippets/de/restapi/schemas/guild.md"
 
 ## Fehlerantworten
 
@@ -49,17 +49,17 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `404` | `GUILD_NOT_FOUND` | No guild matched the supplied `guild_id`. |
+| `404` | `GUILD_NOT_FOUND` | Keine Gilde entsprach der angegebenen `guild_id`. |
 
 ## Beispiele
 
-### Read guild roster and camps
+### Gildenmitglieder und Basislager lesen
 
 ```http
 GET /v1/pdapi/guild/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
 ```
 
-### Read another guild by GUID
+### Eine andere Gilde anhand ihrer GUID lesen
 
 ```http
 GET /v1/pdapi/guild/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
@@ -67,6 +67,6 @@ GET /v1/pdapi/guild/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 
 ## Szenarien
 
-- Investigate base ownership before deleting a base.
-- Review guild members and camp data for support requests.
+- Vor dem Löschen einer Basis deren Eigentümer prüfen.
+- Für Supportanfragen Gildenmitglieder und Basislagerdaten prüfen.
 - Nutze Camp-IDs aus der Antwort vorsichtig mit [POST /deletebase](deletebase.md).

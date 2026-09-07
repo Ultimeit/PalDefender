@@ -10,7 +10,7 @@
 
 ## 用途
 
-Learns one, many, or all technologies for a player.
+为玩家解锁一项、多项或全部科技。
 
 ## 路径参数
 
@@ -22,11 +22,11 @@ Learns one, many, or all technologies for a player.
 
 ## 请求体
 
-`Technology` can be a single [`TechID`](https://paldeck.cc/technology), the string `"All"`, or an array of [`TechID`](https://paldeck.cc/technology) strings. Do not put `"All"` inside an array.
+`Technology` 可以是单个 [`TechID`](https://paldeck.cc/technology)、字符串 `"All"`，或由 [`TechID`](https://paldeck.cc/technology) 字符串组成的数组。请勿将 `"All"` 放入数组中。
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/learntech.md"
+--8<-- "_snippets/zh/restapi/schemas/learntech.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ Learns one, many, or all technologies for a player.
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,12 +49,12 @@ Learns one, many, or all technologies for a player.
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `400` | `INVALID_REQUEST` | `Technology` is missing, or it is not a string/array in the expected format. |
-| `400` | `VALIDATION_FAILED` | The `Technology` array contains a non-string, `All`, or an invalid technology identifier. |
+| `400` | `INVALID_REQUEST` | 缺少 `Technology`，或它不是预期格式的字符串/数组。 |
+| `400` | `VALIDATION_FAILED` | `Technology` 数组包含非字符串值、`All` 或无效的科技标识符。 |
 
 ## 示例
 
-### Learn one technology for a Steam player
+### 为 Steam 玩家解锁一个科技
 
 ```http
 POST /v1/pdapi/learntech/steam_76561198087654321
@@ -66,7 +66,7 @@ POST /v1/pdapi/learntech/steam_76561198087654321
 }
 ```
 
-### Learn several technologies for a PS5 player
+### 为 PS5 玩家解锁多个科技
 
 ```http
 POST /v1/pdapi/learntech/ps5_0f4b8c2d91aa34ef
@@ -81,7 +81,7 @@ POST /v1/pdapi/learntech/ps5_0f4b8c2d91aa34ef
 }
 ```
 
-### Learn every technology by PlayerUID
+### 按 PlayerUID 解锁全部科技
 
 ```http
 POST /v1/pdapi/learntech/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
@@ -95,6 +95,6 @@ POST /v1/pdapi/learntech/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 
 ## 使用场景
 
-- Unlock a missing recipe for support.
-- Unlock all technologies for test accounts.
-- Validate technology IDs at [paldeck.cc/technology](https://paldeck.cc/technology) before sending the request.
+- 在支持处理中解锁缺少的配方。
+- 为测试账户解锁全部科技。
+- 发送请求前在 [paldeck.cc/technology](https://paldeck.cc/technology) 验证科技 ID。

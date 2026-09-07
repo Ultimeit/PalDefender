@@ -14,7 +14,7 @@ Kickt einen Online-Spieler, ohne einen Banneintrag zu erstellen.
 
 ## Pfadparameter
 
-- `player_identifier`: `UserId`, `PlayerUID`, or another supported player identifier.
+- `player_identifier`: `UserId`, `PlayerUID` oder eine andere unterstützte Spielerkennung.
 
 ## Query-Parameter
 
@@ -26,7 +26,7 @@ Optionales JSON-Feld: `Reason` als String.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/kick.md"
+--8<-- "_snippets/de/restapi/schemas/kick.md"
 
 ## Fehlerantworten
 
@@ -49,12 +49,12 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | Ein optionales Anfragefeld besitzt den falschen JSON-Typ. |
 | `404` | `PLAYER_NOT_FOUND` | Der Zielspieler ist nicht online oder konnte nicht gefunden werden. |
 
 ## Beispiele
 
-### Kick a GDK player with reason
+### Einen GDK-Spieler mit Begründung entfernen
 
 ```http
 POST /v1/pdapi/kick/gdk_2533274812345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/kick/gdk_2533274812345678
 }
 ```
 
-### Kick a Steam player with default reason
+### Einen Steam-Spieler mit Standardbegründung entfernen
 
 ```http
 POST /v1/pdapi/kick/steam_76561198087654321
@@ -78,6 +78,6 @@ POST /v1/pdapi/kick/steam_76561198087654321
 
 ## Szenarien
 
-- Remove a player before maintenance.
-- Kick a stuck player so they can reconnect.
+- Einen Spieler vor Wartungsarbeiten entfernen.
+- Einen festhängenden Spieler entfernen, damit er sich erneut verbinden kann.
 - Nutze stattdessen [POST /ban](ban.md), wenn der Spieler nicht zurückkehren dürfen soll.

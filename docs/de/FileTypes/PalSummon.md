@@ -1,88 +1,154 @@
 # 📄 `PalSummon.json`
 
-!!! tip "Zugehörige ID-Suche"
-    Die Summon-Datei verweist selbst auf ein `PalTemplate`. Wenn du dieses Template bearbeiten musst, nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) für Passives und [paldeck.cc/skills](https://paldeck.cc/skills) für Skill-IDs.
+Eine PalSummon-Datei definiert eine Begegnung an einem festen Ort, die mit `/summon <Dateiname>` gestartet wird. Speichere die Dateien unter `<PalServer>/Pal/Binaries/Win64/PalDefender/Pals/Summons/` und referenzierte PalTemplates unter `Pals/Templates/`.
 
-| Schlüssel               | Typ   | Beschreibung                                                                             |
-| ----------------- | ------ | --------------------------------------------------------------------------------------- |
-| `PalTemplate`     | string | Erforderlich. Dateiname der zu verwendenden `PalTemplate.json` (z. B. `"OPnubis.json"`). Die Datei muss in `Pals/Templates/` existieren. |
-| `Uncapturable`    | bool   | Optional. Wenn `true`, kann der Pal nicht von Spielern gefangen werden. Ohne Angabe gilt `false`. |
-| `X` / `Y` / `Z`   | float  | Erforderliche Kartenkoordinaten, an denen der Pal gespawnt wird. Nutze `/getpos`, um die aktuelle Position eines Spielers abzurufen. |
-| `DisableStatuses` | array  | Optionale Liste von Statuseffekten, die für diesen Pal deaktiviert werden. Ungültige oder leere Statusnamen werden übersprungen. Verfügbare Status: `DrownCheck`, `Poison`, `Stun`, `Coma`, `Sleep`, `Overwork`, `Drown`, `FallDamage`, `LavaDamage`, `Burn`, `Wetness`, `Freeze`, `Electrical`, `Muddy`, `IvyCling`, `Darkness`, `CollectItem`. |
+!!! tip "ID-Suche"
+    Nutze [paldeck.cc/pals](https://paldeck.cc/pals) für `PalID`, [paldeck.cc/passives](https://paldeck.cc/passives) für Passives und [paldeck.cc/skills](https://paldeck.cc/skills) für Skill-IDs des referenzierten Templates.
 
-## Anleitung
+## Begegnungsschlüssel
 
-1. Erstelle zuerst das referenzierte Pal-Template in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
-2. Erstelle die Summon-Datei in `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/`.
-3. Benenne die Summon-Datei nach dem Argument, das Admins eingeben sollen, zum Beispiel `ArenaBoss.json` für `/summon ArenaBoss`.
-4. Ermittle Koordinaten im Spiel mit `/getpos`. Bei RCON gib eine Spieler-ID an: `/getpos <UserId>`.
-5. `PalTemplate`, `X`, `Y` und `Z` müssen vorhanden sein. Fehlt eine Koordinate, sollte die Summon-Datei als ungültig gelten.
-6. Nutze `Uncapturable: true` für Eventbosse, Raidbosse oder dekorative Pals, die Spieler nicht besitzen sollen.
-7. Halte `DisableStatuses` kurz, außer du hast einen Grund, viele Zustände zu deaktivieren. Beginne nur mit den Statuswerten, die für das Event wichtig sind.
-8. Validiere JSON vor dem Hochladen. JSON erlaubt keine Kommentare oder nachgestellten Kommas.
-9. Lade die Konfiguration neu oder starte den Server neu, falls dein Host neu hinzugefügte Dateien nicht sofort übernimmt.
+| Schlüssel | Typ | Standard | Beschreibung |
+| --- | --- | --- | --- |
+| `PalTemplate` | string | Erforderlich | Dateiname eines Templates in `Pals/Templates/`; `.json` kann weggelassen werden. |
+| `BossBattleName` | string | Pal-ID | Anzeigename in Ankündigungen, Logs, Webhooks und Schadensergebnissen. |
+| `Uncapturable` | bool | `false` | Verhindert dauerhaft, dass der beschworene Pal gefangen werden kann. |
+| `CapturableAtHealthPercent` | number | `15` | Macht den Pal ab diesem HP-Prozentsatz oder darunter fangbar (`0`–`100`). Wird bei `Uncapturable: true` ignoriert. |
+| `DisableAI` | bool | `false` | Deaktiviert die normale KI. Einzelne passive Verhaltensweisen wie Ausweichen können weiterhin auftreten. |
+| `DisableDamageMeter` | bool | `false` | Deaktiviert Tracking, Ergebnisdialog und Rangbelohnungen. Stattdessen wird die `Default`-Belohnung an alle Online-Spieler vergeben. |
+| `SpawnScale` | number | `1.0` | Visueller/physischer Größenmultiplikator; Werte kleiner oder gleich null fallen auf `1.0` zurück. |
+| `HealthMultiplier` | number | `1.0` | Multiplikator der maximalen Lebenspunkte; muss endlich und größer als null sein. |
+| `DamageTakenMultiplier` | number | `1.0` | Multiplikator für erhaltenen Schaden; negative Werte fallen auf `1.0` zurück. |
+| `DamageDealtMultiplier` | number | `1.0` | Multiplikator für verursachten Schaden; negative Werte fallen auf `1.0` zurück. |
+| `X`, `Y`, `Z` | number | Erforderlich | Kartenkoordinaten. Ermittle sie mit `/getpos`. |
+| `DisableStatuses` | array | Leer | Zu unterdrückende Statusnamen. Ungültige Namen werden übersprungen. |
+| `Rewards` | object | Leer | Optionale rangspezifische und standardmäßige [Belohnungsdefinitionen](#schadensmesser-und-belohnungen). |
 
-## Einrichtungsschritte
+`CapturableAt`, `CapturableAtPercent` und `capturable_at` werden als Kompatibilitätsalias akzeptiert. `HPMultiplier`, `AdditionalEnemyMaxHPRate`, `AdditionalEnemyReceiveDamageRate` und `AdditionalEnemyInflictDamageRate` werden ebenfalls akzeptiert, die Namen aus der Tabelle werden jedoch empfohlen.
 
-1. Erstelle zuerst ein Template, zum Beispiel `Pals/Templates/ArenaBoss.json`.
-2. Teste das Template mit `/givemepal_j ArenaBoss`. Wenn es dort fehlschlaegt, repariere zuerst das Template, bevor du die Summon-Datei erstellst.
-3. Stelle dich an die Stelle, an der der Pal erscheinen soll, und führe `/getpos` aus. Kopiere die zurückgegebenen Werte `X`, `Y` und `Z`.
-4. Erstelle `Pals/Summons/ArenaBossSpawn.json` und setze `PalTemplate` auf `ArenaBoss.json`.
-5. Führe `/summon ArenaBossSpawn` aus.
-6. Wenn der Pal zu hoch, zu niedrig oder im Gelände erscheint, passe zuerst `Z` an und danach `X` und `Y`.
+## Schadensmesser und Belohnungen
 
-## Erklärung der Beispiele
+Der Ergebnisdialog zeigt die fünf Spieler mit dem höchsten Schaden, hebt die ersten drei hervor und zeigt immer die eigene Position des Empfängers. Ein Belohnungsobjekt kann feste `Drops` und zufällige `Pools` enthalten.
 
-Das Minimalbeispiel unten spawnt `ArenaBoss.json` an festen Koordinaten, macht ihn unfangbar und deaktiviert eine kurze Liste üblicher Kontroll-/Statuseffekte. Das ist für Eventbosse nützlich.
+```json
+"Rewards": {
+    "1": {
+        "Drops": [
+            { "ItemID": "Money", "Count": 50000 },
+            { "TechnologyPoints": 5 }
+        ]
+    },
+    "2": {
+        "Drops": [
+            { "EXP": { "Min": 10000, "Max": 20000 } }
+        ]
+    },
+    "Default": {
+        "Drops": [
+            { "ItemID": "Money", "Count": 1000, "Chance": 75 }
+        ]
+    }
+}
+```
 
-Das vollständige Beispiel zeigt die verfügbaren `DisableStatuses`-Werte. Kopiere nicht standardmäßig jeden Status; beginne nur mit den Werten, die für dein Event wichtig sind.
+Numerische Schlüssel sind Positionen des Schadensmessers. `Default` gilt für Positionen ohne eigene Rangbelohnung. Wenn `DisableDamageMeter` auf `true` steht, wird nur `Default` verwendet und jeder Online-Spieler erhält diese Belohnung.
 
-## Minimalbeispiel
+Für einfache Fortschrittsbelohnungen können `EXP`, `TechnologyPoints` oder `AncientTechnologyPoints` auch direkt in einem Rang-/Default-Objekt stehen; `Drops` ist sinnvoll, wenn sie mit Gegenständen und Eiern kombiniert werden.
+
+### Belohnungseinträge
+
+Jeder Eintrag muss genau einen Belohnungstyp definieren:
+
+| Belohnung | Pflichtfelder | Optionale Felder |
+| --- | --- | --- |
+| Gegenstand | `ItemID` | `Count` (Standard `1`) |
+| Pal-Ei | `EggID`, `PalTemplate` | `Count` (Standard `1`), `Level` (Template-Level bei `0`) |
+| Erfahrung | `EXP` | — |
+| Technologiepunkte | `TechnologyPoints` | — |
+| Antike Technologiepunkte | `AncientTechnologyPoints` | — |
+
+Mengen können als feste Ganzzahl oder `{ "Min": 1, "Max": 3 }` angegeben werden. Direkte `Drops` dürfen eine `Chance` von `0` bis `100` enthalten. Pool-Einträge nutzen `Weight` in gewichteten Modi, `Chance` bei `Independent` und können `Unique` überschreiben.
+
+### Loot-Pools
+
+| Pool-Schlüssel | Standard | Beschreibung |
+| --- | --- | --- |
+| `Name` | Leer | Optionale Bezeichnung für Diagnosemeldungen. |
+| `Mode` | `OneOf` | `OneOf`, `Pick`, `All` oder `Independent`. |
+| `Chance` | `100` | Wahrscheinlichkeit, dass der gesamte Pool aktiviert wird. |
+| `Rolls` | `1` | Anzahl der Auswahlen bei `Pick`. |
+| `Unique` | `true` | Verhindert doppelte Auswahlen bei `Pick`; ein Eintrag kann dies überschreiben. |
+| `Entries` | Erforderlich | Array der Belohnungseinträge. |
+
+- `OneOf` wählt anhand von `Weight` einen Eintrag aus.
+- `Pick` führt `Rolls` gewichtete Auswahlen durch.
+- `All` vergibt jeden Eintrag.
+- `Independent` würfelt die `Chance` jedes Eintrags separat.
+
+```json
+"Pools": [
+    {
+        "Name": "Rare drop",
+        "Mode": "OneOf",
+        "Chance": 25,
+        "Entries": [
+            { "ItemID": "AncientCivilizationParts", "Count": { "Min": 1, "Max": 3 }, "Weight": 4 },
+            { "EggID": "PalEgg_Dragon_05", "PalTemplate": "RaidReward.json", "Level": 50, "Weight": 1 }
+        ]
+    }
+]
+```
+
+## Vollständiges Beispiel
 
 ```json
 {
     "PalTemplate": "ArenaBoss.json",
-    "Uncapturable": true,
+    "BossBattleName": "Arena Anubis",
+    "Uncapturable": false,
+    "CapturableAtHealthPercent": 10,
+    "DisableAI": false,
+    "DisableDamageMeter": false,
+    "SpawnScale": 1.5,
+    "HealthMultiplier": 8.0,
+    "DamageTakenMultiplier": 0.75,
+    "DamageDealtMultiplier": 2.0,
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "DisableStatuses": [
-        "Poison",
-        "Burn",
-        "Freeze"
-    ]
+    "DisableStatuses": ["Poison", "Burn", "Freeze"],
+    "Rewards": {
+        "1": {
+            "Drops": [
+                { "ItemID": "Money", "Count": 50000 },
+                { "AncientTechnologyPoints": 3 }
+            ],
+            "Pools": [
+                {
+                    "Name": "Winner bonus",
+                    "Mode": "Pick",
+                    "Rolls": 2,
+                    "Unique": true,
+                    "Entries": [
+                        { "ItemID": "AncientCivilizationParts", "Count": { "Min": 1, "Max": 3 }, "Weight": 5 },
+                        { "EggID": "PalEgg_Dark_05", "PalTemplate": "RaidReward.json", "Level": { "Min": 45, "Max": 55 }, "Weight": 1 }
+                    ]
+                }
+            ]
+        },
+        "Default": {
+            "Drops": [
+                { "EXP": 5000 },
+                { "TechnologyPoints": 1 }
+            ]
+        }
+    }
 }
 ```
 
-## Beispiel
+## Validierungscheckliste
 
-Diese Datei muss hier gespeichert werden: `<...>/Pal/Binaries/Win64/PalDefender/Pals/Summons/ExamplePalSummon.json`
-(`ExamplePalSummon` kann ein beliebiger eindeutiger Name in diesem Ordner sein. Das ist später das Befehlsargument für `/summon`!)
-
-```json
-{
-    "PalTemplate": "ExamplePalTemplate.json",
-    "Uncapturable": true,
-    "X": 230,
-    "Y": -486,
-    "Z": 4097,
-    "DisableStatuses": [
-        "DrownCheck",
-        "Poison",
-        "Stun",
-        "Coma",
-        "Sleep",
-        "Overwork",
-        "Drown",
-        "FallDamage",
-        "LavaDamage",
-        "Burn",
-        "Wetness",
-        "Freeze",
-        "Electrical",
-        "Muddy",
-        "IvyCling",
-        "Darkness"
-    ]
-}
-```
+1. Teste das referenzierte Template zuerst mit `/givemepal_j <Template>`.
+2. Ermittle `X`, `Y` und `Z` mit `/getpos`; bei RCON muss `/getpos` eine UserId erhalten.
+3. Verwende gültiges JSON ohne Kommentare oder nachgestellte Kommas.
+4. Verwende pro Belohnungszeile nur einen Belohnungstyp.
+6. Führe `/summon <Dateiname>` aus und prüfe das PalDefender-Log auf genaue Validierungsfehler.

@@ -10,7 +10,7 @@
 
 ## Zweck
 
-Learns one, many, or all technologies for a player.
+Schaltet für einen Spieler eine, mehrere oder alle Technologien frei.
 
 ## Pfadparameter
 
@@ -22,11 +22,11 @@ Keine.
 
 ## Request-Body
 
-`Technology` can be a single [`TechID`](https://paldeck.cc/technology), the string `"All"`, or an array of [`TechID`](https://paldeck.cc/technology) strings. Do not put `"All"` inside an array.
+`Technology` kann eine einzelne [`TechID`](https://paldeck.cc/technology), die Zeichenfolge `"All"` oder ein Array aus [`TechID`](https://paldeck.cc/technology)-Zeichenfolgen sein. `"All"` darf nicht innerhalb eines Arrays stehen.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/learntech.md"
+--8<-- "_snippets/de/restapi/schemas/learntech.md"
 
 ## Fehlerantworten
 
@@ -49,12 +49,12 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `INVALID_REQUEST` | `Technology` is missing, or it is not a string/array in the expected format. |
-| `400` | `VALIDATION_FAILED` | The `Technology` array contains a non-string, `All`, or an invalid technology identifier. |
+| `400` | `INVALID_REQUEST` | `Technology` fehlt oder ist keine Zeichenfolge beziehungsweise kein Array im erwarteten Format. |
+| `400` | `VALIDATION_FAILED` | Das `Technology`-Array enthält einen Wert, der keine Zeichenfolge ist, `All` oder eine ungültige Technologiekennung. |
 
 ## Beispiele
 
-### Learn one technology for a Steam player
+### Eine Technologie für einen Steam-Spieler freischalten
 
 ```http
 POST /v1/pdapi/learntech/steam_76561198087654321
@@ -66,7 +66,7 @@ POST /v1/pdapi/learntech/steam_76561198087654321
 }
 ```
 
-### Learn several technologies for a PS5 player
+### Mehrere Technologien für einen PS5-Spieler freischalten
 
 ```http
 POST /v1/pdapi/learntech/ps5_0f4b8c2d91aa34ef
@@ -81,7 +81,7 @@ POST /v1/pdapi/learntech/ps5_0f4b8c2d91aa34ef
 }
 ```
 
-### Learn every technology by PlayerUID
+### Alle Technologien anhand der PlayerUID freischalten
 
 ```http
 POST /v1/pdapi/learntech/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
@@ -95,6 +95,6 @@ POST /v1/pdapi/learntech/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 
 ## Szenarien
 
-- Unlock a missing recipe for support.
-- Unlock all technologies for test accounts.
-- Validate technology IDs at [paldeck.cc/technology](https://paldeck.cc/technology) before sending the request.
+- Ein fehlendes Rezept im Rahmen einer Supportmaßnahme freischalten.
+- Alle Technologien für Testkonten freischalten.
+- Technologie-IDs vor dem Senden der Anfrage auf [paldeck.cc/technology](https://paldeck.cc/technology) prüfen.

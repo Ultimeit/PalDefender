@@ -1,7 +1,7 @@
 # 📁 Dateitypen
 
-**PalDefender** supports a range of custom file types that can be used to configure your server’s behavior and extend its features.
-Currently supported:
+**PalDefender** unterstützt verschiedene benutzerdefinierte Dateitypen, mit denen du das Serververhalten konfigurierst und Funktionen erweiterst.
+Derzeit unterstützt:
 * `Config.json`
 * `WhiteList.json`
 * `Banlist.json`
@@ -13,58 +13,58 @@ Currently supported:
 
 ---
 
-## ⚡ Quick Overview
+## ⚡ Schnellübersicht
 
 ### 🛠️ [Config.json](./Config.md)
 
-Controls server behavior, moderation, logging, and admin settings.
+Steuert Serververhalten, Moderation, Protokollierung und Administratoreinstellungen.
 
-* **Security:** Anti-cheat (warn, kick, ban, IP-ban), name/word filtering, SteamID protection, illegal stat/item checks.
-* **Logging:** Tracks chat, RCON, logins, deaths, summons, building activity, oilrig events.
-* **Admin:** IP whitelisting, auto-login, godmode/cheats, visibility of admin actions.
-* **Announcements:** MOTD, player deaths, summons, punishments, and loot events.
-* **Chat & Gameplay Limits:** Message length, cooldown bypass, PvP/PvE damage caps, tree cutting limit.
-* **Misc:** RCON base64 support, startup failure handling, optional Chinese command mode.
+* **Sicherheit:** Anti-Cheat (Warnung, Kick, Sperre, IP-Sperre), Namens-/Wortfilter, SteamID-Schutz und Prüfung unzulässiger Werte oder Gegenstände.
+* **Protokollierung:** Erfasst Chat, RCON, Anmeldungen, Tode, Beschwörungen, Bauaktivitäten und Oil-Rig-Ereignisse.
+* **Administration:** IP-Freigabeliste, automatische Anmeldung, Godmode/Cheats und Sichtbarkeit von Administratoraktionen.
+* **Ankündigungen:** MOTD, Spielertode, Beschwörungen, Strafen und Beuteereignisse.
+* **Chat- und Spiellimits:** Nachrichtenlänge, Umgehung von Abklingzeiten, PvP-/PvE-Schadensgrenzen und Baumfälllimit.
+* **Sonstiges:** Base64-Unterstützung für RCON, Behandlung von Startfehlern und optionaler chinesischer Befehlsmodus.
 
 ---
 
 ### 👥 `WhiteList.json`
 
-Defines who is allowed to join the server.
-Supports both **User IDs** and **IP addresses** (including masked ranges).
+Legt fest, wer dem Server beitreten darf.
+Unterstützt sowohl **Benutzer-IDs** als auch **IP-Adressen** einschließlich maskierter Bereiche.
 
 ---
 
 ### 🚫 `Banlist.json`
 
-Stores PalDefender ban records used by ban, unban, IP-ban, and REST punishment tools.
+Speichert PalDefender-Sperreinträge, die von Sperr-, Entsperr-, IP-Sperr- und REST-Sanktionswerkzeugen verwendet werden.
 
-* Prefer `/ban`, `/unban`, `/banip`, `/unbanip`, or the REST API instead of editing this file manually.
+* Verwende vorzugsweise `/ban`, `/unban`, `/banip`, `/unbanip` oder die REST-API, statt diese Datei manuell zu bearbeiten.
 * Wenn du sie manuell bearbeiten musst, stoppe zuerst den Server oder lade die Konfiguration nach der Aenderung neu.
 
 ---
 
 ### 🧬 [PalTemplate.json](./PalTemplate.md)
 
-Used for spawning or giving customized Pals via commands.
+Wird verwendet, um angepasste Pals über Befehle zu erzeugen oder zu vergeben.
 
-* Defines the Pal’s **ID, nickname, gender, stats (HP/SP/MP), hunger, sanity, shiny status, skills, IVs, passives**, and more.
+* Definiert **ID, Spitzname, Geschlecht, Werte (HP/SP/MP), Hunger, Verstand, Seltenheitsstatus, Skills, IVs, Passives** und weitere Eigenschaften des Pals.
 * Erlaubt vollständige Anpassung der **Kampf-, Nutz- und Arbeitswerte** eines Pals.
 
 ---
 
 ### 📍 [PalSummon.json](./PalSummon.md)
 
-Spawns a custom Pal at a specific location.
+Erzeugt einen angepassten Pal an einer bestimmten Position.
 
-* References a `PalTemplate`, sets **world position (X, Y, Z)**.
-* Configures flags such as **uncapturable** and disables specific **status effects** (e.g., poison, drowning, burn, etc.).
+* Verweist auf ein `PalTemplate` und setzt die **Weltposition (X, Y, Z)**.
+* Konfiguriert Merkmale wie **nicht fangbar** und deaktiviert bestimmte **Statuseffekte** (z. B. Gift, Ertrinken oder Verbrennung).
 
 ---
 
 ### 🧾 [Pals/ImportRules/*.json](./PalImportRules.md)
 
-Controls how custom Pal templates are accepted.
+Steuert, wie benutzerdefinierte Pal-Templates angenommen werden.
 
 * Setze globale Limits in `Pals/ImportRules/Default.json`.
 * Füge Pal-spezifische Überschreibungen mit Dateien wie `Pals/ImportRules/Anubis.json` hinzu.
@@ -73,9 +73,9 @@ Controls how custom Pal templates are accepted.
 
 ---
 
-### 🌐 REST API config files
+### 🌐 REST-API-Konfigurationsdateien
 
-REST API configuration lives in `RESTAPI/RESTConfig.json`, while bearer tokens live in `RESTAPI/Tokens/*.json`.
+Die REST-API-Konfiguration befindet sich in `RESTAPI/RESTConfig.json`; Bearer-Token liegen in `RESTAPI/Tokens/*.json`.
 
-* `RESTConfig.json` controls whether the API is enabled, the bind address, port, console logging, and CORS settings.
-* Each token file should contain a private token and permissions. Do not share token values publicly.
+* `RESTConfig.json` steuert, ob die API aktiviert ist, sowie Bind-Adresse, Port, Konsolenprotokollierung und CORS-Einstellungen.
+* Jede Token-Datei sollte ein privates Token und Berechtigungen enthalten. Veröffentliche Tokenwerte niemals.

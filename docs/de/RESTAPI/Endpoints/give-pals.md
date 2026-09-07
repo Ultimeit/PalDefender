@@ -26,7 +26,7 @@ JSON-Objekt mit `Pals`, einem Array von Pal-Vergaben. Jeder Eintrag benötigt ei
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/give-pals.md"
+--8<-- "_snippets/de/restapi/schemas/give-pals.md"
 
 ## Fehlerantworten
 
@@ -50,7 +50,7 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `INVALID_REQUEST` | Der Body enthält kein `Pals`-Array. |
-| `400` | `VALIDATION_FAILED` | One or more Pal grants are invalid, or the player has insufficient Pal storage space. |
+| `400` | `VALIDATION_FAILED` | Eine oder mehrere Pal-Vergaben sind ungültig oder der Spieler hat nicht genügend Pal-Speicherplatz. |
 
 ## Beispiele
 

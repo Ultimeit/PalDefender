@@ -30,7 +30,7 @@ use <https://paldeck.cc/creator> to create those files way easier!
 | `CraftSpeed`             | int    | Crafting speed multiplier.                                                          |
 | `PalSouls`               | object | Passive soul bonuses. Contains: `Health`, `Attack`, `Defense`, `CraftSpeed`. Recommended normal values are controlled by your import rules. |
 | `IVs`                    | object | Individual stat values. Contains: `Health`, `AttackMelee`, `AttackShot`, `Defense`. Recommended normal values are controlled by your import rules. |
-| `ActiveSkills`           | array  | List of currently equipped skills (Max 3). If more than 3 are provided, the extra entries are treated as learned skills. Search valid [skill IDs](https://paldeck.cc/skills) on Paldeck. |
+| `ActiveSkills`           | array  | List of equipped skills. PalDefender 1.9.0 does not truncate admin PalTemplates to three entries; every entry remains equipped. Search valid [skill IDs](https://paldeck.cc/skills) on Paldeck. Normal game/UI behavior may still assume the standard slot count. |
 | `LearntSkills`           | array  | Skills the Pal has learned and can swap to. Avoid putting active skills here. Search valid [skill IDs](https://paldeck.cc/skills) on Paldeck. |
 | `Passives`               | array  | Passive traits the Pal has. Normal Pals should use up to 4 passives. Search valid [`PassiveID`](https://paldeck.cc/passives) values on Paldeck. |
 | `ExtraWorkSuitabilities` | object | Boosted work types and levels (e.g., `"Mining": 2`). Available work types: `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`.  |
@@ -42,7 +42,7 @@ use <https://paldeck.cc/creator> to create those files way easier!
 2. Use a unique filename, for example `RaidRewardAnubis.json`. Commands can usually use `RaidRewardAnubis` or `RaidRewardAnubis.json`.
 3. Always include `PalID`. Everything else is optional, but missing values use PalDefender or Palworld defaults.
 4. Keep `Level` at `1` or higher and `PartnerSkillLevel` at `1` or higher.
-5. Put only the 3 equipped attacks in `ActiveSkills`; put extra known attacks in `LearntSkills`.
+5. Put equipped attacks in `ActiveSkills` and other known attacks in `LearntSkills`. PalDefender no longer moves extra active entries into learned skills.
 6. Use exact IDs for Pals, skills, passives, skins, and work types. Wrong IDs may fail to import or may be ignored.
 7. Validate JSON before uploading. JSON does not allow comments or trailing commas.
 8. If a template imports but values are changed or blocked, check the server's `Pals/ImportRules/Default.json` and any per-Pal override files.
@@ -52,7 +52,7 @@ use <https://paldeck.cc/creator> to create those files way easier!
 1. Decide what the template is for: a simple admin reward, an event boss, a testing Pal, or a spawn template for a summon.
 2. Pick the `PalID` at [paldeck.cc/pals](https://paldeck.cc/pals). The display name is not always the file ID, so copy the ID exactly.
 3. Add only the fields you want to control. A short template is easier to debug than a very large one.
-4. Choose skills from [paldeck.cc/skills](https://paldeck.cc/skills). Put the three equipped attacks in `ActiveSkills`; add extra known attacks to `LearntSkills`.
+4. Choose skills from [paldeck.cc/skills](https://paldeck.cc/skills). Put equipped attacks in `ActiveSkills`; add other known attacks to `LearntSkills`.
 5. Choose passives from [paldeck.cc/passives](https://paldeck.cc/passives). For normal usage, keep up to four passives unless your server intentionally allows more.
 6. Save the file in `Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
 7. Test with `/givemepal_j <filename>` first. After that, use the same template for `/givepal_j`, `/spawnpal_j`, `/giveegg_j`, the REST API, or `PalSummon.json`.

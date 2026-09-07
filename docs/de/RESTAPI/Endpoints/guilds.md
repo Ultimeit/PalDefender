@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/guilds.md"
+--8<-- "_snippets/de/restapi/schemas/guilds.md"
 
 ## Fehlerantworten
 
@@ -52,13 +52,13 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### List all guilds
+### Alle Gilden auflisten
 
 ```http
 GET /v1/pdapi/guilds
 ```
 
-### Refresh guild dashboard data
+### Daten eines Gilden-Dashboards aktualisieren
 
 ```http
 GET /v1/pdapi/guilds
@@ -66,6 +66,6 @@ GET /v1/pdapi/guilds
 
 ## Szenarien
 
-- Build a guild selector in an admin panel.
-- Find the `guild_id` for [GET /guild](guild.md).
-- Audit base counts, member counts, and guild ownership at a glance.
+- Eine Gildenauswahl in einem Adminbereich erstellen.
+- Die `guild_id` für [GET /guild](guild.md) ermitteln.
+- Basisanzahl, Mitgliederanzahl und Gildeneigentum auf einen Blick prüfen.

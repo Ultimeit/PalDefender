@@ -43,7 +43,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         /getrconcmds
         ```
 
-??? note "Server Management"
+??? note "Serververwaltung"
     ??? info "/version"
         **Syntax:** `/version`
 
@@ -196,7 +196,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Argumente:**
 
-        - `<hour>`: Hour value (0-23, day, night).
+        - `<hour>`: Stundenwert (`0`–`23`, `day`, `night`).
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -246,10 +246,10 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         **Argumente:**
 
         - `<type>`: Der Typ der zu sendenden Nachricht. Mögliche Werte:
-             - `msg`: Regular chat message.
-             - `log`: Regular log message (white, disappears quickly, larger font).
-             - `ilog`: Important log message (blue, stays longer).
-             - `vilog`: Very important log message (blue, stays extremely long).
+             - `msg`: Normale Chatnachricht.
+             - `log`: Normale Protokollnachricht (weiß, verschwindet schnell, größere Schrift).
+             - `ilog`: Wichtige Protokollnachricht (blau, bleibt länger sichtbar).
+             - `vilog`: Sehr wichtige Protokollnachricht (blau, bleibt besonders lange sichtbar).
         - `<UserId>`: Die ID des Spielers, der die Nachricht erhalten soll.
         - `<Message>`: Der zu sendende Nachrichtentext.
 
@@ -263,7 +263,79 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         /send vilog steam_76500000000000000 Dont miss out on Qonzer's sale!
         ```
 
-??? note "Base Management"
+    ??? info "/resetoilrig"
+        **Syntax:** `/resetoilrig <lv30|lv55|lv60|all>`
+
+        **Beschreibung:** Setzt die ausgewählte Oil Rig oder alle derzeit verwalteten Oil Rigs zurück.
+
+        **Berechtigungen:** `Chat`, aktiver Ingame-Administratorstatus.
+
+        **Beispiel:**
+        ```
+        /resetoilrig all
+        ```
+
+    ??? info "/setting"
+        **Syntax:** `/setting list [filter]` oder `/setting <setting_name> <get|set|add|sub> [value]`
+
+        **Beschreibung:** Zeigt unterstützte Live-Werte von `UPalGameSetting` an oder ändert sie. Namen werden ohne Beachtung der Groß-/Kleinschreibung verglichen; ein eindeutiges Präfix oder Teilstück wird akzeptiert. Die Funktion ist experimentell, ersetzt keine persistente Weltkonfiguration und Clients können weiterhin zwischengespeicherte Werte anzeigen.
+
+        - `list [filter]`: Listet unterstützte Integer-, Float-, Bool-, Byte- und Enum-Felder auf.
+        - `get`: Liest einen Wert.
+        - `set`: Setzt jeden unterstützten Typ. Bool-Werte akzeptieren `true/false`, `on/off`, `yes/no` oder `1/0`; Enums akzeptieren eine Zahl oder einen Eintragsnamen.
+        - `add` / `sub`: Ändert nur numerische Werte.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+        **Beispiele:**
+        ```
+        /setting list death
+        /setting PalDeathPenaltyTime get
+        /setting PalDeathPenaltyTime set 10
+        ```
+
+    ??? info "/resetbosstower"
+        **Syntax:** `/resetbosstower <BossType|all>`
+
+        **Beschreibung:** Nur im Debug-Build verfügbar. Setzt eine Boss-Turm-Instanz oder alle zurücksetzbaren Boss-Türme zurück. Ein einzelnes Ziel muss einen gültigen `EPalBossType`-Namen verwenden. In öffentlichen Release-Builds nicht verfügbar.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+        **Beispiel:**
+        ```
+        /resetbosstower all
+        ```
+
+    ??? info "/showbosses"
+        **Syntax:** `/showbosses`
+
+        **Beschreibung:** Nur im Debug-Build verfügbarer Data-Mining-Befehl, der aktuelle statische Boss-Informationen nach `PalDefender/Logs/BossInfo.json` schreibt. In öffentlichen Release-Builds nicht verfügbar.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+??? note "Basisverwaltung"
+    ??? info "/findunusedbases (Alias: /findbases)"
+        **Syntax:** `/findbases [empty|inactive|unused|all] [days=N] [builds<=N]`
+
+        **Interaktive Syntax:** `/findbases visit [filter]`, `/findbases next`, `/findbases kill [next]`
+
+        **Beschreibung:** Sucht nach leeren, inaktiven oder anderweitig ungenutzten Basen. `visit` erstellt eine nur im Chat verfügbare Prüfliste und teleportiert zum ersten Ergebnis; `next` geht weiter; `kill` zerstört die ausgewählte Basis; `kill next` zerstört sie und geht weiter. Die Zerstörung ist nicht umkehrbar — prüfe jedes Ziel zuerst.
+
+        - `empty`: Keine Arbeiter und höchstens das Standard-Gebäudelimit (oder `builds<=N`).
+        - `inactive`: Keine Online-Gildenmitglieder und mindestens `days` Tage inaktiv (Standard `30`).
+        - `unused`: Entspricht leer oder inaktiv.
+        - `all`: Listet alle Basen auf und berücksichtigt weiterhin explizite Filter.
+
+        **Berechtigungen:** Die Auflistung unterstützt `Chat` und `RCON`; visit/next/kill benötigen Ingame-Chat und Administratorberechtigung.
+
+        **Beispiele:**
+        ```
+        /findbases empty builds<=5
+        /findbases inactive days=14
+        /findbases visit unused days=30
+        /findbases kill next
+        ```
+
     ??? info "/getnearestbase"
         **Syntax:** `/getnearestbase [X] [Y] [Z]`
 
@@ -325,7 +397,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ```
 
 
-??? note "Player Management"
+??? note "Spielerverwaltung"
     ??? info "/kick"
         **Syntax:** `/kick <UserId> [Reason="Kicked by Admin."]`
 
@@ -522,10 +594,10 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         /spectate
         ```
 
-??? note "Player Character"
+??? note "Spielercharakter"
     ??? info "/tp"
         **Syntax:**
-        Any of the following works:
+        Folgende Varianten funktionieren:
 
         - `/tp <UserId>`
         - `/tp <UserId1> <UserId2>`
@@ -541,16 +613,16 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Beschreibung:** Teleportiert dich oder einen angegebenen Spieler zu einem anderen Spieler, Koordinaten, der nächsten eigenen Basis oder einem Ölturm-Ziel.
 
-        **Note:** RCON must include the player being teleported because RCON has no in-game character.
+        **Hinweis:** Bei RCON muss der zu teleportierende Spieler angegeben werden, da RCON keinen Charakter im Spiel besitzt.
 
         **Argumente:**
 
-        - `<UserId>`: A player to teleport to, or the player being teleported when more arguments are supplied.
+        - `<UserId>`: Der Spieler, zu dem teleportiert wird, oder bei weiteren Argumenten der Spieler, der teleportiert werden soll.
         - `<UserId1>`: Der Spieler, der teleportiert wird.
         - `<UserId2>`: Der Zielspieler.
         - `<X> <Y> [Z]`: Kartenkoordinaten. Wenn `Z` weggelassen wird, versucht PalDefender eine nutzbare Bodenhöhe zu finden.
-        - `home`: Teleports to the nearest owned base.
-        - `oilrig`, `oilrig:Lv30`, `oilrig:Lv55`, `oilrig:Lv60`: Teleports to an oilrig destination.
+        - `home`: Teleportiert zur nächsten eigenen Basis.
+        - `oilrig`, `oilrig:Lv30`, `oilrig:Lv55`, `oilrig:Lv60`: Teleportiert zu einem Oil-Rig-Ziel.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -569,7 +641,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         **Argumente:**
 
         - `<UserId>`: Die ID des Spielers.
-        - `<Amount>`: Amount of experience points.
+        - `<Amount>`: Anzahl der Erfahrungspunkte.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -585,7 +657,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Argumente:**
 
-        - `<Amount>`: Amount of experience points.
+        - `<Amount>`: Anzahl der Erfahrungspunkte.
 
         **Berechtigungen:** `Chat`, `Admin`
 
@@ -664,7 +736,19 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         /godmode off
         ```
 
-??? note "Guild Management"
+    ??? info "/admingun (Alias: /agun)"
+        **Syntax:** `/admingun`
+
+        **Beschreibung:** Gibt einem aktiven Ingame-Administrator eine geschützte Admin-Waffe. Sie tötet Charaktere sofort, zerstört Kartenobjekte, maximiert Vegetationsschaden, besitzt unbegrenzte Munition/Haltbarkeit und kann nicht abgelegt, verkauft oder in externe Container verschoben werden. Beim Zerstören eines Lagerobjekts löscht Ducken dessen Inhalt; im Stehen bleibt er erhalten. Die Waffe wird bei Tod, Logout oder Admin-Logout entfernt; eine erneute Anforderung ersetzt die vorhandene Kopie.
+
+        **Berechtigungen:** `Chat`, aktiver Ingame-Administratorstatus. `allowAdminCheats` ist nicht erforderlich.
+
+        **Beispiel:**
+        ```
+        /agun
+        ```
+
+??? note "Gildenverwaltung"
     ??? info "/setguildleader"
         **Syntax:** `/setguildleader <UserId>`
 
@@ -699,7 +783,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         Beispiel-Ausgabedatei: `Pal/Binaries/Win64/PalDefender/guildexport.json`
 
 
-??? note "Items"
+??? note "Gegenstände"
     ??? info "/give"
         **Syntax:** `/give <UserId> <ItemId> [Amount=1]`
 
@@ -726,7 +810,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         **Argumente:**
 
         - `<UserId>`: Die ID des Spielers, der die Items erhalten soll.
-        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+        - `<ItemId>[:<Amount>] ...`: Liste der Gegenstände und optionalen Mengen.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -821,7 +905,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         **Argumente:**
 
         - `<UserId>`: Die ID des Spielers.
-        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+        - `<ItemId>[:<Amount>] ...`: Liste der Gegenstände und optionalen Mengen.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -859,7 +943,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         - `<UserId>`: Die ID des Spielers.
         - `<PalId>`: Der zu gebende Pal.
-            - **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
+            - **Hinweis:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
         - `[Level]`: (Optional) Level des Pals. Standard: 1.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
@@ -874,7 +958,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Beschreibung:** Gibt einem Spieler einen Pal aus einer PalTemplate-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
 
-        **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
+        **Hinweis:** Die Dateiendung `.json` muss nicht angegeben werden; das System ergänzt sie automatisch, falls sie fehlt.
 
         **Argumente:**
 
@@ -896,7 +980,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         **Argumente:**
 
         - `<PalId>`: Der Pal, den du dir selbst gibst.
-            - **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
+            - **Hinweis:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
         - `[Level]`: (Optional) Level des Pals. Standard: 1.
 
         **Berechtigungen:** `Chat`, `Admin`
@@ -924,7 +1008,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
     ??? info "/spawnpal"
         **Syntax:**
-        Any of the following works:
+        Folgende Varianten funktionieren:
 
         - `/spawnpal <PalID>`
         - `/spawnpal <PalID> [Level]`
@@ -933,7 +1017,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Beschreibung:** Spawnt einen Pal relativ oder absolut zu dir. **RCON muss x, y und z angeben!**
 
-        **Note:** All stats, except level, are randomized.
+        **Hinweis:** Alle Werte außer der Stufe werden zufällig bestimmt.
 
         **Argumente:**
         - `<PalID>`: Der zu spawnende Pal.
@@ -948,19 +1032,31 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ```
         /spawnpal Anubis 255
         ```
-        _Spawns an Anubis with level 255!_
+        _Erzeugt einen Anubis auf Stufe 255!_
+
+    ??? info "/spawnnpc"
+        **Syntax:** `/spawnnpc <NPCID|CharacterID> [Level=1]` oder `/spawnnpc <NPCID|CharacterID> <X> <Y> [Z] [Level=1]`
+
+        **Beschreibung:** Spawnt einen NPC mit KI. Im Chat wird bei fehlenden Koordinaten nahe beim Administrator gespawnt; RCON muss Koordinaten angeben. Werden nur `X` und `Y` angegeben, ermittelt PalDefender die Bodenhöhe.
+
+        **Berechtigungen:** `Chat`, `RCON`, `Admin`
+
+        **Beispiel:**
+        ```
+        /spawnnpc PIDF_Soldier_AssaultRifle 30
+        ```
 
     ??? info "/spawnpal_j"
         **Syntax:**
 
-        Any of the following works:
+        Folgende Varianten funktionieren:
 
         - `/spawnpal_j <PalTemplate>`
-        - `/spawnpal <PalTemplate> [x] [y] [z]`
+        - `/spawnpal_j <PalTemplate> [x] [y] [z]`
 
         **Beschreibung:** Spawnt einen Pal relativ oder absolut zu dir. **RCON muss x, y und z angeben!**
 
-        **Note:** All stats, except level, are randomized.
+        **Hinweis:** Alle Werte außer der Stufe werden zufällig bestimmt.
 
         **Argumente:**
 
@@ -973,16 +1069,15 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Beispiel:**
         ```
-        /spawnpal Anubis 255
+        /spawnpal_j ArenaBoss 230 -486 4097
         ```
-        _Spawns an Anubis with level 255!_
 
     ??? info "/summon"
         **Syntax:** `/summon <PalSummon>`
 
         **Beschreibung:** Spawnt einen Pal anhand der angegebenen PalSummon-Datei.
 
-        **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
+        **Hinweis:** Die Dateiendung `.json` muss nicht angegeben werden; das System ergänzt sie automatisch, falls sie fehlt.
 
         **Argumente:**
         - `<PalSummon>`: Der Name der zu verwendenden PalSummon-Datei.
@@ -1007,7 +1102,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<EggId\>"
             **Beschreibung:** Der Typ des zu gebenden Eis.
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **Hinweis:** Für jeden Typ sind Werte von 01 (kleinstes Ei) bis 05 (größtes Ei) zulässig:
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1022,7 +1117,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<PalId\>"
             **Beschreibung:** Der Pal, der im Ei enthalten sein wird.
 
-            **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Hinweis:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level\]"
             **Beschreibung:** (Optional) Das Level des Pals im Ei.
@@ -1045,7 +1140,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<EggId\>"
             **Beschreibung:** Der Typ des Eis, das du dir selbst gibst.
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **Hinweis:** Für jeden Typ sind Werte von 01 (kleinstes Ei) bis 05 (größtes Ei) zulässig:
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1060,7 +1155,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<PalId\>"
             **Beschreibung:** Der Pal, der im Ei enthalten sein wird.
 
-            **Note:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
+            **Hinweis:** Nutze die Pal-ID, z. B. `WeaselDragon` (Chillet). Die vollständige Liste findest du auf [paldeck.cc/pals](https://paldeck.cc/pals).
 
         ??? quote "[Level]"
             **Beschreibung:** (Optional) Das Level des Pals im Ei.
@@ -1082,7 +1177,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<EggId\>"
             **Beschreibung:** Der Typ des zu gebenden Eis.
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **Hinweis:** Für jeden Typ sind Werte von 01 (kleinstes Ei) bis 05 (größtes Ei) zulässig:
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1119,7 +1214,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<EggI\>"
             **Beschreibung:** Der Typ des Eis, das du dir selbst gibst.
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **Hinweis:** Für jeden Typ sind Werte von 01 (kleinstes Ei) bis 05 (größtes Ei) zulässig:
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1207,18 +1302,18 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ??? quote "<PalFilter\>"
             **Beschreibung:** Eine Gruppe von Filter-Schlüsselwörtern zur Auswahl der zu löschenden Pals.
 
-            **Note:** Multiple keywords can be combined in one command.
+            **Hinweis:** Mehrere Schlüsselwörter können in einem Befehl kombiniert werden.
 
-            Available filter keywords:
+        Verfügbare Filterschlüsselwörter:
 
             - `ID`: PalID or list of PalIDs (comma-separated)
-            - `Nick`: String (name of the Pal)
+            - `Nick`: Zeichenfolge (Name des Pals)
             - `Gender`: `male` or `female`
-            - `Level`: Number, supports symbols `<`, `>`, `<=`, `>=`, `=`, `!=`
-            - `Rank`: Number, supports symbols `<`, `>`, `<=`, `>=`, `=`, `!=`
+            - `Level`: Zahl; unterstützt `<`, `>`, `<=`, `>=`, `=`, `!=`
+            - `Rank`: Zahl; unterstützt `<`, `>`, `<=`, `>=`, `=`, `!=`
             - `Lucky`: `true` or `false` (shiny)
             - `Passives`: PassiveSkill or list of PassiveSkills (comma-separated)
-            - `Limit`: Number (max number of Pals to delete)
+            - `Limit`: Zahl (maximale Anzahl zu löschender Pals)
 
             **Beispielfilter:**
 
@@ -1226,7 +1321,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/master/Wiki/Commands/deletepals.md).
+            Die Filter-Schlüssel und Beispiele oben bilden die aktuelle PalFilter-Referenz.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -1238,7 +1333,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ```
 
 
-??? note "Research Tree"
+??? note "Forschungsbaum"
     ??? info "/learntech"
         **Syntax:** `/learntech <UserId> <TechID>`
 
@@ -1342,7 +1437,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
         ```
 
 
-??? note "Data mining"
+??? note "Datenanalyse"
     ??? info "/gettechids"
         **Syntax:** `/gettechids`
 

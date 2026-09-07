@@ -43,7 +43,7 @@
         /getrconcmds
         ```
 
-??? note "Server Management"
+??? note "服务器管理"
     ??? info "/version"
         **语法:** `/version`
 
@@ -196,7 +196,7 @@
 
         **参数:**
 
-        - `<hour>`: Hour value (0-23, day, night).
+        - `<hour>`: 小时值（`0`–`23`、`day`、`night`）。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -246,10 +246,10 @@
         **参数:**
 
         - `<type>`: 要发送的消息类型。可选值：
-             - `msg`: Regular chat message.
-             - `log`: Regular log message (white, disappears quickly, larger font).
-             - `ilog`: Important log message (blue, stays longer).
-             - `vilog`: Very important log message (blue, stays extremely long).
+             - `msg`: 普通聊天消息。
+             - `log`: 普通日志消息（白色、很快消失、较大字体）。
+             - `ilog`: 重要日志消息（蓝色、显示时间较长）。
+             - `vilog`: 非常重要的日志消息（蓝色、显示时间极长）。
         - `<UserId>`: 接收消息的玩家 ID。
         - `<Message>`: 要发送的消息文本。
 
@@ -263,13 +263,84 @@
         /send vilog steam_76500000000000000 Dont miss out on Qonzer's sale!
         ```
 
-??? note "Base Management"
+    ??? info "/resetoilrig"
+        **语法:** `/resetoilrig <lv30|lv55|lv60|all>`
+
+        **描述:** 重置指定的 Oil Rig，或重置当前管理的全部 Oil Rig。
+
+        **权限:** `Chat`，且必须处于游戏内管理员状态。
+
+        **示例:**
+        ```
+        /resetoilrig all
+        ```
+
+    ??? info "/setting"
+        **语法:** `/setting list [filter]` 或 `/setting <setting_name> <get|set|add|sub> [value]`
+
+        **描述:** 检查或修改受支持的实时 `UPalGameSetting` 值。名称匹配不区分大小写，并接受唯一的前缀或子字符串。此功能仍处于实验阶段，不能替代持久化的世界配置，而且客户端可能继续显示缓存值。
+
+        - `list [filter]`: 列出受支持的整数、浮点数、布尔值、字节和枚举字段。
+        - `get`: 读取数值。
+        - `set`: 设置任意受支持的类型。布尔值接受 `true/false`、`on/off`、`yes/no` 或 `1/0`；枚举接受数字或条目名称。
+        - `add` / `sub`: 仅修改数值类型。
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+        **示例:**
+        ```
+        /setting list death
+        /setting PalDeathPenaltyTime get
+        /setting PalDeathPenaltyTime set 10
+        ```
+
+    ??? info "/resetbosstower"
+        **语法:** `/resetbosstower <BossType|all>`
+
+        **描述:** 仅限调试构建的命令，用于重置一个 Boss Tower 实例或所有可重置的 Boss Tower。指定单个目标时必须使用有效的 `EPalBossType` 名称。此命令不包含在公开的 Release 构建中。
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+        **示例:**
+        ```
+        /resetbosstower all
+        ```
+
+    ??? info "/showbosses"
+        **语法:** `/showbosses`
+
+        **描述:** 仅限调试构建的数据挖掘命令，将当前 Boss 静态信息写入 `PalDefender/Logs/BossInfo.json`。此命令不包含在公开的 Release 构建中。
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+??? note "基地管理"
+    ??? info "/findunusedbases (别名: /findbases)"
+        **语法:** `/findbases [empty|inactive|unused|all] [days=N] [builds<=N]`
+
+        **交互语法:** `/findbases visit [filters]`、`/findbases next`、`/findbases kill [next]`
+
+        **描述:** 扫描空置、不活跃或其他未使用的基地。`visit` 创建一个仅聊天可用的审核队列并传送到第一个结果；`next` 前往下一个；`kill` 摧毁选中的基地；`kill next` 摧毁后继续前往下一个。摧毁操作不可逆，因此请先检查每个目标。
+
+        - `empty`: 没有工作帕鲁，且建筑数量不超过默认上限（或 `builds<=N`）。
+        - `inactive`: 没有在线公会成员，且不活跃时间至少达到 `days`（默认 `30` 天）。
+        - `unused`: 符合空置或不活跃条件。
+        - `all`: 列出所有基地，同时仍应用明确指定的筛选条件。
+
+        **权限:** 列表查询支持 `Chat` 和 `RCON`；visit/next/kill 需要游戏内聊天和管理员权限。
+
+        **示例:**
+        ```
+        /findbases empty builds<=5
+        /findbases inactive days=14
+        /findbases visit unused days=30
+        /findbases kill next
+        ```
     ??? info "/getnearestbase"
         **语法:** `/getnearestbase [X] [Y] [Z]`
 
         **描述:** 显示离你角色最近的基地所属公会名称。
 
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **注意:** 通过 **RCON** 执行时必须提供全部位置参数（`[X]`、`[Y]`、`[Z]`），因为 RCON 没有可用于确定位置的玩家角色。
 
         **参数:**
 
@@ -289,7 +360,7 @@
 
         **描述:** 将你传送到当前位置附近最近的基地。
 
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **注意:** 通过 **RCON** 执行时必须提供全部位置参数（`[X]`、`[Y]`、`[Z]`），因为 RCON 没有可用于确定位置的玩家角色。
 
         **参数:**
 
@@ -309,7 +380,7 @@
 
         **描述:** 摧毁最近的基地（**请谨慎使用！**）。
 
-        **Note:** When executed via **RCON**, all location parameters (`[X]` `[Y]` `[Z]`) **are required**, since RCON has no player character to determine the location.
+        **注意:** 通过 **RCON** 执行时必须提供全部位置参数（`[X]`、`[Y]`、`[Z]`），因为 RCON 没有可用于确定位置的玩家角色。
 
         **参数:**
 
@@ -325,7 +396,7 @@
         ```
 
 
-??? note "Player Management"
+??? note "玩家管理"
     ??? info "/kick"
         **语法:** `/kick <UserId> [Reason="Kicked by Admin."]`
 
@@ -522,10 +593,10 @@
         /spectate
         ```
 
-??? note "Player Character"
+??? note "玩家角色"
     ??? info "/tp"
         **语法:**
-        Any of the following works:
+        以下任一格式均可：
 
         - `/tp <UserId>`
         - `/tp <UserId1> <UserId2>`
@@ -541,16 +612,16 @@
 
         **描述:** 将你自己或指定玩家传送到另一名玩家、坐标、最近的己方基地或油田目标位置。
 
-        **Note:** RCON must include the player being teleported because RCON has no in-game character.
+        **注意:** 使用 RCON 时必须指定要传送的玩家，因为 RCON 没有游戏内角色。
 
         **参数:**
 
-        - `<UserId>`: A player to teleport to, or the player being teleported when more arguments are supplied.
+        - `<UserId>`: 要传送到其身边的玩家；提供更多参数时，则表示要被传送的玩家。
         - `<UserId1>`: 要传送的玩家。
         - `<UserId2>`: 目标玩家。
         - `<X> <Y> [Z]`: 地图坐标。如果省略 `Z`，PalDefender 会尝试寻找可用的地面高度。
-        - `home`: Teleports to the nearest owned base.
-        - `oilrig`, `oilrig:Lv30`, `oilrig:Lv55`, `oilrig:Lv60`: Teleports to an oilrig destination.
+        - `home`: 传送到最近的自有基地。
+        - `oilrig`、`oilrig:Lv30`、`oilrig:Lv55`、`oilrig:Lv60`: 传送到对应的 Oil Rig 目的地。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -569,7 +640,7 @@
         **参数:**
 
         - `<UserId>`: 玩家的 ID。
-        - `<Amount>`: Amount of experience points.
+        - `<Amount>`: 经验值数量。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -585,7 +656,7 @@
 
         **参数:**
 
-        - `<Amount>`: Amount of experience points.
+        - `<Amount>`: 经验值数量。
 
         **权限:** `Chat`, `Admin`
 
@@ -664,7 +735,19 @@
         /godmode off
         ```
 
-??? note "Guild Management"
+    ??? info "/admingun (别名: /agun)"
+        **语法:** `/admingun`
+
+        **描述:** 为当前游戏内管理员提供一把受保护的 Admin Gun。它可以立即击杀角色、摧毁地图物体、最大化植被伤害，拥有无限弹药和耐久度，并且不能丢弃、出售或移动到外部容器。蹲下摧毁储物对象时会删除其中内容；保持站立即可保留内容。该武器会在死亡、退出游戏或退出管理员状态时移除，再次领取会替换已有副本。
+
+        **权限:** `Chat`，且必须处于游戏内管理员状态。不要求启用 `allowAdminCheats`。
+
+        **示例:**
+        ```
+        /agun
+        ```
+
+??? note "公会管理"
     ??? info "/setguildleader"
         **语法:** `/setguildleader <UserId>`
 
@@ -699,7 +782,7 @@
         示例输出文件： `Pal/Binaries/Win64/PalDefender/guildexport.json`
 
 
-??? note "Items"
+??? note "物品"
     ??? info "/give"
         **语法:** `/give <UserId> <ItemId> [Amount=1]`
 
@@ -726,7 +809,7 @@
         **参数:**
 
         - `<UserId>`: 接收物品的玩家 ID。
-        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+        - `<ItemId>[:<Amount>] ...`: 物品及其可选数量列表。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -821,7 +904,7 @@
         **参数:**
 
         - `<UserId>`: 玩家的 ID。
-        - `<ItemId>[:<Amount>] ...`: List of items and optional amounts.
+        - `<ItemId>[:<Amount>] ...`: 物品及其可选数量列表。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -849,7 +932,7 @@
         ```
 
 
-??? note "Pals"
+??? note "帕鲁"
     ??? info "/givepal"
         **语法:** `/givepal <UserId> <PalId> [Level=1]`
 
@@ -859,7 +942,7 @@
 
         - `<UserId>`: 玩家的 ID。
         - `<PalId>`: 要给予的帕鲁。
-            - **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
+            - **注意:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
         - `[Level]`: （可选）Pal 等级。默认：1。
 
         **权限:** `Chat`, `RCON`, `Admin`
@@ -874,7 +957,7 @@
 
         **描述:** 给玩家一只由 PalTemplate 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
 
-        **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
+        **注意:** 文件名不必包含 `.json` 扩展名；缺少时系统会自动添加。
 
         **参数:**
 
@@ -896,7 +979,7 @@
         **参数:**
 
         - `<PalId>`: 要给自己的帕鲁。
-            - **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
+            - **注意:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
         - `[Level]`: （可选）Pal 等级。默认：1。
 
         **权限:** `Chat`, `Admin`
@@ -924,7 +1007,7 @@
 
     ??? info "/spawnpal"
         **语法:**
-        Any of the following works:
+        以下任一格式均可：
 
         - `/spawnpal <PalID>`
         - `/spawnpal <PalID> [Level]`
@@ -933,7 +1016,7 @@
 
         **描述:** 按相对或绝对坐标生成一只帕鲁。**RCON 必须指定 x、y 和 z！**
 
-        **Note:** All stats, except level, are randomized.
+        **注意:** 除等级外，所有属性均随机生成。
 
         **参数:**
         - `<PalID>`: 要生成的帕鲁。
@@ -948,19 +1031,31 @@
         ```
         /spawnpal Anubis 255
         ```
-        _Spawns an Anubis with level 255!_
+        _生成一只 255 级的阿努比斯！_
+
+    ??? info "/spawnnpc"
+        **语法:** `/spawnnpc <NPCID|CharacterID> [Level=1]` 或 `/spawnnpc <NPCID|CharacterID> <X> <Y> [Z] [Level=1]`
+
+        **描述:** 生成一个带 AI 的 NPC。在聊天中省略坐标时，会在管理员附近生成；RCON 必须提供坐标。仅提供 `X` 和 `Y` 时，PalDefender 会自动查找地面高度。
+
+        **权限:** `Chat`, `RCON`, `Admin`
+
+        **示例:**
+        ```
+        /spawnnpc PIDF_Soldier_AssaultRifle 30
+        ```
 
     ??? info "/spawnpal_j"
         **语法:**
 
-        Any of the following works:
+        以下任一格式均可：
 
         - `/spawnpal_j <PalTemplate>`
-        - `/spawnpal <PalTemplate> [x] [y] [z]`
+        - `/spawnpal_j <PalTemplate> [x] [y] [z]`
 
         **描述:** 按相对或绝对坐标生成一只帕鲁。**RCON 必须指定 x、y 和 z！**
 
-        **Note:** All stats, except level, are randomized.
+        **注意:** 除等级外，所有属性均随机生成。
 
         **参数:**
 
@@ -973,16 +1068,15 @@
 
         **示例:**
         ```
-        /spawnpal Anubis 255
+        /spawnpal_j ArenaBoss 230 -486 4097
         ```
-        _Spawns an Anubis with level 255!_
 
     ??? info "/summon"
         **语法:** `/summon <PalSummon>`
 
         **描述:** 使用指定的 PalSummon 文件生成帕鲁。
 
-        **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
+        **注意:** 文件名不必包含 `.json` 扩展名；缺少时系统会自动添加。
 
         **参数:**
         - `<PalSummon>`: 要使用的 PalSummon 文件名。
@@ -1007,7 +1101,7 @@
         ??? quote "<EggId\>"
             **描述:** 要给予的蛋类型。
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **注意:** 每种类型允许使用 01（最小）到 05（最大）的值：
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1022,7 +1116,7 @@
         ??? quote "<PalId\>"
             **描述:** 蛋中包含的帕鲁。
 
-            **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
+            **注意:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
 
         ??? quote "[Level\]"
             **描述:** （可选）蛋中帕鲁的等级。
@@ -1045,7 +1139,7 @@
         ??? quote "<EggId\>"
             **描述:** 要给自己的蛋类型。
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **注意:** 每种类型允许使用 01（最小）到 05（最大）的值：
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1060,7 +1154,7 @@
         ??? quote "<PalId\>"
             **描述:** 蛋中包含的帕鲁。
 
-            **Note:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
+            **注意:** 使用 Pal ID，例如 `WeaselDragon`（Chillet）。完整列表见 [paldeck.cc/pals](https://paldeck.cc/pals)。
 
         ??? quote "[Level]"
             **描述:** （可选）蛋中帕鲁的等级。
@@ -1082,7 +1176,7 @@
         ??? quote "<EggId\>"
             **描述:** 要给予的蛋类型。
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **注意:** 每种类型允许使用 01（最小）到 05（最大）的值：
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1119,7 +1213,7 @@
         ??? quote "<EggI\>"
             **描述:** 要给自己的蛋类型。
 
-            **Note:** Allowed values are from 01 (smallest) to 05 (largest) for each type:
+            **注意:** 每种类型允许使用 01（最小）到 05（最大）的值：
 
             - `PalEgg_Dark_01`–`PalEgg_Dark_05`
             - `PalEgg_Dragon_01`–`PalEgg_Dragon_05`
@@ -1207,18 +1301,18 @@
         ??? quote "<PalFilter\>"
             **描述:** 用于选择要删除哪些帕鲁的一组过滤关键字。
 
-            **Note:** Multiple keywords can be combined in one command.
+            **注意:** 一条命令中可以组合多个关键字。
 
-            Available filter keywords:
+        可用的筛选关键字：
 
             - `ID`: PalID or list of PalIDs (comma-separated)
-            - `Nick`: String (name of the Pal)
+            - `Nick`: 字符串（帕鲁名称）
             - `Gender`: `male` or `female`
-            - `Level`: Number, supports symbols `<`, `>`, `<=`, `>=`, `=`, `!=`
-            - `Rank`: Number, supports symbols `<`, `>`, `<=`, `>=`, `=`, `!=`
+            - `Level`: 数字，支持 `<`、`>`、`<=`、`>=`、`=`、`!=`
+            - `Rank`: 数字，支持 `<`、`>`、`<=`、`>=`、`=`、`!=`
             - `Lucky`: `true` or `false` (shiny)
             - `Passives`: PassiveSkill or list of PassiveSkills (comma-separated)
-            - `Limit`: Number (max number of Pals to delete)
+            - `Limit`: 数字（最多删除的帕鲁数量）
 
             **示例过滤器：**
 
@@ -1226,7 +1320,7 @@
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/master/Wiki/Commands/deletepals.md).
+            上述筛选键和示例即为当前的 PalFilter 参考。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -1238,7 +1332,7 @@
         ```
 
 
-??? note "Research Tree"
+??? note "科技树"
     ??? info "/learntech"
         **语法:** `/learntech <UserId> <TechID>`
 
@@ -1342,7 +1436,7 @@
         ```
 
 
-??? note "Data mining"
+??? note "数据挖掘"
     ??? info "/gettechids"
         **语法:** `/gettechids`
 

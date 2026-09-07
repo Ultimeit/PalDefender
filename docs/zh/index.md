@@ -20,7 +20,7 @@
           hosted_button_id: '6NVHHB52DSUZA',
           image: {
             src: 'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
-            alt: 'Donate with PayPal button',
+            alt: '使用 PayPal 捐赠',
             title: 'PayPal - 更安全、更简单的在线支付方式！'
           }
         }).render('#donate-button');
@@ -35,7 +35,7 @@
 ## 前言
 如果你能为 Wiki 做贡献或指出错误，我们会非常感谢，这样 Wiki 就能逐步完善。
 
-代码为闭源，目前没有公开源码的计划。
+PalDefender 源代码已在 [pal_anticheat 仓库](https://github.com/Ultimeit/pal_anticheat)公开。欢迎贡献代码和提交问题报告。
 
 ---
 
@@ -69,4 +69,4 @@ PalDefender 实现了全面的服务端验证，用于防止大量已知以及�
 
 > *我们感谢 <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a> 为 Palworld 付出的出色工作。生动的世界、与 Pals 的动态互动以及富有创意的设计，都展现了团队的投入与热情。作为社区的一员，我们也在通过开发 PalServer 插件来支持 Palworld，以增强安全性并防护潜在漏洞。*
 <br><br>
-*We will continue striving to provide the highest level of security and protection for your Palworld server. Your feedback is invaluable, and we truly appreciate it.*
+*我们会继续努力，为你的 Palworld 服务器提供最高水平的安全与保护。你的反馈非常宝贵，我们由衷感谢。*

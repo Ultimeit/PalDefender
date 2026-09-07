@@ -26,7 +26,7 @@ JSON-Objekt mit `SendType`, `Message` und entweder `UserID` oder `UserIDs`. Gän
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/send-player-message.md"
+--8<-- "_snippets/de/restapi/schemas/send-player-message.md"
 
 ## Fehlerantworten
 
@@ -50,7 +50,7 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Der Request-Body ist kein gültiges JSON. |
 | `400` | `VALIDATION_FAILED` | `SendType`, `Message`, `UserID` oder `UserIDs` fehlt, ist leer, doppelt vorhanden oder hat den falschen Typ. |
 | `400` | `PLAYER_NOT_FOUND` | One or more target user IDs or player UIDs could not be found. |
-| `400` | `SEND_MESSAGE_FAILED` | Validation passed, but the server rejected the message send operation. |
+| `400` | `SEND_MESSAGE_FAILED` | Die Validierung war erfolgreich, aber der Server lehnte das Senden der Nachricht ab. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 

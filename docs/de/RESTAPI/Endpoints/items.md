@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/items.md"
+--8<-- "_snippets/de/restapi/schemas/items.md"
 
 ## Fehlerantworten
 
@@ -52,13 +52,13 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### Read inventory for a Steam player
+### Inventar eines Steam-Spielers lesen
 
 ```http
 GET /v1/pdapi/items/steam_76561198087654321
 ```
 
-### Read inventory for a GDK player
+### Inventar eines GDK-Spielers lesen
 
 ```http
 GET /v1/pdapi/items/gdk_2533274812345678
@@ -66,6 +66,6 @@ GET /v1/pdapi/items/gdk_2533274812345678
 
 ## Szenarien
 
-- Check inventory before giving compensation.
-- Confirm an [`ItemID`](https://paldeck.cc/items) before using [POST /give/items](give-items.md).
-- Troubleshoot reports about missing items.
+- Das Inventar vor einer Entschädigung prüfen.
+- Eine [`ItemID`](https://paldeck.cc/items) vor der Verwendung von [POST /give/items](give-items.md) bestätigen.
+- Meldungen über fehlende Gegenstände untersuchen.

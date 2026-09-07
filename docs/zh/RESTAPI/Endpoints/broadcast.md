@@ -26,7 +26,7 @@ JSON 对象，包含必填字符串 `Message`。
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/broadcast.md"
+--8<-- "_snippets/zh/restapi/schemas/broadcast.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ JSON 对象，包含必填字符串 `Message`。
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```

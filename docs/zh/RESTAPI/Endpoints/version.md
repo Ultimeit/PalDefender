@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/version.md"
+--8<-- "_snippets/zh/restapi/schemas/version.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,7 +49,7 @@
 
 ## 示例
 
-### Health and version check
+### 运行状态和版本检查
 
 ```http
 GET /v1/pdapi/version

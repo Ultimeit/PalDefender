@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/guilds.md"
+--8<-- "_snippets/zh/restapi/schemas/guilds.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -52,13 +52,13 @@
 
 ## 示例
 
-### List all guilds
+### 列出所有公会
 
 ```http
 GET /v1/pdapi/guilds
 ```
 
-### Refresh guild dashboard data
+### 刷新公会面板数据
 
 ```http
 GET /v1/pdapi/guilds
@@ -66,6 +66,6 @@ GET /v1/pdapi/guilds
 
 ## 使用场景
 
-- Build a guild selector in an admin panel.
-- Find the `guild_id` for [GET /guild](guild.md).
-- Audit base counts, member counts, and guild ownership at a glance.
+- 在管理面板中构建公会选择器。
+- 查找 [GET /guild](guild.md) 所需的 `guild_id`。
+- 快速审计基地数量、成员数量和公会所有权。

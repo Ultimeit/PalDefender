@@ -14,7 +14,7 @@
 
 ## 路径参数
 
-- `player_identifier`: `UserId`, `PlayerUID`, or another supported player identifier.
+- `player_identifier`: `UserId`、`PlayerUID` 或其他受支持的玩家标识符。
 
 ## 查询参数
 
@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/ban.md"
+--8<-- "_snippets/zh/restapi/schemas/ban.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,12 +49,12 @@
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
-| `400` | `IP_UNAVAILABLE` | `IP` was `true`, but the server could not resolve an IP for the target user. |
+| `400` | `VALIDATION_FAILED` | 可选请求字段的 JSON 类型错误。 |
+| `400` | `IP_UNAVAILABLE` | `IP` 为 `true`，但服务器无法解析目标用户的 IP 地址。 |
 
 ## 示例
 
-### Ban a Steam user
+### 封禁 Steam 用户
 
 ```http
 POST /v1/pdapi/ban/steam_76561198012345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/ban/steam_76561198012345678
 }
 ```
 
-### Ban a PS5 user and their resolved IP
+### 封禁 PS5 用户及其解析出的 IP
 
 ```http
 POST /v1/pdapi/ban/ps5_0f4b8c2d91aa34ef
@@ -81,6 +81,6 @@ POST /v1/pdapi/ban/ps5_0f4b8c2d91aa34ef
 
 ## 使用场景
 
-- Ban a player by `UserId` after moderation review.
-- Include a clear reason so future staff can understand the banlist entry.
+- 经管理审核后，按 `UserId` 封禁玩家。
+- 提供清晰的原因，方便之后的管理人员理解封禁列表条目。
 - 使用 [GET /banlist](banlist.md) 验证活动记录。封禁相关数据不再由 `Config.json` 管理。

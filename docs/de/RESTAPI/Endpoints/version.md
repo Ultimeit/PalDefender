@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/version.md"
+--8<-- "_snippets/de/restapi/schemas/version.md"
 
 ## Fehlerantworten
 
@@ -49,7 +49,7 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### Health and version check
+### Zustands- und Versionsprüfung
 
 ```http
 GET /v1/pdapi/version

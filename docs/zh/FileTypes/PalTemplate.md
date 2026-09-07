@@ -30,7 +30,7 @@
 | `CraftSpeed`             | int    | 制作速度倍率。 |
 | `PalSouls`               | object | Pal 魂强化加成。包含 `Health`、`Attack`、`Defense`、`CraftSpeed`。建议的正常值由你的导入规则控制。 |
 | `IVs`                    | object | 个体值。包含 `Health`、`AttackMelee`、`AttackShot`、`Defense`。建议的正常值由你的导入规则控制。 |
-| `ActiveSkills`           | array  | 当前装备的技能列表（最多 3 个）。如果提供超过 3 个，额外条目会被视为已学会技能。可在 Paldeck 查询有效的 [skill IDs](https://paldeck.cc/skills)。 |
+| `ActiveSkills`           | array  | 已装备[技能 ID](https://paldeck.cc/skills)列表。PalDefender 1.9.0 不再把管理员 PalTemplate 截断为三个技能，所有条目都会保持装备状态；游戏界面仍可能按标准槽位数显示。 |
 | `LearntSkills`           | array  | Pal 已学会并可切换的技能。避免把当前装备技能放在这里。可在 Paldeck 查询有效的 [skill IDs](https://paldeck.cc/skills)。 |
 | `Passives`               | array  | Pal 拥有的被动词条。普通 Pal 最多应使用 4 个被动。可在 Paldeck 查询有效的 [`PassiveID`](https://paldeck.cc/passives)。 |
 | `ExtraWorkSuitabilities` | object | 增强的工作类型和等级（例如 `"Mining": 2`）。可用工作类型：`EmitFlame`、`Watering`、`Seeding`、`GenerateElectricity`、`Handcraft`、`Collection`、`Deforest`、`Mining`、`OilExtraction`、`ProductMedicine`、`Cool`、`Transport`、`MonsterFarm`。 |
@@ -42,7 +42,7 @@
 2. 使用唯一文件名，例如 `RaidRewardAnubis.json`。命令通常可使用 `RaidRewardAnubis` 或 `RaidRewardAnubis.json`。
 3. 必须始终包含 `PalID`。其他字段都是可选的；缺失值会使用 PalDefender 或 Palworld 的默认值。
 4. `Level` 和 `PartnerSkillLevel` 都必须为 `1` 或更高。
-5. `ActiveSkills` 中只放 3 个已装备攻击技能；额外已学会技能放入 `LearntSkills`。
+5. 已装备攻击技能放入 `ActiveSkills`，其他已学会技能放入 `LearntSkills`；额外的主动技能不会再被移动。
 6. 帕鲁、技能、被动、皮肤和工作类型必须使用精确 ID。错误 ID 可能导致导入失败或被忽略。
 7. 上传前验证 JSON。JSON 不允许注释或末尾多余逗号。
 8. 如果模板可以导入，但某些值被修改或阻止，请检查服务器的 `Pals/ImportRules/Default.json` 以及任何单个 Pal 覆盖文件。
@@ -52,7 +52,7 @@
 1. 先确定模板用途：简单管理员奖励、活动 Boss、测试 Pal，或用于召唤文件的生成模板。
 2. 在 [paldeck.cc/pals](https://paldeck.cc/pals) 选择 `PalID`。显示名称不一定是文件 ID，请准确复制 ID。
 3. 只添加你想控制的字段。短模板比大型模板更容易排查问题。
-4. 在 [paldeck.cc/skills](https://paldeck.cc/skills) 选择技能。三个已装备攻击技能放入 `ActiveSkills`；额外已学会技能放入 `LearntSkills`。
+4. 在 [paldeck.cc/skills](https://paldeck.cc/skills) 选择技能。已装备攻击技能放入 `ActiveSkills`，其他已学会技能放入 `LearntSkills`。
 5. 在 [paldeck.cc/passives](https://paldeck.cc/passives) 选择被动。正常用法下最多保留四个被动，除非你的服务器有意允许更多。
 6. 将文件保存到 `Pal/Binaries/Win64/PalDefender/Pals/Templates/`。
 7. 先用 `/givemepal_j <filename>` 测试。之后同一个模板可用于 `/givepal_j`、`/spawnpal_j`、`/giveegg_j`、REST API 或 `PalSummon.json`。

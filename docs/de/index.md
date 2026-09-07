@@ -20,7 +20,7 @@
           hosted_button_id: '6NVHHB52DSUZA',
           image: {
             src: 'https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif',
-            alt: 'Donate with PayPal button',
+            alt: 'Mit PayPal spenden',
             title: 'PayPal - Die sicherere und einfachere Art online zu bezahlen!'
           }
         }).render('#donate-button');
@@ -35,7 +35,7 @@
 ## Vorwort
 Wir freuen uns, wenn du zum Wiki beiträgst oder Fehler meldest, damit das Wiki Schritt für Schritt besser wird.
 
-Der Code ist Closed Source und wir planen derzeit keine Veröffentlichung.
+Der PalDefender-Quellcode ist öffentlich im [pal_anticheat-Repository](https://github.com/Ultimeit/pal_anticheat) verfügbar. Beiträge und Fehlerberichte sind willkommen.
 
 ---
 
@@ -69,4 +69,4 @@ PalDefender implementiert umfassende serverseitige Prüfungen, um viele bekannte
 
 > *Wir möchten <a href="https://www.pocketpair.jp/palworld" target="_blank">Pocketpair, Inc.</a> für ihre großartige Arbeit an Palworld danken. Die lebendige Welt, die dynamischen Interaktionen mit Pals und das kreative Design zeigen die Hingabe und Leidenschaft des Teams. Als Community unterstützen wir Palworld ebenfalls, indem wir ein Plugin für den PalServer entwickeln, das die Sicherheit verbessert und vor möglichen Exploits schützt.*
 <br><br>
-*We will continue striving to provide the highest level of security and protection for your Palworld server. Your feedback is invaluable, and we truly appreciate it.*
+*Wir werden weiterhin alles daransetzen, deinem Palworld-Server ein Höchstmaß an Sicherheit und Schutz zu bieten. Dein Feedback ist unschätzbar wertvoll – vielen Dank dafür.*

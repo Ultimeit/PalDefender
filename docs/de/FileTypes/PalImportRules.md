@@ -24,6 +24,8 @@ Pal-Importregeln steuern, welche `PalTemplate.json`-Dateien beim Import über Be
 | `MaxValueLimitAction` | string | `BlockImport` lehnt Templates oberhalb der konfigurierten Limits ab. `ClampToMaxValues` reduziert Werte auf die konfigurierten Limits. |
 | `DisallowedPassivesAction` | string | `BlockImport` lehnt Templates mit gelisteten Passives ab. `RemoveFromPal` entfernt gelistete Passives vor dem Import. |
 | `DisallowedPassives` | array | [`PassiveID`](https://paldeck.cc/passives)-Werte, auf die `DisallowedPassivesAction` angewendet wird. |
+| `ConditionMode` | string | `None` wendet die Regel normal an. `RequirePalCaptureCount` erlaubt den Import erst, nachdem der Spieler genügend Pals derselben Art gefangen hat. |
+| `RequiredCaptureCount` | int | Erforderliche Fangzahl derselben Art für `RequirePalCaptureCount` (Standard: `5`). |
 | `Disabled` | bool | Wenn `true`, werden Importprüfungen für dieses Regelset deaktiviert. |
 | `BanIfPalIsImpossible` | bool | Wenn `true`, kann PalDefender unmögliche Pal-Importe gemäß Servereinstellungen bestrafen. |
 | `AllowGenderNone` | bool | Wenn `false`, können Templates mit `Gender: "None"` durch Importprüfungen abgelehnt werden. |
@@ -77,6 +79,8 @@ Nutze das, wenn normale Admin-Belohnungen erlaubt sind, bestimmte Pals aber nich
     "DisallowedPassives": [
         "Legend"
     ],
+    "ConditionMode": "None",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "AllowGenderNone": false,
@@ -116,6 +120,8 @@ Nutze das, wenn von Spielern importierte Templates auf freigegebene Pals beschr�
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "RequirePalCaptureCount",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "AllowGenderNone": false,
@@ -150,6 +156,8 @@ In diesem Setup können nur die drei gelisteten `PalID`-Werte importiert werden.
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "None",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "BannedPalIDs": [
@@ -184,6 +192,8 @@ In diesem Setup können nur die drei gelisteten `PalID`-Werte importiert werden.
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "RequirePalCaptureCount",
+    "RequiredCaptureCount": 5,
     "AllowGenderNone": false,
     "MaxLevel": 10,
     "MaxRank": 3,

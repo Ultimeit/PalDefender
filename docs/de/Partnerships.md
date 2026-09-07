@@ -10,12 +10,12 @@ Transparenz, fairen Leistungen und flexibler Serververwaltung.
 > ~Zvend
 
 ### Diese Partnerschaft bringt einige Vorteile:
-- **10% Rabatt** - Das gilt nur für Neukunden, aber du bekommst 10% Rabatt auf jede Zahlung, selbst wenn du Spiel oder Standort des Servers wechselst!
+- **Dauerhaft 15% Rabatt** - Neue und bestehende Kunden erhalten 15% Rabatt auf jede Zahlung für jeden neuen Server, der mit dem Promo-Code bestellt wird. Der Rabatt kann nicht durch ein Upgrade auf einen Server angewendet werden, der ursprünglich ohne Code gekauft wurde; dafür muss ein neuer Server mit dem Code bestellt werden.
 - **PalDefender-Integration mit einem Klick** - PalDefender ist in den Service integriert und kann sofort mit einem Klick aktiviert werden. Keine Magie mehr!
 - **Offizieller PalDefender-Testserver** - Qonzer hat uns einen Server gesponsert, und wir freuen uns darauf, ihn produktiv zu nutzen.
 - **Mehr ist in Arbeit** - Wir stehen in engem Kontakt mit Qonzer und arbeiten daran, Palworld-Server für dich noch spannender zu machen.
 
-### So bekommst du die **10% Rabatt**:
+### So bekommst du den **dauerhaften 15% Rabatt**:
 
 1. Nutze den Affiliate-Link: <a href="https://qonzer.com/aff.php?aff=61" target="_blank">https://qonzer.com/aff.php?aff=61</a>
 2. Gehe zu Game Servers und wähle Palworld aus.
@@ -24,8 +24,11 @@ Transparenz, fairen Leistungen und flexibler Serververwaltung.
 5. Gib den Promo-Code `PalDefender` ein und schliesse den Kauf ab.
 6. Fertig!
 
+!!! important
+    Die Aktion ist nicht auf Neukunden beschränkt. Sie muss jedoch bei der Bestellung eines neuen Servers angewendet werden. Ein Upgrade eines bestehenden, ohne Code gekauften Servers fügt den Rabatt nicht hinzu; bestelle stattdessen einen neuen Server mit `PalDefender`.
+
 **Du willst mehr als einen Server mit Rabatt?** <br>
-Lege einfach mehrere Server in den Warenkorb, bevor du bezahlst.
+Lege einfach mehrere neue Server in den Warenkorb und wende den Promo-Code vor dem Bezahlen an.
 
 ### Ich bezahle bereits einen anderen Server-Host, möchte aber wechseln
 

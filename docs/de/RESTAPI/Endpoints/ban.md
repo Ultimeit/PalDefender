@@ -14,7 +14,7 @@ Bannt einen Benutzer und speichert den Bann in `Banlist.json`. Das Ziel kann gek
 
 ## Pfadparameter
 
-- `player_identifier`: `UserId`, `PlayerUID`, or another supported player identifier.
+- `player_identifier`: `UserId`, `PlayerUID` oder eine andere unterstützte Spielerkennung.
 
 ## Query-Parameter
 
@@ -26,7 +26,7 @@ Optionale JSON-Felder: `Reason` als String und `IP` als Boolean. Setze `IP` nur 
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/ban.md"
+--8<-- "_snippets/de/restapi/schemas/ban.md"
 
 ## Fehlerantworten
 
@@ -49,12 +49,12 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
-| `400` | `IP_UNAVAILABLE` | `IP` was `true`, but the server could not resolve an IP for the target user. |
+| `400` | `VALIDATION_FAILED` | Ein optionales Anfragefeld besitzt den falschen JSON-Typ. |
+| `400` | `IP_UNAVAILABLE` | `IP` war `true`, aber der Server konnte für den Zielbenutzer keine IP-Adresse ermitteln. |
 
 ## Beispiele
 
-### Ban a Steam user
+### Einen Steam-Benutzer sperren
 
 ```http
 POST /v1/pdapi/ban/steam_76561198012345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/ban/steam_76561198012345678
 }
 ```
 
-### Ban a PS5 user and their resolved IP
+### Einen PS5-Benutzer und seine ermittelte IP sperren
 
 ```http
 POST /v1/pdapi/ban/ps5_0f4b8c2d91aa34ef
@@ -81,6 +81,6 @@ POST /v1/pdapi/ban/ps5_0f4b8c2d91aa34ef
 
 ## Szenarien
 
-- Ban a player by `UserId` after moderation review.
-- Include a clear reason so future staff can understand the banlist entry.
+- Einen Spieler nach moderativer Prüfung anhand seiner `UserId` sperren.
+- Einen eindeutigen Grund angeben, damit spätere Teammitglieder den Sperrlisteneintrag nachvollziehen können.
 - Nutze [GET /banlist](banlist.md), um den aktiven Eintrag zu prüfen. Bannbezogene Daten werden nicht mehr in `Config.json` verwaltet.

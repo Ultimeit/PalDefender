@@ -263,7 +263,79 @@ At the current version there are only Admin and RCON commands available.
         /send vilog steam_76500000000000000 Dont miss out on Qonzer's sale!
         ```
 
+    ??? info "/resetoilrig"
+        **Syntax:** `/resetoilrig <lv30|lv55|lv60|all>`
+
+        **Description:** Resets the selected Oil Rig or every currently managed Oil Rig.
+
+        **Permissions:** `Chat`, active in-game administrator status.
+
+        **Example:**
+        ```
+        /resetoilrig all
+        ```
+
+    ??? info "/setting"
+        **Syntax:** `/setting list [filter]` or `/setting <setting_name> <get|set|add|sub> [value]`
+
+        **Description:** Inspects or changes supported live `UPalGameSetting` values. Names are matched case-insensitively; a unique prefix or substring is accepted. This is experimental, is not a replacement for persistent world configuration, and clients may continue to display cached values.
+
+        - `list [filter]`: Lists supported integer, float, boolean, byte, and enum fields.
+        - `get`: Reads a value.
+        - `set`: Sets any supported type. Booleans accept `true/false`, `on/off`, `yes/no`, or `1/0`; enums accept a number or entry name.
+        - `add` / `sub`: Changes numeric values only.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Examples:**
+        ```
+        /setting list death
+        /setting PalDeathPenaltyTime get
+        /setting PalDeathPenaltyTime set 10
+        ```
+
+    ??? info "/resetbosstower"
+        **Syntax:** `/resetbosstower <BossType|all>`
+
+        **Description:** Debug-build-only command that resets one boss-tower instance or all resettable boss towers. A single target must use a valid `EPalBossType` name. It is not available in public Release builds.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /resetbosstower all
+        ```
+
+    ??? info "/showbosses"
+        **Syntax:** `/showbosses`
+
+        **Description:** Debug-build-only data-mining command that writes current boss static information to `PalDefender/Logs/BossInfo.json`. It is not available in public Release builds.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
 ??? note "Base Management"
+    ??? info "/findunusedbases (alias: /findbases)"
+        **Syntax:** `/findbases [empty|inactive|unused|all] [days=N] [builds<=N]`
+
+        **Interactive syntax:** `/findbases visit [filters]`, `/findbases next`, `/findbases kill [next]`
+
+        **Description:** Scans for empty, inactive, or otherwise unused bases. `visit` creates a chat-only review queue and teleports to its first result; `next` advances; `kill` destroys the selected base; `kill next` destroys it and advances. Destruction is irreversible, so inspect each target first.
+
+        - `empty`: No workers and at most the default building limit (or `builds<=N`).
+        - `inactive`: No online guild members and inactive for at least `days` (default `30`).
+        - `unused`: Matches empty or inactive.
+        - `all`: Lists all bases while still applying explicit filters.
+
+        **Permissions:** Listing supports `Chat` and `RCON`; visit/next/kill require in-game chat and administrator permission.
+
+        **Examples:**
+        ```
+        /findbases empty builds<=5
+        /findbases inactive days=14
+        /findbases visit unused days=30
+        /findbases kill next
+        ```
+
     ??? info "/getnearestbase"
         **Syntax:** `/getnearestbase [X] [Y] [Z]`
 
@@ -664,6 +736,18 @@ At the current version there are only Admin and RCON commands available.
         /godmode off
         ```
 
+    ??? info "/admingun (alias: /agun)"
+        **Syntax:** `/admingun`
+
+        **Description:** Gives an active in-game administrator a protected Admin Gun. It instantly kills characters, destroys map objects, maximizes foliage damage, has unlimited ammunition/durability, and cannot be dropped, sold, or moved to external containers. Crouch while destroying a storage object to delete its contents; remain standing to preserve them. The gun is removed on death, logout, or admin logout, and requesting another replaces the existing copy.
+
+        **Permissions:** `Chat`, active in-game administrator status. `allowAdminCheats` is not required.
+
+        **Example:**
+        ```
+        /agun
+        ```
+
 ??? note "Guild Management"
     ??? info "/setguildleader"
         **Syntax:** `/setguildleader <UserId>`
@@ -950,13 +1034,25 @@ At the current version there are only Admin and RCON commands available.
         ```
         _Spawns an Anubis with level 255!_
 
+    ??? info "/spawnnpc"
+        **Syntax:** `/spawnnpc <NPCID|CharacterID> [Level=1]` or `/spawnnpc <NPCID|CharacterID> <X> <Y> [Z] [Level=1]`
+
+        **Description:** Spawns an NPC with AI. In chat, omitted coordinates spawn near the administrator; RCON must provide coordinates. With only `X` and `Y`, PalDefender finds the floor height.
+
+        **Permissions:** `Chat`, `RCON`, `Admin`
+
+        **Example:**
+        ```
+        /spawnnpc PIDF_Soldier_AssaultRifle 30
+        ```
+
     ??? info "/spawnpal_j"
         **Syntax:**
 
         Any of the following works:
 
         - `/spawnpal_j <PalTemplate>`
-        - `/spawnpal <PalTemplate> [x] [y] [z]`
+        - `/spawnpal_j <PalTemplate> [x] [y] [z]`
 
         **Description:** Spawns a Pal relative or absolute to you. **RCON has to specify x, y and z!**
 
@@ -973,9 +1069,8 @@ At the current version there are only Admin and RCON commands available.
 
         **Example:**
         ```
-        /spawnpal Anubis 255
+        /spawnpal_j ArenaBoss 230 -486 4097
         ```
-        _Spawns an Anubis with level 255!_
 
     ??? info "/summon"
         **Syntax:** `/summon <PalSummon>`
@@ -1226,7 +1321,7 @@ At the current version there are only Admin and RCON commands available.
             - `ID Anubis Rank>=3`
             - `Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave`
 
-            For more details, see the [PalFilter documentation](https://github.com/Ultimeit/PalDefender/blob/master/Wiki/Commands/deletepals.md).
+            The filter keys and examples above are the current PalFilter reference.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 

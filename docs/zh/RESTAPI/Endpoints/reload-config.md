@@ -10,7 +10,7 @@
 
 ## 用途
 
-Reloads PalDefender configuration without requiring a full server restart.
+无需完整重启服务器即可重新加载 PalDefender 配置。
 
 ## 路径参数
 
@@ -26,7 +26,7 @@ Reloads PalDefender configuration without requiring a full server restart.
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/reload-config.md"
+--8<-- "_snippets/zh/restapi/schemas/reload-config.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ Reloads PalDefender configuration without requiring a full server restart.
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,13 +49,13 @@ Reloads PalDefender configuration without requiring a full server restart.
 
 ## 示例
 
-### Reload configuration
+### 重新加载配置
 
 ```http
 POST /v1/pdapi/ReloadConfig
 ```
 
-### Reload after token changes
+### Token 更改后重新加载
 
 ```http
 POST /v1/pdapi/ReloadConfig
@@ -63,6 +63,6 @@ POST /v1/pdapi/ReloadConfig
 
 ## 使用场景
 
-- Apply edits to supported configuration files.
-- Reload after updating `Banlist.json`, import rules, or other runtime-readable PalDefender files.
+- 应用对受支持配置文件的修改。
+- 更新 `Banlist.json`、导入规则或其他运行时可读取的 PalDefender 文件后重新加载。
 - 如果更改在重新加载后没有生效，请在维护窗口期间重启服务器。

@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/player.md"
+--8<-- "_snippets/zh/restapi/schemas/player.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,12 +49,12 @@
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `404` | `PLAYER_NOT_FOUND` | No online player matched the supplied `player_identifier`. |
+| `404` | `PLAYER_NOT_FOUND` | 没有在线玩家与提供的 `player_identifier` 匹配。 |
 | `404` | `PLAYER_ACCOUNT_NOT_FOUND` | 已找到玩家，但无法加载玩家账号数据。 |
 
 ## 示例
 
-### Lookup by Steam UserID
+### 按 Steam UserID 查询
 
 ```http
 GET /v1/pdapi/player/steam_76561198012345678
@@ -69,5 +69,5 @@ GET /v1/pdapi/player/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
 ## 使用场景
 
 - 从 `GET /players` 选择一行后，打开玩家详情页。
-- Confirm the target before giving rewards or applying punishments.
-- Check whether the player can currently be resolved by the server.
+- 在授予奖励或执行处罚前确认目标。
+- 检查服务器当前能否解析该玩家。

@@ -26,7 +26,7 @@ Optionales JSON-Feld: `Reason` als String.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/unban.md"
+--8<-- "_snippets/de/restapi/schemas/unban.md"
 
 ## Fehlerantworten
 
@@ -49,12 +49,12 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | Ein optionales Anfragefeld besitzt den falschen JSON-Typ. |
 | `404` | `BAN_NOT_FOUND` | Die angegebene `user_id` ist nicht aktiv gebannt. |
 
 ## Beispiele
 
-### Unban a Steam user
+### Einen Steam-Benutzer entsperren
 
 ```http
 POST /v1/pdapi/unban/steam_76561198012345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/unban/steam_76561198012345678
 }
 ```
 
-### Unban a PS5 user with default reason
+### Einen PS5-Benutzer mit Standardbegründung entsperren
 
 ```http
 POST /v1/pdapi/unban/ps5_c481a77e22004b9d
@@ -78,6 +78,6 @@ POST /v1/pdapi/unban/ps5_c481a77e22004b9d
 
 ## Szenarien
 
-- Remove a user ban after appeal approval.
-- Keep a reason for the audit trail.
+- Eine Benutzersperre nach genehmigtem Einspruch aufheben.
+- Eine Begründung für die Prüfspur festhalten.
 - Nutze [GET /banlist](banlist.md) mit `userId` oder `q`, um das Ergebnis zu prüfen.

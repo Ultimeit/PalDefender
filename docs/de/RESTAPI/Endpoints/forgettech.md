@@ -10,7 +10,7 @@
 
 ## Zweck
 
-Forgets one, many, or all technologies for a player.
+Entfernt eine, mehrere oder alle erlernten Technologien eines Spielers.
 
 ## Pfadparameter
 
@@ -22,11 +22,11 @@ Keine.
 
 ## Request-Body
 
-`Technology` can be a single [`TechID`](https://paldeck.cc/technology), the string `"All"`, or an array of [`TechID`](https://paldeck.cc/technology) strings. Do not put `"All"` inside an array.
+`Technology` kann eine einzelne [`TechID`](https://paldeck.cc/technology), die Zeichenfolge `"All"` oder ein Array aus [`TechID`](https://paldeck.cc/technology)-Zeichenfolgen sein. `"All"` darf nicht innerhalb eines Arrays stehen.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/forgettech.md"
+--8<-- "_snippets/de/restapi/schemas/forgettech.md"
 
 ## Fehlerantworten
 
@@ -49,12 +49,12 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `INVALID_REQUEST` | `Technology` is missing, or it is not a string/array in the expected format. |
-| `400` | `VALIDATION_FAILED` | The `Technology` array contains a non-string, `All`, or an invalid technology identifier. |
+| `400` | `INVALID_REQUEST` | `Technology` fehlt oder ist keine Zeichenfolge beziehungsweise kein Array im erwarteten Format. |
+| `400` | `VALIDATION_FAILED` | Das `Technology`-Array enthält einen Wert, der keine Zeichenfolge ist, `All` oder eine ungültige Technologiekennung. |
 
 ## Beispiele
 
-### Forget one technology for a GDK player
+### Eine Technologie eines GDK-Spielers entfernen
 
 ```http
 POST /v1/pdapi/forgettech/gdk_2533274812345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/forgettech/gdk_2533274812345678
 }
 ```
 
-### Forget several technologies by PlayerUID
+### Mehrere Technologien anhand der PlayerUID entfernen
 
 ```http
 POST /v1/pdapi/forgettech/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
@@ -81,7 +81,7 @@ POST /v1/pdapi/forgettech/b7f4e91a-2c53-4d8f-a6e1-93c4bb62a7d1
 }
 ```
 
-### Forget all technologies for a Steam player
+### Alle Technologien eines Steam-Spielers entfernen
 
 ```http
 POST /v1/pdapi/forgettech/steam_76561198012345678
@@ -95,6 +95,6 @@ POST /v1/pdapi/forgettech/steam_76561198012345678
 
 ## Szenarien
 
-- Remove a technology granted by mistake.
-- Reset a test account with `"All"`.
-- Confirm the current state with [GET /techs](techs.md) before and after the request.
+- Eine versehentlich gewährte Technologie entfernen.
+- Ein Testkonto mit `"All"` zurücksetzen.
+- Den aktuellen Zustand vor und nach der Anfrage mit [GET /techs](techs.md) prüfen.

@@ -14,7 +14,7 @@
 
 ## 路径参数
 
-- `player_identifier`: `UserId`, `PlayerUID`, or another supported player identifier.
+- `player_identifier`: `UserId`、`PlayerUID` 或其他受支持的玩家标识符。
 
 ## 查询参数
 
@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/kick.md"
+--8<-- "_snippets/zh/restapi/schemas/kick.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,12 +49,12 @@
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | 可选请求字段的 JSON 类型错误。 |
 | `404` | `PLAYER_NOT_FOUND` | 目标玩家不在线或无法找到。 |
 
 ## 示例
 
-### Kick a GDK player with reason
+### 踢出 GDK 玩家并提供原因
 
 ```http
 POST /v1/pdapi/kick/gdk_2533274812345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/kick/gdk_2533274812345678
 }
 ```
 
-### Kick a Steam player with default reason
+### 使用默认原因踢出 Steam 玩家
 
 ```http
 POST /v1/pdapi/kick/steam_76561198087654321
@@ -78,6 +78,6 @@ POST /v1/pdapi/kick/steam_76561198087654321
 
 ## 使用场景
 
-- Remove a player before maintenance.
-- Kick a stuck player so they can reconnect.
+- 在维护前移除玩家。
+- 踢出卡住的玩家，使其可以重新连接。
 - 如果不应允许玩家返回，请改用 [POST /ban](ban.md)。

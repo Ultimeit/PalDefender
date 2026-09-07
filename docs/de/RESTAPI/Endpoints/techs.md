@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/techs.md"
+--8<-- "_snippets/de/restapi/schemas/techs.md"
 
 ## Fehlerantworten
 
@@ -52,13 +52,13 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### Read unlocked techs by UserID
+### Freigeschaltete Technologien anhand der UserID lesen
 
 ```http
 GET /v1/pdapi/techs/gdk_2533274812345678
 ```
 
-### Read unlocked techs by PlayerUID
+### Freigeschaltete Technologien anhand der PlayerUID lesen
 
 ```http
 GET /v1/pdapi/techs/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
@@ -66,6 +66,6 @@ GET /v1/pdapi/techs/f0a1c3e9-7d5b-4a28-8c33-411fdc2e6b74
 
 ## Szenarien
 
-- Check whether a player already has a [`TechID`](https://paldeck.cc/technology) before learning or forgetting it.
-- Build an admin page that separates unlocked and available technologies.
-- Audit progression after support actions.
+- Vor dem Freischalten oder Entfernen prüfen, ob ein Spieler eine [`TechID`](https://paldeck.cc/technology) bereits besitzt.
+- Eine Adminseite erstellen, die freigeschaltete und verfügbare Technologien trennt.
+- Den Fortschritt nach Supportmaßnahmen prüfen.

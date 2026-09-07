@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/banip.md"
+--8<-- "_snippets/zh/restapi/schemas/banip.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,11 +49,11 @@
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | 可选请求字段的 JSON 类型错误。 |
 
 ## 示例
 
-### Ban an IP only
+### 仅封禁 IP
 
 ```http
 POST /v1/pdapi/banip/203.0.113.42
@@ -65,7 +65,7 @@ POST /v1/pdapi/banip/203.0.113.42
 }
 ```
 
-### Ban an IP and attach a GDK user
+### 封禁 IP 并关联 GDK 用户
 
 ```http
 POST /v1/pdapi/banip/198.51.100.87
@@ -80,6 +80,6 @@ POST /v1/pdapi/banip/198.51.100.87
 
 ## 使用场景
 
-- Stop repeated abuse from the same IP after staff review.
-- Associate `UserId` when known so the banlist is easier to audit.
+- 经管理人员审核后，阻止来自同一 IP 的重复滥用。
+- 已知时关联 `UserId`，以便更轻松地审计封禁列表。
 - 使用带 `ip` 的 [GET /banlist](banlist.md) 验证活动记录。

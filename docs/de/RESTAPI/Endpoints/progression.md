@@ -26,7 +26,7 @@ Kein Request-Body.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/progression.md"
+--8<-- "_snippets/de/restapi/schemas/progression.md"
 
 ## Fehlerantworten
 
@@ -52,13 +52,13 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### Read progression by PS5 UserID
+### Fortschritt anhand der PS5-UserID lesen
 
 ```http
 GET /v1/pdapi/progression/ps5_c481a77e22004b9d
 ```
 
-### Read progression by PlayerUID
+### Fortschritt anhand der PlayerUID lesen
 
 ```http
 GET /v1/pdapi/progression/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
@@ -66,6 +66,6 @@ GET /v1/pdapi/progression/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 
 ## Szenarien
 
-- Confirm the current values before granting progression.
-- Verify a support action after [POST /give/progression](give-progression.md).
-- Build a player overview panel in a trusted admin dashboard.
+- Die aktuellen Werte vor der Vergabe von Fortschritt bestätigen.
+- Eine Supportmaßnahme nach [POST /give/progression](give-progression.md) prüfen.
+- Eine Spielerübersicht in einem vertrauenswürdigen Admin-Dashboard erstellen.

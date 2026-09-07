@@ -26,7 +26,7 @@ Unbans a user ID in `Banlist.json`.
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/unban.md"
+--8<-- "_snippets/zh/restapi/schemas/unban.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ Unbans a user ID in `Banlist.json`.
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -49,12 +49,12 @@ Unbans a user ID in `Banlist.json`.
 | `400` | `INVALID_JSON` | 提供了请求体，但无法解析为 JSON。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | 可选请求字段的 JSON 类型错误。 |
 | `404` | `BAN_NOT_FOUND` | 提供的 `user_id` 当前未被封禁。 |
 
 ## 示例
 
-### Unban a Steam user
+### 解封 Steam 用户
 
 ```http
 POST /v1/pdapi/unban/steam_76561198012345678
@@ -66,7 +66,7 @@ POST /v1/pdapi/unban/steam_76561198012345678
 }
 ```
 
-### Unban a PS5 user with default reason
+### 使用默认原因解封 PS5 用户
 
 ```http
 POST /v1/pdapi/unban/ps5_c481a77e22004b9d
@@ -78,6 +78,6 @@ POST /v1/pdapi/unban/ps5_c481a77e22004b9d
 
 ## 使用场景
 
-- Remove a user ban after appeal approval.
-- Keep a reason for the audit trail.
+- 申诉获准后解除用户封禁。
+- 保留原因以供审计追踪。
 - 使用带 `userId` 或 `q` 的 [GET /banlist](banlist.md) 验证结果。

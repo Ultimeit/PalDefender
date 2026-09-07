@@ -14,7 +14,7 @@
 
 ## 路径参数
 
-- `base_camp_id`: Base camp identifier, usually copied from guild/base data.
+- `base_camp_id`: 基地标识符，通常从公会或基地数据中复制。
 
 ## 查询参数
 
@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/deletebase.md"
+--8<-- "_snippets/zh/restapi/schemas/deletebase.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -51,18 +51,18 @@
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `INVALID_BASE_CAMP_ID` | The `base_camp_id` path value is not a valid GUID. |
 | `500` | `BASE_CAMP_MANAGER_UNAVAILABLE` | 服务器无法访问 `UPalBaseCampManager`。 |
-| `404` | `BASE_CAMP_NOT_FOUND` | No base camp matched the supplied GUID. |
+| `404` | `BASE_CAMP_NOT_FOUND` | 没有基地与提供的 GUID 匹配。 |
 | `500` | `DELETE_BASE_FAILED` | 已找到 Base Camp，但销毁/清理失败。 |
 
 ## 示例
 
-### Delete a base camp by GUID
+### 按 GUID 删除基地
 
 ```http
 POST /v1/pdapi/deletebase/13b9e8d7-4f2c-42a1-b79e-fc2a9186e4d5
 ```
 
-### Delete another base camp by GUID
+### 按 GUID 删除另一个基地
 
 ```http
 POST /v1/pdapi/deletebase/81c2f0a4-6d7e-49fb-a11d-0d2f9f94b13c
@@ -70,6 +70,6 @@ POST /v1/pdapi/deletebase/81c2f0a4-6d7e-49fb-a11d-0d2f9f94b13c
 
 ## 使用场景
 
-- Remove abandoned or broken bases after staff review.
+- 经管理人员审核后移除废弃或损坏的基地。
 - 删除前使用 [GET /guilds](guilds.md) 和 [GET /guild](guild.md) 确认正确的营地。
-- Do not use this endpoint for routine cleanup unless your staff process already verifies ownership and backups.
+- 除非管理流程已验证所有权和备份，否则不要将此端点用于例行清理。

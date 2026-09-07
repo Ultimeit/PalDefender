@@ -26,7 +26,7 @@ Palworld_Server/
 │   │       │   └── RESTAPI/
 │   │       ├── <...>
 │   │       ├── PalDefender.dll                   << 放在这里（步骤 2）
-│   │       ├── d3d9.dll                          << 放在这里（步骤 2）
+│   │       ├── version.dll                       << 放在这里（步骤 2）
 │   │       ├── PalServer-Win64-Shipping-Cmd.exe
 │   │       └── PalServer-Win64-Shipping.exe
 │   ├── Content/

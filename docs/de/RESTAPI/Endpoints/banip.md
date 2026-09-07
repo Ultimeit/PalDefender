@@ -26,7 +26,7 @@ Optionale JSON-Felder: `Reason` als String und `UserId` als String, wenn der IP-
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/banip.md"
+--8<-- "_snippets/de/restapi/schemas/banip.md"
 
 ## Fehlerantworten
 
@@ -49,11 +49,11 @@ Fehlerantworten verwenden dieses Format:
 | `400` | `INVALID_JSON` | Ein Request-Body wurde gesendet, konnte aber nicht als JSON gelesen werden. |
 | `400` | `REQUEST_FAILED` | Der Game-Thread-Callback hat eine Ausnahme ausgelöst oder ein gemeinsamer Spieler-/Ressourcen-Resolver ist fehlgeschlagen. |
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
-| `400` | `VALIDATION_FAILED` | An optional request field has the wrong JSON type. |
+| `400` | `VALIDATION_FAILED` | Ein optionales Anfragefeld besitzt den falschen JSON-Typ. |
 
 ## Beispiele
 
-### Ban an IP only
+### Nur eine IP sperren
 
 ```http
 POST /v1/pdapi/banip/203.0.113.42
@@ -65,7 +65,7 @@ POST /v1/pdapi/banip/203.0.113.42
 }
 ```
 
-### Ban an IP and attach a GDK user
+### Eine IP sperren und einen GDK-Benutzer zuordnen
 
 ```http
 POST /v1/pdapi/banip/198.51.100.87
@@ -80,6 +80,6 @@ POST /v1/pdapi/banip/198.51.100.87
 
 ## Szenarien
 
-- Stop repeated abuse from the same IP after staff review.
-- Associate `UserId` when known so the banlist is easier to audit.
+- Wiederholten Missbrauch von derselben IP nach Prüfung durch das Team unterbinden.
+- Wenn bekannt, `UserId` zuordnen, damit die Sperrliste leichter geprüft werden kann.
 - Nutze [GET /banlist](banlist.md) mit `ip`, um den aktiven Eintrag zu prüfen.

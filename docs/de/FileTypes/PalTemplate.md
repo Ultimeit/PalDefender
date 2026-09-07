@@ -30,7 +30,7 @@ Mit <https://paldeck.cc/creator> kannst du diese Dateien deutlich einfacher erst
 | `CraftSpeed`             | int    | Multiplikator für Handwerksgeschwindigkeit. |
 | `PalSouls`               | object | Passive Soul-Boni. Enthält `Health`, `Attack`, `Defense`, `CraftSpeed`. Empfohlene Normalwerte werden über deine Importregeln gesteuert. |
 | `IVs`                    | object | Individuelle Statuswerte. Enthält `Health`, `AttackMelee`, `AttackShot`, `Defense`. Empfohlene Normalwerte werden über deine Importregeln gesteuert. |
-| `ActiveSkills`           | array  | Liste der aktuell ausgerüsteten Skills (max. 3). Wenn mehr als 3 Einträge angegeben werden, gelten die zusätzlichen Einträge als gelernte Skills. Gültige [Skill-IDs](https://paldeck.cc/skills) findest du auf Paldeck. |
+| `ActiveSkills`           | array  | Liste der ausgerüsteten [Skill-IDs](https://paldeck.cc/skills). PalDefender 1.9.0 kürzt Admin-PalTemplates nicht mehr auf drei Einträge; alle bleiben ausgerüstet. Die Spieloberfläche kann weiterhin von der üblichen Slotzahl ausgehen. |
 | `LearntSkills`           | array  | Skills, die der Pal gelernt hat und einwechseln kann. Aktive Skills sollten hier nicht stehen. Gültige [Skill-IDs](https://paldeck.cc/skills) findest du auf Paldeck. |
 | `Passives`               | array  | Passive Eigenschaften des Pals. Normale Pals sollten höchstens 4 Passives verwenden. Gültige [`PassiveID`](https://paldeck.cc/passives)-Werte findest du auf Paldeck. |
 | `ExtraWorkSuitabilities` | object | Verstärkte Arbeitstypen und Level (z. B. `"Mining": 2`). Verfügbare Arbeitstypen: `EmitFlame`, `Watering`, `Seeding`, `GenerateElectricity`, `Handcraft`, `Collection`, `Deforest`, `Mining`, `OilExtraction`, `ProductMedicine`, `Cool`, `Transport`, `MonsterFarm`. |
@@ -42,7 +42,7 @@ Mit <https://paldeck.cc/creator> kannst du diese Dateien deutlich einfacher erst
 2. Nutze einen eindeutigen Dateinamen, zum Beispiel `RaidRewardAnubis.json`. Befehle können meist `RaidRewardAnubis` oder `RaidRewardAnubis.json` verwenden.
 3. `PalID` muss immer vorhanden sein. Alles andere ist optional; fehlende Werte verwenden die Standardwerte von PalDefender oder Palworld.
 4. `Level` und `PartnerSkillLevel` müssen jeweils `1` oder höher sein.
-5. Trage nur die 3 ausgerüsteten Angriffe in `ActiveSkills` ein. Zusätzliche bekannte Angriffe gehören in `LearntSkills`.
+5. Trage ausgerüstete Angriffe in `ActiveSkills` und andere bekannte Angriffe in `LearntSkills` ein. Zusätzliche aktive Einträge werden nicht mehr verschoben.
 6. Nutze exakte IDs für Pals, Skills, Passives, Skins und Arbeitstypen. Falsche IDs können den Import fehlschlagen lassen oder ignoriert werden.
 7. Validiere JSON vor dem Hochladen. JSON erlaubt keine Kommentare oder nachgestellten Kommas.
 8. Wenn ein Template importiert wird, Werte aber geändert oder blockiert werden, prüfe `Pals/ImportRules/Default.json` und alle Pal-spezifischen Überschreibungen auf dem Server.
@@ -52,7 +52,7 @@ Mit <https://paldeck.cc/creator> kannst du diese Dateien deutlich einfacher erst
 1. Lege fest, wofür das Template gedacht ist: einfache Admin-Belohnung, Eventboss, Test-Pal oder Spawn-Template für eine Summon-Datei.
 2. Wähle die `PalID` auf [paldeck.cc/pals](https://paldeck.cc/pals). Der Anzeigename ist nicht immer die Datei-ID, kopiere die ID daher exakt.
 3. Füge nur die Felder hinzu, die du wirklich steuern willst. Ein kurzes Template ist leichter zu debuggen als ein sehr großes.
-4. Wähle Skills auf [paldeck.cc/skills](https://paldeck.cc/skills). Die drei ausgerüsteten Angriffe gehören in `ActiveSkills`; zusätzliche bekannte Angriffe in `LearntSkills`.
+4. Wähle Skills auf [paldeck.cc/skills](https://paldeck.cc/skills). Ausgerüstete Angriffe gehören in `ActiveSkills`, andere bekannte Angriffe in `LearntSkills`.
 5. Wähle Passives auf [paldeck.cc/passives](https://paldeck.cc/passives). Für normale Nutzung sollten es höchstens vier Passives sein, außer dein Server erlaubt bewusst mehr.
 6. Speichere die Datei in `Pal/Binaries/Win64/PalDefender/Pals/Templates/`.
 7. Teste zuerst mit `/givemepal_j <filename>`. Danach kannst du dasselbe Template für `/givepal_j`, `/spawnpal_j`, `/giveegg_j`, die REST API oder `PalSummon.json` verwenden.

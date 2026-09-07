@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/items.md"
+--8<-- "_snippets/zh/restapi/schemas/items.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -52,13 +52,13 @@
 
 ## 示例
 
-### Read inventory for a Steam player
+### 读取 Steam 玩家的库存
 
 ```http
 GET /v1/pdapi/items/steam_76561198087654321
 ```
 
-### Read inventory for a GDK player
+### 读取 GDK 玩家的库存
 
 ```http
 GET /v1/pdapi/items/gdk_2533274812345678
@@ -66,6 +66,6 @@ GET /v1/pdapi/items/gdk_2533274812345678
 
 ## 使用场景
 
-- Check inventory before giving compensation.
-- Confirm an [`ItemID`](https://paldeck.cc/items) before using [POST /give/items](give-items.md).
-- Troubleshoot reports about missing items.
+- 发放补偿前检查库存。
+- 使用 [POST /give/items](give-items.md) 前确认 [`ItemID`](https://paldeck.cc/items)。
+- 排查物品缺失报告。

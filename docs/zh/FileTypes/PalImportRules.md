@@ -24,6 +24,8 @@ Pal 导入规则用于控制通过命令或 API 操作导入 `PalTemplate.json` 
 | `MaxValueLimitAction` | string | `BlockImport` 会拒绝超过配置限制的模板。`ClampToMaxValues` 会把数值降低到配置的上限。 |
 | `DisallowedPassivesAction` | string | `BlockImport` 会拒绝包含禁用被动的模板。`RemoveFromPal` 会在导入前移除这些被动。 |
 | `DisallowedPassives` | array | 受 `DisallowedPassivesAction` 影响的 [`PassiveID`](https://paldeck.cc/passives) 值。 |
+| `ConditionMode` | string | `None` 正常应用规则；`RequirePalCaptureCount` 要求玩家先捕获足够数量的同种 Pal 才能导入。 |
+| `RequiredCaptureCount` | int | 使用 `RequirePalCaptureCount` 时所需的同种 Pal 捕获数量（默认 `5`）。 |
 | `Disabled` | bool | 如果为 `true`，则禁用匹配规则集的导入检查。 |
 | `BanIfPalIsImpossible` | bool | 如果为 `true`，PalDefender 可以根据服务器设置处罚不可能合法存在的 Pal 导入。 |
 | `AllowGenderNone` | bool | 如果为 `false`，使用 `Gender: "None"` 的模板可能会被导入检查拒绝。 |
@@ -77,6 +79,8 @@ Pal 导入规则用于控制通过命令或 API 操作导入 `PalTemplate.json` 
     "DisallowedPassives": [
         "Legend"
     ],
+    "ConditionMode": "None",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "AllowGenderNone": false,
@@ -116,6 +120,8 @@ Pal 导入规则用于控制通过命令或 API 操作导入 `PalTemplate.json` 
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "RequirePalCaptureCount",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "AllowGenderNone": false,
@@ -150,6 +156,8 @@ Pal 导入规则用于控制通过命令或 API 操作导入 `PalTemplate.json` 
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "None",
+    "RequiredCaptureCount": 5,
     "Disabled": false,
     "BanIfPalIsImpossible": false,
     "BannedPalIDs": [
@@ -184,6 +192,8 @@ Pal 导入规则用于控制通过命令或 API 操作导入 `PalTemplate.json` 
         "Legend",
         "Vampire"
     ],
+    "ConditionMode": "RequirePalCaptureCount",
+    "RequiredCaptureCount": 5,
     "AllowGenderNone": false,
     "MaxLevel": 10,
     "MaxRank": 3,

@@ -26,7 +26,7 @@ JSON-Objekt mit `PalTemplates`, einem Array von Template-Dateinamen. Die Endung 
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/give-paltemplate.md"
+--8<-- "_snippets/de/restapi/schemas/give-paltemplate.md"
 
 ## Fehlerantworten
 
@@ -87,4 +87,4 @@ POST /v1/pdapi/give/paltemplate/ps5_c481a77e22004b9d
 
 - Nutzen, wenn Belohnungen bestimmte Skills, Passives, IVs, Souls, Spitznamen oder Arbeits-Eignungswerte brauchen.
 - Erstelle das Template zuerst über [FileTypes/PalTemplates](../../FileTypes/PalTemplate.md).
-- Import rules in `Pals/ImportRules/` can block or adjust templates before they are granted.
+- Importregeln in `Pals/ImportRules/` können Templates vor der Vergabe blockieren oder anpassen.

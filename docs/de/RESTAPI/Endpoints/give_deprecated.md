@@ -2,13 +2,13 @@
 
 <span class='pd-badge pd-badge--deprecated'>Veraltet</span>
 
-!!! warning "<span class='pd-badge pd-badge--deprecated'>Veraltet</span> legacy endpoint"
-    Dieser alte Belohnungs-Endpunkt ist veraltet. Nutze bevorzugt die getrennten Belohnungs-Endpunkte: [give progression](./give-progression.md), [give items](./give-items.md), [give pals](./give-pals.md), [give pal templates](./give-paltemplate.md) und [give Pal eggs](./give-paleggs.md).
+!!! warning "<span class='pd-badge pd-badge--deprecated'>Veraltet</span> alter Endpunkt"
+    Dieser alte Belohnungsendpunkt ist veraltet. Nutze bevorzugt die getrennten Endpunkte: [Fortschritt vergeben](./give-progression.md), [Gegenstände vergeben](./give-items.md), [Pals vergeben](./give-pals.md), [Pal-Templates vergeben](./give-paltemplate.md) und [Pal-Eier vergeben](./give-paleggs.md).
 
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/give_deprecated.md"
+--8<-- "_snippets/de/restapi/schemas/give_deprecated.md"
 
 ## Fehlerantworten
 
@@ -24,7 +24,7 @@ Dieser Endpunkt ist veraltet und in aktuellen Builds möglicherweise nicht vorha
 
 ## Beispiele
 
-### Grant EXP and items
+### EXP und Gegenstände vergeben
 
 ```http
 POST /v1/pdapi/give
@@ -40,7 +40,7 @@ POST /v1/pdapi/give
 }
 ```
 
-### Grant Pals and eggs
+### Pals und Eier vergeben
 
 ```http
 POST /v1/pdapi/give
@@ -58,46 +58,46 @@ POST /v1/pdapi/give
 }
 ```
 
-??? info "POST `/v1/pdapi/give` — Grant EXP / items / pals / eggs (atomic)"
+??? info "POST `/v1/pdapi/give` — EXP / Gegenstände / Pals / Eier atomar vergeben"
     ## POST `/v1/pdapi/give`
-    ### What it does
-    Grants rewards to a target player in a single server-side transaction-like operation:
+    ### Funktionsweise
+    Vergibt Belohnungen in einem einzigen transaktionsähnlichen serverseitigen Vorgang an einen Zielspieler:
 
-    - EXP and/or
-    - items and/or
-    - pals and/or
-    - eggs
-    depending on the request body.
+    - EXP und/oder
+    - Gegenstände und/oder
+    - Pals und/oder
+    - Eier,
+    abhängig vom Anfrageinhalt.
 
-    ### Core behavior
+    ### Kernverhalten
     Dieser Endpunkt soll **atomar** arbeiten:
 
-    - either everything is granted
-    - or nothing is granted
+    - Entweder wird alles vergeben,
+    - oder es wird nichts vergeben.
 
     Wenn ein Teil fehlschlägt (ungültige Eingabe, fehlender Inventarplatz, ungültige IDs usw.), sollte der Server die Anfrage ablehnen und sie nicht teilweise anwenden.
 
-    ### Why this matters
-    Admin tooling must not accidentally:
+    ### Warum das wichtig ist
+    Administrationswerkzeuge dürfen nicht versehentlich:
 
-    - give EXP but not items
-    - give some items but fail on later items
-    - spawn pals without placing items
+    - EXP, aber keine Gegenstände vergeben,
+    - einige Gegenstände vergeben und bei späteren scheitern,
+    - Pals erzeugen, ohne Gegenstände abzulegen.
 
-    Atomic behavior avoids messy states and “support tickets from hell”.
+    Atomares Verhalten verhindert inkonsistente Zustände und aufwendige Supportfälle.
 
-    ### What it can grant
-    Depending on your implementation, the request may include:
+    ### Mögliche Vergaben
+    Je nach Implementierung kann die Anfrage Folgendes enthalten:
 
-    - `EXP` — adds experience
-    - `Relics` — adds relic points keyed by relic type
-    - `TechnologyPoints` — adds tech points
-    - `AncientTechnologyPoints` — adds ancient tech points
-    - `UnlockTechnology` / `Techs[]` — learn technologies
-    - `Items[]` — give one or more items with counts
-    - `Pals[]` — give pals by ID + level
-    - `PalTemplates[]` — import pal templates by filename
-    - `PalEggs[]` — eggs by ID + pal ID / template, optionally with level
+    - `EXP` — fügt Erfahrung hinzu
+    - `Relics` — fügt nach Relikttyp indizierte Reliktpunkte hinzu
+    - `TechnologyPoints` — fügt Technologiepunkte hinzu
+    - `AncientTechnologyPoints` — fügt antike Technologiepunkte hinzu
+    - `UnlockTechnology` / `Techs[]` — erlernt Technologien
+    - `Items[]` — vergibt einen oder mehrere Gegenstände mit Mengen
+    - `Pals[]` — vergibt Pals anhand von ID und Stufe
+    - `PalTemplates[]` — importiert Pal-Templates anhand des Dateinamens
+    - `PalEggs[]` — vergibt Eier anhand von Ei-ID und Pal-ID oder Template, optional mit Stufe
 
 
     ### Fehlerantworten
@@ -128,18 +128,18 @@ POST /v1/pdapi/give
     }
     ```
 
-    ### Validation & common failure cases
+    ### Validierung und häufige Fehlerfälle
     Typische Gründe für Fehler:
 
-    - Inventory space: not enough room for all items → fail the entire request
-    - Invalid IDs: unknown `ItemID`, `PalID`, `EggID`, or missing template file → fail
-    - Invalid values:
-        - negative / zero counts (depending on rules)
-        - invalid levels (too low/high, or non-numeric)
-        - missing required fields (e.g., no `UserID`)
-    - Player not found / not loaded:
-        - user ID not known
-        - player not currently online (depending on how your server handles offline grants)
+    - Inventarplatz: Nicht genug Platz für alle Gegenstände → gesamte Anfrage schlägt fehl
+    - Ungültige IDs: unbekannte `ItemID`, `PalID`, `EggID` oder fehlende Template-Datei → Anfrage schlägt fehl
+    - Ungültige Werte:
+        - negative oder Nullmengen (abhängig von den Regeln)
+        - ungültige Stufen (zu niedrig/hoch oder nicht numerisch)
+        - fehlende Pflichtfelder (z. B. keine `UserID`)
+    - Spieler nicht gefunden oder nicht geladen:
+        - Benutzer-ID nicht bekannt
+        - Spieler derzeit nicht online (abhängig von der Behandlung von Offline-Vergaben)
 
-    ### Rueckgabe
+    ### Rückgabe
     Fehleranzahl und Fehlermeldungen. Wenn `status` nicht 200 ist, prüfe `Errors`, um zu sehen, wie viele Fehler aufgetreten sind. `Error` enthält die detaillierte Liste der fehlgeschlagenen Teile.

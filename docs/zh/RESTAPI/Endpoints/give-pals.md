@@ -26,7 +26,7 @@ JSON 对象，包含 `Pals` Pal 发放数组。每个条目都需要一个 [`Pal
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/give-pals.md"
+--8<-- "_snippets/zh/restapi/schemas/give-pals.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ JSON 对象，包含 `Pals` Pal 发放数组。每个条目都需要一个 [`Pal
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -50,7 +50,7 @@ JSON 对象，包含 `Pals` Pal 发放数组。每个条目都需要一个 [`Pal
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常，或共享玩家/资源解析器失败。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 | `400` | `INVALID_REQUEST` | 请求体不包含 `Pals` 数组。 |
-| `400` | `VALIDATION_FAILED` | One or more Pal grants are invalid, or the player has insufficient Pal storage space. |
+| `400` | `VALIDATION_FAILED` | 一个或多个帕鲁发放项无效，或玩家的帕鲁存储空间不足。 |
 
 ## 示例
 

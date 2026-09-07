@@ -10,7 +10,7 @@
 
 ## Zweck
 
-Reloads PalDefender configuration without requiring a full server restart.
+Lädt die PalDefender-Konfiguration neu, ohne einen vollständigen Serverneustart zu erfordern.
 
 ## Pfadparameter
 
@@ -26,7 +26,7 @@ Optionales leeres JSON-Objekt.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/reload-config.md"
+--8<-- "_snippets/de/restapi/schemas/reload-config.md"
 
 ## Fehlerantworten
 
@@ -49,13 +49,13 @@ Fehlerantworten verwenden dieses Format:
 
 ## Beispiele
 
-### Reload configuration
+### Konfiguration neu laden
 
 ```http
 POST /v1/pdapi/ReloadConfig
 ```
 
-### Reload after token changes
+### Nach Tokenänderungen neu laden
 
 ```http
 POST /v1/pdapi/ReloadConfig
@@ -63,6 +63,6 @@ POST /v1/pdapi/ReloadConfig
 
 ## Szenarien
 
-- Apply edits to supported configuration files.
-- Reload after updating `Banlist.json`, import rules, or other runtime-readable PalDefender files.
+- Änderungen an unterstützten Konfigurationsdateien anwenden.
+- Nach Änderungen an `Banlist.json`, Importregeln oder anderen zur Laufzeit lesbaren PalDefender-Dateien neu laden.
 - Wenn eine Änderung nach dem Neuladen nicht wirksam wird, starte den Server während eines Wartungsfensters neu.

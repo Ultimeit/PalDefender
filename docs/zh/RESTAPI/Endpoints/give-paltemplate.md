@@ -26,7 +26,7 @@ JSON 对象，包含 `PalTemplates` 模板文件名数组。为了清晰起见�
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/give-paltemplate.md"
+--8<-- "_snippets/zh/restapi/schemas/give-paltemplate.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ JSON 对象，包含 `PalTemplates` 模板文件名数组。为了清晰起见�
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -87,4 +87,4 @@ POST /v1/pdapi/give/paltemplate/ps5_c481a77e22004b9d
 
 - 当奖励需要指定技能、被动、IV、souls、昵称或工作适应性数值时使用。
 - 先使用 [FileTypes/PalTemplates](../../FileTypes/PalTemplate.md) 创建模板。
-- Import rules in `Pals/ImportRules/` can block or adjust templates before they are granted.
+- `Pals/ImportRules/` 中的导入规则可以在发放前阻止或调整模板。

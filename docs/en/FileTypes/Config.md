@@ -1,80 +1,151 @@
-# 🛠️ Config.json
+# 🛠️ `Config.json`
 
-| Config Key                     | Type   | Description                                                               |
-| ------------------------------ | ------ | ------------------------------------------------------------------------- |
-| `version`                      | string | Config version identifier (e.g. `"1.0.0"`).                               |
-| `MOTD`                         | array  | Message of the Day. Supports placeholders:<br>`{ServerName}` -> String - name of the server<br>`{PlayerName}` -> String - player who joined<br>`{Difficulty}` -> String - if set in palworld .ini<br>`{DeathPenalty}` -> String<br>`{AllowGlobalPalboxExport}` -> "Enabled" / "Disabled"<br>`{AllowGlobalPalboxImport}` -> "Enabled" / "Disabled"<br>`{IsPvP}` -> "Enabled" / "Disabled"<br>`{IsHardcore}` -> "Enabled" / "Disabled"<br>`{FriendlyFire}` -> "Enabled" / "Disabled"<br>`{DayTimeSpeedRate}` -> Float number<br>`{NightTimeSpeedRate}` -> Float number<br>`{ExpRate}` -> Float number<br>`{PalCaptureRate}` -> Float number<br>`{PalSpawnNumRate}` -> Float number<br>`{PalEggDefaultHatchingTime}` -> Float number<br>`{EnemyDropItemRate}` -> Float number<br>`{PalStomachDecreaceRate}` -> Float number<br>`{PalStaminaDecreaceRate}` -> Float number<br>`{BaseCampMaxNumInGuild}` -> Int number<br>`{SupplyDropSpan}` -> Int number<br>`{MaxBuildingLimitNum}` -> Int number<br> |
-| `exitServerOnStartupFailure`   | bool   | If `true`, shuts down the server when PalDefender cannot start. Good to protect your savegame being run without PalDefender. **Might cause problems with some Server Hosts, that do not check Exit Codes and assume the game crashed causing an endless loop.**                   |
-| `preventAdminPasswordInChat`   | bool   | Prevents leaking admin passwords in chat. Does nothing if no admin password is set.                                |
-| `shouldWarnCheaters`           | bool   | Sends a warning message to detected cheaters when they got caught.        |
-| `shouldWarnCheatersReason`     | bool   | Includes the reason in the cheat warning message above.                   |
-| `shouldKickCheaters`           | bool   | Automatically kicks detected cheaters.                                    |
-| `shouldBanCheaters`            | bool   | Automatically bans detected cheaters.                                     |
-| `shouldIPBanCheaters`          | bool   | Automatically IP-bans detected cheaters.                                  |
-| `RCONTimeout`                  | float  | Lets you declare the timeout to drop a RCON connection.                   |
-| `RCONUsePacketIdFix`           | bool   | Fixes packet IDs of pocketpairs wrong implemented of ROCN packet handling.|
-| `logNetworking`                | bool   | Logs incoming network data from clients.                                  |
-| `logNetworkingToConsole`       | bool   | Logs network traffic to the console.                                      |
-| `logChat`                      | bool   | Logs all player chat messages.                                            |
-| `logRCON`                      | bool   | Logs RCON command usage.                                                  |
-| `logPlayerUID`                 | bool   | Logs player PlayerUID in relevant logs.                                   |
-| `logPlayerIP`                  | bool   | Logs player IP address in relevant logs.                                  |
-| `logPlayerDeaths`              | bool   | Logs player deaths.                                                       |
-| `logPlayerLogins`              | bool   | Logs player login/logout events.                                          |
-| `logPlayerBuildings`           | bool   | Logs construction by players. (Build, Cancel, Dismantle)                  |
-| `logHelicopterKills`           | bool   | Logs kills by helicopters.                                                |
-| `logPlayerSummons`             | bool   | Logs player Pal summons.                                                  |
-| `logPlayerCaptures`            | bool   | Logs player Pal captures.                                                 |
-| `logCraftings`                 | bool   | Logs player craftings.                                                    |
-| `logTechUnlocks`               | bool   | Logs player technology unlockings.                                        |
-| `logOpenOilrigBoxes`           | bool   | Logs oilrig box interactions.                                             |
-| `OilrigGoalBoxLocktime`        | int    | Seconds the oilrig goal box stays locked (default: `300`).                |
-| `useAdminWhitelist`            | bool   | Enables admin IP whitelist. **The IPs have to bet set in `adminIPs`!**    |
-| `adminAutoLogin`               | bool   | Automatically logs in whitelisted admins into admin mode when joining.    |
-| `adminIPs`                     | array  | List of admin IPs allowed to use admin commands.                          |
-| `bannedIPs`                    | array  | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old IP ban storage. Use `Banlist.json` and `/banip` or `/unbanip` instead. |
-| `bannedChatWords`              | array  | Chat filter for blocked words (e.g., RMT ads).                            |
-| `bannedMessage`                | string | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Old ban message setting for Config-based ban handling. |
-| `bannedNames`                  | array  | Disallowed player names (e.g., from cracked versions).                    |
-| `pvpMaxToBuildingDamage`       | int    | Max allowed PvP damage to buildings.                                      |
-| `pvpMaxToPalDamage`            | int    | Max allowed PvP damage to Pals.                                           |
-| `pveMaxToPalBanThreshold`      | int    | PVE Pal damage threshold that triggers cheat detection.                   |
-| `treeLimiter`                  | float  | Max time a player can destroy 1 tree. (e.g. `0.1` = 1 tree every 100ms). This avoids huge lag during combat where rockets kill plenty of trees quickly. |
-| `allowAdminCheats`             | bool   | Allows admins to use cheat commands such as godmode.                      |
-| `allowGodmodeOnehit`           | bool   | Enables godmode to one-hit anything.                                      |
-| `adminCheats`                  | array  | Lets you specify which command is considered as an admin cheat, so if admin cheats are not allowed, they cannot be executed by your admins. RCON can still execute those. |
-| `isChineseCmd`                 | bool   | Enables Chinese encoding in console (legacy).                             |
-| `announceConnections`          | bool   | Announces player join/leave events in the chat.                           |
-| `dontAnnounceAdminConnections` | bool   | Suppresses connection messages for admins.                                |
-| `announcePunishments`          | bool   | Announces cheat bans/kicks to all players in the chat.                    |
-| `announcePlayerDeaths`         | bool   | Shows public death messages in the chat.                                  |
-| `announceOpenOilrigBoxes`      | bool   | Announces oilrig loot events in the chat.                                 |
-| `announceHelicopterKills`      | bool   | Announces helicopter kills in the chat.                                   |
-| `announcePlayerSummons`        | bool   | Announces Pal summons by players in the chat.                             |
-| `announceAdminSummons`         | bool   | Announces Pal summons by admin commands in the chat.                      |
-| `announceAdminSummonsKill`     | bool   | Announces when a player kills a summoned pal by an admin.                 |
-| `chatBypassWait`               | bool   | Removes chat cooldown between messages.                                   |
-| `chatMessageMaxLen`            | int    | Max allowed chat message length.                                          |
-| `useWhitelist`                 | bool   | Enables `WhiteList.json`.                                                 |
-| `whitelistMessage`             | string | Message shown to non-whitelisted players.                                 |
-| `steamidProtection`            | bool   | Prevents duplicate logins using same UserId.                              |
-| `blockTowerBossCapture`        | bool   | Disables capture of tower bosses.                                         |
-| `RCONbase64`                   | bool   | Enables base64-encoded RCON commands.                                     |
-| `disableIllegalItemProtection` | bool   | Disables protection against modded items (e.g., debug spheres).           |
-| `disableButchering`            | bool   | Disables butchering.                                                      |
-| `disableRenaming`              | bool   | Disables character renaming.                                              |
-| `disablePalRenaming`           | bool   | Disables renaming of Pals.                                                |
-| `doActionUponIllegalPalStats`  | bool   | Automatically reacts to illegal Pal stat exploits.                        |
-| `palStatsMaxRank`              | int    | Max allowed Pal enhancement rank (`-1` = auto-detect).                    |
-| `bannedTechnologies`           | array  | Blocks technologies from being learnt. Unlearns them upon joining.        |
-| `PalImport_Disabled`           | bool   | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy setting for Pal import rule migration. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_BanIfPalIsImpossible` | bool | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy setting for impossible Pal import punishment behavior. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_BannedPalIDs`       | array  | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy list of Pal IDs blocked from import. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_AllowGenderNone`    | bool   | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import rule for `Gender: "None"`. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxLevel`           | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max level. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxRank`            | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max partner skill rank. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxSoulHP`          | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul health. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxSoulATK`         | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul attack. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxSoulDEF`         | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul defense. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxSoulCS`          | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max Pal soul craft speed. Prefer `Pals/ImportRules/Default.json`. |
-| `PalImport_MaxIV`              | int    | <span class='pd-badge pd-badge--deprecated'>Deprecated</span> Legacy import max IV value. Prefer `Pals/ImportRules/Default.json`. |
+`Config.json` is generated in `<PalServer>/Pal/Binaries/Win64/PalDefender/` on first start. Stop the server before editing it, or use `/reloadcfg` after saving changes.
+
+!!! note "Generated settings"
+    PalDefender writes the current setting set back to this file. Keys not listed below are obsolete, migration-only, or unavailable in the current public build.
+
+## General and enforcement
+
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| `version` | string | Current version | Config schema/version marker maintained by PalDefender. |
+| `MOTD` | array | Three messages | Join messages. Supports `{ServerName}`, `{PlayerName}`, `{Difficulty}`, `{DeathPenalty}`, `{AllowGlobalPalboxExport}`, `{AllowGlobalPalboxImport}`, `{IsPvP}`, `{IsHardcore}`, `{FriendlyFire}`, `{DayTimeSpeedRate}`, `{NightTimeSpeedRate}`, `{ExpRate}`, `{PalCaptureRate}`, `{PalSpawnNumRate}`, `{PalEggDefaultHatchingTime}`, `{EnemyDropItemRate}`, `{PalStomachDecreaceRate}`, `{PalStaminaDecreaceRate}`, `{BaseCampMaxNumInGuild}`, `{SupplyDropSpan}`, and `{MaxBuildingLimitNum}`. |
+| `exitServerOnStartupFailure` | bool | `true` | Stops the server if PalDefender cannot initialize. Some hosts may interpret this as a crash and restart repeatedly. |
+| `preventAdminPasswordInChat` | bool | `true` | Blocks the admin password from being sent as chat text. |
+| `shouldWarnCheaters` | bool | `true` | Warns a player when an automatic detection triggers. |
+| `shouldWarnCheatersReason` | bool | `false` | Includes the detection reason in that warning. |
+| `shouldKickCheaters` | bool | `true` | Kicks detected cheaters unless a stronger enabled action applies. |
+| `shouldBanCheaters` | bool | `false` | Account-bans detected cheaters. |
+| `shouldIPBanCheaters` | bool | `false` | IP-bans detected cheaters. |
+| `blockEmergencyRespawn` | bool | `true` | Blocks the Menu → Emergency Respawn action. |
+
+## RCON and logging
+
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| `RCONTimeout` | float | `31.0` | Seconds before an inactive RCON connection times out. |
+| `RCONbase64` | bool | `false` | Enables base64-encoded RCON commands. |
+| `logNetworking` | bool | `false` | Writes supported network logging. Network logging is disabled in the current public build. |
+| `logNetworkingToConsole` | bool | `true` | Mirrors network logging to the console when network logging is available. |
+| `logChat` | bool | `true` | Logs Global, Guild, and Say chat. |
+| `logRCON` | bool | `false` | Logs RCON commands. |
+| `logPlayerUID` | bool | `false` | Includes PlayerUID in relevant logs and anti-cheat webhooks. |
+| `logPlayerIP` | bool | `true` | Includes IP addresses in relevant logs and anti-cheat webhooks. |
+| `logPlayerDeaths` | bool | `true` | Logs player deaths and kills. |
+| `logPlayerLogins` | bool | `true` | Logs player joins and leaves. |
+| `logPlayerBuildings` | bool | `true` | Logs supported build, cancellation, dismantle, and Palbox-move activity. |
+| `logPlayerSummons` | bool | `true` | Logs player raid-boss summons. |
+| `logPlayerCaptures` | bool | `true` | Reserved compatibility setting. Capture logging is disabled in 1.9.0 because the available event is unreliable. |
+| `BannedCampWorker` | array | Panthalus variants | Character IDs that cannot be assigned at a base. Matching is case-insensitive; variants such as `BOSS_...` must be listed separately. |
+| `logHelicopterKills` | bool | `true` | Logs combat-helicopter kills. |
+| `logCraftings` | bool | `true` | Logs player crafting. |
+| `logTechUnlocks` | bool | `true` | Logs technology unlocks. |
+| `logOpenOilrigBoxes` | bool | `true` | Logs Oil Rig End Goal Box events. |
+| `OilrigGoalBoxLocktime` | int | `300` | Seconds the Oil Rig End Goal Box remains locked. |
+
+## Discord webhooks
+
+`PalWebhooks` is an object. Leave an individual URL empty to disable that destination. Webhook delivery is queued, so bursts are staggered instead of blocking the game thread.
+
+| Nested key | Sends |
+| --- | --- |
+| `webhookURL_Chat` | Global and Say chat messages. |
+| `webhookURL_GuildChat` | Guild chat messages with the guild name. |
+| `webhookURL_Commands` | Commands run through in-game chat, including the administrator and full command. |
+| `webhookURL_Deaths` | Deaths and kills. Requires `announcePlayerDeaths` or `logPlayerDeaths`. |
+| `webhookURL_JoinLeave` | Join/leave events when `announceConnections` is enabled; respects `dontAnnounceAdminConnections`. |
+| `webhookURL_Summons` | Player/admin summon announcements and complete tracked-summon damage results. |
+| `webhookURL_Oilrig` | Oil Rig boxes and helicopter kills when the corresponding `announce...` setting is enabled. |
+| `webhookURL_AntiCheats` | Automatic and manual-review anti-cheat detections. UID/IP inclusion follows `logPlayerUID` and `logPlayerIP`. |
+
+```json
+"PalWebhooks": {
+    "webhookURL_Chat": "",
+    "webhookURL_GuildChat": "",
+    "webhookURL_Commands": "",
+    "webhookURL_Deaths": "",
+    "webhookURL_JoinLeave": "",
+    "webhookURL_Summons": "",
+    "webhookURL_Oilrig": "",
+    "webhookURL_AntiCheats": ""
+}
+```
+
+## Administration, chat, and announcements
+
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| `useAdminWhitelist` | bool | `true` | Restricts admin login/commands to `adminIPs`. |
+| `adminAutoLogin` | bool | `false` | Automatically enables admin mode for a joining whitelisted IP. |
+| `adminIPs` | array | `127.0.0.1` | Exact IPs and supported wildcard entries allowed to administer the server. |
+| `bannedChatWords` | array | Common RMT terms | Case-insensitive chat filter terms. |
+| `bannedNames` | array | Known abuse names | Player names rejected during login. |
+| `allowAdminCheats` | bool | `false` | Allows administrators to use commands in `adminCheats` and bypass selected protections. The Admin Gun itself only requires active in-game administrator status. |
+| `allowGodmodeOnehit` | bool | `false` | Allows Godmode users to deal one-hit damage. |
+| `adminCheats` | array | Generated list | Commands treated as admin cheats when `allowAdminCheats` is disabled. RCON is not blocked by this list. |
+| `announceConnections` | bool | `false` | Announces joins/leaves in chat and enables the join/leave webhook source. |
+| `dontAnnounceAdminConnections` | bool | `true` | Hides administrator joins/leaves from those announcements. |
+| `announcePunishments` | bool | `false` | Announces automatic cheat kicks/bans. |
+| `announcePlayerDeaths` | bool | `false` | Announces player deaths in chat. |
+| `announceOpenOilrigBoxes` | bool | `false` | Announces Oil Rig box events and enables their webhook source. |
+| `announceHelicopterKills` | bool | `false` | Announces helicopter kills and enables their webhook source. |
+| `announcePlayerSummons` | bool | `false` | Announces player raid-boss summons. |
+| `announceAdminSummons` | bool | `false` | Announces Pals spawned through administrative summon features. |
+| `announceAdminSummonsKill` | bool | `true` | Announces kills/deaths of administratively summoned Pals. |
+| `chatBypassWait` | bool | `true` | Removes the normal chat wait between messages. |
+| `chatMessageMaxLen` | int | `128` | Maximum accepted chat-message length. |
+| `useWhitelist` | bool | `false` | Enables `WhiteList.json`. |
+| `whitelistMessage` | string | Generated text | Message shown to a rejected non-whitelisted player. |
+| `steamidProtection` | bool | `true` | Rejects duplicate simultaneous use of a UserId. |
+
+## Gameplay validation
+
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| `pvpMaxToBuildingDamage` | int | `100` | Maximum permitted PvP damage to buildings. |
+| `pvpMaxToPalDamage` | int | `1000` | Maximum permitted PvP damage to Pals. |
+| `pveMaxToPalBanThreshold` | int | `900000` | PvE Pal-damage threshold used by cheat detection. |
+| `droppedPalPickupRange` | int | `99999` | Maximum accepted distance for a dropped-Pal pickup. |
+| `treeLimiter` | float | `0.1` | Minimum seconds between tree destruction events used to limit foliage bursts. |
+| `disableIllegalItemProtection` | bool | `false` | Disables invalid/modded item protection. |
+| `disableButchering` | bool | `false` | Blocks Pal butchering. |
+| `disableRenaming` | bool | `false` | Blocks player renaming. |
+| `disablePalRenaming` | bool | `false` | Blocks Pal renaming. |
+| `doActionUponIllegalPalStats` | bool | `true` | Applies the configured cheat action for impossible Pal stats. |
+| `preventUnsupportedWorkbenchRecipes` | bool | `true` | Blocks recipes unsupported by the requested workbench. |
+| `preventDoctorSurgiExploit` | bool | `true` | Detects/blocks the Doctor Surgi exploit. |
+| `doActionUponDoctorSurgiExploit` | bool | `true` | Applies the configured cheat action for that exploit. |
+| `palStatsMaxRank` | int | `-1` | Maximum Pal enhancement rank; `-1` uses automatic/current game limits. |
+| `bannedTechnologies` | array | Empty | Technology IDs blocked from learning and removed when detected. |
+
+## Anti-cheat feature switches
+
+| Key | Type | Default | Description |
+| --- | --- | --- | --- |
+| `antiDupeEnabled` | bool | `true` | Compatibility switch for the legacy AntiDupe feature; inactive in the current public 1.9.0 build. |
+| `antiDupeBuildRateLimitSeconds` | float | `1.5` | Legacy minimum interval between builds; currently inactive. |
+| `antiDupeDismantleRateLimitSeconds` | float | `1.5` | Legacy minimum interval between dismantles; currently inactive. |
+| `antiDupeShowBlockMessage` | bool | `true` | Legacy block-message switch; currently inactive. |
+| `antiDupeBuildMessage` | string | Generated text | Legacy build-block message; currently inactive. |
+| `antiDupeDismantleMessage` | string | Generated text | Legacy dismantle-block message; currently inactive. |
+| `antiVacuumEnabled` | bool | `true` | Enables remote pickup (vacuum) protection. |
+| `antiVacuumBlockAutoPickup` | bool | `true` | Applies anti-vacuum checks to normal auto-pickups. |
+| `antiVacuumBlockRelicObtain` | bool | `true` | Applies checks to relic collection. |
+| `antiVacuumBlockNoteObtain` | bool | `true` | Applies checks to note collection. |
+| `antiVacuumBlockEggPickup` | bool | `true` | Applies checks to egg pickup. |
+| `antiVacuumMaxPickupDistance` | float | `800.0` | Maximum permitted pickup distance for protected requests. |
+| `antiVacuumShowBlockMessage` | bool | `true` | Shows a player-facing message when a pickup is blocked. |
+| `antiVacuumBlockMessage` | string | Generated text | Message shown for a blocked remote pickup. |
+| `staminaCheatDetectionEnabled` | bool | `true` | Enables suspicious stamina-action detection. |
+| `baseCampDupeDetectionEnabled` | bool | `true` | Enables base-camp duplication detection. |
+| `damageCheatDetectionEnabled` | bool | `true` | Enables damage cheat detection. |
+| `ammoCheatDetectionEnabled` | bool | `true` | Enables ammunition/weapon-state cheat detection. |
+
+The `antiDupe...` keys are still generated for configuration compatibility, but the legacy AntiDupe feature is disabled in the current public 1.9.0 build. Do not rely on these controls until the feature is enabled again.
+
+## Legacy migration keys
+
+`PalImport_Disabled`, `PalImport_BanIfPalIsImpossible`, `PalImport_BannedPalIDs`, `PalImport_AllowGenderNone`, `PalImport_MaxLevel`, `PalImport_MaxRank`, `PalImport_MaxSoulHP`, `PalImport_MaxSoulATK`, `PalImport_MaxSoulDEF`, `PalImport_MaxSoulCS`, and `PalImport_MaxIV` are read only to migrate older installations to [`Pals/ImportRules/Default.json`](./PalImportRules.md). They are no longer written to current `Config.json` files.
+
+The old `RCONUsePacketIdFix`, `bannedIPs`, `bannedMessage`, `isChineseCmd`, and `blockTowerBossCapture` keys are not part of the current configuration. Ban records belong in `Banlist.json`.

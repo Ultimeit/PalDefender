@@ -14,7 +14,7 @@ Löscht eine Basis/ein Camp anhand der Base-Camp-ID. Das ist eine destruktive Ad
 
 ## Pfadparameter
 
-- `base_camp_id`: Base camp identifier, usually copied from guild/base data.
+- `base_camp_id`: Kennung des Basislagers, üblicherweise aus Gilden- oder Basisdaten kopiert.
 
 ## Query-Parameter
 
@@ -26,7 +26,7 @@ Optionales leeres JSON-Objekt. Bestätige die ID, bevor du die Anfrage sendest.
 
 ## Antwortschema
 
---8<-- "_snippets/restapi/schemas/deletebase.md"
+--8<-- "_snippets/de/restapi/schemas/deletebase.md"
 
 ## Fehlerantworten
 
@@ -51,18 +51,18 @@ Fehlerantworten verwenden dieses Format:
 | `500` | `REQUEST_TIMEOUT` | Der interne Game-Thread-Callback wurde nicht innerhalb von 5 Sekunden abgeschlossen. |
 | `400` | `INVALID_BASE_CAMP_ID` | The `base_camp_id` path value is not a valid GUID. |
 | `500` | `BASE_CAMP_MANAGER_UNAVAILABLE` | Der Server konnte nicht auf `UPalBaseCampManager` zugreifen. |
-| `404` | `BASE_CAMP_NOT_FOUND` | No base camp matched the supplied GUID. |
+| `404` | `BASE_CAMP_NOT_FOUND` | Kein Basislager entsprach der angegebenen GUID. |
 | `500` | `DELETE_BASE_FAILED` | Das Base Camp wurde gefunden, aber Zerstoerung/Bereinigung ist fehlgeschlagen. |
 
 ## Beispiele
 
-### Delete a base camp by GUID
+### Ein Basislager anhand seiner GUID löschen
 
 ```http
 POST /v1/pdapi/deletebase/13b9e8d7-4f2c-42a1-b79e-fc2a9186e4d5
 ```
 
-### Delete another base camp by GUID
+### Ein weiteres Basislager anhand seiner GUID löschen
 
 ```http
 POST /v1/pdapi/deletebase/81c2f0a4-6d7e-49fb-a11d-0d2f9f94b13c
@@ -70,6 +70,6 @@ POST /v1/pdapi/deletebase/81c2f0a4-6d7e-49fb-a11d-0d2f9f94b13c
 
 ## Szenarien
 
-- Remove abandoned or broken bases after staff review.
+- Verlassene oder defekte Basen nach Prüfung durch das Team entfernen.
 - Nutze [GET /guilds](guilds.md) und [GET /guild](guild.md), um vor dem Löschen das richtige Camp zu identifizieren.
-- Do not use this endpoint for routine cleanup unless your staff process already verifies ownership and backups.
+- Diesen Endpunkt nicht für routinemäßige Bereinigungen verwenden, sofern der Teamprozess Eigentum und Sicherungen nicht bereits prüft.

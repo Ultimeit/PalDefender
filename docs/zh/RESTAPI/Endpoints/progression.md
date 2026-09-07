@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/progression.md"
+--8<-- "_snippets/zh/restapi/schemas/progression.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -52,13 +52,13 @@
 
 ## 示例
 
-### Read progression by PS5 UserID
+### 按 PS5 UserID 读取进度
 
 ```http
 GET /v1/pdapi/progression/ps5_c481a77e22004b9d
 ```
 
-### Read progression by PlayerUID
+### 按 PlayerUID 读取进度
 
 ```http
 GET /v1/pdapi/progression/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
@@ -66,6 +66,6 @@ GET /v1/pdapi/progression/92b8f6ac-1a3d-4a9e-8f52-cc741db8c20a
 
 ## 使用场景
 
-- Confirm the current values before granting progression.
-- Verify a support action after [POST /give/progression](give-progression.md).
-- Build a player overview panel in a trusted admin dashboard.
+- 授予进度前确认当前数值。
+- 在 [POST /give/progression](give-progression.md) 后验证支持操作。
+- 在可信的管理面板中构建玩家概览。

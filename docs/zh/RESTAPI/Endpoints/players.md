@@ -26,7 +26,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/players.md"
+--8<-- "_snippets/zh/restapi/schemas/players.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -53,13 +53,13 @@
 
 ## 示例
 
-### List all known players
+### 列出所有已知玩家
 
 ```http
 GET /v1/pdapi/players
 ```
 
-### Refresh an admin player selector
+### 刷新管理员玩家选择器
 
 ```http
 GET /v1/pdapi/players
@@ -67,11 +67,11 @@ GET /v1/pdapi/players
 
 ## 使用场景
 
-- Build a dropdown of online and known players.
-- Find the correct `UserId` or `PlayerUID` before calling reward, punishment, or inventory endpoints.
-- Audit who is online before sending a message or scheduled maintenance warning.
+- 构建在线玩家和已知玩家的下拉列表。
+- 调用奖励、处罚或库存端点前，先找到正确的 `UserId` 或 `PlayerUID`。
+- 发送消息或计划维护警告前，审计当前在线玩家。
 
 ## Related
 
-- [GET /player](player.md) for one player.
-- [POST /kick](kick.md), [POST /ban](ban.md), and reward endpoints use the same player identifier style.
+- 使用 [GET /player](player.md) 查询单个玩家。
+- [POST /kick](kick.md)、[POST /ban](ban.md) 和奖励端点使用相同的玩家标识符格式。

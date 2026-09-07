@@ -18,13 +18,13 @@
 
 ## 查询参数
 
-- `active`: `true`, `false`, or `1` to filter active state.
+- `active`: 使用 `true`、`false` 或 `1` 按有效状态筛选。
 - `entryType`：按封禁条目类型过滤。
 - `userId`: Filter by user ID.
 - `ip` or `userIP`: Filter by IP address.
 - `issuerType`、`issuerName`、`issuerIP`：按执行者元数据过滤。
-- `reason`: Filter by reason text.
-- `q`: General text search.
+- `reason`: 按原因文本筛选。
+- `q`: 常规文本搜索。
 
 ## 请求体
 
@@ -32,7 +32,7 @@
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/banlist.md"
+--8<-- "_snippets/zh/restapi/schemas/banlist.md"
 
 ## 错误响应
 
@@ -43,7 +43,7 @@
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -55,19 +55,19 @@
 
 ## 示例
 
-### List all ban records
+### 列出所有封禁记录
 
 ```http
 GET /v1/pdapi/banlist
 ```
 
-### Find active records for a Steam user
+### 查找 Steam 用户的有效记录
 
 ```http
 GET /v1/pdapi/banlist?active=true&userId=steam_76561198012345678
 ```
 
-### Search records by IP
+### 按 IP 搜索记录
 
 ```http
 GET /v1/pdapi/banlist?ip=203.0.113.42
@@ -75,9 +75,9 @@ GET /v1/pdapi/banlist?ip=203.0.113.42
 
 ## 使用场景
 
-- Check whether a player or IP is currently banned.
-- Search by reason or issuer before unbanning.
-- Build a moderation dashboard that reads from `Banlist.json` through the API.
+- 检查玩家或 IP 当前是否被封禁。
+- 解封前按原因或执行者搜索。
+- 构建通过 API 读取 `Banlist.json` 的管理面板。
 
 ## Related
 

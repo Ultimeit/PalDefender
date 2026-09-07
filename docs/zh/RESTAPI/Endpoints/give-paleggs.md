@@ -26,7 +26,7 @@ JSON 对象，包含 `PalEggs` 蛋发放数组。`EggID` 是一个 [`ItemID`](ht
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/give-paleggs.md"
+--8<-- "_snippets/zh/restapi/schemas/give-paleggs.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ JSON 对象，包含 `PalEggs` 蛋发放数组。`EggID` 是一个 [`ItemID`](ht
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```

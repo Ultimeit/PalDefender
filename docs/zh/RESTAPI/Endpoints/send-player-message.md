@@ -26,7 +26,7 @@ JSON 对象，包含 `SendType`、`Message`，以及 `UserID` 或 `UserIDs`。�
 
 ## 响应结构
 
---8<-- "_snippets/restapi/schemas/send-player-message.md"
+--8<-- "_snippets/zh/restapi/schemas/send-player-message.md"
 
 ## 错误响应
 
@@ -37,7 +37,7 @@ JSON 对象，包含 `SendType`、`Message`，以及 `UserID` 或 `UserIDs`。�
     "Error": {
         "Code": "ERROR_CODE",
         "Message": "人类可读的消息",
-        "详情": {}
+        "Details": {}
     }
 }
 ```
@@ -50,7 +50,7 @@ JSON 对象，包含 `SendType`、`Message`，以及 `UserID` 或 `UserIDs`。�
 | `400` | `INVALID_JSON` | 请求体不是有效 JSON。 |
 | `400` | `VALIDATION_FAILED` | `SendType`、`Message`、`UserID` 或 `UserIDs` 缺失、为空、重复，或类型错误。 |
 | `400` | `PLAYER_NOT_FOUND` | One or more target user IDs or player UIDs could not be found. |
-| `400` | `SEND_MESSAGE_FAILED` | Validation passed, but the server rejected the message send operation. |
+| `400` | `SEND_MESSAGE_FAILED` | 验证通过，但服务器拒绝了消息发送操作。 |
 | `400` | `REQUEST_FAILED` | 游戏线程回调抛出异常。 |
 | `500` | `REQUEST_TIMEOUT` | 内部游戏线程回调未在 5 秒内完成。 |
 
