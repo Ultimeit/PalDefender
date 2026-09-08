@@ -163,6 +163,58 @@ plugins:
                     - POST /summon/npc: RESTAPI/Endpoints/summon-npc.md
                 - Exemplos:
                     - Python: RESTAPI/Examples/Python.md
+        - locale: fr
+          name: Français (French)
+          nav:
+            - Accueil: index.md
+            - Foire aux questions: FAQ.md
+            - Fonctionnalités et état actuel: Features.md
+            - Installation: Installation.md
+            - Partenariats: Partnerships.md
+            - Commandes: Commands/index.md
+            - Types de fichiers:
+                - Vue d'ensemble: FileTypes/index.md
+                - Config.json: FileTypes/Config.md
+                - Pals/ImportRules/*.json: FileTypes/PalImportRules.md
+                - PalSummon.json: FileTypes/PalSummon.md
+                - PalTemplate.json: FileTypes/PalTemplate.md
+            - API REST:
+                - Vue d'ensemble: RESTAPI/index.md
+                - Authentification et configuration: RESTAPI/authentication.md
+                - Points de terminaison:
+                    - Vue d'ensemble: RESTAPI/Endpoints/index.md
+                    - GET /version: RESTAPI/Endpoints/version.md
+                    - GET /players: RESTAPI/Endpoints/players.md
+                    - GET /player: RESTAPI/Endpoints/player.md
+                    - GET /pals: RESTAPI/Endpoints/pals.md
+                    - GET /items: RESTAPI/Endpoints/items.md
+                    - GET /techs: RESTAPI/Endpoints/techs.md
+                    - GET /progression: RESTAPI/Endpoints/progression.md
+                    - GET /guilds: RESTAPI/Endpoints/guilds.md
+                    - GET /guild: RESTAPI/Endpoints/guild.md
+                    - GET /banlist: RESTAPI/Endpoints/banlist.md
+                    - POST /alert: RESTAPI/Endpoints/alert.md
+                    - POST /broadcast: RESTAPI/Endpoints/broadcast.md
+                    - POST /SendPlayerMessage: RESTAPI/Endpoints/send-player-message.md
+                    - POST /ban: RESTAPI/Endpoints/ban.md
+                    - POST /banip: RESTAPI/Endpoints/banip.md
+                    - POST /unban: RESTAPI/Endpoints/unban.md
+                    - POST /unbanip: RESTAPI/Endpoints/unbanip.md
+                    - POST /kick: RESTAPI/Endpoints/kick.md
+                    - POST /deletebase: RESTAPI/Endpoints/deletebase.md
+                    - POST /give/items: RESTAPI/Endpoints/give-items.md
+                    - POST /give/pals: RESTAPI/Endpoints/give-pals.md
+                    - POST /give/paleggs: RESTAPI/Endpoints/give-paleggs.md
+                    - POST /give/paltemplate: RESTAPI/Endpoints/give-paltemplate.md
+                    - POST /give/progression: RESTAPI/Endpoints/give-progression.md
+                    - POST /give: RESTAPI/Endpoints/give_deprecated.md
+                    - POST /learntech: RESTAPI/Endpoints/learntech.md
+                    - POST /forgettech: RESTAPI/Endpoints/forgettech.md
+                    - POST /reload-config: RESTAPI/Endpoints/reload-config.md
+                    - POST /summon/pal: RESTAPI/Endpoints/summon-pal.md
+                    - POST /summon/npc: RESTAPI/Endpoints/summon-npc.md
+                - Exemples:
+                    - Python: RESTAPI/Examples/Python.md
 
 extra:
   social:
