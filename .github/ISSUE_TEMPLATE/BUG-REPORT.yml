@@ -1,27 +1,19 @@
 name: "Bug Report"
-description: Create a new issue for a bug.
-title: "Your title"
-labels: [
-  "bug"
-]
+description: "Report a reproducible problem with PalDefender."
+title: "[Bug]: "
+labels:
+  - "bug"
 body:
   - type: dropdown
     id: version
     attributes:
       label: "PalDefender Version"
-      description: What version of PalDefender are you running?
-      multiple: true
+      description: "Which version of PalDefender are you running? Stable v1.9.x releases are currently supported."
       options:
-        - v1.4.6
-        - v1.4.5
-        - v1.4.4
-        - v1.4.3
-        - v1.4.2
-        - v1.4.0
-        - v1.3.1
-        - v1.3.0
-        - v1.1.6
-        - Older than v1.1.6
+        - "v1.9.1"
+        - "v1.9.0"
+        - "Older than v1.9.0 (unsupported)"
+        - "Pre-release, beta, or custom build (unsupported)"
     validations:
       required: true
   - type: textarea
@@ -36,7 +28,7 @@ body:
     id: reprod
     attributes:
       label: "Reproduction steps"
-      description: Please enter an explicit description of your bug. E.g.: It doesnt help us when you tell us a command is not working without providing the command you typed.
+      description: "Describe exactly how to reproduce the bug. For example, if a command is not working, include the command you entered."
       value: |
         1. ...
         2. ...
@@ -49,7 +41,7 @@ body:
     attributes:
       label: "Screenshots"
       description: If applicable, add screenshots to help explain your problem.
-      placeholder: just drag & drop your screenshot or copy & paste it.
+      placeholder: "Drag and drop your screenshot here, or copy and paste it."
     validations:
       required: false
   - type: textarea
