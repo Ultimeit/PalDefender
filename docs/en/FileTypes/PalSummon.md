@@ -16,14 +16,16 @@ A PalSummon file defines a fixed-location encounter launched with `/summon <file
 | `DisableAI` | bool | `false` | Disables normal AI. Some passive behavior, such as dodging, may still occur. |
 | `DisableDamageMeter` | bool | `false` | Disables tracking, the result dialog, and rank rewards. The `Default` reward is instead granted to all online players. |
 | `SpawnScale` | number | `1.0` | Visual/physical size multiplier; non-positive values fall back to `1.0`. |
-| `HealthMultiplier` | number | `1.0` | Maximum-health multiplier; must be finite and greater than zero. |
 | `DamageTakenMultiplier` | number | `1.0` | Multiplier for damage received; negative values fall back to `1.0`. |
 | `DamageDealtMultiplier` | number | `1.0` | Multiplier for damage dealt; negative values fall back to `1.0`. |
 | `X`, `Y`, `Z` | number | Required | Map coordinates. Use `/getpos` to obtain them. |
 | `DisableStatuses` | array | Empty | Status names to suppress. Invalid names are skipped. |
 | `Rewards` | object or array | Empty | Optional rank-specific and default [reward definitions](#damage-meter-and-rewards). The object form is recommended. |
 
-`CapturableAt`, `CapturableAtPercent`, and `capturable_at` are accepted compatibility aliases. `HPMultiplier`, `AdditionalEnemyMaxHPRate`, `AdditionalEnemyReceiveDamageRate`, and `AdditionalEnemyInflictDamageRate` are also accepted, but the names in the table are preferred.
+`CapturableAt`, `CapturableAtPercent`, and `capturable_at` are accepted compatibility aliases. `AdditionalEnemyReceiveDamageRate` and `AdditionalEnemyInflictDamageRate` are also accepted, but the names in the table are preferred.
+
+!!! warning "Maximum HP migration"
+    The summoned Pal's maximum HP is now taken from `HP` in the referenced PalTemplate. `HealthMultiplier`, `HPMultiplier`, and `AdditionalEnemyMaxHPRate` are no longer supported; remove these fields from existing PalSummon files.
 
 ## Damage meter and rewards { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@ Use valid JSON without comments or trailing commas. Review load warnings even wh
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

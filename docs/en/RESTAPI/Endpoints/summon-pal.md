@@ -19,8 +19,10 @@ Spawns a Pal at fixed map coordinates. The request must provide exactly one of `
 | `Uncapturable` | bool | No | Prevents capture (default `false`). |
 | `DisableAI` | bool | No | Disables normal AI (default `false`). |
 | `DisableDamageMeter` | bool | No | Disables damage tracking (default `false`). |
-| `HealthMultiplier` | number | No | Positive health multiplier (default `1.0`). `HPMultiplier` is accepted as an alias. |
 | `DisableStatuses` | array | No | Status names to suppress. |
+
+!!! warning "Maximum HP migration"
+    When `PalTemplate` is used, the template's `HP` value becomes the spawned Pal's maximum HP. `HealthMultiplier` and `HPMultiplier` are no longer accepted in requests or returned in responses; remove them from existing REST integrations.
 
 ## Response schema
 
@@ -44,7 +46,6 @@ Content-Type: application/json
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "Uncapturable": true,
-    "HealthMultiplier": 5.0
+    "Uncapturable": true
 }
 ```

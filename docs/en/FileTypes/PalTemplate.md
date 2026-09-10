@@ -22,7 +22,7 @@ use <https://paldeck.cc/creator> to create those files way easier!
 | `PhysicalHealth`         | string | Physical health state. Valid names include `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
 | `WorkerSick`             | string | Worker sickness state. Valid names include `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
 | `ImportedCharacter`      | bool   | Marks the Pal as an imported character.                                    |
-| `HP` / `SP` / `MP`       | number | Base Health, Stamina, and Mana values.                                              |
+| `HP` / `SP` / `MP`       | number | Base Health, Stamina, and Mana values. `HP` is used as the spawned Pal's maximum HP, including PalSummon and REST summons that reference this template. |
 | `Shield`                 | number | Shield value.                                                              |
 | `Hunger` / `MaxHunger`   | int    | Current and max hunger values.                                                      |
 | `SAN`                    | int    | Sanity (mental stability of the Pal).                                               |

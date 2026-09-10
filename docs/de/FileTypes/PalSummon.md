@@ -16,14 +16,16 @@ Eine PalSummon-Datei definiert eine Begegnung an einem festen Ort, die mit `/sum
 | `DisableAI` | bool | `false` | Deaktiviert die normale KI. Einzelne passive Verhaltensweisen wie Ausweichen können weiterhin auftreten. |
 | `DisableDamageMeter` | bool | `false` | Deaktiviert Tracking, Ergebnisdialog und Rangbelohnungen. Stattdessen wird die `Default`-Belohnung an alle Online-Spieler vergeben. |
 | `SpawnScale` | number | `1.0` | Visueller/physischer Größenmultiplikator; Werte kleiner oder gleich null fallen auf `1.0` zurück. |
-| `HealthMultiplier` | number | `1.0` | Multiplikator der maximalen Lebenspunkte; muss endlich und größer als null sein. |
 | `DamageTakenMultiplier` | number | `1.0` | Multiplikator für erhaltenen Schaden; negative Werte fallen auf `1.0` zurück. |
 | `DamageDealtMultiplier` | number | `1.0` | Multiplikator für verursachten Schaden; negative Werte fallen auf `1.0` zurück. |
 | `X`, `Y`, `Z` | number | Erforderlich | Kartenkoordinaten. Ermittle sie mit `/getpos`. |
 | `DisableStatuses` | array | Leer | Zu unterdrückende Statusnamen. Ungültige Namen werden übersprungen. |
 | `Rewards` | object oder array | Leer | Optionale rangspezifische und standardmäßige [Belohnungsdefinitionen](#damage-meter-and-rewards). Die Objektform wird empfohlen. |
 
-`CapturableAt`, `CapturableAtPercent` und `capturable_at` werden als Kompatibilitätsalias akzeptiert. `HPMultiplier`, `AdditionalEnemyMaxHPRate`, `AdditionalEnemyReceiveDamageRate` und `AdditionalEnemyInflictDamageRate` werden ebenfalls akzeptiert, die Namen aus der Tabelle werden jedoch empfohlen.
+`CapturableAt`, `CapturableAtPercent` und `capturable_at` werden als Kompatibilitätsalias akzeptiert. `AdditionalEnemyReceiveDamageRate` und `AdditionalEnemyInflictDamageRate` werden ebenfalls akzeptiert, die Namen aus der Tabelle werden jedoch empfohlen.
+
+!!! warning "Migration der maximalen Lebenspunkte"
+    Die maximalen Lebenspunkte des beschworenen Pals werden jetzt aus `HP` im referenzierten PalTemplate übernommen. `HealthMultiplier`, `HPMultiplier` und `AdditionalEnemyMaxHPRate` werden nicht mehr unterstützt; entferne diese Felder aus bestehenden PalSummon-Dateien.
 
 ## Schadensanzeige und Belohnungen { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@ Verwenden Sie einen gültigen JSON ohne Kommentare oder nachgestellte Kommas. Ü
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

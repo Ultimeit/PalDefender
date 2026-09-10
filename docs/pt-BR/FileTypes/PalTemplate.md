@@ -22,7 +22,7 @@ use <https://paldeck.cc/creator> para criar esses arquivos com muito mais facili
 | `PhysicalHealth` | string | Estado de saúde física. Os nomes válidos incluem `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
 | `WorkerSick` | string | Estado de doença do trabalhador. Os nomes válidos incluem `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
 | `ImportedCharacter` | bool | Marca o Pal como um personagem importado.                                    |
-| `HP` / `SP` / `MP` | número | Valores básicos de saúde, resistência e mana.                                              |
+| `HP` / `SP` / `MP` | número | Valores básicos de vida, resistência e mana. `HP` é usado como a vida máxima do Pal gerado, inclusive em invocações PalSummon e REST que referenciam este modelo. |
 | `Shield` | número | Valor do escudo.                                                              |
 | `Hunger` / `MaxHunger` | interno | Valores atuais e máximos de fome.                                                      |
 | `SAN` | interno | Sanidade (estabilidade mental do Pal).                                               |

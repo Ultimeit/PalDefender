@@ -19,8 +19,10 @@
 | `Uncapturable` | bool | 否 | 禁止捕获（默认 `false`）。 |
 | `DisableAI` | bool | 否 | 禁用普通 AI（默认 `false`）。 |
 | `DisableDamageMeter` | bool | 否 | 禁用伤害统计（默认 `false`）。 |
-| `HealthMultiplier` | number | 否 | 正数生命倍率（默认 `1.0`）。`HPMultiplier` 是兼容别名。 |
 | `DisableStatuses` | array | 否 | 要禁用的状态名称。 |
+
+!!! warning "最大生命值迁移"
+    使用 `PalTemplate` 时，模板的 `HP` 值会成为生成帕鲁的最大生命值。请求不再接受 `HealthMultiplier` 和 `HPMultiplier`，响应也不再返回这些字段；请从现有 REST 集成中删除它们。
 
 ## 响应架构
 
@@ -44,7 +46,6 @@ Content-Type: application/json
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "Uncapturable": true,
-    "HealthMultiplier": 5.0
+    "Uncapturable": true
 }
 ```

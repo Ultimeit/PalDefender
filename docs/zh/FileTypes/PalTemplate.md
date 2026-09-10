@@ -22,7 +22,7 @@
 | `PhysicalHealth`         | string | 身体健康状态。有效名称包括 `Healthful`、`MinorInjury`、`Severe`、`Dying`、`DeadBody`、`CloudCemetery`。 |
 | `WorkerSick`             | string | 工作疾病状态。有效名称包括 `None`、`Cold`、`Sprain`、`Bulimia`、`GastricUlcer`、`Fracture`、`Weakness`、`DepressionSprain`、`DisturbingElement`。 |
 | `ImportedCharacter`      | bool   | 将该 Pal 标记为导入角色。 |
-| `HP` / `SP` / `MP`       | number | 基础生命、耐力和法力值。 |
+| `HP` / `SP` / `MP`       | number | 基础生命、耐力和法力值。`HP` 会作为生成帕鲁的最大生命值，包括引用此模板的 PalSummon 和 REST 召唤。 |
 | `Shield`                 | number | 护盾值。 |
 | `Hunger` / `MaxHunger`   | int    | 当前饥饿值和最大饥饿值。 |
 | `SAN`                    | int    | SAN 值，即 Pal 的精神稳定度。 |

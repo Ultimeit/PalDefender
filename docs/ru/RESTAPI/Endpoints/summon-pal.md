@@ -19,8 +19,10 @@
 | `Uncapturable` | bool | Нет | Предотвращает захват (по умолчанию `false`). |
 | `DisableAI` | bool | Нет | Отключает обычный ИИ (по умолчанию `false`). |
 | `DisableDamageMeter` | bool | Нет | Отключает отслеживание повреждений (по умолчанию `false`). |
-| `HealthMultiplier` | номер | Нет | Положительный множитель здоровья (по умолчанию `1.0`). `HPMultiplier` принимается как псевдоним. |
 | `DisableStatuses` | array | Нет | Имена статусов, которые нужно скрыть. |
+
+!!! warning "Миграция максимального HP"
+    При использовании `PalTemplate` значение `HP` шаблона становится максимальным HP созданного Pal. `HealthMultiplier` и `HPMultiplier` больше не принимаются в запросах и не возвращаются в ответах; удалите их из существующих REST-интеграций.
 
 ## Схема ответа
 
@@ -44,7 +46,6 @@ Content-Type: application/json
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "Uncapturable": true,
-    "HealthMultiplier": 5.0
+    "Uncapturable": true
 }
 ```

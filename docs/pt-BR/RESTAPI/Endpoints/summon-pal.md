@@ -19,8 +19,10 @@ Gera um Pal em coordenadas fixas do mapa. A solicitação deve fornecer exatamen
 | `Uncapturable` | bool | Não | Impede a captura (padrão `false`). |
 | `DisableAI` | bool | Não | Desativa a IA normal (padrão `false`). |
 | `DisableDamageMeter` | bool | Não | Desativa o rastreamento de danos (padrão `false`). |
-| `HealthMultiplier` | número | Não | Multiplicador de integridade positivo (padrão `1.0`). `HPMultiplier` é aceito como alias. |
 | `DisableStatuses` | array | Não | Nomes de status a serem suprimidos. |
+
+!!! warning "Migração da vida máxima"
+    Quando `PalTemplate` é usado, o valor `HP` do modelo se torna a vida máxima do Pal gerado. `HealthMultiplier` e `HPMultiplier` não são mais aceitos nas solicitações nem retornados nas respostas; remova-os das integrações REST existentes.
 
 ## Esquema de resposta
 
@@ -44,7 +46,6 @@ Content-Type: application/json
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "Uncapturable": true,
-    "HealthMultiplier": 5.0
+    "Uncapturable": true
 }
 ```

@@ -16,14 +16,16 @@ PalSummon 文件定义一个固定地点的遭遇，可通过 `/summon <文件�
 | `DisableAI` | bool | `false` | 禁用普通 AI。闪避等部分被动行为仍可能发生。 |
 | `DisableDamageMeter` | bool | `false` | 禁用伤害跟踪、结果窗口和排名奖励。此时会将 `Default` 奖励发给所有在线玩家。 |
 | `SpawnScale` | number | `1.0` | 视觉/物理体型倍率；非正数会恢复为 `1.0`。 |
-| `HealthMultiplier` | number | `1.0` | 最大生命值倍率；必须是大于零的有限数值。 |
 | `DamageTakenMultiplier` | number | `1.0` | 承受伤害倍率；负数会恢复为 `1.0`。 |
 | `DamageDealtMultiplier` | number | `1.0` | 造成伤害倍率；负数会恢复为 `1.0`。 |
 | `X`, `Y`, `Z` | number | 必填 | 地图坐标。使用 `/getpos` 获取。 |
 | `DisableStatuses` | array | 空 | 要禁用的状态名称。无效名称会被跳过。 |
 | `Rewards` | object 或 array | 空 | 可选的排名奖励和[默认奖励定义](#damage-meter-and-rewards)。推荐使用 object 形式。 |
 
-兼容别名 `CapturableAt`、`CapturableAtPercent` 和 `capturable_at` 也可使用。`HPMultiplier`、`AdditionalEnemyMaxHPRate`、`AdditionalEnemyReceiveDamageRate` 和 `AdditionalEnemyInflictDamageRate` 同样受支持，但建议使用表格中的名称。
+兼容别名 `CapturableAt`、`CapturableAtPercent` 和 `capturable_at` 也可使用。`AdditionalEnemyReceiveDamageRate` 和 `AdditionalEnemyInflictDamageRate` 同样受支持，但建议使用表格中的名称。
+
+!!! warning "最大生命值迁移"
+    召唤出的帕鲁的最大生命值现在取自所引用 PalTemplate 中的 `HP`。`HealthMultiplier`、`HPMultiplier` 和 `AdditionalEnemyMaxHPRate` 已不再受支持；请从现有 PalSummon 文件中删除这些字段。
 
 ## 伤害统计与奖励 { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@ Money 在被选择后仍保留在候选列表中，因为其条目为 `Unique: f
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

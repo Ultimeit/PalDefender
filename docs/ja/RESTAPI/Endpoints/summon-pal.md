@@ -19,8 +19,10 @@ Spawns a Pal at fixed map coordinates.リクエストでは、`PalID` または 
 | `Uncapturable` | bool |いいえ |キャプチャを防止します (デフォルトは `false`)。 |
 | `DisableAI` | bool |いいえ |通常の AI を無効にします (デフォルト `false`)。 |
 | `DisableDamageMeter` | bool |いいえ |ダメージ追跡を無効にします (デフォルト `false`)。 |
-| `HealthMultiplier` |番号 |いいえ |正の健康乗数 (デフォルト `1.0`)。 `HPMultiplier` is accepted as an alias. |
 | `DisableStatuses` | array |いいえ |抑制するステータス名。 |
+
+!!! warning "最大 HP の移行"
+    `PalTemplate` を使用すると、テンプレートの `HP` 値が生成された Pal の最大 HP になります。`HealthMultiplier` と `HPMultiplier` はリクエストで受け付けられず、レスポンスにも返されなくなりました。既存の REST 連携から削除してください。
 
 ## 応答スキーマ
 
@@ -44,7 +46,6 @@ Content-Type: application/json
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "Uncapturable": true,
-    "HealthMultiplier": 5.0
+    "Uncapturable": true
 }
 ```

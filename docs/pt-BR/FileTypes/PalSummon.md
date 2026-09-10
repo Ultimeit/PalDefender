@@ -16,14 +16,16 @@ Um arquivo PalSummon define um encontro de local fixo iniciado com `/summon <fil
 | `DisableAI` | bool | `false` | Desativa a IA normal. Algum comportamento passivo, como esquiva, ainda pode ocorrer. |
 | `DisableDamageMeter` | bool | `false` | Desativa o rastreamento, a caixa de diálogo de resultados e as recompensas de classificação. A recompensa `Default` é concedida a todos os jogadores online. |
 | `SpawnScale` | número | `1.0` | Visual/physical multiplicador de tamanho; valores não positivos voltam para `1.0`. |
-| `HealthMultiplier` | número | `1.0` | Multiplicador máximo de saúde; deve ser finito e maior que zero. |
 | `DamageTakenMultiplier` | número | `1.0` | Multiplicador por dano recebido; valores negativos voltam para `1.0`. |
 | `DamageDealtMultiplier` | número | `1.0` | Multiplicador por dano causado; valores negativos voltam para `1.0`. |
 | `X`, `Y`, `Z` | número | Obrigatório | Coordenadas do mapa. Use `/getpos` para obtê-los. |
 | `DisableStatuses` | array | Vazio | Nomes de status a serem suprimidos. Nomes inválidos são ignorados. |
 | `Rewards` | object ou array | Vazio | [Definições de recompensa específicas por classificação e padrão](#damage-meter-and-rewards) opcionais. O formato object é recomendado. |
 
-`CapturableAt`, `CapturableAtPercent` e `capturable_at` são aliases de compatibilidade aceitos. `HPMultiplier`, `AdditionalEnemyMaxHPRate`, `AdditionalEnemyReceiveDamageRate` e `AdditionalEnemyInflictDamageRate` também são aceitos, mas os nomes na tabela são preferidos.
+`CapturableAt`, `CapturableAtPercent` e `capturable_at` são aliases de compatibilidade aceitos. `AdditionalEnemyReceiveDamageRate` e `AdditionalEnemyInflictDamageRate` também são aceitos, mas os nomes na tabela são preferidos.
+
+!!! warning "Migração da vida máxima"
+    A vida máxima do Pal invocado agora é obtida de `HP` no PalTemplate referenciado. `HealthMultiplier`, `HPMultiplier` e `AdditionalEnemyMaxHPRate` não são mais compatíveis; remova esses campos dos arquivos PalSummon existentes.
 
 ## Medidor de danos e recompensas { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@ Use JSON válido sem comentários ou vírgulas finais. Revise os avisos de carre
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

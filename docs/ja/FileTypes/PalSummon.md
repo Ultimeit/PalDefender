@@ -16,14 +16,16 @@ PalSummon ファイルは、`/summon <filename>` で起動される固定場所�
 | `DisableAI` | bool | `false` |通常のAIを無効化します。回避などの一部の受動的な動作が依然として発生する可能性があります。 |
 | `DisableDamageMeter` | bool | `false` |追跡、結果ダイアログ、ランク報酬を無効にします。代わりに、`Default` 報酬がすべてのオンライン プレーヤーに付与されます。 |
 | `SpawnScale` |番号 | `1.0` |視覚的/物理的なサイズの乗数。正でない値は `1.0` に戻ります。 |
-| `HealthMultiplier` |番号 | `1.0` |最大体力乗数。は有限でゼロより大きくなければなりません。 |
 | `DamageTakenMultiplier` |番号 | `1.0` |受けたダメージの乗数。負の値は `1.0` に戻ります。 |
 | `DamageDealtMultiplier` |番号 | `1.0` |与えられたダメージの乗数。負の値は `1.0` に戻ります。 |
 | `X`、`Y`、`Z` |番号 |必須 |地図座標。 `/getpos` を使用して取得します。 |
 | `DisableStatuses` | array |空 |抑制するステータス名。無効な名前はスキップされます。 |
 | `Rewards` | object または array |空 |ランク別およびデフォルトの[報酬定義](#damage-meter-and-rewards)（任意）。object 形式を推奨します。 |
 
-`CapturableAt`、`CapturableAtPercent`、および `capturable_at` は、互換性エイリアスとして受け入れられます。 `HPMultiplier`、`AdditionalEnemyMaxHPRate`、`AdditionalEnemyReceiveDamageRate`、および `AdditionalEnemyInflictDamageRate` も使用できますが、表内の名前が優先されます。
+`CapturableAt`、`CapturableAtPercent`、および `capturable_at` は、互換性エイリアスとして受け入れられます。`AdditionalEnemyReceiveDamageRate` と `AdditionalEnemyInflictDamageRate` も使用できますが、表内の名前が優先されます。
+
+!!! warning "最大 HP の移行"
+    召喚された Pal の最大 HP は、参照される PalTemplate の `HP` から取得されるようになりました。`HealthMultiplier`、`HPMultiplier`、`AdditionalEnemyMaxHPRate` はサポートされなくなったため、既存の PalSummon ファイルから削除してください。
 
 ## ダメージメーターと報酬 { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@ Money はすべてのオンライン プレーヤーに付与されます。各�
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

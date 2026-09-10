@@ -16,14 +16,16 @@ Un fichier PalSummon définit une rencontre à emplacement fixe lancée avec `/s
 | `DisableAI` | bool | `false` | Désactive l'IA normale. Certains comportements passifs, comme l'esquive, peuvent toujours se produire. |
 | `DisableDamageMeter` | bool | `false` | Désactive le suivi, la boîte de dialogue des résultats et les récompenses de classement. La récompense `Default` est plutôt accordée à tous les joueurs en ligne. |
 | `SpawnScale` | numéro | `1.0` | Multiplicateur de taille Visual/physical ; les valeurs non positives reviennent à `1.0`. |
-| `HealthMultiplier` | numéro | `1.0` | Multiplicateur de santé maximum ; doit être fini et supérieur à zéro. |
 | `DamageTakenMultiplier` | numéro | `1.0` | Multiplicateur des dommages reçus ; les valeurs négatives reviennent à `1.0`. |
 | `DamageDealtMultiplier` | numéro | `1.0` | Multiplicateur des dégâts infligés ; les valeurs négatives reviennent à `1.0`. |
 | `X`, `Y`, `Z` | numéro | Obligatoire | Coordonnées de la carte. Utilisez `/getpos` pour les obtenir. |
 | `DisableStatuses` | array | Vide | Noms de statut à supprimer. Les noms invalides sont ignorés. |
 | `Rewards` | object ou array | Vide | [Définitions de récompenses propres au classement et par défaut](#damage-meter-and-rewards) facultatives. Le format object est recommandé. |
 
-`CapturableAt`, `CapturableAtPercent` et `capturable_at` sont des alias de compatibilité acceptés. `HPMultiplier`, `AdditionalEnemyMaxHPRate`, `AdditionalEnemyReceiveDamageRate` et `AdditionalEnemyInflictDamageRate` sont également acceptés, mais les noms du tableau sont préférés.
+`CapturableAt`, `CapturableAtPercent` et `capturable_at` sont des alias de compatibilité acceptés. `AdditionalEnemyReceiveDamageRate` et `AdditionalEnemyInflictDamageRate` sont également acceptés, mais les noms du tableau sont préférés.
+
+!!! warning "Migration des PV maximum"
+    Les PV maximum du Pal invoqué proviennent désormais de `HP` dans le PalTemplate référencé. `HealthMultiplier`, `HPMultiplier` et `AdditionalEnemyMaxHPRate` ne sont plus pris en charge ; supprimez ces champs des fichiers PalSummon existants.
 
 ## Compteur de dégâts et récompenses { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@ Utilisez un JSON valide sans commentaires ni virgules finales. Consultez les ave
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

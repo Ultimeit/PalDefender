@@ -22,7 +22,7 @@
 | `PhysicalHealth` | string | Состояние физического здоровья. Допустимые имена: `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
 | `WorkerSick` | string | Состояние болезни работника. Допустимые имена: `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
 | `ImportedCharacter` | bool | Отмечает Pal как импортированный символ.                                    |
-| `HP` / `SP` / `MP` | номер | Базовые значения здоровья, выносливости и маны.                                              |
+| `HP` / `SP` / `MP` | номер | Базовые значения здоровья, выносливости и маны. `HP` используется как максимальный HP созданного Pal, в том числе при вызовах PalSummon и REST, ссылающихся на этот шаблон. |
 | `Shield` | номер | Значение щита.                                                              |
 | `Hunger` / `MaxHunger` | интервал | Текущее и максимальное значения голода.                                                      |
 | `SAN` | интервал | Здравомыслие (психическая устойчивость Pal).                                               |

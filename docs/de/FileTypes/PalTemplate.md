@@ -22,7 +22,7 @@ Mit <https://paldeck.cc/creator> kannst du diese Dateien deutlich einfacher erst
 | `PhysicalHealth`         | string | Körperlicher Gesundheitszustand. Gültige Namen sind unter anderem `Healthful`, `MinorInjury`, `Severe`, `Dying`, `DeadBody`, `CloudCemetery`. |
 | `WorkerSick`             | string | Krankheitszustand des Arbeiters. Gültige Namen sind unter anderem `None`, `Cold`, `Sprain`, `Bulimia`, `GastricUlcer`, `Fracture`, `Weakness`, `DepressionSprain`, `DisturbingElement`. |
 | `ImportedCharacter`      | bool   | Markiert den Pal als importierten Charakter. |
-| `HP` / `SP` / `MP`       | number | Basiswerte für Gesundheit, Ausdauer und Mana. |
+| `HP` / `SP` / `MP`       | number | Basiswerte für Gesundheit, Ausdauer und Mana. `HP` wird als maximale Lebenspunktzahl des erzeugten Pals verwendet, auch bei PalSummon- und REST-Beschwörungen, die dieses Template referenzieren. |
 | `Shield`                 | number | Schildwert. |
 | `Hunger` / `MaxHunger`   | int    | Aktueller und maximaler Hungerwert. |
 | `SAN`                    | int    | Sanity-Wert, also die mentale Stabilität des Pals. |

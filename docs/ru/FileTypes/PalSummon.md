@@ -16,14 +16,16 @@
 | `DisableAI` | bool | `false` | Отключает обычный ИИ. Некоторое пассивное поведение, например уклонение, все еще может иметь место. |
 | `DisableDamageMeter` | bool | `false` | Отключает отслеживание, диалоговое окно результатов и награды за ранги. Вместо этого награда `Default` предоставляется всем онлайн-игрокам. |
 | `SpawnScale` | номер | `1.0` | Визуальный и физический множитель размера; неположительные значения возвращаются к `1.0`. |
-| `HealthMultiplier` | номер | `1.0` | Множитель максимального здоровья; должно быть конечным и больше нуля. |
 | `DamageTakenMultiplier` | номер | `1.0` | Множитель полученного урона; отрицательные значения возвращаются к `1.0`. |
 | `DamageDealtMultiplier` | номер | `1.0` | Множитель нанесенного урона; отрицательные значения возвращаются к `1.0`. |
 | `X`, `Y`, `Z` | номер | Требуется | Координаты карты. Используйте `/getpos`, чтобы получить их. |
 | `DisableStatuses` | array | Пусто | Имена статусов, которые нужно скрыть. Недопустимые имена пропускаются. |
 | `Rewards` | object или array | Пусто | Необязательные [определения наград для отдельных мест и награды по умолчанию](#damage-meter-and-rewards). Рекомендуется использовать форму object. |
 
-`CapturableAt`, `CapturableAtPercent` и `capturable_at` являются допустимыми псевдонимами совместимости. `HPMultiplier`, `AdditionalEnemyMaxHPRate`, `AdditionalEnemyReceiveDamageRate` и `AdditionalEnemyInflictDamageRate` также принимаются, но имена из таблицы являются предпочтительными.
+`CapturableAt`, `CapturableAtPercent` и `capturable_at` являются допустимыми псевдонимами совместимости. `AdditionalEnemyReceiveDamageRate` и `AdditionalEnemyInflictDamageRate` также принимаются, но имена из таблицы являются предпочтительными.
+
+!!! warning "Миграция максимального HP"
+    Максимальный HP призванного Pal теперь берётся из `HP` указанного PalTemplate. `HealthMultiplier`, `HPMultiplier` и `AdditionalEnemyMaxHPRate` больше не поддерживаются; удалите эти поля из существующих файлов PalSummon.
 
 ## Счетчик урона и награды { #damage-meter-and-rewards }
 
@@ -492,7 +494,6 @@
     "DisableAI": false,
     "DisableDamageMeter": false,
     "SpawnScale": 1.5,
-    "HealthMultiplier": 8.0,
     "DamageTakenMultiplier": 0.75,
     "DamageDealtMultiplier": 2.0,
     "X": 230,

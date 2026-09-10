@@ -22,7 +22,7 @@
 | `PhysicalHealth` | string |身体的な健康状態。有効な名前には、`Healthful`、`MinorInjury`、`Severe`、`Dying`、`DeadBody`、`CloudCemetery` があります。 |
 | `WorkerSick` | string |労働者の病気の状態。有効な名前には、`None`、`Cold`、`Sprain`、`Bulimia`、`GastricUlcer`、`Fracture`、`Weakness`、`DepressionSprain`、`DisturbingElement` があります。 |
 | `ImportedCharacter` | bool | Pal をインポートされた文字としてマークします。                                    |
-| `HP` / `SP` / `MP` |番号 |基本的なヘルス、スタミナ、マナの値。                                              |
+| `HP` / `SP` / `MP` |番号 |基本的なヘルス、スタミナ、マナの値。`HP` は、このテンプレートを参照する PalSummon および REST 召喚を含め、生成された Pal の最大 HP として使用されます。 |
 | `Shield` |番号 |シールド値。                                                              |
 | `Hunger` / `MaxHunger` |整数 |現在の空腹値と最大空腹値。                                                      |
 | `SAN` |整数 |正気度 (Pal の精神的安定)。                                               |

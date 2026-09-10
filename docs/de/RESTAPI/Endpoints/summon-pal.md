@@ -19,8 +19,10 @@ Spawnt einen Pal an festen Kartenkoordinaten. Die Anfrage muss genau eines von `
 | `Uncapturable` | bool | Nein | Verhindert das Fangen (Standard `false`). |
 | `DisableAI` | bool | Nein | Deaktiviert die normale KI (Standard `false`). |
 | `DisableDamageMeter` | bool | Nein | Deaktiviert die Schadenserfassung (Standard `false`). |
-| `HealthMultiplier` | number | Nein | Positiver Lebensmultiplikator (Standard `1.0`). `HPMultiplier` wird als Alias akzeptiert. |
 | `DisableStatuses` | array | Nein | Zu unterdrückende Statusnamen. |
+
+!!! warning "Migration der maximalen Lebenspunkte"
+    Wenn `PalTemplate` verwendet wird, wird dessen `HP`-Wert zur maximalen Lebenspunktzahl des erzeugten Pals. `HealthMultiplier` und `HPMultiplier` werden weder in Anfragen akzeptiert noch in Antworten zurückgegeben; entferne sie aus bestehenden REST-Integrationen.
 
 ## Antwortschema
 
@@ -44,7 +46,6 @@ Content-Type: application/json
     "X": 230,
     "Y": -486,
     "Z": 4097,
-    "Uncapturable": true,
-    "HealthMultiplier": 5.0
+    "Uncapturable": true
 }
 ```
