@@ -10,6 +10,7 @@ body:
       label: "PalDefender Version"
       description: "Which version of PalDefender are you running? Stable v1.9.x releases are currently supported."
       options:
+        - "v1.9.2"
         - "v1.9.1"
         - "v1.9.0"
         - "Older than v1.9.0 (unsupported)"
