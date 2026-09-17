@@ -1,5 +1,5 @@
 click==8.2.1
-mkdocs>=1.5.3
+mkdocs>=1.5.3,<2
 mkdocs-material>=9.5.7
 pymdown-extensions>=10.5
 mkdocs-static-i18n>=1.0.4
