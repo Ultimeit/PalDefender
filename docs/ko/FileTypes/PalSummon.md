@@ -19,13 +19,29 @@ PalSummon 파일은 `/summon <filename>`으로 시작하는 고정 위치 전투
 | `DamageTakenMultiplier` | 숫자 | `1.0` | 받는 피해량 배율입니다. 음수이면 `1.0`을 사용합니다. |
 | `DamageDealtMultiplier` | 숫자 | `1.0` | 주는 피해량 배율입니다. 음수이면 `1.0`을 사용합니다. |
 | `X`, `Y`, `Z` | 숫자 | 필수 | 맵 좌표입니다. `/getpos`로 확인하세요. |
-| `DisableStatuses` | 배열 | 비어 있음 | 적용을 막을 상태 이름입니다. 잘못된 이름은 건너뜁니다. |
+| `DisableStatuses` | 배열 | 비어 있음 | 적용을 막을 상태 이름입니다. 잘못된 이름은 건너뜁니다. [사용 가능한 이름](#disable-statuses). |
 | `Rewards` | 객체 또는 배열 | 비어 있음 | 선택적으로 설정하는 순위별 및 기본 [보상 정의](#damage-meter-and-rewards)입니다. 객체 형식을 권장합니다. |
 
 호환성을 위해 `CapturableAt`, `CapturableAtPercent`, `capturable_at`도 별칭으로 허용합니다. `AdditionalEnemyReceiveDamageRate`와 `AdditionalEnemyInflictDamageRate`도 사용할 수 있지만, 표에 있는 이름을 권장합니다.
 
 !!! warning "최대 체력 설정 변경"
     소환된 팰의 최대 체력은 이제 참조하는 PalTemplate의 `HP`에서 가져옵니다. `HealthMultiplier`, `HPMultiplier`, `AdditionalEnemyMaxHPRate`는 더 이상 지원하지 않으므로 기존 PalSummon 파일에서 제거하세요.
+
+## 적용을 막을 상태 { #disable-statuses }
+
+`DisableStatuses`는 상태 이름을 문자열로 나열한 배열입니다. 지정한 상태는 소환한 팰에게서 제거되며, 이후에도 다시 적용할 수 없습니다. 대소문자는 구분하지 않습니다. 밑줄을 포함한 영문 식별자를 그대로 입력하세요. 빈 배열 `[]`은 어떤 상태도 차단하지 않습니다. 빈 문자열과 잘못된 이름은 건너뛰며, `None`은 사용할 수 없습니다.
+
+예: 독, 화상, 빙결, 전기 계열 효과, 기절, 수면을 차단합니다.
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+전체 목록에는 해로운 효과뿐 아니라 강화 효과와 게임 내부에서 사용하는 상태도 포함됩니다.
+
+??? info "사용 가능한 모든 상태 이름"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## 피해량 집계 및 보상 { #damage-meter-and-rewards }
 

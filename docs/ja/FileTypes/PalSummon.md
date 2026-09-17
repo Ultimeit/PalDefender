@@ -19,13 +19,29 @@ PalSummon ファイルは、`/summon <filename>` で起動される固定場所�
 | `DamageTakenMultiplier` |番号 | `1.0` |受けたダメージの乗数。負の値は `1.0` に戻ります。 |
 | `DamageDealtMultiplier` |番号 | `1.0` |与えられたダメージの乗数。負の値は `1.0` に戻ります。 |
 | `X`、`Y`、`Z` |番号 |必須 |地図座標。 `/getpos` を使用して取得します。 |
-| `DisableStatuses` | array |空 |抑制するステータス名。無効な名前はスキップされます。 |
+| `DisableStatuses` | array |空 |抑制するステータス名。無効な名前はスキップされます。 [指定できる名前](#disable-statuses). |
 | `Rewards` | object または array |空 |ランク別およびデフォルトの[報酬定義](#damage-meter-and-rewards)（任意）。object 形式を推奨します。 |
 
 `CapturableAt`、`CapturableAtPercent`、および `capturable_at` は、互換性エイリアスとして受け入れられます。`AdditionalEnemyReceiveDamageRate` と `AdditionalEnemyInflictDamageRate` も使用できますが、表内の名前が優先されます。
 
 !!! warning "最大 HP の移行"
     召喚された Pal の最大 HP は、参照される PalTemplate の `HP` から取得されるようになりました。`HealthMultiplier`、`HPMultiplier`、`AdditionalEnemyMaxHPRate` はサポートされなくなったため、既存の PalSummon ファイルから削除してください。
+
+## 無効にするステータス { #disable-statuses }
+
+`DisableStatuses` は、ステータス名を文字列で指定する配列です。指定したステータスは召喚したパルから除去され、その後も付与できなくなります。大文字と小文字は区別されません。識別子はアンダースコアも含め、英語のまま指定してください。空の配列 `[]` では何も無効にしません。空の文字列と無効な名前はスキップされます。`None` は指定できません。
+
+例：毒、火傷、凍結、電気系の効果、スタン、睡眠を無効にします。
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+一覧には有害な効果だけでなく、強化効果やゲーム内部で使われるステータスも含まれます。
+
+??? info "指定できるすべてのステータス名"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## ダメージメーターと報酬 { #damage-meter-and-rewards }
 

@@ -19,13 +19,29 @@ Un fichier PalSummon définit une rencontre à emplacement fixe lancée avec `/s
 | `DamageTakenMultiplier` | numéro | `1.0` | Multiplicateur des dommages reçus ; les valeurs négatives reviennent à `1.0`. |
 | `DamageDealtMultiplier` | numéro | `1.0` | Multiplicateur des dégâts infligés ; les valeurs négatives reviennent à `1.0`. |
 | `X`, `Y`, `Z` | numéro | Obligatoire | Coordonnées de la carte. Utilisez `/getpos` pour les obtenir. |
-| `DisableStatuses` | array | Vide | Noms de statut à supprimer. Les noms invalides sont ignorés. |
+| `DisableStatuses` | array | Vide | Noms de statut à supprimer. Les noms invalides sont ignorés. [Noms acceptés](#disable-statuses). |
 | `Rewards` | object ou array | Vide | [Définitions de récompenses propres au classement et par défaut](#damage-meter-and-rewards) facultatives. Le format object est recommandé. |
 
 `CapturableAt`, `CapturableAtPercent` et `capturable_at` sont des alias de compatibilité acceptés. `AdditionalEnemyReceiveDamageRate` et `AdditionalEnemyInflictDamageRate` sont également acceptés, mais les noms du tableau sont préférés.
 
 !!! warning "Migration des PV maximum"
     Les PV maximum du Pal invoqué proviennent désormais de `HP` dans le PalTemplate référencé. `HealthMultiplier`, `HPMultiplier` et `AdditionalEnemyMaxHPRate` ne sont plus pris en charge ; supprimez ces champs des fichiers PalSummon existants.
+
+## Statuts désactivés { #disable-statuses }
+
+`DisableStatuses` est un tableau de noms de statut sous forme de chaînes de caractères. Les statuts indiqués sont retirés du Pal invoqué et ne peuvent plus lui être appliqués. La casse est ignorée ; conservez les identifiants en anglais, y compris les traits de soulignement. Un tableau vide `[]` ne désactive aucun statut. Les chaînes vides et les noms invalides sont ignorés ; `None` n’est pas une entrée valide.
+
+Exemple : bloquer le poison, la brûlure, le gel, les effets électriques, l’étourdissement et le sommeil.
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+La liste complète comprend aussi des bonus et des statuts internes du jeu, pas seulement des effets néfastes.
+
+??? info "Tous les noms de statut acceptés"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## Compteur de dégâts et récompenses { #damage-meter-and-rewards }
 

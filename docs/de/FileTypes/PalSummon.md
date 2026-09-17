@@ -19,13 +19,29 @@ Eine PalSummon-Datei definiert eine Begegnung an einem festen Ort, die mit `/sum
 | `DamageTakenMultiplier` | number | `1.0` | Multiplikator für erhaltenen Schaden; negative Werte fallen auf `1.0` zurück. |
 | `DamageDealtMultiplier` | number | `1.0` | Multiplikator für verursachten Schaden; negative Werte fallen auf `1.0` zurück. |
 | `X`, `Y`, `Z` | number | Erforderlich | Kartenkoordinaten. Ermittle sie mit `/getpos`. |
-| `DisableStatuses` | array | Leer | Zu unterdrückende Statusnamen. Ungültige Namen werden übersprungen. |
+| `DisableStatuses` | array | Leer | Zu unterdrückende Statusnamen. Ungültige Namen werden übersprungen. [Akzeptierte Namen](#disable-statuses). |
 | `Rewards` | object oder array | Leer | Optionale rangspezifische und standardmäßige [Belohnungsdefinitionen](#damage-meter-and-rewards). Die Objektform wird empfohlen. |
 
 `CapturableAt`, `CapturableAtPercent` und `capturable_at` werden als Kompatibilitätsalias akzeptiert. `AdditionalEnemyReceiveDamageRate` und `AdditionalEnemyInflictDamageRate` werden ebenfalls akzeptiert, die Namen aus der Tabelle werden jedoch empfohlen.
 
 !!! warning "Migration der maximalen Lebenspunkte"
     Die maximalen Lebenspunkte des beschworenen Pals werden jetzt aus `HP` im referenzierten PalTemplate übernommen. `HealthMultiplier`, `HPMultiplier` und `AdditionalEnemyMaxHPRate` werden nicht mehr unterstützt; entferne diese Felder aus bestehenden PalSummon-Dateien.
+
+## Deaktivierte Status { #disable-statuses }
+
+`DisableStatuses` ist ein Array aus Statusnamen als Zeichenketten. Die aufgeführten Status werden vom beschworenen Pal entfernt und können nicht erneut hinzugefügt werden. Groß- und Kleinschreibung spielt keine Rolle; die englischen Bezeichner einschließlich Unterstrichen bleiben unverändert. Ein leeres Array `[]` deaktiviert keine Status. Leere Zeichenketten und ungültige Namen werden übersprungen; `None` ist kein gültiger Eintrag.
+
+Beispiel: Gift, Verbrennung, Einfrieren, elektrische Effekte, Betäubung und Schlaf blockieren.
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+Die vollständige Liste enthält auch Verstärkungen und interne Spielstatus, nicht nur schädliche Effekte.
+
+??? info "Alle akzeptierten Statusnamen"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## Schadensanzeige und Belohnungen { #damage-meter-and-rewards }
 

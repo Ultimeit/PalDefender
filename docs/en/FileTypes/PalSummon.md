@@ -19,13 +19,29 @@ A PalSummon file defines a fixed-location encounter launched with `/summon <file
 | `DamageTakenMultiplier` | number | `1.0` | Multiplier for damage received; negative values fall back to `1.0`. |
 | `DamageDealtMultiplier` | number | `1.0` | Multiplier for damage dealt; negative values fall back to `1.0`. |
 | `X`, `Y`, `Z` | number | Required | Map coordinates. Use `/getpos` to obtain them. |
-| `DisableStatuses` | array | Empty | Status names to suppress. Invalid names are skipped. |
+| `DisableStatuses` | array | Empty | Status names to suppress. Invalid names are skipped. [Accepted names](#disable-statuses). |
 | `Rewards` | object or array | Empty | Optional rank-specific and default [reward definitions](#damage-meter-and-rewards). The object form is recommended. |
 
 `CapturableAt`, `CapturableAtPercent`, and `capturable_at` are accepted compatibility aliases. `AdditionalEnemyReceiveDamageRate` and `AdditionalEnemyInflictDamageRate` are also accepted, but the names in the table are preferred.
 
 !!! warning "Maximum HP migration"
     The summoned Pal's maximum HP is now taken from `HP` in the referenced PalTemplate. `HealthMultiplier`, `HPMultiplier`, and `AdditionalEnemyMaxHPRate` are no longer supported; remove these fields from existing PalSummon files.
+
+## Disabled statuses { #disable-statuses }
+
+`DisableStatuses` is an array of status-name strings. Listed statuses are removed from the summoned Pal and cannot be added again. Names are case-insensitive; keep the identifiers in English, including underscores. An empty array `[]` disables no statuses. Empty strings and invalid names are skipped; `None` is not a valid entry.
+
+Example: block poison, burning, freezing, electrical effects, stunning, and sleep.
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+The full list also includes buffs and internal game statuses, not just harmful effects.
+
+??? info "All accepted status names"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## Damage meter and rewards { #damage-meter-and-rewards }
 

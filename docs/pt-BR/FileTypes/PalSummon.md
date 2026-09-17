@@ -19,13 +19,29 @@ Um arquivo PalSummon define um encontro de local fixo iniciado com `/summon <fil
 | `DamageTakenMultiplier` | número | `1.0` | Multiplicador por dano recebido; valores negativos voltam para `1.0`. |
 | `DamageDealtMultiplier` | número | `1.0` | Multiplicador por dano causado; valores negativos voltam para `1.0`. |
 | `X`, `Y`, `Z` | número | Obrigatório | Coordenadas do mapa. Use `/getpos` para obtê-los. |
-| `DisableStatuses` | array | Vazio | Nomes de status a serem suprimidos. Nomes inválidos são ignorados. |
+| `DisableStatuses` | array | Vazio | Nomes de status a serem suprimidos. Nomes inválidos são ignorados. [Nomes aceitos](#disable-statuses). |
 | `Rewards` | object ou array | Vazio | [Definições de recompensa específicas por classificação e padrão](#damage-meter-and-rewards) opcionais. O formato object é recomendado. |
 
 `CapturableAt`, `CapturableAtPercent` e `capturable_at` são aliases de compatibilidade aceitos. `AdditionalEnemyReceiveDamageRate` e `AdditionalEnemyInflictDamageRate` também são aceitos, mas os nomes na tabela são preferidos.
 
 !!! warning "Migração da vida máxima"
     A vida máxima do Pal invocado agora é obtida de `HP` no PalTemplate referenciado. `HealthMultiplier`, `HPMultiplier` e `AdditionalEnemyMaxHPRate` não são mais compatíveis; remova esses campos dos arquivos PalSummon existentes.
+
+## Status desativados { #disable-statuses }
+
+`DisableStatuses` é um array de nomes de status em formato de string. Os status indicados são removidos do Pal invocado e não podem ser aplicados novamente. Maiúsculas e minúsculas são equivalentes; mantenha os identificadores em inglês, incluindo os sublinhados. Um array vazio `[]` não desativa nenhum status. Strings vazias e nomes inválidos são ignorados; `None` não é uma entrada válida.
+
+Exemplo: bloquear veneno, queimadura, congelamento, efeitos elétricos, atordoamento e sono.
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+A lista completa também inclui efeitos de fortalecimento e status internos do jogo, além dos efeitos negativos.
+
+??? info "Todos os nomes de status aceitos"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## Medidor de danos e recompensas { #damage-meter-and-rewards }
 

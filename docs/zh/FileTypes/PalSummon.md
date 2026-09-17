@@ -19,13 +19,29 @@ PalSummon 文件定义一个固定地点的遭遇，可通过 `/summon <文件�
 | `DamageTakenMultiplier` | number | `1.0` | 承受伤害倍率；负数会恢复为 `1.0`。 |
 | `DamageDealtMultiplier` | number | `1.0` | 造成伤害倍率；负数会恢复为 `1.0`。 |
 | `X`, `Y`, `Z` | number | 必填 | 地图坐标。使用 `/getpos` 获取。 |
-| `DisableStatuses` | array | 空 | 要禁用的状态名称。无效名称会被跳过。 |
+| `DisableStatuses` | array | 空 | 要禁用的状态名称。无效名称会被跳过。 [可用名称](#disable-statuses). |
 | `Rewards` | object 或 array | 空 | 可选的排名奖励和[默认奖励定义](#damage-meter-and-rewards)。推荐使用 object 形式。 |
 
 兼容别名 `CapturableAt`、`CapturableAtPercent` 和 `capturable_at` 也可使用。`AdditionalEnemyReceiveDamageRate` 和 `AdditionalEnemyInflictDamageRate` 同样受支持，但建议使用表格中的名称。
 
 !!! warning "最大生命值迁移"
     召唤出的帕鲁的最大生命值现在取自所引用 PalTemplate 中的 `HP`。`HealthMultiplier`、`HPMultiplier` 和 `AdditionalEnemyMaxHPRate` 已不再受支持；请从现有 PalSummon 文件中删除这些字段。
+
+## 禁用状态 { #disable-statuses }
+
+`DisableStatuses` 是一个由状态名称字符串组成的数组。列出的状态会从召唤出的帕鲁身上移除，并且无法再次施加。名称不区分大小写；请保留英文标识符及其中的下划线，不要翻译。空数组 `[]` 不会禁用任何状态。空字符串和无效名称会被跳过；`None` 不是有效选项。
+
+示例：禁用中毒、燃烧、冻结、电系效果、眩晕和睡眠。
+
+```json
+"DisableStatuses": ["Poison", "Burn", "Freeze", "Electrical", "Stun", "Sleep"]
+```
+
+完整列表还包含增益效果和游戏内部状态，并非只有负面效果。
+
+??? info "所有可用的状态名称"
+    --8<-- "_snippets/pals/disable-statuses.md"
+
 
 ## 伤害统计与奖励 { #damage-meter-and-rewards }
 
