@@ -956,7 +956,7 @@
     ??? info "/givepal_j"
         **構文:** `/givepal_j <UserID> <PalTemplate>`
 
-        **説明:** PalTemplate ファイルによって定義された Pal をプレーヤーに提供します。埋め込み JSON はサポートされなくなりました。ファイル名のみが受け入れられます。
+        **説明:** [PalTemplate](../FileTypes/PalTemplate.md) ファイルによって定義された Pal をプレーヤーに提供します。埋め込み JSON はサポートされなくなりました。ファイル名のみが受け入れられます。
 
         **注意:** ファイル名に .json 拡張子を含める必要はありません。見つからない場合は、システムが自動的に追加します。
 
@@ -993,7 +993,7 @@
     ??? info "/givemepal_j"
         **構文:** `/givemepal_j <PalTemplate>`
 
-        **説明:** PalTemplate ファイルによって定義された Pal を自分自身に与えます。埋め込み JSON はサポートされなくなりました。ファイル名のみが受け入れられます。
+        **説明:** [PalTemplate](../FileTypes/PalTemplate.md) ファイルによって定義された Pal を自分自身に与えます。埋め込み JSON はサポートされなくなりました。ファイル名のみが受け入れられます。
 
         **引数:**
 
@@ -1068,11 +1068,11 @@
 
         **説明:** あなたに対して相対的または絶対的に Pal を生成します。 **RCON では x、y、z を指定する必要があります!**
 
-        **注意:** レベルを除くすべてのステータスはランダム化されます。
+        **注意:** `Pals/Templates/` にある [PalTemplate](../FileTypes/PalTemplate.md) ファイルの属性を使用します。`/givepal_j` とテンプレートを使うパルの卵のコマンドも同じ属性を使用します。生成オプションや報酬を含む遭遇戦には、[PalSummon](../FileTypes/PalSummon.md) ファイルを指定して `/summon` を使用してください。`/spawnpal` はテンプレートのファイル名ではなくパル ID を受け取ります。
 
         **引数:**
 
-        - `<PalTemplate>`: 使用する PalTemplate ファイルの名前。
+        - `<PalTemplate>`: 使用する [PalTemplate](../FileTypes/PalTemplate.md) ファイルの名前。
         - `[x]`: (オプション) 仲間の x 位置。デフォルト: プレイヤーの呼び出し元を基準にします。
         - `[y]`: (オプション) 仲間の y 位置。デフォルト: プレイヤーの呼び出し元を基準にします。
         - `[z]`: (オプション) 仲間の z 位置。デフォルト: プレイヤーの呼び出し元を基準にします。
@@ -1099,12 +1099,12 @@
     ??? info "/summon"
         **構文:** `/summon <PalSummon>`
 
-        **説明:** 提供された PalSummon ファイルを使用して Pal を生成します。
+        **説明:** 提供された [PalSummon](../FileTypes/PalSummon.md) ファイルを使用して Pal を生成します。
 
         **注意:** ファイル名に .json 拡張子を含める必要はありません。見つからない場合は、システムが自動的に追加します。
 
         **引数:**
-        - `<PalSummon>`: 使用する PalSummon ファイルの名前。
+        - `<PalSummon>`: `PalDefender/Pals/Summons/` 内の [PalSummon](../FileTypes/PalSummon.md) ファイル名です。[PalTemplate](../FileTypes/PalTemplate.md) のファイル名では**ありません**。このファイルはパルの属性を定義する PalTemplate を参照し、座標などの生成オプションと任意の報酬を追加します。例えば、`/summon ArenaEncounter` は `Pals/Summons/ArenaEncounter.json` を読み込みます。
 
         **権限:** `Chat`、`RCON`、`Admin`
 
@@ -1194,7 +1194,7 @@
     ??? info "/giveegg_j"
         **構文:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **説明:** PalTemplate ファイルによって定義された Pal と、オプションで調整されたレベルを持つ仲間の卵を与えます。
+        **説明:** [PalTemplate](../FileTypes/PalTemplate.md) ファイルによって定義された Pal と、オプションで調整されたレベルを持つ仲間の卵を与えます。
 
         **引数:**
 
@@ -1214,7 +1214,7 @@
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **説明:** 使用する PalTemplate ファイルの名前。
+            **説明:** 使用する [PalTemplate](../FileTypes/PalTemplate.md) ファイルの名前。
 
             **注意:** ファイル名に .json 拡張子を含める必要はありません。見つからない場合は、システムが自動的に追加します。 [PalTemplate](../FileTypes/PalTemplate.md) を参照してください。
 
@@ -1231,7 +1231,7 @@
     ??? info "/givemeegg_j"
         **構文:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **説明:** PalTemplate ファイルによって定義された Pal と、オプションで調整されたレベルを持つ仲間の卵を自分に与えます。
+        **説明:** [PalTemplate](../FileTypes/PalTemplate.md) ファイルによって定義された Pal と、オプションで調整されたレベルを持つ仲間の卵を自分に与えます。
 
         **引数:**
 
@@ -1251,7 +1251,7 @@
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **説明:** 使用する PalTemplate ファイルの名前。
+            **説明:** 使用する [PalTemplate](../FileTypes/PalTemplate.md) ファイルの名前。
 
             **注意:** ファイル名に .json 拡張子を含める必要はありません。見つからない場合は、システムが自動的に追加します。 [PalTemplate](../FileTypes/PalTemplate.md) を参照してください。
 
@@ -1299,7 +1299,7 @@
     ??? info "/exportpals"
         **構文:** `/exportpals [UserId]`
 
-        **説明:** プレーヤーのすべての Pal を、Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/ にある PalTemplate ファイルにエクスポートします。
+        **説明:** プレーヤーのすべての Pal を、Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/ にある [PalTemplate](../FileTypes/PalTemplate.md) ファイルにエクスポートします。
 
         **引数:**
 

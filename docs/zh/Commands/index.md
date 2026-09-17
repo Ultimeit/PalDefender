@@ -955,7 +955,7 @@
     ??? info "/givepal_j"
         **语法:** `/givepal_j <UserID> <PalTemplate>`
 
-        **描述:** 给玩家一只由 PalTemplate 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
+        **描述:** 给玩家一只由 [PalTemplate](../FileTypes/PalTemplate.md) 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
 
         **注意:** 文件名不必包含 `.json` 扩展名；缺少时系统会自动添加。
 
@@ -992,7 +992,7 @@
     ??? info "/givemepal_j"
         **语法:** `/givemepal_j <PalTemplate>`
 
-        **描述:** 给自己一只由 PalTemplate 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
+        **描述:** 给自己一只由 [PalTemplate](../FileTypes/PalTemplate.md) 文件定义的帕鲁。不再支持内嵌 JSON，只接受文件名。
 
         **参数:**
 
@@ -1067,11 +1067,11 @@
 
         **描述:** 按相对或绝对坐标生成一只帕鲁。**RCON 必须指定 x、y 和 z！**
 
-        **注意:** 除等级外，所有属性均随机生成。
+        **注意:** 使用 `Pals/Templates/` 中 [PalTemplate](../FileTypes/PalTemplate.md) 文件定义的属性，和 `/givepal_j` 及基于模板的帕鲁蛋命令一样。若需要包含生成选项和奖励的完整遭遇战，请使用 `/summon` 并提供 [PalSummon](../FileTypes/PalSummon.md) 文件。`/spawnpal` 接受帕鲁 ID，而不是模板文件名。
 
         **参数:**
 
-        - `<PalTemplate>`: 要使用的 PalTemplate 文件名。
+        - `<PalTemplate>`: 要使用的 [PalTemplate](../FileTypes/PalTemplate.md) 文件名。
         - `[x]`: （可选）Pal 的 X 坐标。默认：相对于执行命令的玩家。
         - `[y]`: （可选）Pal 的 Y 坐标。默认：相对于执行命令的玩家。
         - `[z]`: （可选）Pal 的 Z 坐标。默认：相对于执行命令的玩家。
@@ -1086,7 +1086,7 @@
     ??? info "/spawnpal_ex_j"
         **语法:** `/spawnpal_ex_j <PalTemplate> [x] [y] [z]`
 
-        **描述:** 使用与 `/spawnpal_j` 相同的 PalTemplate 和坐标处理，但会启用伤害统计。帕鲁死亡或被捕获时，PalDefender 会记录完整的伤害排名；如果已配置 `PalWebhooks.webhookURL_Summons`，还会将排名发送到该 Webhook。启用 `announceAdminSummonsKill` 时，参与战斗的在线玩家还会收到结果窗口，其中显示前五名和自己的排名。伤害最高者会标记为获胜者。此命令不使用 PalSummon 奖励。
+        **描述:** 使用与 `/spawnpal_j` 相同的 [PalTemplate](../FileTypes/PalTemplate.md) 和坐标处理，但会启用伤害统计。帕鲁死亡或被捕获时，PalDefender 会记录完整的伤害排名；如果已配置 `PalWebhooks.webhookURL_Summons`，还会将排名发送到该 Webhook。启用 `announceAdminSummonsKill` 时，参与战斗的在线玩家还会收到结果窗口，其中显示前五名和自己的排名。伤害最高者会标记为获胜者。此命令不使用 [PalSummon](../FileTypes/PalSummon.md) 奖励。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -1098,12 +1098,12 @@
     ??? info "/summon"
         **语法:** `/summon <PalSummon>`
 
-        **描述:** 使用指定的 PalSummon 文件生成帕鲁。
+        **描述:** 使用指定的 [PalSummon](../FileTypes/PalSummon.md) 文件生成帕鲁。
 
         **注意:** 文件名不必包含 `.json` 扩展名；缺少时系统会自动添加。
 
         **参数:**
-        - `<PalSummon>`: 要使用的 PalSummon 文件名。
+        - `<PalSummon>`: `PalDefender/Pals/Summons/` 中 [PalSummon](../FileTypes/PalSummon.md) 文件的文件名，**不是** [PalTemplate](../FileTypes/PalTemplate.md) 文件名。该文件引用 PalTemplate 来定义帕鲁属性，并添加坐标等生成选项及可选奖励。例如，`/summon ArenaEncounter` 加载 `Pals/Summons/ArenaEncounter.json`。
 
         **权限:** `Chat`, `RCON`, `Admin`
 
@@ -1193,7 +1193,7 @@
     ??? info "/giveegg_j"
         **语法:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **描述:** 给出一个帕鲁蛋，内部帕鲁由 PalTemplate 文件定义，并可选择调整等级。
+        **描述:** 给出一个帕鲁蛋，内部帕鲁由 [PalTemplate](../FileTypes/PalTemplate.md) 文件定义，并可选择调整等级。
 
         **参数:**
 
@@ -1213,7 +1213,7 @@
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **描述:** 要使用的 PalTemplate 文件名。
+            **描述:** 要使用的 [PalTemplate](../FileTypes/PalTemplate.md) 文件名。
 
             **注意：** 文件名不需要包含 .json 扩展名；如果缺失，系统会自动追加。参见 [PalTemplate](../FileTypes/PalTemplate.md)。
 
@@ -1230,7 +1230,7 @@
     ??? info "/givemeegg_j"
         **语法:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **描述:** 给自己一个帕鲁蛋，内部帕鲁由 PalTemplate 文件定义，并可选择调整等级。
+        **描述:** 给自己一个帕鲁蛋，内部帕鲁由 [PalTemplate](../FileTypes/PalTemplate.md) 文件定义，并可选择调整等级。
 
         **参数:**
 
@@ -1250,7 +1250,7 @@
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **描述:** 要使用的 PalTemplate 文件名。
+            **描述:** 要使用的 [PalTemplate](../FileTypes/PalTemplate.md) 文件名。
 
             **注意：** 文件名不需要包含 .json 扩展名；如果缺失，系统会自动追加。参见 [PalTemplate](../FileTypes/PalTemplate.md)。
 
@@ -1298,7 +1298,7 @@
     ??? info "/exportpals"
         **语法:** `/exportpals [UserId]`
 
-        **描述:** 将玩家的每只帕鲁导出为 PalTemplate 文件，位置为 Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/。
+        **描述:** 将玩家的每只帕鲁导出为 [PalTemplate](../FileTypes/PalTemplate.md) 文件，位置为 Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/。
 
         **参数:**
 

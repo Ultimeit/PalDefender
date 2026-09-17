@@ -956,7 +956,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givepal_j"
         **Syntax:** `/givepal_j <UserID> <PalTemplate>`
 
-        **Description:** Gives a player a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
+        **Description:** Gives a player a Pal defined by a [PalTemplate](../FileTypes/PalTemplate.md) file. Embedded JSON is no longer supported; only a filename is accepted.
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
@@ -993,7 +993,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemepal_j"
         **Syntax:** `/givemepal_j <PalTemplate>`
 
-        **Description:** Gives yourself a Pal defined by a PalTemplate file. Embedded JSON is no longer supported; only a filename is accepted.
+        **Description:** Gives yourself a Pal defined by a [PalTemplate](../FileTypes/PalTemplate.md) file. Embedded JSON is no longer supported; only a filename is accepted.
 
         **Arguments:**
 
@@ -1068,11 +1068,11 @@ At the current version there are only Admin and RCON commands available.
 
         **Description:** Spawns a Pal relative or absolute to you. **RCON has to specify x, y and z!**
 
-        **Note:** All stats, except level, are randomized.
+        **Note:** Uses the attributes from the [PalTemplate](../FileTypes/PalTemplate.md) file in `Pals/Templates/`, as do `/givepal_j` and the template-based egg commands. For a full encounter with spawning options and rewards, use `/summon` with a [PalSummon](../FileTypes/PalSummon.md) file instead. `/spawnpal` takes a Pal ID, not a template filename.
 
         **Arguments:**
 
-        - `<PalTemplate>`: The name of the PalTemplate file to use.
+        - `<PalTemplate>`: The name of the [PalTemplate](../FileTypes/PalTemplate.md) file to use.
         - `[x]`: (Optional) x position of the pal. Default: Relative to player-invoker.
         - `[y]`: (Optional) y position of the pal. Default: Relative to player-invoker.
         - `[z]`: (Optional) z position of the pal. Default: Relative to player-invoker.
@@ -1087,7 +1087,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/spawnpal_ex_j"
         **Syntax:** `/spawnpal_ex_j <PalTemplate> [x] [y] [z]`
 
-        **Description:** Uses the same PalTemplate and coordinate handling as `/spawnpal_j`, but enables damage tracking. When the Pal dies or is captured, PalDefender logs the full damage ranking and sends it to `PalWebhooks.webhookURL_Summons` when that webhook is configured. If `announceAdminSummonsKill` is enabled, participating online players also receive a result dialog showing the top five and their own rank. The highest damage dealer is marked as the winner. This command does not use PalSummon rewards.
+        **Description:** Uses the same [PalTemplate](../FileTypes/PalTemplate.md) and coordinate handling as `/spawnpal_j`, but enables damage tracking. When the Pal dies or is captured, PalDefender logs the full damage ranking and sends it to `PalWebhooks.webhookURL_Summons` when that webhook is configured. If `announceAdminSummonsKill` is enabled, participating online players also receive a result dialog showing the top five and their own rank. The highest damage dealer is marked as the winner. This command does not use [PalSummon](../FileTypes/PalSummon.md) rewards.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -1099,12 +1099,12 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/summon"
         **Syntax:** `/summon <PalSummon>`
 
-        **Description:** Spawns a Pal using the provided PalSummon file.
+        **Description:** Spawns a Pal using the provided [PalSummon](../FileTypes/PalSummon.md) file.
 
         **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing.
 
         **Arguments:**
-        - `<PalSummon>`: The name of the PalSummon file to use.
+        - `<PalSummon>`: The filename of a [PalSummon](../FileTypes/PalSummon.md) file in `PalDefender/Pals/Summons/`, **not** a [PalTemplate](../FileTypes/PalTemplate.md) filename. This file references a PalTemplate for the Pal's attributes and adds spawning options such as coordinates and optional rewards. For example, `/summon ArenaEncounter` loads `Pals/Summons/ArenaEncounter.json`.
 
         **Permissions:** `Chat`, `RCON`, `Admin`
 
@@ -1194,7 +1194,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/giveegg_j"
         **Syntax:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** Gives a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
+        **Description:** Gives a pal egg with a Pal defined by a [PalTemplate](../FileTypes/PalTemplate.md) file and optionally adjusted level.
 
         **Arguments:**
 
@@ -1214,7 +1214,7 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Description:** The name of the PalTemplate file to use.
+            **Description:** The name of the [PalTemplate](../FileTypes/PalTemplate.md) file to use.
 
             **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
 
@@ -1231,7 +1231,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/givemeegg_j"
         **Syntax:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **Description:** Gives yourself a pal egg with a Pal defined by a PalTemplate file and optionally adjusted level.
+        **Description:** Gives yourself a pal egg with a Pal defined by a [PalTemplate](../FileTypes/PalTemplate.md) file and optionally adjusted level.
 
         **Arguments:**
 
@@ -1251,7 +1251,7 @@ At the current version there are only Admin and RCON commands available.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Description:** The name of the PalTemplate file to use.
+            **Description:** The name of the [PalTemplate](../FileTypes/PalTemplate.md) file to use.
 
             **Note:** You do not need to include the .json extension in the filename; the system will append it automatically if missing. See [PalTemplate](../FileTypes/PalTemplate.md).
 
@@ -1299,7 +1299,7 @@ At the current version there are only Admin and RCON commands available.
     ??? info "/exportpals"
         **Syntax:** `/exportpals [UserId]`
 
-        **Description:** Export every Pal of a player to a PalTemplate file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
+        **Description:** Export every Pal of a player to a [PalTemplate](../FileTypes/PalTemplate.md) file at Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
 
         **Arguments:**
 

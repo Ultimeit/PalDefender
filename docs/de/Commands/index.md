@@ -956,7 +956,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/givepal_j"
         **Syntax:** `/givepal_j <UserID> <PalTemplate>`
 
-        **Beschreibung:** Gibt einem Spieler einen Pal aus einer PalTemplate-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
+        **Beschreibung:** Gibt einem Spieler einen Pal aus einer [PalTemplate](../FileTypes/PalTemplate.md)-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
 
         **Hinweis:** Die Dateiendung `.json` muss nicht angegeben werden; das System ergänzt sie automatisch, falls sie fehlt.
 
@@ -993,7 +993,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/givemepal_j"
         **Syntax:** `/givemepal_j <PalTemplate>`
 
-        **Beschreibung:** Gibt dir selbst einen Pal aus einer PalTemplate-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
+        **Beschreibung:** Gibt dir selbst einen Pal aus einer [PalTemplate](../FileTypes/PalTemplate.md)-Datei. Eingebettetes JSON wird nicht mehr unterstützt; es wird nur ein Dateiname akzeptiert.
 
         **Argumente:**
 
@@ -1068,11 +1068,11 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
 
         **Beschreibung:** Spawnt einen Pal relativ oder absolut zu dir. **RCON muss x, y und z angeben!**
 
-        **Hinweis:** Alle Werte außer der Stufe werden zufällig bestimmt.
+        **Hinweis:** Verwendet die Attribute aus der [PalTemplate](../FileTypes/PalTemplate.md)-Datei in `Pals/Templates/`, wie auch `/givepal_j` und die vorlagenbasierten Ei-Befehle. Für eine vollständige Begegnung mit Spawn-Optionen und Belohnungen verwende stattdessen `/summon` mit einer [PalSummon](../FileTypes/PalSummon.md)-Datei. `/spawnpal` erwartet eine Pal-ID, keinen Vorlagendateinamen.
 
         **Argumente:**
 
-        - `<PalTemplate>`: Der Name der zu verwendenden PalTemplate-Datei.
+        - `<PalTemplate>`: Der Name der zu verwendenden [PalTemplate](../FileTypes/PalTemplate.md)-Datei.
         - `[x]`: (Optional) X-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
         - `[y]`: (Optional) Y-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
         - `[z]`: (Optional) Z-Position des Pals. Standard: Relativ zum aufrufenden Spieler.
@@ -1087,7 +1087,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/spawnpal_ex_j"
         **Syntax:** `/spawnpal_ex_j <PalTemplate> [x] [y] [z]`
 
-        **Beschreibung:** Verwendet dasselbe PalTemplate und dieselbe Koordinatenverarbeitung wie `/spawnpal_j`, aktiviert jedoch das Damage-Tracking. Wenn der Pal stirbt oder gefangen wird, protokolliert PalDefender die vollständige Schadensrangliste und sendet sie an `PalWebhooks.webhookURL_Summons`, sofern dieser Webhook konfiguriert ist. Ist `announceAdminSummonsKill` aktiviert, erhalten teilnehmende Online-Spieler außerdem einen Ergebnisdialog mit den ersten fünf Plätzen und ihrem eigenen Rang. Der Spieler mit dem höchsten Schaden wird als Gewinner markiert. Dieser Befehl verwendet keine PalSummon-Belohnungen.
+        **Beschreibung:** Verwendet dasselbe [PalTemplate](../FileTypes/PalTemplate.md) und dieselbe Koordinatenverarbeitung wie `/spawnpal_j`, aktiviert jedoch das Damage-Tracking. Wenn der Pal stirbt oder gefangen wird, protokolliert PalDefender die vollständige Schadensrangliste und sendet sie an `PalWebhooks.webhookURL_Summons`, sofern dieser Webhook konfiguriert ist. Ist `announceAdminSummonsKill` aktiviert, erhalten teilnehmende Online-Spieler außerdem einen Ergebnisdialog mit den ersten fünf Plätzen und ihrem eigenen Rang. Der Spieler mit dem höchsten Schaden wird als Gewinner markiert. Dieser Befehl verwendet keine [PalSummon](../FileTypes/PalSummon.md)-Belohnungen.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -1099,12 +1099,12 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/summon"
         **Syntax:** `/summon <PalSummon>`
 
-        **Beschreibung:** Spawnt einen Pal anhand der angegebenen PalSummon-Datei.
+        **Beschreibung:** Spawnt einen Pal anhand der angegebenen [PalSummon](../FileTypes/PalSummon.md)-Datei.
 
         **Hinweis:** Die Dateiendung `.json` muss nicht angegeben werden; das System ergänzt sie automatisch, falls sie fehlt.
 
         **Argumente:**
-        - `<PalSummon>`: Der Name der zu verwendenden PalSummon-Datei.
+        - `<PalSummon>`: Der Dateiname einer [PalSummon](../FileTypes/PalSummon.md)-Datei in `PalDefender/Pals/Summons/`, **kein** [PalTemplate](../FileTypes/PalTemplate.md)-Dateiname. Diese Datei verweist für die Pal-Attribute auf ein PalTemplate und ergänzt Spawn-Optionen wie Koordinaten und optionale Belohnungen. Beispielsweise lädt `/summon ArenaEncounter` die Datei `Pals/Summons/ArenaEncounter.json`.
 
         **Berechtigungen:** `Chat`, `RCON`, `Admin`
 
@@ -1194,7 +1194,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/giveegg_j"
         **Syntax:** `/giveegg_j <EggId> <PalTemplate> [Level]`
 
-        **Beschreibung:** Gibt ein Pal-Ei mit einem Pal aus einer PalTemplate-Datei und optional angepasstem Level.
+        **Beschreibung:** Gibt ein Pal-Ei mit einem Pal aus einer [PalTemplate](../FileTypes/PalTemplate.md)-Datei und optional angepasstem Level.
 
         **Argumente:**
 
@@ -1214,7 +1214,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Beschreibung:** Der Name der zu verwendenden PalTemplate-Datei.
+            **Beschreibung:** Der Name der zu verwendenden [PalTemplate](../FileTypes/PalTemplate.md)-Datei.
 
             **Hinweis:** Du musst die Dateiendung .json nicht im Dateinamen angeben; das System hängt sie automatisch an, wenn sie fehlt. Siehe [PalTemplate](../FileTypes/PalTemplate.md).
 
@@ -1231,7 +1231,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/givemeegg_j"
         **Syntax:** `/givemeegg_j <EggId> <PalTemplate> [Level]`
 
-        **Beschreibung:** Gibt dir selbst ein Pal-Ei mit einem Pal aus einer PalTemplate-Datei und optional angepasstem Level.
+        **Beschreibung:** Gibt dir selbst ein Pal-Ei mit einem Pal aus einer [PalTemplate](../FileTypes/PalTemplate.md)-Datei und optional angepasstem Level.
 
         **Argumente:**
 
@@ -1251,7 +1251,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
             - `PalEgg_Water_01`–`PalEgg_Water_05`
 
         ??? quote "<PalTemplate\>"
-            **Beschreibung:** Der Name der zu verwendenden PalTemplate-Datei.
+            **Beschreibung:** Der Name der zu verwendenden [PalTemplate](../FileTypes/PalTemplate.md)-Datei.
 
             **Hinweis:** Du musst die Dateiendung .json nicht im Dateinamen angeben; das System hängt sie automatisch an, wenn sie fehlt. Siehe [PalTemplate](../FileTypes/PalTemplate.md).
 
@@ -1299,7 +1299,7 @@ In der aktuellen Version sind nur Admin- und RCON-Befehle verfügbar.
     ??? info "/exportpals"
         **Syntax:** `/exportpals [UserId]`
 
-        **Beschreibung:** Exportiert jeden Pal eines Spielers als PalTemplate-Datei nach Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
+        **Beschreibung:** Exportiert jeden Pal eines Spielers als [PalTemplate](../FileTypes/PalTemplate.md)-Datei nach Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/.
 
         **Argumente:**
 
