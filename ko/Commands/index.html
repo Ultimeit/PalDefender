@@ -1,0 +1,3601 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PalDefender (Palworld 전용 서버 부정행위 방지)">
+      
+      
+        <meta name="author" content="Zvend">
+      
+      
+        <link rel="canonical" href="https://ultimeit.github.io/PalDefender/ko/Commands/">
+      
+      
+        <link rel="prev" href="../Partnerships/">
+      
+      
+        <link rel="next" href="../FileTypes/">
+      
+      
+        
+          <link rel="alternate" href="../../Commands/" hreflang="en">
+        
+          <link rel="alternate" href="../../de/Commands/" hreflang="de">
+        
+          <link rel="alternate" href="../../zh/Commands/" hreflang="zh">
+        
+          <link rel="alternate" href="../../ja/Commands/" hreflang="ja">
+        
+          <link rel="alternate" href="./" hreflang="ko">
+        
+          <link rel="alternate" href="../../pl/Commands/" hreflang="pl">
+        
+          <link rel="alternate" href="../../pt-BR/Commands/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../fr/Commands/" hreflang="fr">
+        
+          <link rel="alternate" href="../../ru/Commands/" hreflang="ru">
+        
+      
+      
+      <link rel="icon" href="../../assets/LogoWiki.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>명령어 - PalDefender Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22m8.533.133%205.25%201.68A1.75%201.75%200%200%201%2015%203.48V7c0%201.566-.32%203.182-1.303%204.682-.983%201.498-2.585%202.813-5.032%203.855a1.7%201.7%200%200%201-1.33%200c-2.447-1.042-4.049-2.357-5.032-3.855C1.32%2010.182%201%208.566%201%207V3.48a1.75%201.75%200%200%201%201.217-1.667l5.25-1.68a1.75%201.75%200%200%201%201.066%200m-.61%201.429zl-5.25%201.68a.25.25%200%200%200-.174.237V7c0%201.36.275%202.666%201.057%203.859.784%201.194%202.121%202.342%204.366%203.298a.2.2%200%200%200%20.154%200c2.245-.957%203.582-2.103%204.366-3.297C13.225%209.666%2013.5%208.358%2013.5%207V3.48a.25.25%200%200%200-.174-.238l-5.25-1.68a.25.25%200%200%200-.153%200M11.28%206.28l-3.5%203.5a.75.75%200%200%201-1.06%200l-1.5-1.5a.749.749%200%200%201%20.326-1.275.75.75%200%200%201%20.734.215l.97.97%202.97-2.97a.75.75%200%200%201%201.042.018.75.75%200%200%201%20.018%201.042%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.533.753V.752c.217%202.385%201.463%203.626%202.653%204.81C13.37%206.74%2014.498%207.863%2014.498%2010c0%203.5-3%206-6.5%206S1.5%2013.512%201.5%2010c0-1.298.536-2.56%201.425-3.286.376-.308.862%200%201.035.454C4.46%208.487%205.581%208.419%206%208c.282-.282.341-.811-.003-1.5C4.34%203.187%207.035.75%208.77.146c.39-.137.726.194.763.607M7.998%2014.5c2.832%200%205-1.98%205-4.5%200-1.463-.68-2.19-1.879-3.383l-.036-.037c-1.013-1.008-2.3-2.29-2.834-4.434-.322.256-.63.579-.864.953-.432.696-.621%201.58-.046%202.73.473.947.67%202.284-.278%203.232-.61.61-1.545.84-2.403.633a2.8%202.8%200%200%201-1.436-.874A3.2%203.2%200%200%200%203%2010c0%202.53%202.164%204.5%204.998%204.5%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../" title="PalDefender Wiki" class="md-header__button md-logo" aria-label="PalDefender Wiki" data-md-component="logo">
+      
+  <img src="../../assets/LogoWiki.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PalDefender Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              명령어
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="밝은 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="밝은 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="어두운 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="어두운 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../Commands/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../de/Commands/" hreflang="de" class="md-select__link">
+              Deutsch (German)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../zh/Commands/" hreflang="zh" class="md-select__link">
+              简体中文 (Chinese)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ja/Commands/" hreflang="ja" class="md-select__link">
+              日本語 (Japanese)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              한국어 (Korean)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../pl/Commands/" hreflang="pl" class="md-select__link">
+              Polski (Polish)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../pt-BR/Commands/" hreflang="pt-BR" class="md-select__link">
+              Português do Brasil (Brazilian Portuguese)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../fr/Commands/" hreflang="fr" class="md-select__link">
+              Français (French)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ru/Commands/" hreflang="ru" class="md-select__link">
+              Русский (Russian)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Ultimeit/PalDefender" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ultimeit/PalDefender
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  홈
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../FAQ/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  자주 묻는 질문
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Features/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  기능 및 현재 상태
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  설치
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Partnerships/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  파트너십
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  명령어
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../FileTypes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  파일 유형
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../RESTAPI/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  REST API
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="PalDefender Wiki" class="md-nav__button md-logo" aria-label="PalDefender Wiki" data-md-component="logo">
+      
+  <img src="../../assets/LogoWiki.png" alt="logo">
+
+    </a>
+    PalDefender Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Ultimeit/PalDefender" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ultimeit/PalDefender
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자주 묻는 질문
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기능 및 현재 상태
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Partnerships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트너십
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    명령어
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    명령어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        명령어란?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        누가 사용할 수 있나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        명령어 목록
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../FileTypes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파일 유형
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    파일 유형
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FileTypes/Config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FileTypes/PalImportRules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pals/ImportRules/*.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FileTypes/PalSummon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PalSummon.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FileTypes/PalTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PalTemplate.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../RESTAPI/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인증 및 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../RESTAPI/Endpoints/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    엔드포인트
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    엔드포인트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/players/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /players
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/pals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /pals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/techs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /techs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /progression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/guilds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /guilds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/guild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /guild
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/banlist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /banlist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /broadcast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/send-player-message/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /SendPlayerMessage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/ban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /ban
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/banip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /banip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/unban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /unban
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/unbanip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /unbanip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/kick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /kick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/deletebase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /deletebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/give-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/give-pals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/pals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/give-paleggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/paleggs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/give-paltemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/paltemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/give-progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/progression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/give_deprecated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/learntech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /learntech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/forgettech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /forgettech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/reload-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /reload-config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/summon-pal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /summon/pal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Endpoints/summon-npc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /summon/npc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    예제
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    예제
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RESTAPI/Examples/Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        명령어란?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        누가 사용할 수 있나요?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        명령어 목록
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="_1">명령어</h1>
+<h2 id="_2">명령어란?</h2>
+<p>명령어는 게임에 특정 동작을 지시하는 텍스트입니다. 채팅에 입력하여 순간이동, 생물 생성, 플레이어 관리 등을 수행할 수 있습니다. 보통 <span class="var-command">/</span>로 시작하며 뒤에 명령어 이름과 필요한 인수를 입력합니다.</p>
+<h2 id="_3">누가 사용할 수 있나요?</h2>
+<p><strong>현재 일반 플레이어가 사용할 수 있는 명령어는 없습니다.</strong>
+현재 버전에서는 관리자 및 RCON 명령어만 제공합니다.</p>
+<h2 id="_4">명령어 목록</h2>
+<div class="admonition note">
+<p class="admonition-title">명령어 문법</p>
+<p><span class="var-command">/명령어_이름&nbsp;</span><span class="var-command-arg">&lt;필수_인수&gt;&nbsp;</span><span class="var-command-optional">[선택_인수={?}]</span>
+<br>
+<br>
+<p>
+<span class="var-command-arg">&lt;필수_인수&gt;</span> → 반드시 입력해야 합니다.<br>
+<span class="var-command-optional">[선택_인수={?}]</span> → 생략할 수 있습니다. <span class="var-command-optional">{?}</span>는 생략했을 때 사용하는 기본값입니다.
+</p>
+<p>
+인수에는 여러 자료형이 있습니다. 주로 <span class="var-string">문자열</span>, <span class="var-number">숫자</span>, <span class="var-float">실수</span>, <span class="var-bool">불리언</span>을 사용합니다. 특정 디렉터리의 <span class="file">파일 이름</span>이나 <span class="var-filter">필터</span>처럼 복잡한 인수를 받기도 합니다.
+</p></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">ID 조회</p>
+<p><code>PalID</code>는 <a href="https://paldeck.cc/pals">paldeck.cc/pals</a>, <code>ItemID</code>는 <a href="https://paldeck.cc/items">paldeck.cc/items</a>, <code>TechID</code>는 <a href="https://paldeck.cc/technology">paldeck.cc/technology</a>, <code>BuildingID</code>는 <a href="https://paldeck.cc/buildings">paldeck.cc/buildings</a>, <code>PassiveID</code>는 <a href="https://paldeck.cc/passives">paldeck.cc/passives</a>, 기술 ID는 <a href="https://paldeck.cc/skills">paldeck.cc/skills</a>에서 확인하세요.</p>
+</div>
+<details class="note">
+<summary>RCON 전용</summary>
+<details class="info">
+<summary>/getrconcmds</summary>
+<p><strong>문법:</strong> <code>/getrconcmds</code></p>
+<p><strong>설명:</strong> RCON에서 사용할 수 있는 모든 명령어와 필수 인수 개수를 반환합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>RCON</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/getrconcmds
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>서버 관리</summary>
+<details class="info">
+<summary>/version</summary>
+<p><strong>문법:</strong> <code>/version</code></p>
+<p><strong>설명:</strong> Palworld 게임 버전과 PalDefender 버전을 표시합니다. RCON에서는 JSON을 반환합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/version
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/reloadcfg</summary>
+<p><strong>문법:</strong> <code>/reloadcfg</code></p>
+<p><strong>설명:</strong> <code>Config.json</code>, <code>WhiteList.json</code> 및 PalDefender 차단 데이터를 다시 불러옵니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/reloadcfg
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/addadminip</summary>
+<p><strong>문법:</strong> <code>/addadminip &lt;IP&gt;</code></p>
+<p><strong>설명:</strong> 관리자 허용 목록에 IP 주소를 추가합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;IP&gt;</code>: 관리자로 허용할 IP 주소입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/addadminip 192.168.1.1
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/setadmin</summary>
+<p><strong>문법:</strong> <code>/setadmin &lt;UserId&gt;</code></p>
+<p><strong>설명:</strong> 플레이어에게 관리자 권한을 일시적으로 부여하거나 해제합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 관리자 권한을 부여하거나 해제할 플레이어 ID입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/setadmin steam_76500000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/pgbroadcast</summary>
+<p><strong>문법:</strong> <code>/pgbroadcast &lt;Message&gt;</code></p>
+<p><strong>설명:</strong> 서버의 모든 플레이어에게 메시지를 보냅니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;Message&gt;</code>: 전체 전송할 메시지입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>/pgbroadcast "곧 서버를 재시작합니다."
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/adminlogin</summary>
+<p><strong>문법:</strong> <code>/adminlogin &lt;password&gt;</code></p>
+<p><strong>설명:</strong> 관리자 모드로 로그인합니다. 인수에 관리자 비밀번호를 입력해야 합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;password&gt;</code>: 관리자 비밀번호입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/adminlogin mySecretPassword
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/adminlogout</summary>
+<p><strong>문법:</strong> <code>/adminlogout</code></p>
+<p><strong>설명:</strong> 관리자 모드에서 로그아웃합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/adminlogout
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/iwantplayerlist</summary>
+<p><strong>문법:</strong> <code>/iwantplayerlist</code></p>
+<p><strong>설명:</strong> 게임 내 플레이어 목록 오버레이를 켭니다. ESC를 누르면 각 플레이어의 UserId와 Player UID를 확인할 수 있습니다. 게임 화면에서 상세 플레이어 정보를 확인하려는 관리자와 플레이어에게 유용합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/iwantplayerlist
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/getpos</summary>
+<p><strong>문법:</strong> <code>/getpos [UserId]</code></p>
+<p><strong>설명:</strong> 순간이동이나 소환 등에 사용할 현재 월드 위치를 조회합니다. [UserId]를 지정하면 해당 플레이어의 위치를 조회합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[UserId]</code>: (선택) 위치를 조회할 플레이어 ID입니다. 생략하면 자신의 위치를 조회합니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/getpos
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>/getpos steam_76500000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/settime</summary>
+<p><strong>문법:</strong> <code>/settime &lt;hour&gt;</code></p>
+<p><strong>설명:</strong> Palworld의 시간을 변경합니다. <code>0</code>부터 <code>23</code>까지의 시각 또는 <code>day</code>, <code>night</code>를 지정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;hour&gt;</code>: 시각 값입니다(0–23, day, night).</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/settime 12
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>/settime night
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/togglepvp</summary>
+<p><strong>문법:</strong> <code>/togglepvp</code></p>
+<p><strong>설명:</strong> 현재 서버 실행 세션에서 PvP를 켜거나 끕니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>/togglepvp
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/alert</summary>
+<p><strong>문법:</strong> <code>/alert &lt;message&gt;</code></p>
+<p><strong>설명:</strong> 서버의 모든 플레이어에게 알림을 전송합니다. 일반적으로 화면에서 눈에 잘 띄게 표시됩니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;message&gt;</code>: 알림으로 전체 전송할 메시지입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/alert 5분 후 서버를 재시작합니다!
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/send</summary>
+<p><strong>문법:</strong> <code>/send &lt;type&gt; &lt;UserId&gt; &lt;Message&gt;</code></p>
+<p><strong>설명:</strong> 특정 플레이어에게 채팅 또는 로그 메시지를 보냅니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;type&gt;</code>: 전송할 메시지 유형입니다. 사용 가능한 값:<ul>
+<li><code>msg</code>: 일반 채팅 메시지.</li>
+<li><code>log</code>: 일반 로그 메시지(흰색, 짧게 표시, 큰 글꼴).</li>
+<li><code>ilog</code>: 중요 로그 메시지(파란색, 더 오래 표시).</li>
+<li><code>vilog</code>: 매우 중요한 로그 메시지(파란색, 아주 오래 표시).</li>
+</ul>
+</li>
+<li><code>&lt;UserId&gt;</code>: 메시지를 받을 플레이어 ID입니다.</li>
+<li><code>&lt;Message&gt;</code>: 전송할 메시지 내용입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/send msg steam_76500000000000000 Qonzer 할인 행사를 놓치지 마세요!
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>/send log steam_76500000000000000 Qonzer 할인 행사를 놓치지 마세요!
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>/send ilog steam_76500000000000000 Qonzer 할인 행사를 놓치지 마세요!
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>/send vilog steam_76500000000000000 Qonzer 할인 행사를 놓치지 마세요!
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/resetoilrig</summary>
+<p><strong>문법:</strong> <code>/resetoilrig &lt;lv30|lv55|lv60|all&gt;</code></p>
+<p><strong>설명:</strong> 선택한 오일 리그 또는 현재 관리 중인 모든 오일 리그를 초기화합니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, 게임 내 관리자 권한이 활성화되어 있어야 합니다.</p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>/resetoilrig all
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/setting</summary>
+<p><strong>문법:</strong> <code>/setting list [filter]</code> 또는 <code>/setting &lt;setting_name&gt; &lt;get|set|add|sub&gt; [value]</code></p>
+<p><strong>설명:</strong> 지원되는 <code>UPalGameSetting</code>의 현재 값을 확인하거나 변경합니다. 이름은 대소문자를 구분하지 않으며 대상을 유일하게 식별하는 접두어나 부분 문자열도 허용합니다. 실험적인 기능으로 영구 월드 설정을 대체하지 않으며, 클라이언트에는 캐시된 값이 계속 표시될 수 있습니다.</p>
+<ul>
+<li><code>list [filter]</code>: 지원되는 정수, 실수, 불리언, 바이트 및 열거형 필드를 나열합니다.</li>
+<li><code>get</code>: 값을 읽습니다.</li>
+<li><code>set</code>: 지원되는 모든 자료형의 값을 설정합니다. 불리언에는 <code>true/false</code>, <code>on/off</code>, <code>yes/no</code>, <code>1/0</code>을, 열거형에는 숫자 또는 항목 이름을 사용할 수 있습니다.</li>
+<li><code>add</code> / <code>sub</code>: 숫자 값만 변경합니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>/setting list death
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>/setting PalDeathPenaltyTime get
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>/setting PalDeathPenaltyTime set 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/resetbosstower</summary>
+<p><strong>문법:</strong> <code>/resetbosstower &lt;BossType|all&gt;</code></p>
+<p><strong>설명:</strong> 디버그 빌드 전용 명령어로 탑 보스 인스턴스 하나 또는 초기화 가능한 모든 탑 보스를 초기화합니다. 단일 대상에는 유효한 <code>EPalBossType</code> 이름을 사용해야 합니다. 공개 릴리스 빌드에서는 사용할 수 없습니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>/resetbosstower all
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/showbosses</summary>
+<p><strong>문법:</strong> <code>/showbosses</code></p>
+<p><strong>설명:</strong> 현재 보스의 정적 정보를 <code>PalDefender/Logs/BossInfo.json</code>에 기록하는 디버그 빌드 전용 데이터 추출 명령어입니다. 공개 릴리스 빌드에서는 사용할 수 없습니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+</details>
+</details>
+<details class="note">
+<summary>거점 관리</summary>
+<details class="info">
+<summary>/findunusedbases (별칭: /findbases)</summary>
+<p><strong>문법:</strong> <code>/findbases [empty|inactive|unused|all] [days=N] [builds&lt;=N]</code></p>
+<p><strong>대화형 문법:</strong> <code>/findbases visit [filters]</code>, <code>/findbases next</code>, <code>/findbases kill [next]</code></p>
+<p><strong>설명:</strong> 비어 있거나 비활성 상태이거나 사용되지 않는 거점을 검색합니다. <code>visit</code>는 채팅 전용 검토 목록을 만들고 첫 번째 결과로 순간이동합니다. <code>next</code>는 다음 거점으로 이동하며, <code>kill</code>은 선택한 거점을 파괴합니다. <code>kill next</code>는 파괴 후 다음 거점으로 이동합니다. 파괴는 되돌릴 수 없으므로 각 대상을 먼저 확인하세요.</p>
+<ul>
+<li><code>empty</code>: 작업 팰이 없고 건축물 수가 기본 상한(또는 <code>builds&lt;=N</code>) 이하인 거점입니다.</li>
+<li><code>inactive</code>: 접속 중인 길드 멤버가 없고 최소 <code>days</code>일(기본 <code>30</code>) 동안 비활성 상태인 거점입니다.</li>
+<li><code>unused</code>: 비어 있거나 비활성 상태인 거점입니다.</li>
+<li><code>all</code>: 직접 지정한 필터를 적용하여 모든 거점을 나열합니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> 목록 조회는 <code>Chat</code>과 <code>RCON</code>을 지원합니다. visit/next/kill은 게임 내 채팅과 관리자 권한이 필요합니다.</p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>/findbases empty builds&lt;=5
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>/findbases inactive days=14
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>/findbases visit unused days=30
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>/findbases kill next
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/getnearestbase</summary>
+<p><strong>문법:</strong> <code>/getnearestbase [X] [Y] [Z]</code></p>
+<p><strong>설명:</strong> 캐릭터에서 가장 가까운 거점을 소유한 길드 이름을 알려 줍니다.</p>
+<p><strong>참고:</strong> <strong>RCON</strong>에는 위치를 확인할 플레이어 캐릭터가 없으므로 모든 위치 매개변수(<code>[X]</code> <code>[Y]</code> <code>[Z]</code>)가 <strong>필수</strong>입니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[X]</code>: (선택) X 좌표입니다.</li>
+<li><code>[Y]</code>: (선택) Y 좌표입니다.</li>
+<li><code>[Z]</code>: (선택) Z 좌표입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>/getnearestbase 100 200 50
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/gotonearestbase</summary>
+<p><strong>문법:</strong> <code>/gotonearestbase [X] [Y] [Z]</code></p>
+<p><strong>설명:</strong> 해당 위치에서 가장 가까운 거점으로 순간이동합니다.</p>
+<p><strong>참고:</strong> <strong>RCON</strong>에는 위치를 확인할 플레이어 캐릭터가 없으므로 모든 위치 매개변수(<code>[X]</code> <code>[Y]</code> <code>[Z]</code>)가 <strong>필수</strong>입니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[X]</code>: (선택) X 좌표입니다.</li>
+<li><code>[Y]</code>: (선택) Y 좌표입니다.</li>
+<li><code>[Z]</code>: (선택) Z 좌표입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>/gotonearestbase 100 200 50
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/killnearestbase</summary>
+<p><strong>문법:</strong> <code>/killnearestbase [X] [Y] [Z]</code></p>
+<p><strong>설명:</strong> 가장 가까운 거점을 파괴합니다(<strong>주의해서 사용하세요!</strong>).</p>
+<p><strong>참고:</strong> <strong>RCON</strong>에는 위치를 확인할 플레이어 캐릭터가 없으므로 모든 위치 매개변수(<code>[X]</code> <code>[Y]</code> <code>[Z]</code>)가 <strong>필수</strong>입니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[X]</code>: (선택) X 좌표입니다.</li>
+<li><code>[Y]</code>: (선택) Y 좌표입니다.</li>
+<li><code>[Z]</code>: (선택) Z 좌표입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/killnearestbase 100 200 50
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>플레이어 관리</summary>
+<details class="info">
+<summary>/kick</summary>
+<p><strong>문법:</strong> <code>/kick &lt;UserId&gt; [Reason="Kicked by Admin."]</code></p>
+<p><strong>설명:</strong> 플레이어를 서버에서 강제 퇴장시킵니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 강제 퇴장시킬 플레이어 ID입니다.</li>
+<li><code>[Reason]</code>: (선택) 강제 퇴장 사유입니다. 기본값: "Kicked by Admin."(관리자에 의해 강제 퇴장됨).</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>/kick steam_76500000000000000 "채팅 도배"
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/ban</summary>
+<p><strong>문법:</strong> <code>/ban &lt;UserId&gt; [Reason="Banned by Admin."]</code></p>
+<p><strong>설명:</strong> 플레이어를 차단하고 서버에서 강제 퇴장시킵니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 차단할 플레이어 ID입니다.</li>
+<li><code>[Reason]</code>: (선택) 차단 사유입니다. 기본값: "Banned by Admin."(관리자에 의해 차단됨).</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>/ban gdk_25300000000000000 "부정행위"
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/ipban</summary>
+<p><strong>문법:</strong> <code>/ipban &lt;UserId&gt; [Reason="Banned by Admin."]</code></p>
+<p><strong>설명:</strong> 플레이어의 IP 주소를 차단하고 서버에서 강제 퇴장시킵니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: IP를 차단할 플레이어 ID입니다.</li>
+<li><code>[Reason]</code>: (선택) 차단 사유입니다. 기본값: "Banned by Admin."(관리자에 의해 차단됨).</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>/ipban steam_76500000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/banip</summary>
+<p><strong>문법:</strong> <code>/banip &lt;IP&gt;</code></p>
+<p><strong>설명:</strong> IP 주소의 서버 접속을 차단합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;IP&gt;</code>: 차단할 IP 주소입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>/banip 192.168.1.1
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/unbanip</summary>
+<p><strong>문법:</strong> <code>/unbanip &lt;IP&gt;</code></p>
+<p><strong>설명:</strong> 차단 목록에서 IP 주소를 제거합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;IP&gt;</code>: 차단을 해제할 IP 주소입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>/unbanip 192.168.1.1
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/unban</summary>
+<p><strong>문법:</strong> <code>/unban &lt;UserId&gt; [Reason="Unbanned by admin."]</code></p>
+<p><strong>설명:</strong> PalDefender 차단 목록에서 UserId를 제거합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 차단을 해제할 UserId입니다.</li>
+<li><code>[Reason]</code>: (선택) 차단 해제 작업에 기록할 사유입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>/unban steam_76500000000000000 "이의 신청 승인"
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/getip</summary>
+<p><strong>문법:</strong> <code>/getip &lt;UserId&gt;</code></p>
+<p><strong>설명:</strong> 플레이어의 IP 주소를 표시합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>/getip gdk_25300000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/whitelist_add</summary>
+<p><strong>문법:</strong> <code>/whitelist_add &lt;UserId&gt;</code></p>
+<p><strong>설명:</strong> 허용 목록에 UserId를 추가합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 허용 목록에 추가할 플레이어 ID입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>/whitelist_add steam_76500000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/whitelist_remove</summary>
+<p><strong>문법:</strong> <code>/whitelist_remove &lt;UserId&gt;</code></p>
+<p><strong>설명:</strong> 허용 목록에서 UserId를 제거합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 허용 목록에서 제거할 플레이어 ID입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>/whitelist_remove gdk_25300000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/whitelist_get</summary>
+<p><strong>문법:</strong> <code>/whitelist_get</code></p>
+<p><strong>설명:</strong> 허용 목록의 전체 플레이어를 표시합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>/whitelist_get
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/imcheater</summary>
+<p><strong>문법:</strong> <code>/imcheater</code></p>
+<p><strong>설명:</strong> 서버가 부정행위에 어떻게 대응하는지 테스트할 때 사용합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>/imcheater
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/spectate</summary>
+<p><strong>문법:</strong> <code>/spectate</code></p>
+<p><strong>설명:</strong> 관전 모드를 켭니다. 단축키 <code>\</code>를 누르는 것과 같지만 콘솔 플레이어 등 단축키를 사용할 수 없는 경우에도 실행할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>/spectate
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>플레이어 캐릭터</summary>
+<details class="info">
+<summary>/tp</summary>
+<p><strong>문법:</strong>
+다음 형식을 사용할 수 있습니다:</p>
+<ul>
+<li><code>/tp &lt;UserId&gt;</code></li>
+<li><code>/tp &lt;UserId1&gt; &lt;UserId2&gt;</code></li>
+<li><code>/tp &lt;X&gt; &lt;Y&gt;</code></li>
+<li><code>/tp &lt;X&gt; &lt;Y&gt; &lt;Z&gt;</code></li>
+<li><code>/tp &lt;UserId&gt; &lt;X&gt; &lt;Y&gt;</code></li>
+<li><code>/tp &lt;UserId&gt; &lt;X&gt; &lt;Y&gt; &lt;Z&gt;</code></li>
+<li><code>/tp home</code></li>
+<li><code>/tp oilrig</code></li>
+<li><code>/tp oilrig:Lv30</code></li>
+<li><code>/tp oilrig:Lv55</code></li>
+<li><code>/tp oilrig:Lv60</code></li>
+</ul>
+<p><strong>설명:</strong> 자신 또는 지정한 플레이어를 다른 플레이어, 좌표, 가장 가까운 소유 거점 또는 오일 리그로 순간이동시킵니다.</p>
+<p><strong>참고:</strong> RCON에는 게임 내 캐릭터가 없으므로 순간이동시킬 플레이어를 반드시 지정해야 합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 이동 목적지가 되는 플레이어입니다. 추가 인수를 지정하면 순간이동시킬 플레이어를 뜻합니다.</li>
+<li><code>&lt;UserId1&gt;</code>: 순간이동시킬 플레이어입니다.</li>
+<li><code>&lt;UserId2&gt;</code>: 이동 목적지가 되는 플레이어입니다.</li>
+<li><code>&lt;X&gt; &lt;Y&gt; [Z]</code>: 맵 좌표입니다. <code>Z</code>를 생략하면 PalDefender가 사용할 수 있는 지면 높이를 찾습니다.</li>
+<li><code>home</code>: 가장 가까운 소유 거점으로 순간이동합니다.</li>
+<li><code>oilrig</code>, <code>oilrig:Lv30</code>, <code>oilrig:Lv55</code>, <code>oilrig:Lv60</code>: 오일 리그로 순간이동합니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>/tp steam_76500000000000000 gdk_25300000000000000
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>/tp 100 -250
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>/tp oilrig:Lv60
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/give_exp</summary>
+<p><strong>문법:</strong> <code>/give_exp &lt;UserId&gt; &lt;Amount&gt;</code></p>
+<p><strong>설명:</strong> 플레이어에게 경험치를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;Amount&gt;</code>: 지급할 경험치입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>/give_exp gdk_25300000000000000 1000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/giveme_exp</summary>
+<p><strong>문법:</strong> <code>/giveme_exp &lt;Amount&gt;</code></p>
+<p><strong>설명:</strong> 자신에게 경험치를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;Amount&gt;</code>: 지급할 경험치입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>/giveme_exp 1000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/renameplayer</summary>
+<p><strong>문법:</strong> <code>/renameplayer &lt;UserId&gt; &lt;NewName&gt;</code></p>
+<p><strong>설명:</strong> 플레이어의 별명을 변경합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;NewName&gt;</code>: 새 별명입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>/renameplayer steam_76500000000000000 새별명
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givestats</summary>
+<p><strong>문법:</strong> <code>/givestats &lt;UserId&gt; [Count=1]</code></p>
+<p><strong>설명:</strong> 플레이어에게 미사용 능력치 포인트를 지급합니다. 음수이면 차감합니다. 이미 사용한 포인트에는 영향을 주지 않습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 능력치 포인트를 받을 플레이어 ID입니다.</li>
+<li><code>[Count]</code>: (선택) 지급할 미사용 능력치 포인트입니다. 음수이면 차감합니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>/givestats steam_76500000000000000 5
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>/givestats steam_76500000000000000 -2
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemestats</summary>
+<p><strong>문법:</strong> <code>/givemestats [Count=1]</code></p>
+<p><strong>설명:</strong> 자신에게 미사용 능력치 포인트를 지급합니다. 음수이면 차감합니다. 이미 사용한 포인트에는 영향을 주지 않습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[Count]</code>: (선택) 자신에게 지급할 미사용 능력치 포인트입니다. 음수이면 차감합니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>/givemestats 5
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>/givemestats -2
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/godmode</summary>
+<p><strong>문법:</strong> <code>/godmode [on/off]</code></p>
+<p><strong>설명:</strong> 상태 이상 면역을 포함한 무적 상태를 부여하고 음식 소모를 막으며, 활성화 시 체력을 회복합니다. 설정에서 허용하면 모든 대상을 한 방에 처치할 수도 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[on/off]</code>: (선택) 무적 모드를 명시적으로 켜거나 끕니다. 생략하면 현재 상태를 전환합니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>/godmode
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>/godmode on
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>/godmode off
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/admingun (별칭: /agun)</summary>
+<p><strong>문법:</strong> <code>/admingun</code></p>
+<p><strong>설명:</strong> 게임 내 관리자 권한이 활성화된 플레이어에게 보호 기능이 적용된 관리자 총을 지급합니다. 캐릭터를 즉시 처치하고 맵 오브젝트를 파괴하며 식생에 최대 피해를 줍니다. 탄약과 내구도는 무제한이며 버리기, 판매, 외부 컨테이너로 이동할 수 없습니다. 보관 오브젝트를 파괴할 때 웅크리면 내용물도 삭제하고, 서 있으면 내용물을 보존합니다. 사망, 게임 로그아웃 또는 관리자 로그아웃 시 총이 제거되며 다시 요청하면 기존 총을 대체합니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, 게임 내 관리자 권한이 활성화되어 있어야 합니다. <code>allowAdminCheats</code>는 필요하지 않습니다.</p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>/agun
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>길드 관리</summary>
+<details class="info">
+<summary>/setguildleader</summary>
+<p><strong>문법:</strong> <code>/setguildleader &lt;UserId&gt;</code></p>
+<p><strong>설명:</strong> 대상 플레이어를 현재 소속 길드의 길드장으로 지정합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 길드장으로 지정할 플레이어 ID입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>/setguildleader gdk_25300000000000000
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/exportguilds</summary>
+<p><strong>문법:</strong> <code>/exportguilds</code></p>
+<p><strong>설명:</strong> 서버의 모든 길드 정보를 Pal/Binaries/Win64/PalDefender/guildexport.json으로 내보냅니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>/exportguilds
+</span></code></pre></div>
+출력 파일 예: <code>Pal/Binaries/Win64/PalDefender/guildexport.json</code></p>
+</details>
+</details>
+<details class="note">
+<summary>아이템</summary>
+<details class="info">
+<summary>/give</summary>
+<p><strong>문법:</strong> <code>/give &lt;UserId&gt; &lt;ItemId&gt; [Amount=1]</code></p>
+<p><strong>설명:</strong> 플레이어에게 아이템을 지급합니다. 수량을 지정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 아이템을 받을 플레이어 ID입니다.</li>
+<li><code>&lt;ItemId&gt;</code>: 지급할 아이템입니다.</li>
+<li><code>[Amount]</code>: (선택) 수량입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>/give steam_76500000000000000 Sword 2
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/giveitems</summary>
+<p><strong>문법:</strong> <code>/giveitems &lt;UserId&gt; &lt;ItemId&gt;[:&lt;Amount&gt;] ...</code></p>
+<p><strong>설명:</strong> 한 명령어로 플레이어에게 여러 아이템을 지급합니다. 콜론 뒤에 각 아이템의 수량을 지정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 아이템을 받을 플레이어 ID입니다.</li>
+<li><code>&lt;ItemId&gt;[:&lt;Amount&gt;] ...</code>: 아이템 및 선택적인 수량 목록입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>/giveitems gdk_25300000000000000 Sword:2 Shield:1
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/giveme</summary>
+<p><strong>문법:</strong> <code>/giveme &lt;ItemId&gt; [Amount=1]</code></p>
+<p><strong>설명:</strong> 자신에게 아이템을 지급합니다. 수량을 지정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;ItemId&gt;</code>: 자신에게 지급할 아이템입니다.</li>
+<li><code>[Amount]</code>: (선택) 수량입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>/giveme Sword 3
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/delitem</summary>
+<p><strong>문법:</strong> <code>/delitem &lt;UserId&gt; &lt;ItemId&gt; [Amount=1]</code></p>
+<p><strong>설명:</strong> 플레이어의 아이템을 지정한 수량만큼 삭제합니다. 기본값 <code>1</code>은 해당 아이템 하나만 삭제합니다. 모두 삭제하려면 <code>1</code> 대신 <code>all</code>을 사용하세요.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;ItemId&gt;</code>: 삭제할 아이템입니다.</li>
+<li><code>[Amount]</code>: (선택) 삭제할 수량입니다. 기본값: 1. 해당 아이템을 모두 삭제하려면 <code>all</code>을 사용하세요.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>/delitem steam_76500000000000000 Sword 1
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>/delitem gdk_25300000000000000 Sword all
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/give_relic</summary>
+<p><strong>문법:</strong> <code>/give_relic &lt;UserId&gt; &lt;RelicType&gt; [Amount]</code></p>
+<p><strong>설명:</strong> 플레이어에게 선택한 유형의 유물 포인트를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 유물 포인트를 받을 플레이어 ID입니다.</li>
+<li>
+<p><code>&lt;RelicType&gt;</code>: 지급할 유물 유형입니다.</p>
+</li>
+<li>
+<p><code>[Amount]</code>: 선택적으로 지정할 유물 포인트 지급량입니다. 기본값은 <code>1</code>입니다.</p>
+</li>
+</ul>
+<p><strong>지원되는 유물 유형:</strong> <code>CapturePower</code>, <code>HungerReduction</code>, <code>SwimSpeed</code>, <code>FoodDecayReduction</code>, <code>JumpPower</code>, <code>GliderSpeed</code>, <code>ClimbSpeed</code>, <code>StatusAilmentResist</code>, <code>StaminaReduction</code>, <code>SphereHoming</code>, <code>ExpBonus</code>, <code>RainbowPassiveRate</code>, <code>MoveSpeed</code>.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>/give_relic steam_76500000000000000 CapturePower 5
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/giveme_relic</summary>
+<p><strong>문법:</strong> <code>/giveme_relic &lt;RelicType&gt; [Amount]</code></p>
+<p><strong>설명:</strong> 자신에게 선택한 유형의 유물 포인트를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>
+<p><code>&lt;RelicType&gt;</code>: 지급할 유물 유형입니다.</p>
+</li>
+<li>
+<p><code>[Amount]</code>: 선택적으로 지정할 자신의 유물 포인트 지급량입니다. 기본값은 <code>1</code>입니다.</p>
+</li>
+</ul>
+<p><strong>지원되는 유물 유형:</strong> <code>CapturePower</code>, <code>HungerReduction</code>, <code>SwimSpeed</code>, <code>FoodDecayReduction</code>, <code>JumpPower</code>, <code>GliderSpeed</code>, <code>ClimbSpeed</code>, <code>StatusAilmentResist</code>, <code>StaminaReduction</code>, <code>SphereHoming</code>, <code>ExpBonus</code>, <code>RainbowPassiveRate</code>, <code>MoveSpeed</code>.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>/giveme_relic CapturePower 5
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/delitems</summary>
+<p><strong>문법:</strong> <code>/delitems &lt;UserId&gt; &lt;ItemId&gt;[:&lt;Amount&gt;] ...</code></p>
+<p><strong>설명:</strong> 한 명령어로 플레이어의 여러 아이템을 삭제합니다. 콜론 뒤에 각 아이템의 수량을 지정할 수 있습니다. 해당 아이템을 모두 삭제하려면 <code>1</code> 대신 <code>all</code>을 사용하세요.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;ItemId&gt;[:&lt;Amount&gt;] ...</code>: 아이템 및 선택적인 수량 목록입니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>/delitems steam_76500000000000000 Sword:1 Shield:all
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/clearinv</summary>
+<p><strong>문법:</strong> <code>/clearinv &lt;UserId&gt; [Container=items] ...</code></p>
+<p><strong>설명:</strong> 플레이어 인벤토리에서 지정한 컨테이너를 비웁니다. 사용 가능한 컨테이너: <code>items</code>, <code>keyitems</code>, <code>armor</code>, <code>weapons</code>, <code>food</code>, <code>dropslot</code>, <code>all</code>.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>[Container] ...</code>: (선택) 비울 컨테이너입니다. 기본값: items.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>/clearinv steam_76500000000000000 items
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>/clearinv gdk_25300000000000000 all
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>팰</summary>
+<details class="info">
+<summary>/givepal</summary>
+<p><strong>문법:</strong> <code>/givepal &lt;UserId&gt; &lt;PalId&gt; [Level=1]</code></p>
+<p><strong>설명:</strong> 플레이어에게 지정한 레벨의 팰을 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;PalId&gt;</code>: 지급할 팰입니다.<ul>
+<li><strong>참고:</strong> <code>WeaselDragon</code>(칠렛)처럼 팰 ID를 사용하세요. 전체 목록은 <a href="https://paldeck.cc/pals">paldeck.cc/pals</a>에서 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li><code>[Level]</code>: (선택) 팰 레벨입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>/givepal gdk_25300000000000000 WeaselDragon 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givepal_j</summary>
+<p><strong>문법:</strong> <code>/givepal_j &lt;UserID&gt; &lt;PalTemplate&gt;</code></p>
+<p><strong>설명:</strong> <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일에 정의된 팰을 플레이어에게 지급합니다. JSON을 직접 입력하는 방식은 더 이상 지원하지 않으며 파일 이름만 사용할 수 있습니다.</p>
+<p><strong>참고:</strong> 파일 이름에 .json 확장자를 넣지 않아도 됩니다. 생략하면 자동으로 추가합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserID&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;PalTemplate&gt;</code>: PalTemplate 파일 이름입니다(<a href="../FileTypes/PalTemplate/">PalTemplate</a> 참고).</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>/givepal_j steam_76500000000000000 MyPalTemplate
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemepal</summary>
+<p><strong>문법:</strong> <code>/givemepal &lt;PalId&gt; [Level=1]</code></p>
+<p><strong>설명:</strong> 자신에게 지정한 레벨의 팰을 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;PalId&gt;</code>: 자신에게 지급할 팰입니다.<ul>
+<li><strong>참고:</strong> <code>WeaselDragon</code>(칠렛)처럼 팰 ID를 사용하세요. 전체 목록은 <a href="https://paldeck.cc/pals">paldeck.cc/pals</a>에서 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li><code>[Level]</code>: (선택) 팰 레벨입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>/givemepal WeaselDragon 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemepal_j</summary>
+<p><strong>문법:</strong> <code>/givemepal_j &lt;PalTemplate&gt;</code></p>
+<p><strong>설명:</strong> <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일에 정의된 팰을 자신에게 지급합니다. JSON을 직접 입력하는 방식은 더 이상 지원하지 않으며 파일 이름만 사용할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;PalTemplate&gt;</code>: PalTemplate 파일 이름입니다(<a href="../FileTypes/PalTemplate/">PalTemplate</a> 참고).</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>/givemepal_j MyPalTemplate
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/spawnpal</summary>
+<p><strong>문법:</strong>
+다음 형식을 사용할 수 있습니다:</p>
+<ul>
+<li><code>/spawnpal &lt;PalID&gt;</code></li>
+<li><code>/spawnpal &lt;PalID&gt; [Level]</code></li>
+<li><code>/spawnpal &lt;PalID&gt; [x] [y] [z]</code></li>
+<li><code>/spawnpal &lt;PalID&gt; [x] [y] [z] [Level]</code></li>
+</ul>
+<p><strong>설명:</strong> 실행자 기준 위치 또는 지정한 절대 좌표에 팰을 생성합니다. <strong>RCON에서는 x, y, z를 반드시 지정해야 합니다!</strong></p>
+<p><strong>참고:</strong> 레벨을 제외한 모든 능력치는 무작위로 결정됩니다.</p>
+<p><strong>인수:</strong>
+- <code>&lt;PalID&gt;</code>: 생성할 팰입니다.
+- <code>[x]</code>: (선택) 팰의 x 위치입니다. 기본값: 명령어를 실행한 플레이어 기준 위치.
+- <code>[y]</code>: (선택) 팰의 y 위치입니다. 기본값: 명령어를 실행한 플레이어 기준 위치.
+- <code>[z]</code>: (선택) 팰의 z 위치입니다. 기본값: 명령어를 실행한 플레이어 기준 위치.
+- <code>[Level]</code>: (선택) 팰 레벨입니다. 기본값: 1.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>/spawnpal Anubis 255
+</span></code></pre></div>
+<em>레벨 255 아누비스를 생성합니다!</em></p>
+</details>
+<details class="info">
+<summary>/spawnpal_ex</summary>
+<p><strong>문법:</strong> <code>/spawnpal</code>과 같습니다.</p>
+<p><strong>설명:</strong> <code>/spawnpal</code>과 같은 방식으로 팰을 생성하되 피해량 집계를 켭니다. 팰이 죽거나 포획되면 전체 피해량 순위를 로그에 기록하고, 웹훅이 설정되어 있으면 <code>PalWebhooks.webhookURL_Summons</code>로 전송합니다. <code>announceAdminSummonsKill</code>을 켜면 접속 중인 참가자에게 상위 5명과 자신의 순위가 표시된 결과 창도 보냅니다. 가장 많은 피해를 준 플레이어를 승자로 표시합니다. PalTemplate이나 PalSummon 파일을 사용하지 않으며 보상을 지급하지 않습니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>/spawnpal_ex Anubis 230 -486 4097 80
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/spawnnpc</summary>
+<p><strong>문법:</strong> <code>/spawnnpc &lt;NPCID|CharacterID&gt; [Level=1]</code> 또는 <code>/spawnnpc &lt;NPCID|CharacterID&gt; &lt;X&gt; &lt;Y&gt; [Z] [Level=1]</code></p>
+<p><strong>설명:</strong> AI가 있는 NPC를 생성합니다. 채팅에서 좌표를 생략하면 관리자 근처에 생성하며, RCON에서는 좌표를 지정해야 합니다. <code>X</code>와 <code>Y</code>만 지정하면 지면 높이를 자동으로 찾습니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>/spawnnpc PIDF_Soldier_AssaultRifle 30
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/spawnpal_j</summary>
+<p><strong>문법:</strong></p>
+<p>다음 형식을 사용할 수 있습니다:</p>
+<ul>
+<li><code>/spawnpal_j &lt;PalTemplate&gt;</code></li>
+<li><code>/spawnpal_j &lt;PalTemplate&gt; [x] [y] [z]</code></li>
+</ul>
+<p><strong>설명:</strong> 실행자 기준 위치 또는 지정한 절대 좌표에 팰을 생성합니다. <strong>RCON에서는 x, y, z를 반드시 지정해야 합니다!</strong></p>
+<p><strong>참고:</strong> <code>/givepal_j</code> 및 템플릿 기반 알 명령어와 마찬가지로 <code>Pals/Templates/</code>의 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 속성을 사용합니다. 생성 옵션과 보상을 포함한 전투 이벤트에는 <a href="../FileTypes/PalSummon/">PalSummon</a> 파일을 사용하는 <code>/summon</code>을 실행하세요. <code>/spawnpal</code>은 템플릿 파일 이름이 아니라 팰 ID를 받습니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;PalTemplate&gt;</code>: 사용할 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일 이름입니다.</li>
+<li><code>[x]</code>: (선택) 팰의 x 위치입니다. 기본값: 명령어를 실행한 플레이어 기준 위치.</li>
+<li><code>[y]</code>: (선택) 팰의 y 위치입니다. 기본값: 명령어를 실행한 플레이어 기준 위치.</li>
+<li><code>[z]</code>: (선택) 팰의 z 위치입니다. 기본값: 명령어를 실행한 플레이어 기준 위치.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>/spawnpal_j ArenaBoss 230 -486 4097
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/spawnpal_ex_j</summary>
+<p><strong>문법:</strong> <code>/spawnpal_ex_j &lt;PalTemplate&gt; [x] [y] [z]</code></p>
+<p><strong>설명:</strong> <code>/spawnpal_j</code>와 동일한 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 및 좌표 처리 방식을 사용하되 피해량 집계를 켭니다. 팰이 죽거나 포획되면 전체 피해량 순위를 로그에 기록하고, 웹훅이 설정되어 있으면 <code>PalWebhooks.webhookURL_Summons</code>로 전송합니다. <code>announceAdminSummonsKill</code>을 켜면 접속 중인 참가자에게 상위 5명과 자신의 순위가 표시된 결과 창도 보냅니다. 가장 많은 피해를 준 플레이어를 승자로 표시합니다. <a href="../FileTypes/PalSummon/">PalSummon</a> 보상은 사용하지 않습니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>/spawnpal_ex_j ArenaBoss 230 -486 4097
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/summon</summary>
+<p><strong>문법:</strong> <code>/summon &lt;PalSummon&gt;</code></p>
+<p><strong>설명:</strong> 지정한 <a href="../FileTypes/PalSummon/">PalSummon</a> 파일로 팰을 생성합니다.</p>
+<p><strong>참고:</strong> 파일 이름에 .json 확장자를 넣지 않아도 됩니다. 생략하면 자동으로 추가합니다.</p>
+<p><strong>인수:</strong>
+- <code>&lt;PalSummon&gt;</code>: <code>PalDefender/Pals/Summons/</code>의 <a href="../FileTypes/PalSummon/">PalSummon</a> 파일 이름입니다. <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일 이름을 지정하면 <strong>안 됩니다</strong>. 이 파일은 팰 속성용 PalTemplate을 참조하고 좌표 및 선택적인 보상 등의 생성 옵션을 추가합니다. 예를 들어 <code>/summon ArenaEncounter</code>는 <code>Pals/Summons/ArenaEncounter.json</code>을 불러옵니다.</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>/summon PalSummon
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/giveegg</summary>
+<p><strong>문법:</strong> <code>/giveegg &lt;UserId&gt; &lt;EggId&gt; &lt;PalId&gt; [Level]</code></p>
+<p><strong>설명:</strong> 대상 사용자에게 지정한 팰이 들어 있는 알을 지급합니다. 레벨을 조정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<details class="quote">
+<summary>&lt;UserId&gt;</summary>
+<p><strong>설명:</strong> 알을 받을 플레이어 ID입니다.</p>
+</details>
+<details class="quote">
+<summary>&lt;EggId&gt;</summary>
+<p><strong>설명:</strong> 지급할 알 유형입니다.</p>
+<p><strong>참고:</strong> 각 유형에서 01(가장 작음)부터 05(가장 큼)까지 사용할 수 있습니다:</p>
+<ul>
+<li><code>PalEgg_Dark_01</code>–<code>PalEgg_Dark_05</code></li>
+<li><code>PalEgg_Dragon_01</code>–<code>PalEgg_Dragon_05</code></li>
+<li><code>PalEgg_Earth_01</code>–<code>PalEgg_Earth_05</code></li>
+<li><code>PalEgg_Electricity_01</code>–<code>PalEgg_Electricity_05</code></li>
+<li><code>PalEgg_Fire_01</code>–<code>PalEgg_Fire_05</code></li>
+<li><code>PalEgg_Ice_01</code>–<code>PalEgg_Ice_05</code></li>
+<li><code>PalEgg_Leaf_01</code>–<code>PalEgg_Leaf_05</code></li>
+<li><code>PalEgg_Normal_01</code>–<code>PalEgg_Normal_05</code></li>
+<li><code>PalEgg_Water_01</code>–<code>PalEgg_Water_05</code></li>
+</ul>
+</details>
+<details class="quote">
+<summary>&lt;PalId&gt;</summary>
+<p><strong>설명:</strong> 알 안에 들어갈 팰입니다.</p>
+<p><strong>참고:</strong> <code>WeaselDragon</code>(칠렛)처럼 팰 ID를 사용하세요. 전체 목록은 <a href="https://paldeck.cc/pals">paldeck.cc/pals</a>에서 확인할 수 있습니다.</p>
+</details>
+<details class="quote">
+<summary>[Level]</summary>
+<p><strong>설명:</strong> (선택) 알 안의 팰 레벨입니다.</p>
+</details>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>/giveegg steam_76500000000000000 PalEgg_Ice_01 WeaselDragon 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemeegg</summary>
+<p><strong>문법:</strong> <code>/givemeegg &lt;EggId&gt; &lt;PalId&gt; [Level]</code></p>
+<p><strong>설명:</strong> 자신에게 지정한 팰이 들어 있는 알을 지급합니다. 레벨을 조정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<details class="quote">
+<summary>&lt;EggId&gt;</summary>
+<p><strong>설명:</strong> 자신에게 지급할 알 유형입니다.</p>
+<p><strong>참고:</strong> 각 유형에서 01(가장 작음)부터 05(가장 큼)까지 사용할 수 있습니다:</p>
+<ul>
+<li><code>PalEgg_Dark_01</code>–<code>PalEgg_Dark_05</code></li>
+<li><code>PalEgg_Dragon_01</code>–<code>PalEgg_Dragon_05</code></li>
+<li><code>PalEgg_Earth_01</code>–<code>PalEgg_Earth_05</code></li>
+<li><code>PalEgg_Electricity_01</code>–<code>PalEgg_Electricity_05</code></li>
+<li><code>PalEgg_Fire_01</code>–<code>PalEgg_Fire_05</code></li>
+<li><code>PalEgg_Ice_01</code>–<code>PalEgg_Ice_05</code></li>
+<li><code>PalEgg_Leaf_01</code>–<code>PalEgg_Leaf_05</code></li>
+<li><code>PalEgg_Normal_01</code>–<code>PalEgg_Normal_05</code></li>
+<li><code>PalEgg_Water_01</code>–<code>PalEgg_Water_05</code></li>
+</ul>
+</details>
+<details class="quote">
+<summary>&lt;PalId&gt;</summary>
+<p><strong>설명:</strong> 알 안에 들어갈 팰입니다.</p>
+<p><strong>참고:</strong> <code>WeaselDragon</code>(칠렛)처럼 팰 ID를 사용하세요. 전체 목록은 <a href="https://paldeck.cc/pals">paldeck.cc/pals</a>에서 확인할 수 있습니다.</p>
+</details>
+<details class="quote">
+<summary>[Level]</summary>
+<p><strong>설명:</strong> (선택) 알 안의 팰 레벨입니다.</p>
+</details>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>/givemeegg PalEgg_Ice_01 WeaselDragon 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/giveegg_j</summary>
+<p><strong>문법:</strong> <code>/giveegg_j &lt;EggId&gt; &lt;PalTemplate&gt; [Level]</code></p>
+<p><strong>설명:</strong> <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일에 정의된 팰이 들어 있는 알을 지급합니다. 레벨을 조정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<details class="quote">
+<summary>&lt;EggId&gt;</summary>
+<p><strong>설명:</strong> 지급할 알 유형입니다.</p>
+<p><strong>참고:</strong> 각 유형에서 01(가장 작음)부터 05(가장 큼)까지 사용할 수 있습니다:</p>
+<ul>
+<li><code>PalEgg_Dark_01</code>–<code>PalEgg_Dark_05</code></li>
+<li><code>PalEgg_Dragon_01</code>–<code>PalEgg_Dragon_05</code></li>
+<li><code>PalEgg_Earth_01</code>–<code>PalEgg_Earth_05</code></li>
+<li><code>PalEgg_Electricity_01</code>–<code>PalEgg_Electricity_05</code></li>
+<li><code>PalEgg_Fire_01</code>–<code>PalEgg_Fire_05</code></li>
+<li><code>PalEgg_Ice_01</code>–<code>PalEgg_Ice_05</code></li>
+<li><code>PalEgg_Leaf_01</code>–<code>PalEgg_Leaf_05</code></li>
+<li><code>PalEgg_Normal_01</code>–<code>PalEgg_Normal_05</code></li>
+<li><code>PalEgg_Water_01</code>–<code>PalEgg_Water_05</code></li>
+</ul>
+</details>
+<details class="quote">
+<summary>&lt;PalTemplate&gt;</summary>
+<p><strong>설명:</strong> 사용할 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일 이름입니다.</p>
+<p><strong>참고:</strong> 파일 이름에 .json 확장자를 넣지 않아도 됩니다. 생략하면 자동으로 추가합니다. <a href="../FileTypes/PalTemplate/">PalTemplate</a>을 참고하세요.</p>
+</details>
+<details class="quote">
+<summary>[Level]</summary>
+<p><strong>설명:</strong> (선택) 알 안의 팰 레벨입니다.</p>
+</details>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>/giveegg_j PalEgg_Ice_01 MyPalTemplate 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemeegg_j</summary>
+<p><strong>문법:</strong> <code>/givemeegg_j &lt;EggId&gt; &lt;PalTemplate&gt; [Level]</code></p>
+<p><strong>설명:</strong> 자신에게 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일에 정의된 팰이 들어 있는 알을 지급합니다. 레벨을 조정할 수 있습니다.</p>
+<p><strong>인수:</strong></p>
+<details class="quote">
+<summary>&lt;EggI&gt;</summary>
+<p><strong>설명:</strong> 자신에게 지급할 알 유형입니다.</p>
+<p><strong>참고:</strong> 각 유형에서 01(가장 작음)부터 05(가장 큼)까지 사용할 수 있습니다:</p>
+<ul>
+<li><code>PalEgg_Dark_01</code>–<code>PalEgg_Dark_05</code></li>
+<li><code>PalEgg_Dragon_01</code>–<code>PalEgg_Dragon_05</code></li>
+<li><code>PalEgg_Earth_01</code>–<code>PalEgg_Earth_05</code></li>
+<li><code>PalEgg_Electricity_01</code>–<code>PalEgg_Electricity_05</code></li>
+<li><code>PalEgg_Fire_01</code>–<code>PalEgg_Fire_05</code></li>
+<li><code>PalEgg_Ice_01</code>–<code>PalEgg_Ice_05</code></li>
+<li><code>PalEgg_Leaf_01</code>–<code>PalEgg_Leaf_05</code></li>
+<li><code>PalEgg_Normal_01</code>–<code>PalEgg_Normal_05</code></li>
+<li><code>PalEgg_Water_01</code>–<code>PalEgg_Water_05</code></li>
+</ul>
+</details>
+<details class="quote">
+<summary>&lt;PalTemplate&gt;</summary>
+<p><strong>설명:</strong> 사용할 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일 이름입니다.</p>
+<p><strong>참고:</strong> 파일 이름에 .json 확장자를 넣지 않아도 됩니다. 생략하면 자동으로 추가합니다. <a href="../FileTypes/PalTemplate/">PalTemplate</a>을 참고하세요.</p>
+</details>
+<details class="quote">
+<summary>[Level]</summary>
+<p><strong>설명:</strong> (선택) 알 안의 팰 레벨입니다.</p>
+</details>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>/givemeegg_j PalEgg_Ice_01 MyPalTemplate 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/jetragon</summary>
+<p><strong>문법:</strong> <code>/jetragon</code></p>
+<p><strong>설명:</strong> 관리자용 제트래곤을 지급합니다(정말 빠르… 벌써 사라졌네요).</p>
+<p><strong>인수:</strong>
+- 없음</p>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>/jetragon
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/catwaifu</summary>
+<p><strong>문법:</strong> <code>/catwaifu</code></p>
+<p><strong>설명:</strong> 캐릭터 능력치를 강화하는 관리자용 Cat-Waifu를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>/catwaifu
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/exportpals</summary>
+<p><strong>문법:</strong> <code>/exportpals [UserId]</code></p>
+<p><strong>설명:</strong> 플레이어의 모든 팰을 Pal/Binaries/Win64/PalDefender/pals/exported/<UserId>/에 <a href="../FileTypes/PalTemplate/">PalTemplate</a> 파일로 내보냅니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[UserId]</code>: (선택) 팰을 내보낼 플레이어 ID입니다. 생략하면 자신의 팰을 내보냅니다.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>/exportpals steam_76500000000000000
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>/exportpals
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/deletepals</summary>
+<p><strong>문법:</strong> <code>/deletepals &lt;UserId&gt; &lt;PalFilter&gt;</code></p>
+<p><strong>설명:</strong> 고급 필터로 지정한 사용자의 팰을 삭제합니다. 한 명령어에서 팰 ID, 레벨, 성별, 패시브 등의 조건을 함께 지정할 수 있습니다. 중요한 데이터에 사용하기 전에 안전한 환경에서 테스트하세요.</p>
+<p><strong>인수:</strong></p>
+<details class="quote">
+<summary>&lt;UserId&gt;</summary>
+<p><strong>설명:</strong> 팰을 삭제할 플레이어 ID입니다.</p>
+</details>
+<details class="quote">
+<summary>&lt;PalFilter&gt;</summary>
+<p><strong>설명:</strong> 삭제할 팰을 선택하는 필터 키워드 집합입니다.</p>
+<p><strong>참고:</strong> 한 명령어에서 여러 키워드를 조합할 수 있습니다.</p>
+<p>사용 가능한 필터 키워드:</p>
+<ul>
+<li><code>ID</code>: PalID 또는 쉼표로 구분한 PalID 목록</li>
+<li><code>Nick</code>: 문자열(팰 이름)</li>
+<li><code>Gender</code>: <code>male</code>(수컷) 또는 <code>female</code>(암컷)</li>
+<li><code>Level</code>: 숫자. 지원하는 연산자: <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>=</code>, <code>!=</code></li>
+<li><code>Rank</code>: 숫자. 지원하는 연산자: <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>=</code>, <code>!=</code></li>
+<li><code>Lucky</code>: <code>true</code> 또는 <code>false</code>(희귀 여부)</li>
+<li><code>Passives</code>: PassiveSkill 또는 쉼표로 구분한 PassiveSkill 목록</li>
+<li><code>Limit</code>: 숫자(삭제할 팰의 최대 수)</li>
+</ul>
+<p><strong>필터 예제:</strong></p>
+<ul>
+<li><code>ID Serpent, PinkLizard Level&gt;10 Gender male Limit 3</code></li>
+<li><code>ID Anubis Rank&gt;=3</code></li>
+<li><code>Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave</code></li>
+</ul>
+<p>위 필터 키와 예제는 현재 PalFilter의 참조 자료입니다.</p>
+</details>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a>/deletepals 76567890987654321 ID Serpent, PinkLizard Level&gt;10 Gender male Limit 3
+</span><span id="__span-68-2"><a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a>/deletepals 76567890987654321 ID Anubis Rank&gt;=3
+</span><span id="__span-68-3"><a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a>/deletepals 76561198033277828 Passives CraftSpeed_up1,CraftSpeed_up2,Rare,PAL_CorporateSlave
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>기술 트리</summary>
+<details class="info">
+<summary>/learntech</summary>
+<p><strong>문법:</strong> <code>/learntech &lt;UserId&gt; &lt;TechID&gt;</code></p>
+<p><strong>설명:</strong> 플레이어에게 특정 기술을 습득시킵니다. 모두 해금하려면 <code>all</code>을 사용하세요.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;TechID&gt;</code>: 습득할 기술입니다. 모두 해금하려면 <code>all</code>을 사용하세요.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>/learntech steam_76500000000000000 Tech001
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>/learntech gdk_25300000000000000 all
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/unlearntech</summary>
+<p><strong>문법:</strong> <code>/unlearntech &lt;UserId&gt; &lt;TechID&gt;</code></p>
+<p><strong>설명:</strong> 플레이어에게서 특정 기술을 제거합니다. 모두 제거하려면 <code>all</code>을 사용하세요.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 플레이어 ID입니다.</li>
+<li><code>&lt;TechID&gt;</code>: 제거할 기술입니다. 모두 제거하려면 <code>all</code>을 사용하세요.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>/unlearntech gdk_25300000000000000 Tech001
+</span><span id="__span-70-2"><a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>/unlearntech steam_76500000000000000 all
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givetechpoints</summary>
+<p><strong>문법:</strong> <code>/givetechpoints &lt;UserId&gt; [Amount=1]</code></p>
+<p><strong>설명:</strong> 대상 사용자에게 지정한 양의 기술 포인트를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 기술 포인트를 받을 플레이어 ID입니다.</li>
+<li><code>[Amount]</code>: (선택) 지급할 기술 포인트입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>/givetechpoints steam_76500000000000000 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givebosstechpoints</summary>
+<p><strong>문법:</strong> <code>/givebosstechpoints &lt;UserId&gt; [Amount=1]</code></p>
+<p><strong>설명:</strong> 대상 사용자에게 지정한 양의 고대 기술 포인트를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>&lt;UserId&gt;</code>: 고대 기술 포인트를 받을 플레이어 ID입니다.</li>
+<li><code>[Amount]</code>: (선택) 지급할 고대 기술 포인트입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>/givebosstechpoints steam_76500000000000000 5
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemetechpoints</summary>
+<p><strong>문법:</strong> <code>/givemetechpoints [Amount=1]</code></p>
+<p><strong>설명:</strong> 자신에게 지정한 양의 기술 포인트를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[Amount]</code>: (선택) 자신에게 지급할 기술 포인트입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>/givemetechpoints 10
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/givemebosstechpoints</summary>
+<p><strong>문법:</strong> <code>/givemebosstechpoints [Amount=1]</code></p>
+<p><strong>설명:</strong> 자신에게 지정한 양의 고대 기술 포인트를 지급합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li><code>[Amount]</code>: (선택) 자신에게 지급할 고대 기술 포인트입니다. 기본값: 1.</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a>/givemebosstechpoints 5
+</span></code></pre></div></p>
+</details>
+</details>
+<details class="note">
+<summary>데이터 추출</summary>
+<details class="info">
+<summary>/gettechids</summary>
+<p><strong>문법:</strong> <code>/gettechids</code></p>
+<p><strong>설명:</strong> 사용 가능한 모든 기술 ID를 반환합니다. RCON에서는 JSON을 반환합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>/gettechids
+</span></code></pre></div></p>
+</details>
+<details class="info">
+<summary>/getskinids</summary>
+<p><strong>문법:</strong> <code>/getskinids</code></p>
+<p><strong>설명:</strong> 사용 가능한 모든 팰 스킨 ID를 반환합니다. RCON에서는 JSON을 반환합니다.</p>
+<p><strong>인수:</strong></p>
+<ul>
+<li>없음</li>
+</ul>
+<p><strong>사용 조건:</strong> <code>Chat</code>, <code>RCON</code>, <code>Admin</code></p>
+<p><strong>예제:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>/getskinids
+</span></code></pre></div></p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Ultimeit/PalDefender" target="_blank" rel="noopener" title="GitHub의 PalDefender" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
