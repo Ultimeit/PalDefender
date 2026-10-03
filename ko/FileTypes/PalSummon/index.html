@@ -1,0 +1,3573 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PalDefender (Palworld 전용 서버 부정행위 방지)">
+      
+      
+        <meta name="author" content="Zvend">
+      
+      
+        <link rel="canonical" href="https://ultimeit.github.io/PalDefender/ko/FileTypes/PalSummon/">
+      
+      
+        <link rel="prev" href="../PalImportRules/">
+      
+      
+        <link rel="next" href="../PalTemplate/">
+      
+      
+        
+          <link rel="alternate" href="../../../FileTypes/PalSummon/" hreflang="en">
+        
+          <link rel="alternate" href="../../../de/FileTypes/PalSummon/" hreflang="de">
+        
+          <link rel="alternate" href="../../../zh/FileTypes/PalSummon/" hreflang="zh">
+        
+          <link rel="alternate" href="../../../ja/FileTypes/PalSummon/" hreflang="ja">
+        
+          <link rel="alternate" href="./" hreflang="ko">
+        
+          <link rel="alternate" href="../../../pl/FileTypes/PalSummon/" hreflang="pl">
+        
+          <link rel="alternate" href="../../../pt-BR/FileTypes/PalSummon/" hreflang="pt-BR">
+        
+          <link rel="alternate" href="../../../fr/FileTypes/PalSummon/" hreflang="fr">
+        
+          <link rel="alternate" href="../../../ru/FileTypes/PalSummon/" hreflang="ru">
+        
+      
+      
+      <link rel="icon" href="../../../assets/LogoWiki.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>PalSummon.json - PalDefender Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+  
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+    
+      
+      
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22m8.533.133%205.25%201.68A1.75%201.75%200%200%201%2015%203.48V7c0%201.566-.32%203.182-1.303%204.682-.983%201.498-2.585%202.813-5.032%203.855a1.7%201.7%200%200%201-1.33%200c-2.447-1.042-4.049-2.357-5.032-3.855C1.32%2010.182%201%208.566%201%207V3.48a1.75%201.75%200%200%201%201.217-1.667l5.25-1.68a1.75%201.75%200%200%201%201.066%200m-.61%201.429zl-5.25%201.68a.25.25%200%200%200-.174.237V7c0%201.36.275%202.666%201.057%203.859.784%201.194%202.121%202.342%204.366%203.298a.2.2%200%200%200%20.154%200c2.245-.957%203.582-2.103%204.366-3.297C13.225%209.666%2013.5%208.358%2013.5%207V3.48a.25.25%200%200%200-.174-.238l-5.25-1.68a.25.25%200%200%200-.153%200M11.28%206.28l-3.5%203.5a.75.75%200%200%201-1.06%200l-1.5-1.5a.749.749%200%200%201%20.326-1.275.75.75%200%200%201%20.734.215l.97.97%202.97-2.97a.75.75%200%200%201%201.042.018.75.75%200%200%201%20.018%201.042%22/%3E%3C/svg%3E');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.504.43a1.516%201.516%200%200%201%202.437%201.713L10.415%205.5h2.123c1.57%200%202.346%201.909%201.22%203.004l-7.34%207.142a1.25%201.25%200%200%201-.871.354h-.302a1.25%201.25%200%200%201-1.157-1.723L5.633%2010.5H3.462c-1.57%200-2.346-1.909-1.22-3.004zm1.047%201.074L3.286%208.571A.25.25%200%200%200%203.462%209H6.75a.75.75%200%200%201%20.694%201.034l-1.713%204.188%206.982-6.793A.25.25%200%200%200%2012.538%207H9.25a.75.75%200%200%201-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005%200-.009.004%22/%3E%3C/svg%3E');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M6.457%201.047c.659-1.234%202.427-1.234%203.086%200l6.082%2011.378A1.75%201.75%200%200%201%2014.082%2015H1.918a1.75%201.75%200%200%201-1.543-2.575Zm1.763.707a.25.25%200%200%200-.44%200L1.698%2013.132a.25.25%200%200%200%20.22.368h12.164a.25.25%200%200%200%20.22-.368Zm.53%203.996v2.5a.75.75%200%200%201-1.5%200v-2.5a.75.75%200%200%201%201.5%200M9%2011a1%201%200%201%201-2%200%201%201%200%200%201%202%200%22/%3E%3C/svg%3E');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20d%3D%22M9.533.753V.752c.217%202.385%201.463%203.626%202.653%204.81C13.37%206.74%2014.498%207.863%2014.498%2010c0%203.5-3%206-6.5%206S1.5%2013.512%201.5%2010c0-1.298.536-2.56%201.425-3.286.376-.308.862%200%201.035.454C4.46%208.487%205.581%208.419%206%208c.282-.282.341-.811-.003-1.5C4.34%203.187%207.035.75%208.77.146c.39-.137.726.194.763.607M7.998%2014.5c2.832%200%205-1.98%205-4.5%200-1.463-.68-2.19-1.879-3.383l-.036-.037c-1.013-1.008-2.3-2.29-2.834-4.434-.322.256-.63.579-.864.953-.432.696-.621%201.58-.046%202.73.473.947.67%202.284-.278%203.232-.61.61-1.545.84-2.403.633a2.8%202.8%200%200%201-1.436-.874A3.2%203.2%200%200%200%203%2010c0%202.53%202.164%204.5%204.998%204.5%22/%3E%3C/svg%3E');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#palsummonjson" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href="../../" title="PalDefender Wiki" class="md-header__button md-logo" aria-label="PalDefender Wiki" data-md-component="logo">
+      
+  <img src="../../../assets/LogoWiki.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PalDefender Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PalSummon.json
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="밝은 모드로 전환"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="밝은 모드로 전환" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="어두운 모드로 전환"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="어두운 모드로 전환" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="언어설정">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../FileTypes/PalSummon/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../de/FileTypes/PalSummon/" hreflang="de" class="md-select__link">
+              Deutsch (German)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../zh/FileTypes/PalSummon/" hreflang="zh" class="md-select__link">
+              简体中文 (Chinese)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../ja/FileTypes/PalSummon/" hreflang="ja" class="md-select__link">
+              日本語 (Japanese)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="ko" class="md-select__link">
+              한국어 (Korean)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../pl/FileTypes/PalSummon/" hreflang="pl" class="md-select__link">
+              Polski (Polish)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../pt-BR/FileTypes/PalSummon/" hreflang="pt-BR" class="md-select__link">
+              Português do Brasil (Brazilian Portuguese)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../fr/FileTypes/PalSummon/" hreflang="fr" class="md-select__link">
+              Français (French)
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../ru/FileTypes/PalSummon/" hreflang="ru" class="md-select__link">
+              Русский (Russian)
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="공유" aria-label="공유" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Ultimeit/PalDefender" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ultimeit/PalDefender
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  홈
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../FAQ/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  자주 묻는 질문
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Features/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  기능 및 현재 상태
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Installation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  설치
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Partnerships/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  파트너십
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Commands/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  명령어
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  파일 유형
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../RESTAPI/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  REST API
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="PalDefender Wiki" class="md-nav__button md-logo" aria-label="PalDefender Wiki" data-md-component="logo">
+      
+  <img src="../../../assets/LogoWiki.png" alt="logo">
+
+    </a>
+    PalDefender Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Ultimeit/PalDefender" title="저장소로 이동" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Ultimeit/PalDefender
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FAQ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    자주 묻는 질문
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    기능 및 현재 상태
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    설치
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Partnerships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파트너십
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    명령어
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    파일 유형
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    파일 유형
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Config.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PalImportRules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pals/ImportRules/*.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PalSummon.json
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PalSummon.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전투 이벤트 설정 키
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용을 막을 상태
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damage-meter-and-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        피해량 집계 및 보상
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="피해량 집계 및 보상">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        보상 정의 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        보상 항목 유형
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        고정값, 범위 및 확률
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        직접 지급 보상
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        보상 풀
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="보상 풀">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OneOf: 가중치에 따라 하나 선택
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick: 가중치에 따라 중복 없이 여러 항목 선택
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick: 중복 선택 허용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick-unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick: 항목별 Unique 재정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All: 모든 항목 지급
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent: 각 항목을 별도로 추첨
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        직접 지급 보상과 여러 풀 함께 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        팰 알 보상
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        중복 결과 합치기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabledamagemeter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DisableDamageMeter의 보상 지급 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        잘못된 조합과 무시되는 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전체 예제
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        검증 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PalTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PalTemplate.json
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../RESTAPI/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REST API
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    REST API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    인증 및 설정
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../RESTAPI/Endpoints/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    엔드포인트
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    엔드포인트
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /version
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/players/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /players
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/player/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /player
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/pals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /pals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/techs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /techs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /progression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/guilds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /guilds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/guild/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /guild
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/banlist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GET /banlist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/alert/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /alert
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/broadcast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /broadcast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/send-player-message/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /SendPlayerMessage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/ban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /ban
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/banip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /banip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/unban/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /unban
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/unbanip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /unbanip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/kick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /kick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/deletebase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /deletebase
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/give-items/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/items
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/give-pals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/pals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/give-paleggs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/paleggs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/give-paltemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/paltemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/give-progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give/progression
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/give_deprecated/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /give
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/learntech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /learntech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/forgettech/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /forgettech
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/reload-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /reload-config
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/summon-pal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /summon/pal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Endpoints/summon-npc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POST /summon/npc
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    예제
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    예제
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RESTAPI/Examples/Python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전투 이벤트 설정 키
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        적용을 막을 상태
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#damage-meter-and-rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        피해량 집계 및 보상
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="피해량 집계 및 보상">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        보상 정의 구조
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        보상 항목 유형
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        고정값, 범위 및 확률
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        직접 지급 보상
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        보상 풀
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="보상 풀">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oneof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OneOf: 가중치에 따라 하나 선택
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick: 가중치에 따라 중복 없이 여러 항목 선택
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick: 중복 선택 허용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pick-unique" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pick: 항목별 Unique 재정의
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All: 모든 항목 지급
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#independent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Independent: 각 항목을 별도로 추첨
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        직접 지급 보상과 여러 풀 함께 사용
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        팰 알 보상
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        중복 결과 합치기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabledamagemeter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DisableDamageMeter의 보상 지급 방식
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        잘못된 조합과 무시되는 설정
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        전체 예제
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        검증 체크리스트
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="네비게이션" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../" class="md-path__link">
+        
+  <span class="md-ellipsis">
+    홈
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    파일 유형
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="palsummonjson">📄 <code>PalSummon.json</code></h1>
+<p>PalSummon 파일은 <code>/summon &lt;filename&gt;</code>으로 시작하는 고정 위치 전투 이벤트를 정의합니다. 파일은 <code>&lt;PalServer&gt;/Pal/Binaries/Win64/PalDefender/Pals/Summons/</code>에, 참조하는 PalTemplate은 <code>Pals/Templates/</code>에 저장하세요.</p>
+<div class="admonition tip">
+<p class="admonition-title">ID 조회</p>
+<p>참조하는 템플릿의 <code>PalID</code>는 <a href="https://paldeck.cc/pals">paldeck.cc/pals</a>, 패시브는 <a href="https://paldeck.cc/passives">paldeck.cc/passives</a>, 기술 ID는 <a href="https://paldeck.cc/skills">paldeck.cc/skills</a>에서 확인하세요.</p>
+</div>
+<h2 id="_1">전투 이벤트 설정 키</h2>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th>자료형</th>
+<th>기본값</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PalTemplate</code></td>
+<td>문자열</td>
+<td>필수</td>
+<td><code>Pals/Templates/</code>에 있는 템플릿 파일 이름입니다. <code>.json</code>은 생략할 수 있습니다.</td>
+</tr>
+<tr>
+<td><code>BossBattleName</code></td>
+<td>문자열</td>
+<td>팰 ID</td>
+<td>공지, 로그, 웹훅, 피해량 결과에 표시할 이름입니다.</td>
+</tr>
+<tr>
+<td><code>Uncapturable</code></td>
+<td>불리언</td>
+<td><code>false</code></td>
+<td>소환된 팰을 어떤 경우에도 포획할 수 없게 합니다.</td>
+</tr>
+<tr>
+<td><code>CapturableAtHealthPercent</code></td>
+<td>숫자</td>
+<td><code>15</code></td>
+<td>포획 가능한 팰은 체력 비율이 이 값 이하일 때만 포획할 수 있습니다(<code>0</code>–<code>100</code>). <code>Uncapturable</code>이 <code>true</code>이면 무시됩니다.</td>
+</tr>
+<tr>
+<td><code>DisableAI</code></td>
+<td>불리언</td>
+<td><code>false</code></td>
+<td>일반 AI를 끕니다. 회피 등의 일부 반응 행동은 여전히 발생할 수 있습니다.</td>
+</tr>
+<tr>
+<td><code>DisableDamageMeter</code></td>
+<td>불리언</td>
+<td><code>false</code></td>
+<td>피해량 집계, 결과 창, 순위 보상을 끕니다. 대신 모든 접속 중인 플레이어에게 <code>Default</code> 보상을 지급합니다.</td>
+</tr>
+<tr>
+<td><code>SpawnScale</code></td>
+<td>숫자</td>
+<td><code>1.0</code></td>
+<td>외형 및 물리적 크기 배율입니다. 0 이하이면 <code>1.0</code>을 사용합니다.</td>
+</tr>
+<tr>
+<td><code>DamageTakenMultiplier</code></td>
+<td>숫자</td>
+<td><code>1.0</code></td>
+<td>받는 피해량 배율입니다. 음수이면 <code>1.0</code>을 사용합니다.</td>
+</tr>
+<tr>
+<td><code>DamageDealtMultiplier</code></td>
+<td>숫자</td>
+<td><code>1.0</code></td>
+<td>주는 피해량 배율입니다. 음수이면 <code>1.0</code>을 사용합니다.</td>
+</tr>
+<tr>
+<td><code>X</code>, <code>Y</code>, <code>Z</code></td>
+<td>숫자</td>
+<td>필수</td>
+<td>맵 좌표입니다. <code>/getpos</code>로 확인하세요.</td>
+</tr>
+<tr>
+<td><code>DisableStatuses</code></td>
+<td>배열</td>
+<td>비어 있음</td>
+<td>적용을 막을 상태 이름입니다. 잘못된 이름은 건너뜁니다. <a href="#disable-statuses">사용 가능한 이름</a>.</td>
+</tr>
+<tr>
+<td><code>Rewards</code></td>
+<td>객체 또는 배열</td>
+<td>비어 있음</td>
+<td>선택적으로 설정하는 순위별 및 기본 <a href="#damage-meter-and-rewards">보상 정의</a>입니다. 객체 형식을 권장합니다.</td>
+</tr>
+</tbody>
+</table>
+<p>호환성을 위해 <code>CapturableAt</code>, <code>CapturableAtPercent</code>, <code>capturable_at</code>도 별칭으로 허용합니다. <code>AdditionalEnemyReceiveDamageRate</code>와 <code>AdditionalEnemyInflictDamageRate</code>도 사용할 수 있지만, 표에 있는 이름을 권장합니다.</p>
+<div class="admonition warning">
+<p class="admonition-title">최대 체력 설정 변경</p>
+<p>소환된 팰의 최대 체력은 이제 참조하는 PalTemplate의 <code>HP</code>에서 가져옵니다. <code>HealthMultiplier</code>, <code>HPMultiplier</code>, <code>AdditionalEnemyMaxHPRate</code>는 더 이상 지원하지 않으므로 기존 PalSummon 파일에서 제거하세요.</p>
+</div>
+<h2 id="disable-statuses">적용을 막을 상태</h2>
+<p><code>DisableStatuses</code>는 상태 이름을 문자열로 나열한 배열입니다. 지정한 상태는 소환한 팰에게서 제거되며, 이후에도 다시 적용할 수 없습니다. 대소문자는 구분하지 않습니다. 밑줄을 포함한 영문 식별자를 그대로 입력하세요. 빈 배열 <code>[]</code>은 어떤 상태도 차단하지 않습니다. 빈 문자열과 잘못된 이름은 건너뛰며, <code>None</code>은 사용할 수 없습니다.</p>
+<p>예: 독, 화상, 빙결, 전기 계열 효과, 기절, 수면을 차단합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"DisableStatuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Poison"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Burn"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Freeze"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Electrical"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Stun"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Sleep"</span><span class="p">]</span>
+</span></code></pre></div>
+<p>전체 목록에는 해로운 효과뿐 아니라 강화 효과와 게임 내부에서 사용하는 상태도 포함됩니다.</p>
+<details class="info">
+<summary>사용 가능한 모든 상태 이름</summary>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ControlSP
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>GainHP
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>StepCooldown
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>DrownCheck
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Poison
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>UNKOTimer
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Stun
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Coma
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Sleep
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>Overwork
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Happiness
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>Resistance
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Moratorium
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Drown
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>Dying
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>ShieldRecovery
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>FallDamage
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>LavaDamage
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>Burn
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>Wetness
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>Freeze
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>Electrical
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>Muddy
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>IvyCling
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>Darkness
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>AttackUp
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>DefenseUp
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>AttackDown
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>CollectItem
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>LifeSteal
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>RaidBossStatusChange
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>RarePalEffect
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>MorphChange
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>PalEnhancement
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>PalEnhancement2
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>PalEnhancement3
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>PartBreak
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>FishingSpotElectrical
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>HPLock
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>AcidDamage
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>WorldTreeAuraPalEffect
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>AwakeningAuraEffect
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>ToxicGas
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>ToxicGas_FromAttack
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>Stealth
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>TeleportStealth
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>LowGravity
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>PlayerLowHealthBlast
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>PlayerElementStepAttack_Fire
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>PlayerElementStepAttack_Water
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>PlayerElementStepAttack_Leaf
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>PlayerInflictEffect_AttackBurning_ApplyExplosion
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>PlayerInflictEffect_AttackIvyCling_ApplyExplosion
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>PlayerInflictEffect_AttackBurning_ApplyFireVortex
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>PlayerInflictEffect_AttackElectrified_ApplySpark
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>PlayerInflictEffect_AttackPoisoned_ApplyAttackDown
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>PlayerInflictEffect_AttackMuddy_ApplyAttackDown
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>PlayerInflictEffect_MeleeHitBarrier
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>PlayerInflictEffect_AttackWet_ApplyFreeze
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>PlayerInflictEffect_AttackWet_ApplyFreeze_Resist
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>Player_ArrowExplosion
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>BulletHit_StackBuff
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>DefeatEnemy_StackBuff
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>MapObjectOverHeat
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>JumpingFrog
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>JumpingFrog_dark
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>LifeDrainPower_AttackUp
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>AttackRateHPThresholdPassive
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>DefenseRateHPThresholdPassive
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>WeakPointHitDamageUp
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>WeakPointHitDamageUp_Buff
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>SwimSpeedUp
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>WorldTreeHolyWaterEffect
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>DefeatEnemy_ActiveSkillCoolTime_Decrease
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>DefeatEnemy_RecoverHP
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>RecoverHPOnHPThresholdPassive
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>FloatStun
+</span></code></pre></div>
+</details>
+<h2 id="damage-meter-and-rewards">피해량 집계 및 보상</h2>
+<p>소환된 팰이 죽거나 포획되면 보상을 결정합니다. 피해량 순위는 높은 순서로 정렬됩니다. 결과 창에는 상위 5명을 표시하고 상위 3명을 강조하며, 결과를 받는 플레이어가 5위 밖이면 자신의 순위도 표시합니다.</p>
+<p>피해량 집계를 켜면 각 참가자의 보상을 다음과 같이 처리합니다.</p>
+<ol>
+<li><code>Rewards</code>에서 플레이어의 최종 순위에 해당하는 숫자 키를 찾습니다.</li>
+<li>해당 순위 키가 없으면 <code>Rewards.Default</code>를 사용합니다.</li>
+<li>둘 다 없으면 해당 플레이어는 보상을 받지 않습니다.</li>
+<li>선택한 보상은 플레이어별로 따로 추첨합니다. 같은 <code>Default</code> 정의를 사용하더라도 두 플레이어가 서로 다른 무작위 결과를 받을 수 있습니다.</li>
+</ol>
+<p>이벤트가 끝날 때 여전히 접속 중이고 사용 가능한 플레이어 컨트롤러가 있는 참가자만 순위 보상을 받을 수 있습니다. 숫자 키의 보상은 <code>Default</code> 보상에 추가되는 것이 아니라 해당 순위의 기본 보상을 대체합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"Rewards"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="nt">"Default"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">75</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="p">]</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>이 예제에서 1위는 확정 보상 두 개를 모두 받고, 2위는 무작위 양의 경험치를 받습니다. 나머지 순위 참가자는 각각 독립적으로 75% 확률로 <code>Money</code> 1,000개를 받습니다.</p>
+<p>순위 키는 <code>"1"</code>, <code>"2"</code>, <code>"10"</code>처럼 JSON 객체 키로 작성한 양의 정수여야 합니다. <code>"0"</code>, 음수 순위, 임의의 이름은 사용할 수 없습니다. <code>Default</code>는 대소문자를 구분하지 않습니다.</p>
+<details class="note">
+<summary>배열 형식</summary>
+<p><code>Rewards</code>는 배열로도 작성할 수 있습니다. 인덱스 0은 1위, 인덱스 1은 2위에 해당합니다. 배열 형식에서는 <code>Default</code>를 정의할 수 없으므로 더 명확한 객체 형식을 권장합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"Rewards"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">25000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">]</span>
+</span></code></pre></div>
+</details>
+<h3 id="_2">보상 정의 구조</h3>
+<p>각 순위와 <code>Default</code>에는 하나의 보상 정의가 들어갑니다. 다음 두 항목을 함께 포함할 수 있습니다.</p>
+<ul>
+<li><code>Drops</code>: 각 항목을 직접, 독립적으로 판정합니다.</li>
+<li><code>Pools</code>: 항목을 선택하는 방식을 제어하는 보상 그룹입니다.</li>
+</ul>
+<p>성장 보상의 단축 필드인 <code>EXP</code>, <code>TechnologyPoints</code>, <code>AncientTechnologyPoints</code>도 포함할 수 있습니다. 단축 필드는 확정 지급되며 별도의 <code>Chance</code>, <code>Weight</code>, <code>Unique</code> 설정이 필요 없을 때 유용합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">"AncientTechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientArmor"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientHelmet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="_3">보상 항목 유형</h3>
+<p>각 항목에는 보상 유형을 정확히 하나만 지정해야 합니다. 같은 항목에 아이템, 알, 성장 보상 필드를 함께 넣지 마세요.</p>
+<table>
+<thead>
+<tr>
+<th>보상</th>
+<th>필수 필드</th>
+<th>선택 필드</th>
+<th>참고</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>아이템</td>
+<td><code>ItemID</code></td>
+<td><code>Count</code>, <code>Chance</code>, <code>Weight</code>, <code>Unique</code></td>
+<td><code>Count</code>의 기본값은 <code>1</code>입니다.</td>
+</tr>
+<tr>
+<td>팰 알</td>
+<td><code>EggID</code>, <code>PalTemplate</code></td>
+<td><code>Count</code>, <code>Level</code>, <code>Chance</code>, <code>Weight</code>, <code>Unique</code></td>
+<td><code>Count</code>의 기본값은 <code>1</code>이며, <code>Level: 0</code>은 템플릿의 레벨을 사용합니다.</td>
+</tr>
+<tr>
+<td>경험치</td>
+<td><code>EXP</code></td>
+<td><code>Chance</code>, <code>Weight</code>, <code>Unique</code></td>
+<td><code>EXP</code> 값에 지급량 또는 범위를 지정합니다.</td>
+</tr>
+<tr>
+<td>기술 포인트</td>
+<td><code>TechnologyPoints</code></td>
+<td><code>Chance</code>, <code>Weight</code>, <code>Unique</code></td>
+<td>필드 값에 지급량 또는 범위를 지정합니다.</td>
+</tr>
+<tr>
+<td>고대 기술 포인트</td>
+<td><code>AncientTechnologyPoints</code></td>
+<td><code>Chance</code>, <code>Weight</code>, <code>Unique</code></td>
+<td>필드 값에 지급량 또는 범위를 지정합니다.</td>
+</tr>
+</tbody>
+</table>
+<p><code>Chance</code>, <code>Weight</code>, <code>Unique</code>는 아래에서 설명하는 조건에서만 적용됩니다. 파서가 필드를 허용하더라도 모든 지급 모드에서 효과가 있는 것은 아닙니다.</p>
+<p>위의 정식 필드 이름을 권장합니다. 다음 별칭도 허용됩니다.</p>
+<table>
+<thead>
+<tr>
+<th>정식 필드</th>
+<th>허용되는 별칭</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ItemID</code></td>
+<td><code>ItemId</code>, <code>ID</code></td>
+</tr>
+<tr>
+<td><code>EggID</code></td>
+<td><code>EggId</code></td>
+</tr>
+<tr>
+<td><code>PalTemplate</code></td>
+<td><code>Template</code></td>
+</tr>
+<tr>
+<td><code>Count</code></td>
+<td><code>Amount</code>, <code>Num</code></td>
+</tr>
+<tr>
+<td><code>EXP</code></td>
+<td><code>Exp</code>, <code>Experience</code></td>
+</tr>
+<tr>
+<td><code>TechnologyPoints</code></td>
+<td><code>TechPoints</code></td>
+</tr>
+<tr>
+<td><code>AncientTechnologyPoints</code></td>
+<td><code>BossTechnologyPoints</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">고정값, 범위 및 확률</h3>
+<p>지급량은 고정 정수 또는 양 끝값을 포함하는 범위로 지정할 수 있습니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">25000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssaultRifleBullet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">20000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<ul>
+<li><code>Count</code>, 경험치, 기술 포인트 지급량은 <code>1</code> 이상의 정수여야 합니다.</li>
+<li>범위에는 <code>Min</code>과 <code>Max</code>가 모두 필요하며, <code>Max</code>는 <code>Min</code>보다 작을 수 없습니다.</li>
+<li><code>"1-3"</code> 같은 문자열 범위는 사용할 수 없습니다. <code>{ "Min": 1, "Max": 3 }</code>을 사용하세요.</li>
+<li>알의 <code>Level</code>을 <code>0</code>으로 지정하면 참조하는 PalTemplate의 레벨을 유지합니다. 양수이면 템플릿 레벨을 대체하며, 지급 시 최대 255로 제한됩니다.</li>
+<li><code>Chance</code>에는 숫자 또는 숫자 문자열을 사용할 수 있으며, 문자열에는 <code>%</code>를 붙일 수 있습니다. 예: <code>30</code>, <code>30.5</code>, <code>"30%"</code>.</li>
+<li><code>Chance: 0</code>은 항상 실패하고 <code>Chance: 100</code>은 항상 성공합니다. 값은 <code>0</code>에서 <code>100</code> 사이여야 합니다.</li>
+<li>확률이 0 초과 100 미만이면 추첨값이 설정값보다 작아야 성공합니다. 따라서 추첨값이 정확히 <code>30.0</code>이면 <code>Chance: 30</code>에서는 실패합니다.</li>
+</ul>
+<h3 id="_5">직접 지급 보상</h3>
+<p><code>Drops</code>의 각 항목은 독립적으로 판정합니다. 인접한 항목 중 하나만 선택하는 방식이 아닙니다. <code>Chance</code>를 생략하면 <code>100</code>을 사용합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">25000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">75000</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssaultRifleBullet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50%"</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>Money</code>는 확정 지급됩니다. 탄약, 경험치, 기술 포인트는 각각 따로 추첨하므로 선택 보상 세 개 중 아무것도 받지 않거나, 하나·둘·셋 모두 받을 수 있습니다.</p>
+<p>직접 지급하는 <code>Drops</code>에서는 <code>Weight</code>와 <code>Unique</code>가 적용되지 않으며 경고가 발생합니다. 확률형 직접 보상에는 <code>Chance</code>를 사용하세요.</p>
+<h2 id="_6">보상 풀</h2>
+<p>보상 풀은 먼저 자체 <code>Chance</code>를 판정합니다. 실패하면 풀 안의 항목은 판정하지 않습니다. 성공하면 <code>Mode</code>에 따라 항목을 처리합니다.</p>
+<table>
+<thead>
+<tr>
+<th>풀 설정 키</th>
+<th>자료형</th>
+<th>기본값</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Name</code></td>
+<td>문자열</td>
+<td>비어 있음</td>
+<td>문제 확인용 이름입니다. 선택 사항이며 추첨에는 영향을 주지 않습니다.</td>
+</tr>
+<tr>
+<td><code>Mode</code></td>
+<td>문자열</td>
+<td><code>OneOf</code></td>
+<td><code>OneOf</code>, <code>Pick</code>, <code>All</code>, <code>Independent</code> 중 하나입니다. 대소문자를 구분하지 않습니다.</td>
+</tr>
+<tr>
+<td><code>Chance</code></td>
+<td>숫자 또는 백분율 문자열</td>
+<td><code>100</code></td>
+<td>보상 풀 전체가 활성화될 확률입니다.</td>
+</tr>
+<tr>
+<td><code>Rolls</code></td>
+<td>정수</td>
+<td><code>1</code></td>
+<td><code>Pick</code>의 추첨 횟수입니다. 다른 모드에서는 무시합니다.</td>
+</tr>
+<tr>
+<td><code>Unique</code></td>
+<td>불리언</td>
+<td><code>true</code></td>
+<td><code>Pick</code>의 기본 중복 정책입니다. 개별 항목에서 재정의할 수 있습니다.</td>
+</tr>
+<tr>
+<td><code>Entries</code></td>
+<td>배열</td>
+<td>필수</td>
+<td>비어 있지 않은 보상 항목 목록입니다.</td>
+</tr>
+</tbody>
+</table>
+<p><code>OneOf</code>의 별칭으로 <code>One</code>, <code>Pick</code>의 별칭으로 <code>PickN</code>도 허용하지만 정식 모드 이름을 권장합니다.</p>
+<table>
+<thead>
+<tr>
+<th>모드</th>
+<th>지급 가능한 항목 수</th>
+<th><code>Weight</code> 사용</th>
+<th>항목별 <code>Chance</code> 사용</th>
+<th><code>Rolls</code> / <code>Unique</code> 사용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OneOf</code></td>
+<td>풀 판정 성공 시 정확히 하나</td>
+<td>예</td>
+<td>아니요</td>
+<td>아니요</td>
+</tr>
+<tr>
+<td><code>Pick</code></td>
+<td>최대 <code>Rolls</code>회 추첨</td>
+<td>예</td>
+<td>아니요</td>
+<td>예</td>
+</tr>
+<tr>
+<td><code>All</code></td>
+<td>풀 판정 성공 시 모든 항목을 한 번씩</td>
+<td>아니요</td>
+<td>아니요</td>
+<td>아니요</td>
+</tr>
+<tr>
+<td><code>Independent</code></td>
+<td>0개부터 전체 항목까지</td>
+<td>아니요</td>
+<td>예</td>
+<td>아니요</td>
+</tr>
+</tbody>
+</table>
+<p>네 모드 모두 풀 자체의 <code>Chance</code>를 사용합니다. 하나의 보상 정의에 여러 풀이 있으면 각각 독립적으로 처리하고, 그 결과를 직접 지급하는 <code>Drops</code>에 더합니다.</p>
+<h3 id="oneof"><code>OneOf</code>: 가중치에 따라 하나 선택</h3>
+<p><code>OneOf</code>는 기본 모드입니다. 풀 자체의 확률 판정이 성공하면 정확히 한 항목을 선택합니다. 항목의 선택 확률은 해당 <code>Weight</code>를 모든 항목의 가중치 합으로 나눈 값입니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"장비 대박 보상"</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OneOf"</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">            </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">35</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientArmor"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientHelmet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SkyAssaultRifle"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"EggID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PalEgg_Dark_05"</span><span class="p">,</span><span class="w"> </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RaidReward.json"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>가중치 합은 20입니다. 풀 판정이 성공한 경우 네 항목의 선택 확률은 각각 35%, 35%, 25%, 5%입니다. 풀 자체가 활성화될 확률은 35%이므로 알을 받는 최종 확률은 <code>35% × 5% = 1.75%</code>입니다.</p>
+<ul>
+<li><code>Weight</code>를 생략하면 <code>1</code>을 사용합니다.</li>
+<li><code>Weight</code>는 <code>1</code> 이상의 정수여야 합니다. 가중치를 <code>0</code>으로 지정하지 말고 항목을 제거하세요.</li>
+<li><code>OneOf</code>는 항상 한 번만 선택하므로 <code>Rolls</code>는 무시되고 경고가 발생합니다.</li>
+<li>항목별 <code>Chance</code>는 무시되고 경고가 발생합니다. 상대적인 선택 확률은 <code>Weight</code>로 제어하세요.</li>
+<li>한 항목만 선택하므로 <code>Unique</code>는 실질적인 효과가 없습니다.</li>
+</ul>
+<h3 id="pick"><code>Pick</code>: 가중치에 따라 중복 없이 여러 항목 선택</h3>
+<p><code>Pick</code>은 가중치 추첨을 <code>Rolls</code>회 반복합니다. 기본값인 <code>Unique: true</code>에서는 선택한 항목을 다음 추첨 전에 제거하여 다시 선택되지 않게 합니다. 매 추첨 후 남은 항목을 기준으로 가중치를 다시 계산합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"서로 다른 보상 두 개 선택"</span><span class="p">,</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pick"</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">            </span><span class="nt">"Rolls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">            </span><span class="nt">"Unique"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientArmor"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientHelmet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SkyAssaultRifle"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>서로 다른 항목 두 개를 지급합니다. <code>Rolls</code>가 중복 없이 선택 가능한 항목 수보다 크면 남은 항목이 없을 때 추첨을 종료하며, 오류로 처리하지 않습니다.</p>
+<h3 id="pick_1"><code>Pick</code>: 중복 선택 허용</h3>
+<p>풀의 <code>Unique</code>를 <code>false</code>로 설정하면 이미 선택한 항목도 다음 추첨에 남습니다. 같은 아이템을 여러 번 받으면 지급 전에 수량을 합칩니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"보급품 세 번 추첨"</span><span class="p">,</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pick"</span><span class="p">,</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">            </span><span class="nt">"Rolls"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">            </span><span class="nt">"Unique"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssaultRifleBullet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>세 번 모두 <code>Money</code>가 나오거나 탄약이 나올 수도 있고, 서로 섞여 나올 수도 있습니다. 예를 들어 <code>Money</code>가 두 번 선택되면 따로 두 번 지급하는 대신 10,000개로 합쳐 한 번 지급합니다.</p>
+<h3 id="pick-unique"><code>Pick</code>: 항목별 <code>Unique</code> 재정의</h3>
+<p>항목별 <code>Unique</code>는 해당 항목에 대해서만 풀 기본값을 대체합니다. 따라서 같은 풀 안에 반복 가능한 일반 보상과 한 번만 선택되는 대박 보상을 함께 넣을 수 있습니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"중복 가능한 화폐와 중복 불가 대박 보상"</span><span class="p">,</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pick"</span><span class="p">,</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">            </span><span class="nt">"Rolls"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">            </span><span class="nt">"Unique"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">7000</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"Unique"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientArmor"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientHelmet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>Money</code> 항목에는 <code>Unique: false</code>가 있으므로 선택 후에도 후보 목록에 남습니다. 갑옷과 투구는 풀의 <code>Unique: true</code>를 상속하므로 선택 후 제거됩니다. 반대로 풀에 <code>Unique: false</code>를 지정하고 특정 항목에만 <code>Unique: true</code>를 지정할 수도 있습니다.</p>
+<h3 id="all"><code>All</code>: 모든 항목 지급</h3>
+<p><code>All</code>은 풀 자체의 <code>Chance</code> 판정이 성공하면 모든 항목을 정확히 한 번씩 지급합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"전체 보상 묶음"</span><span class="p">,</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"All"</span><span class="p">,</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">            </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssaultRifleBullet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="mi">15000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"EggID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PalEgg_Dark_05"</span><span class="p">,</span><span class="w"> </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RaidReward.json"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Level"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="p">}</span>
+</span></code></pre></div>
+<p><code>All</code>에서는 <code>Weight</code>, 항목별 <code>Chance</code>, <code>Unique</code>가 적용되지 않습니다. <code>Rolls</code>는 무시되고 경고가 발생합니다. 묶음 전체를 확률형으로 지급하려면 풀의 <code>Chance</code>를 설정하세요. 개별 항목을 확률형으로 지급하려면 <code>Independent</code> 또는 직접 지급하는 <code>Drops</code>를 사용하세요.</p>
+<h3 id="independent"><code>Independent</code>: 각 항목을 별도로 추첨</h3>
+<p><code>Independent</code>는 모든 항목을 확인하고 각 항목의 <code>Chance</code>로 판정합니다. 아무것도 지급하지 않거나, 하나·여러 개·전체 항목을 지급할 수 있습니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"독립적인 추가 보상 추첨"</span><span class="p">,</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Independent"</span><span class="p">,</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">            </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssaultRifleBullet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientArmor"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"EggID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PalEgg_Dark_05"</span><span class="p">,</span><span class="w"> </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RaidReward.json"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>먼저 풀이 80% 확률로 활성화됩니다. 활성화되면 <code>Money</code>는 <code>Chance</code>를 생략했으므로 확정 지급됩니다. 나머지 세 항목은 각각 50%, 10%, 5% 확률로 독립적으로 추첨합니다.</p>
+<ul>
+<li>항목의 <code>Chance</code>를 생략하면 <code>100</code>을 사용합니다.</li>
+<li>이 모드에서는 <code>Weight</code>와 <code>Unique</code>가 적용되지 않습니다.</li>
+<li>모든 항목을 한 번씩 판정하므로 <code>Rolls</code>는 무시되고 경고가 발생합니다.</li>
+</ul>
+<h3 id="_7">직접 지급 보상과 여러 풀 함께 사용</h3>
+<p>한 플레이어에게 서로 독립적인 여러 종류의 보상을 지급하려면 여러 풀을 사용하세요.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="p">],</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"장비 한 개"</span><span class="p">,</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OneOf"</span><span class="p">,</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientArmor"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientHelmet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"보급품 두 번 추첨"</span><span class="p">,</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pick"</span><span class="p">,</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">            </span><span class="nt">"Rolls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w">            </span><span class="nt">"Unique"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AssaultRifleBullet"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-23"><a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-13-24"><a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-13-25"><a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-13-26"><a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"독립적인 희귀 추가 보상"</span><span class="p">,</span>
+</span><span id="__span-13-27"><a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Independent"</span><span class="p">,</span>
+</span><span id="__span-13-28"><a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-13-29"><a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-13-30"><a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"AncientTechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-13-31"><a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-13-32"><a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-13-33"><a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-13-34"><a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>직접 지급하는 <code>Money</code>와 경험치는 항상 적용됩니다. 첫 번째 풀은 장비 한 개를 추가하고, 두 번째 풀은 중복을 허용하며 가중치에 따라 보급품을 두 번 추첨합니다. 세 번째 풀은 추가 보상 두 개를 독립적으로 추첨합니다. 풀끼리는 서로 경쟁하지 않으므로 한 플레이어가 모든 풀에서 보상을 받을 수 있습니다.</p>
+<h3 id="_8">팰 알 보상</h3>
+<p>알에는 <code>EggID</code>와 <code>PalTemplate</code>이 모두 필요합니다. 템플릿은 <code>Pals/Templates/</code>에서 불러오며 <code>.json</code>은 생략할 수 있습니다. <code>Count</code>는 지급할 알의 수입니다. <code>Level: 0</code>을 사용하거나 레벨을 생략하면 템플릿의 레벨을 유지하고, 양수 고정값 또는 범위를 지정하면 해당 값으로 대체합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="p">{</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">            </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"무작위 알 보상 한 개"</span><span class="p">,</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">            </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OneOf"</span><span class="p">,</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">            </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">                    </span><span class="nt">"EggID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PalEgg_Dark_05"</span><span class="p">,</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">                    </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RaidReward.json"</span><span class="p">,</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">                    </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">                    </span><span class="nt">"Level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="w">                    </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">                </span><span class="p">},</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">                    </span><span class="nt">"EggID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PalEgg_Dragon_05"</span><span class="p">,</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="w">                    </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DragonReward.json"</span><span class="p">,</span>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">                    </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">                    </span><span class="nt">"Level"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">                    </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">    </span><span class="p">]</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>보상 지급 시 알의 템플릿을 가져올 수 없으면 오류를 로그에 기록하고 해당 알 보상을 건너뜁니다.</p>
+<h3 id="_9">중복 결과 합치기</h3>
+<p>직접 지급 보상과 모든 풀의 결과는 지급 전에 합칩니다.</p>
+<ul>
+<li>같은 <code>ItemID</code>의 아이템은 수량을 더하여 합칩니다.</li>
+<li>알은 <code>EggID</code>, <code>PalTemplate</code>, 추첨된 <code>Level</code>이 모두 같을 때만 합칩니다.</li>
+<li>경험치, 기술 포인트, 고대 기술 포인트는 각각 합산합니다.</li>
+<li>지급할 아이템 수량과 기술 포인트 총량은 부호 있는 32비트 정수의 최댓값(<code>2,147,483,647</code>)으로 제한합니다.</li>
+</ul>
+<p>따라서 <code>Pick</code>에서 중복 선택된 결과는 보상 요청에 중복 인벤토리 항목을 만들지 않습니다. 추첨된 레벨이 다른 알은 별도 보상으로 유지됩니다.</p>
+<h3 id="disabledamagemeter"><code>DisableDamageMeter</code>의 보상 지급 방식</h3>
+<p><code>DisableDamageMeter</code>가 <code>true</code>이면 피해량 순위를 만들지 않고 숫자 순위 보상도 사용하지 않습니다. 대신 소환된 팰에게 피해를 주지 않은 플레이어까지 포함하여 <strong>이벤트 종료 시 접속 중인 모든 플레이어</strong>에 대해 <code>Rewards.Default</code>를 각각 추첨합니다.</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="nt">"DisableDamageMeter"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">"Rewards"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">        </span><span class="nt">"Default"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">            </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="w">            </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="w">                    </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Independent"</span><span class="p">,</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="w">                    </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="w">                        </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="w">                        </span><span class="p">{</span><span class="w"> </span><span class="nt">"AncientTechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"Chance"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="w">                    </span><span class="p">]</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>모든 접속 중인 플레이어에게 <code>Money</code>를 지급합니다. 선택적으로 지급하는 포인트 보상 두 개는 플레이어마다 따로 추첨합니다. <code>Default</code>가 없거나 비어 있으면 이 모드에서는 아무도 보상을 받지 않으며 로그에 경고를 기록합니다.</p>
+<h3 id="_10">잘못된 조합과 무시되는 설정</h3>
+<p>보상 데이터가 잘못되면 PalSummon 파일을 불러올 수 없습니다. 알 수 없거나 해당 상황에서 무시되는 필드는 경고를 발생시키므로, 오타나 효과 없는 설정을 PalDefender 로그에서 확인할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th>설정</th>
+<th>결과</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>한 항목에 <code>ItemID</code>와 <code>EXP</code>가 모두 있음</td>
+<td>오류: 항목에는 보상 유형을 하나만 정의할 수 있습니다.</td>
+</tr>
+<tr>
+<td>보상 항목에 아이템, 알 또는 성장 보상 필드가 없음</td>
+<td>오류: 지급할 보상을 판단할 수 없습니다.</td>
+</tr>
+<tr>
+<td><code>Count: 0</code>, <code>Weight: 0</code>, <code>Rolls: 0</code></td>
+<td>오류: 이 값은 <code>1</code> 이상이어야 합니다.</td>
+</tr>
+<tr>
+<td>범위에 <code>Min</code> 또는 <code>Max</code>가 없거나 <code>Max &lt; Min</code>임</td>
+<td>오류.</td>
+</tr>
+<tr>
+<td><code>Chance</code>가 <code>0</code>–<code>100</code> 범위를 벗어남</td>
+<td>오류.</td>
+</tr>
+<tr>
+<td>풀에 <code>Entries</code>가 없거나, 배열이 비어 있거나, 배열이 아닌 값임</td>
+<td>오류.</td>
+</tr>
+<tr>
+<td><code>OneOf</code>, <code>Pick</code>, <code>All</code>의 개별 항목에 <code>Chance</code> 지정</td>
+<td>경고: 항목별 확률을 무시합니다.</td>
+</tr>
+<tr>
+<td><code>OneOf</code>, <code>All</code>, <code>Independent</code>에 <code>Rolls</code> 지정</td>
+<td>경고: <code>Rolls</code>를 무시합니다.</td>
+</tr>
+<tr>
+<td>직접 지급하는 <code>Drops</code>에 <code>Weight</code> 또는 <code>Unique</code> 지정</td>
+<td>경고: 직접 지급 보상에는 <code>Chance</code>를 사용하세요.</td>
+</tr>
+<tr>
+<td><code>Wieght</code> 같은 알 수 없는 필드가 있음</td>
+<td>경고: 해당 필드는 사용하지 않습니다.</td>
+</tr>
+</tbody>
+</table>
+<p>주석과 마지막 항목 뒤의 쉼표 없이 올바른 JSON을 작성하세요. 소환 파일을 정상적으로 불러왔더라도 경고를 확인하세요. 경고는 대개 효과 없는 설정을 알려 줍니다.</p>
+<h2 id="_11">전체 예제</h2>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">    </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ArenaBoss.json"</span><span class="p">,</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="nt">"BossBattleName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"투기장 아누비스"</span><span class="p">,</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="nt">"Uncapturable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="nt">"CapturableAtHealthPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="nt">"DisableAI"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="nt">"DisableDamageMeter"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="nt">"SpawnScale"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.5</span><span class="p">,</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="nt">"DamageTakenMultiplier"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.75</span><span class="p">,</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="nt">"DamageDealtMultiplier"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="nt">"X"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="nt">"Y"</span><span class="p">:</span><span class="w"> </span><span class="mi">-486</span><span class="p">,</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">    </span><span class="nt">"Z"</span><span class="p">:</span><span class="w"> </span><span class="mi">4097</span><span class="p">,</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">    </span><span class="nt">"DisableStatuses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Poison"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Burn"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Freeze"</span><span class="p">],</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">    </span><span class="nt">"Rewards"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">        </span><span class="nt">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">            </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Money"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"AncientTechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="w">            </span><span class="p">],</span>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w">            </span><span class="nt">"Pools"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">                </span><span class="p">{</span>
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="w">                    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"우승자 추가 보상"</span><span class="p">,</span>
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w">                    </span><span class="nt">"Mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pick"</span><span class="p">,</span>
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w">                    </span><span class="nt">"Rolls"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+</span><span id="__span-16-26"><a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="w">                    </span><span class="nt">"Unique"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</span><span id="__span-16-27"><a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w">                    </span><span class="nt">"Entries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-28"><a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="w">                        </span><span class="p">{</span><span class="w"> </span><span class="nt">"ItemID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AncientCivilizationParts"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Count"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-16-29"><a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w">                        </span><span class="p">{</span><span class="w"> </span><span class="nt">"EggID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PalEgg_Dark_05"</span><span class="p">,</span><span class="w"> </span><span class="nt">"PalTemplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RaidReward.json"</span><span class="p">,</span><span class="w"> </span><span class="nt">"Level"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"Min"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w"> </span><span class="nt">"Max"</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="nt">"Weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-16-30"><a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a><span class="w">                    </span><span class="p">]</span>
+</span><span id="__span-16-31"><a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w">                </span><span class="p">}</span>
+</span><span id="__span-16-32"><a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-16-33"><a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">        </span><span class="p">},</span>
+</span><span id="__span-16-34"><a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">        </span><span class="nt">"Default"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-35"><a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">            </span><span class="nt">"Drops"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+</span><span id="__span-16-36"><a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"EXP"</span><span class="p">:</span><span class="w"> </span><span class="mi">5000</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-16-37"><a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nt">"TechnologyPoints"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-16-38"><a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="w">            </span><span class="p">]</span>
+</span><span id="__span-16-39"><a id="__codelineno-16-39" name="__codelineno-16-39" href="#__codelineno-16-39"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-16-40"><a id="__codelineno-16-40" name="__codelineno-16-40" href="#__codelineno-16-40"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-16-41"><a id="__codelineno-16-41" name="__codelineno-16-41" href="#__codelineno-16-41"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="_12">검증 체크리스트</h2>
+<ol>
+<li>먼저 <code>/givemepal_j &lt;template&gt;</code>으로 참조하는 템플릿을 테스트하세요.</li>
+<li><code>/getpos</code>로 <code>X</code>, <code>Y</code>, <code>Z</code>를 확인하세요. RCON에서는 <code>/getpos</code>에 UserId를 지정해야 합니다.</li>
+<li>주석과 마지막 항목 뒤의 쉼표 없이 올바른 JSON을 작성하세요.</li>
+<li>보상 항목마다 보상 유형을 하나만 사용하세요.</li>
+<li>각 풀에 비어 있지 않은 <code>Entries</code> 배열이 있고, 선택한 <code>Mode</code>에 적용되는 필드만 사용하는지 확인하세요.</li>
+<li><code>/summon &lt;filename&gt;</code>을 실행하고 PalDefender 로그에서 구체적인 검증 오류와 경고를 확인하세요.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/Ultimeit/PalDefender" target="_blank" rel="noopener" title="GitHub의 PalDefender" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.path", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
